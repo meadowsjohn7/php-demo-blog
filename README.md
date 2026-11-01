@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [Web 性能分析审计：优化方案](https://meadowsjohn7.github.io/php-demo-blog/blog/20261102-051948-wx1o.html) — 2026-11-02
+- [数据库死锁排查与解决：完整手册](https://meadowsjohn7.github.io/php-demo-blog/blog/20261102-053843-v1g8.html) — 2026-11-02
 
 ### 参考资源
 
-- [365worldcd.com](http://www.365worldcd.com) — 365worldcd.com 的相关页面与资源，可作为延伸阅读。
-- [medservintl.com](http://www.medservintl.com) — medservintl.com 的相关页面与资源，可作为延伸阅读。
-- [turfdxb.com](http://www.turfdxb.com) — turfdxb.com 的相关页面与资源，可作为延伸阅读。
-- [canary-food.com](http://www.canary-food.com) — canary-food.com 的相关页面与资源，可作为延伸阅读。
-- [hematqiuq.com](http://www.hematqiuq.com) — hematqiuq.com 的相关页面与资源，可作为延伸阅读。
+- [custom-vacations.com](https://www.custom-vacations.com) — custom-vacations.com 的相关页面与资源，可作为延伸阅读。
+- [otaclinictsukuba.com](http://www.otaclinictsukuba.com) — otaclinictsukuba.com 的相关页面与资源，可作为延伸阅读。
+- [midtowntapandtearoom.com](http://www.midtowntapandtearoom.com) — midtowntapandtearoom.com 的相关页面与资源，可作为延伸阅读。
+- [kitchenwaredolphin.com](https://www.kitchenwaredolphin.com) — kitchenwaredolphin.com 的相关页面与资源，可作为延伸阅读。
+- [hawaiianshirtopia.com](https://www.hawaiianshirtopia.com) — hawaiianshirtopia.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
