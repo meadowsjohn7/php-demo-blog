@@ -1,0 +1,13 @@
+{
+    "name": "demo/php-demo-blog",
+    "description": "A tiny PHP router and JSON API demo.",
+    "type": "project",
+    "require": {
+        "php": ">=8.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}
