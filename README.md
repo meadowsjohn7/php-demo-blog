@@ -2,6 +2,18 @@
 
 PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建简单的路由和 JSON API，并配套技术文档与博客内容。它帮助初学者理解 PHP 路由与 API 开发的基本概念，适合作为学习参考或小型项目起点。
 
+## 最新文章
+
+- [网站反爬虫对抗技术：优化方案](https://meadowsjohn7.github.io/php-demo-blog/blog/20261102-043214-s5c0.html) — 2026-11-02
+
+### 参考资源
+
+- [shanghaispine.com](https://www.shanghaispine.com) — shanghaispine.com 的相关页面与资源，可作为延伸阅读。
+- [dixiecrating.com](http://www.dixiecrating.com) — dixiecrating.com 的相关页面与资源，可作为延伸阅读。
+- [johnmeldrum.com](http://www.johnmeldrum.com) — johnmeldrum.com 的相关页面与资源，可作为延伸阅读。
+- [kurtbergt.com](http://www.kurtbergt.com) — kurtbergt.com 的相关页面与资源，可作为延伸阅读。
+- [yugiohdeckbuilder.com](http://www.yugiohdeckbuilder.com) — yugiohdeckbuilder.com 的相关页面与资源，可作为延伸阅读。
+
 ## 功能
 
 - 轻量级路由实现
@@ -33,7 +45,7 @@ composer.json
 
 ## 文档与博客
 
-- Pages: （首次发布后生成）
+- Pages: https://meadowsjohn7.github.io/php-demo-blog/
 - 博客文章位于 `docs/blog/`
 
 ## 许可
