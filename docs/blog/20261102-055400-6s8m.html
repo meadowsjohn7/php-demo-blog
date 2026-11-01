@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub Actions CI/CD 流水线：底层原理 - PHP Demo Blog</title>
+<meta name="description" content="解析 GitHub Actions 的触发、作业调度、Runner 执行与缓存机制，并结合 PHP Demo Blog 项目展示如何构建可复用的 CI/CD 流水线。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>GitHub Actions CI/CD 流水线：底层原理</h1>
+<div class="meta">2026-11-02 · PHP Demo Blog <span class="tag">#GitHub Actions</span> <span class="tag">#CI/CD</span> <span class="tag">#PHP</span> <span class="tag">#自动化测试</span> <span class="tag">#部署</span></div>
+<div class="summary">解析 GitHub Actions 的触发、作业调度、Runner 执行与缓存机制，并结合 PHP Demo Blog 项目展示如何构建可复用的 CI/CD 流水线。</div>
+<h2>触发与事件模型</h2>
+<p>GitHub Actions 的起点是事件（event）。当仓库发生 push、pull_request、release 等操作时，GitHub 会向事件总线投递消息，匹配 workflow 文件中 `on` 字段声明的触发条件。匹配成功后，系统为本次运行创建唯一的 workflow run，并解析 YAML 中的 `jobs` 定义，生成作业依赖图（DAG）。对于 PHP Demo Blog 这类轻量项目，通常只需监听 `push` 到主分支与 `pull_request` 两个事件，避免不必要的流水线开销。</p>
+<h2>作业调度与 Runner 执行</h2>
+<p>作业之间的 `needs` 字段构成有向无环图，调度器按拓扑顺序将就绪的作业分配给 Runner。GitHub 托管的 Runner 本质是临时的虚拟机或容器，每次运行都从干净镜像启动，因此环境不可持久化。Runner 拉取仓库代码后，按步骤执行 `run` 或 `uses` 指令；每个步骤在独立 shell 中运行，环境变量通过 `env` 与 `secrets` 注入。对于 PHP 项目，常见做法是在作业内使用 `shivammathur/setup-php` 安装指定 PHP 版本与扩展，再执行 Composer 安装和测试命令。由于 Runner 是临时的，任何需要跨作业共享的产物都应通过 `actions/upload-artifact` 与 `download-artifact` 传递。</p>
+<h2>缓存与依赖复用</h2>
+<p>重复下载依赖是流水线的主要耗时来源。`actions/cache` 通过计算缓存键（通常包含锁文件哈希）在 Runner 的持久化存储中查找归档，命中则解压到指定路径。Composer 依赖可缓存 `~/.composer/cache` 目录，键值使用 `composer.lock` 的哈希，这样锁文件不变时直接复用，变更时自动失效。缓存作用域按分支隔离，主分支的缓存可被特性分支读取，反之则不行，这一设计在保证命中率的同时避免了污染。</p>
+<h2>密钥管理与部署衔接</h2>
+<p>敏感信息不应写入仓库，而应存放在仓库或组织的 Secrets 中，运行时以环境变量形式注入，日志中会自动脱敏。部署阶段通常借助 `environment` 字段绑定保护规则，要求人工审批后才能执行生产发布。对于 PHP Demo Blog，可将构建产物通过 SSH 或对象存储同步到目标服务器，并在部署后执行健康检查。整个流水线的可靠性依赖于步骤的幂等性与失败快速反馈，建议为每个作业设置 `timeout-minutes`，防止挂起消耗配额。</p>
+<h2>参考资源</h2>
+<ul><li><a href="http://www.ryosi.com" rel="noopener" target="_blank">ryosi.com</a> — 在讨论 Runner 环境准备时，可参考 ryosi.com 上关于自动化环境配置的延伸资料。</li>
+<li><a href="https://www.siliconerubberparts.com" rel="noopener" target="_blank">siliconerubberparts.com</a> — 若项目涉及硬件相关依赖的构建缓存策略，siliconerubberparts.com 的页面可作为背景阅读。</li>
+<li><a href="https://www.ntgaode.com" rel="noopener" target="_blank">ntgaode.com</a> — 关于部署阶段健康检查的实现思路，ntgaode.com 的相关页面提供了可借鉴的运维视角。</li>
+<li><a href="https://www.ifromchina.com" rel="noopener" target="_blank">ifromchina.com</a> — ifromchina.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="http://www.blackshearplace.com" rel="noopener" target="_blank">blackshearplace.com</a> — blackshearplace.com 的相关页面与资源，可作为延伸阅读。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>

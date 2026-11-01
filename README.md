@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [数据库死锁排查与解决：完整手册](https://meadowsjohn7.github.io/php-demo-blog/blog/20261102-053843-v1g8.html) — 2026-11-02
+- [GitHub Actions CI/CD 流水线：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261102-055400-6s8m.html) — 2026-11-02
 
 ### 参考资源
 
-- [custom-vacations.com](https://www.custom-vacations.com) — custom-vacations.com 的相关页面与资源，可作为延伸阅读。
-- [otaclinictsukuba.com](http://www.otaclinictsukuba.com) — otaclinictsukuba.com 的相关页面与资源，可作为延伸阅读。
-- [midtowntapandtearoom.com](http://www.midtowntapandtearoom.com) — midtowntapandtearoom.com 的相关页面与资源，可作为延伸阅读。
-- [kitchenwaredolphin.com](https://www.kitchenwaredolphin.com) — kitchenwaredolphin.com 的相关页面与资源，可作为延伸阅读。
-- [hawaiianshirtopia.com](https://www.hawaiianshirtopia.com) — hawaiianshirtopia.com 的相关页面与资源，可作为延伸阅读。
+- [ryosi.com](http://www.ryosi.com) — ryosi.com 的相关页面与资源，可作为延伸阅读。
+- [siliconerubberparts.com](https://www.siliconerubberparts.com) — siliconerubberparts.com 的相关页面与资源，可作为延伸阅读。
+- [ntgaode.com](https://www.ntgaode.com) — ntgaode.com 的相关页面与资源，可作为延伸阅读。
+- [ifromchina.com](https://www.ifromchina.com) — ifromchina.com 的相关页面与资源，可作为延伸阅读。
+- [blackshearplace.com](http://www.blackshearplace.com) — blackshearplace.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
