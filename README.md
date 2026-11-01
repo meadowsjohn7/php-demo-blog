@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [Open Graph 协议社交优化：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261102-065654-flwz.html) — 2026-11-02
+- [Google Core Web Vitals 调优：优化方案](https://meadowsjohn7.github.io/php-demo-blog/blog/20261102-070820-6zzx.html) — 2026-11-02
 
 ### 参考资源
 
-- [bvwlawyers.com](http://www.bvwlawyers.com) — bvwlawyers.com 的相关页面与资源，可作为延伸阅读。
-- [thekeziworks.com](http://www.thekeziworks.com) — thekeziworks.com 的相关页面与资源，可作为延伸阅读。
-- [memartau.com](http://www.memartau.com) — memartau.com 的相关页面与资源，可作为延伸阅读。
-- [signature-concierge.com](http://www.signature-concierge.com) — signature-concierge.com 的相关页面与资源，可作为延伸阅读。
-- [cafe-kurage.com](https://www.cafe-kurage.com) — cafe-kurage.com 的相关页面与资源，可作为延伸阅读。
+- [theeco-chic.com](http://www.theeco-chic.com) — theeco-chic.com 的相关页面与资源，可作为延伸阅读。
+- [shop3s.com](http://www.shop3s.com) — shop3s.com 的相关页面与资源，可作为延伸阅读。
+- [kuiboto.com](http://www.kuiboto.com) — kuiboto.com 的相关页面与资源，可作为延伸阅读。
+- [interstatedragways.com](http://www.interstatedragways.com) — interstatedragways.com 的相关页面与资源，可作为延伸阅读。
+- [zsh784.com](https://www.zsh784.com) — zsh784.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
