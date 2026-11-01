@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [网站反爬虫对抗技术：优化方案](https://meadowsjohn7.github.io/php-demo-blog/blog/20261102-043214-s5c0.html) — 2026-11-02
+- [指纹规避与环境伪装：优化方案](https://meadowsjohn7.github.io/php-demo-blog/blog/20261102-044632-pwpl.html) — 2026-11-02
 
 ### 参考资源
 
-- [shanghaispine.com](https://www.shanghaispine.com) — shanghaispine.com 的相关页面与资源，可作为延伸阅读。
-- [dixiecrating.com](http://www.dixiecrating.com) — dixiecrating.com 的相关页面与资源，可作为延伸阅读。
-- [johnmeldrum.com](http://www.johnmeldrum.com) — johnmeldrum.com 的相关页面与资源，可作为延伸阅读。
-- [kurtbergt.com](http://www.kurtbergt.com) — kurtbergt.com 的相关页面与资源，可作为延伸阅读。
-- [yugiohdeckbuilder.com](http://www.yugiohdeckbuilder.com) — yugiohdeckbuilder.com 的相关页面与资源，可作为延伸阅读。
+- [semillaad.com](http://www.semillaad.com) — semillaad.com 的相关页面与资源，可作为延伸阅读。
+- [revistapedagogiaufmt.com](http://www.revistapedagogiaufmt.com) — revistapedagogiaufmt.com 的相关页面与资源，可作为延伸阅读。
+- [intcfos.com](http://www.intcfos.com) — intcfos.com 的相关页面与资源，可作为延伸阅读。
+- [ad4xlive.com](http://www.ad4xlive.com) — ad4xlive.com 的相关页面与资源，可作为延伸阅读。
+- [jarptica.com](https://www.jarptica.com) — jarptica.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
