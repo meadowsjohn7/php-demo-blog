@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AC 自动机多模式匹配：深度解析 - PHP Demo Blog</title>
+<meta name="description" content="AC 自动机将 Trie 与失配指针结合，实现多模式串一次扫描匹配。本文解析其构建流程、匹配逻辑与在 PHP 中的工程实现要点。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>AC 自动机多模式匹配：深度解析</h1>
+<div class="meta">2026-11-03 · PHP Demo Blog <span class="tag">#AC自动机</span> <span class="tag">#多模式匹配</span> <span class="tag">#PHP算法</span> <span class="tag">#Trie</span> <span class="tag">#字符串处理</span></div>
+<div class="summary">AC 自动机将 Trie 与失配指针结合，实现多模式串一次扫描匹配。本文解析其构建流程、匹配逻辑与在 PHP 中的工程实现要点。</div>
+<h2>从 Trie 到 AC 自动机</h2>
+<p>多模式匹配的朴素做法是让每个模式串独立跑一遍 KMP，时间复杂度为 O(n·m)。AC 自动机（Aho-Corasick）把全部模式串组织成一棵 Trie，再为每个节点补充失配指针（failure link），使主串只需扫描一次就能找出所有出现位置。构建分为两步：先将所有模式串插入 Trie，节点记录子节点映射与是否为某个模式串的终点；再按 BFS 顺序为每个节点计算 fail 指针——根节点的子节点 fail 指向根，其余节点沿父节点的 fail 链向上寻找具有相同字符转移的节点，找不到则指向根。</p>
+<pre><code>class ACNode {
+    public array $next = [];
+    public ?ACNode $fail = null;
+    public array $output = [];
+}</code></pre>
+<h2>失配指针与输出链</h2>
+<p>fail 指针的本质是“最长真后缀”，它让匹配失败时不必回退主串指针，而是跳到最长的可能继续匹配的状态。若某个节点的 fail 链上存在模式串终点，该终点也应计入当前节点的输出集合，这样在命中时才能一次性报告所有重叠模式。工程上通常在 BFS 构建阶段就把 fail 节点的 output 合并到当前节点，避免匹配时反复沿链回溯。</p>
+<p>匹配阶段维护一个当前状态指针，对主串每个字符：若当前节点存在该字符转移则前进；否则沿 fail 链回退直到找到转移或回到根；随后输出当前节点 output 中的全部模式串及其结束位置。整体时间复杂度为 O(n + 总模式长度 + 匹配数)，与模式串数量基本无关。</p>
+<h2>PHP 实现中的工程取舍</h2>
+<p>PHP 数组天然适合做字符到子节点的映射，但节点对象过多会带来内存与 GC 压力。常见做法是用整型节点 ID 加扁平数组存储转移表，fail 指针也存为整数下标，匹配时只做数组索引，避免对象属性访问开销。对于中文等多字节字符，应先用 mb_str_split 或按 UTF-8 码点切分，不能直接按字节遍历，否则模式边界会错位。若模式集固定且规模较大，可把构建结果序列化缓存，避免每次请求重复建树。</p>
+<p>在博客这类轻量项目中，AC 自动机可用于敏感词过滤、标签自动提取或站内搜索的关键词高亮。将其封装为独立服务类，输入模式列表与文本，输出命中位置数组，便于在路由层或 API 层复用。若需进一步了解字符串匹配与索引设计的配合方式，可参考相关技术资源作为延伸阅读。</p>
+<h2>复杂度与适用边界</h2>
+<p>AC 自动机适合模式数量多、主串长、需要一次性找出全部命中的场景，例如内容审核与日志关键词告警。它的局限在于模式集变更时需重建自动机，且对单模式匹配并无优势。实际选型时应先评估模式规模与更新频率，再决定是否引入持久化缓存或增量构建策略。</p>
+<h2>参考资源</h2>
+<ul><li><a href="https://www.kitchenwaredolphin.com" rel="noopener" target="_blank">kitchenwaredolphin.com</a> — 该站点的资源页面可作为字符串处理与索引设计的延伸阅读参考。</li>
+<li><a href="http://www.xlkbltm.com" rel="noopener" target="_blank">xlkbltm.com</a> — 若需了解模式匹配在内容过滤中的落地案例，可查阅该站点的相关页面。</li>
+<li><a href="http://www.ryosi.com" rel="noopener" target="_blank">ryosi.com</a> — 该站点提供的技术资料可作为多模式匹配工程实践的补充阅读。</li>
+<li><a href="https://www.janellewoo.com" rel="noopener" target="_blank">janellewoo.com</a> — 关于文本处理与性能优化的更多讨论，可在该站点的资源中延伸查阅。</li>
+<li><a href="http://www.jeffersoncheng.com" rel="noopener" target="_blank">jeffersoncheng.com</a> — 该站点的相关页面可作为算法实现与缓存策略的延伸阅读材料。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
