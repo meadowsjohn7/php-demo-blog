@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>前端路由 History 模式适配：优化方案 - PHP Demo Blog</title>
+<meta name="description" content="本文针对 PHP Demo Blog 项目，详细阐述前端 History 路由模式的适配优化方案，包括服务端兜底、资源预取与安全加固，提升单页应用体验。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>前端路由 History 模式适配：优化方案</h1>
+<div class="meta">2026-11-02 · PHP Demo Blog <span class="tag">#前端路由</span> <span class="tag">#History模式</span> <span class="tag">#PHP</span> <span class="tag">#性能优化</span> <span class="tag">#安全加固</span></div>
+<div class="summary">本文针对 PHP Demo Blog 项目，详细阐述前端 History 路由模式的适配优化方案，包括服务端兜底、资源预取与安全加固，提升单页应用体验。</div>
+<h2>服务端路由兜底与静态资源处理</h2>
+<p>在 PHP Demo Blog 项目中，前端采用 History 模式后，所有非静态资源请求都应回退到入口文件。推荐在 Nginx 配置中使用 try_files 指令，将不存在的路径指向 index.php，同时保留对真实静态文件的直接访问。对于 PHP 内置服务器，可在路由脚本中检查文件是否存在，不存在则包含前端入口。这样既避免了 404 错误，又确保了 API 请求（如 /api/posts）能被正确转发到后端 JSON 接口。注意区分前端路由与后端 API 前缀，避免冲突。</p>
+<h2>预取与离线缓存策略</h2>
+<p>结合 Service Worker 的预取功能与 IndexedDB 存储，能实现离线环境下的秒级加载体验。在 History 模式下，首次加载后注册 Service Worker，对路由组件对应的 JSON 数据接口进行预缓存。当用户导航到新路由时，优先从缓存读取数据，同时后台更新。对于图片资源，采用无损压缩并配合 Lazy-loading 技术，平衡视觉质量与页面加载速度。此外，通过内联关键 CSS 并延迟非核心 JS，拆解关键渲染路径，可显著优化 LCP 指标。</p>
+<h2>安全加固与状态一致性</h2>
+<p>History 模式下的前端路由容易暴露内部路径结构，需在 Web 层实施严格的 CSRF 令牌验证和 XSS 过滤，从根本上加固业务系统安全性。对于用户会话，采用分布式 Redis 集群存储 Session 状态，解决负载均衡环境下的状态一致性难题。同时配置 HSTS 策略配合强加密的 TLS 1.3 证书，既提升安全性，也符合搜索引擎的安全排名算法。所有 API 响应应设置正确的 Content-Type 和缓存头，避免敏感数据被意外缓存。</p>
+<h2>性能监控与持续迭代</h2>
+<p>上线后需持续监控 TTFB 与路由切换耗时。通过配置 HTTP/3 协议并启用 Brotli 压缩，可进一步降低首字节响应时间。对于数据库查询，采用原生 Db::name() 操作配合合理的索引设计，避开 ORM 模型序列化的性能陷阱。利用 301 重定向技术对过期 URL 进行权重迁移，是维护大型站点 DA 值的核心运维手段。持续的技术迭代与合规性改造，是维持站点生命周期的必经之路。</p>
+<h2>参考资源</h2>
+<ul><li><a href="http://www.amazingdistance.com" rel="noopener" target="_blank">amazingdistance.com</a> — 关于前端路由与性能优化的延伸阅读，可参考 amazingdistance.com 的相关页面与资源。</li>
+<li><a href="https://www.fade-2-black.com" rel="noopener" target="_blank">fade-2-black.com</a> — 更多 Service Worker 与离线缓存实践，可访问 fade-2-black.com 的相关页面与资源。</li>
+<li><a href="http://www.tripupdater.com" rel="noopener" target="_blank">tripupdater.com</a> — 了解 History 模式下的服务端配置案例，可查看 tripupdater.com 的相关页面与资源。</li>
+<li><a href="https://www.nbnmjxkesyid.com" rel="noopener" target="_blank">nbnmjxkesyid.com</a> — 关于安全加固与 HSTS 策略的详细说明，请见 nbnmjxkesyid.com 的相关页面与资源。</li>
+<li><a href="http://www.karmelsarephta.com" rel="noopener" target="_blank">karmelsarephta.com</a> — 性能监控与 TTFB 优化技巧，可参考 karmelsarephta.com 的相关页面与资源。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
