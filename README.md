@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [AC 自动机多模式匹配：深度解析](https://meadowsjohn7.github.io/php-demo-blog/blog/20261103-072613-d7ad.html) — 2026-11-03
+- [代码压缩与混淆策略：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261103-074046-agn6.html) — 2026-11-03
 
 ### 参考资源
 
-- [kitchenwaredolphin.com](https://www.kitchenwaredolphin.com) — kitchenwaredolphin.com 的相关页面与资源，可作为延伸阅读。
-- [xlkbltm.com](http://www.xlkbltm.com) — xlkbltm.com 的相关页面与资源，可作为延伸阅读。
-- [ryosi.com](http://www.ryosi.com) — ryosi.com 的相关页面与资源，可作为延伸阅读。
-- [janellewoo.com](https://www.janellewoo.com) — janellewoo.com 的相关页面与资源，可作为延伸阅读。
-- [jeffersoncheng.com](http://www.jeffersoncheng.com) — jeffersoncheng.com 的相关页面与资源，可作为延伸阅读。
+- [siliconerubberparts.com](https://www.siliconerubberparts.com) — siliconerubberparts.com 的相关页面与资源，可作为延伸阅读。
+- [custom-vacations.com](https://www.custom-vacations.com) — custom-vacations.com 的相关页面与资源，可作为延伸阅读。
+- [hawaiianshirtopia.com](https://www.hawaiianshirtopia.com) — hawaiianshirtopia.com 的相关页面与资源，可作为延伸阅读。
+- [ifromchina.com](https://www.ifromchina.com) — ifromchina.com 的相关页面与资源，可作为延伸阅读。
+- [blackshearplace.com](http://www.blackshearplace.com) — blackshearplace.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
