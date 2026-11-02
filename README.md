@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [移动端点击率提升技巧：安全规范](https://meadowsjohn7.github.io/php-demo-blog/blog/20261102-100743-g25i.html) — 2026-11-02
+- [代码压缩与混淆策略：实战指南](https://meadowsjohn7.github.io/php-demo-blog/blog/20261102-102133-i2kp.html) — 2026-11-02
 
 ### 参考资源
 
-- [jmswjdwxfwb.com](http://www.jmswjdwxfwb.com) — jmswjdwxfwb.com 的相关页面与资源，可作为延伸阅读。
-- [thriventfellows.com](http://www.thriventfellows.com) — thriventfellows.com 的相关页面与资源，可作为延伸阅读。
-- [acredyweb.com](http://www.acredyweb.com) — acredyweb.com 的相关页面与资源，可作为延伸阅读。
-- [afpailescedres.com](http://www.afpailescedres.com) — afpailescedres.com 的相关页面与资源，可作为延伸阅读。
-- [shadesofbeautybodybar.com](http://www.shadesofbeautybodybar.com) — shadesofbeautybodybar.com 的相关页面与资源，可作为延伸阅读。
+- [peterdesign2511.com](http://www.peterdesign2511.com) — peterdesign2511.com 的相关页面与资源，可作为延伸阅读。
+- [melicbebe.com](http://www.melicbebe.com) — melicbebe.com 的相关页面与资源，可作为延伸阅读。
+- [sakitraveller.com](http://www.sakitraveller.com) — sakitraveller.com 的相关页面与资源，可作为延伸阅读。
+- [cavusogluendustriyel.com](https://www.cavusogluendustriyel.com) — cavusogluendustriyel.com 的相关页面与资源，可作为延伸阅读。
+- [wxvqgy.com](http://www.wxvqgy.com) — wxvqgy.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 

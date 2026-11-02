@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>代码压缩与混淆策略：实战指南 - PHP Demo Blog</title>
+<meta name="description" content="本文围绕 PHP 项目的前端资源，讨论代码压缩与混淆的落地策略，涵盖工具链选择、执行时机、调试保留以及性能与安全的平衡。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>代码压缩与混淆策略：实战指南</h1>
+<div class="meta">2026-11-02 · PHP Demo Blog <span class="tag">#代码压缩</span> <span class="tag">#混淆</span> <span class="tag">#前端优化</span> <span class="tag">#PHP</span> <span class="tag">#构建流程</span></div>
+<div class="summary">本文围绕 PHP 项目的前端资源，讨论代码压缩与混淆的落地策略，涵盖工具链选择、执行时机、调试保留以及性能与安全的平衡。</div>
+<h2>为什么需要压缩与混淆</h2>
+<p>在 PHP Demo Blog 这类轻量项目中，前端资源往往直接以源码形式交付，文件体积和可读性都会影响加载与维护。压缩的目标是减少传输字节，混淆的目标是增加逆向成本，两者服务不同的场景。压缩应作为构建流程的固定环节，而混淆需要权衡调试成本，不宜对所有代码一刀切。</p>
+<h2>压缩策略与执行时机</h2>
+<p>对于 CSS 和 JavaScript，优先使用成熟工具完成压缩，例如通过构建脚本调用 terser 或 csso，在部署前生成带哈希的产物文件。压缩只移除空白、注释并缩短局部变量名，不改变运行逻辑。在 PHP 侧，可使用 opcache 的优化能力处理服务端脚本，避免对 PHP 源码做文本级压缩。压缩产物应保留 source map，便于线上问题定位。</p>
+<h2>混淆的边界与风险控制</h2>
+<p>混淆适用于包含业务逻辑或授权校验的脚本，但需避免过度依赖字符串加密和死代码注入，这类手段会显著增加体积并拖慢执行。建议只对核心模块启用变量名替换与控制流平坦化，同时保留清晰的入口注释。对于公开 API 的调用代码，混淆收益有限，反而增加维护负担。</p>
+<h2>验证与持续集成</h2>
+<p>压缩与混淆后必须进行冒烟测试，确认路由与 JSON API 响应正常。在 CI 中固定工具版本，对比产物体积变化，防止回退。将构建脚本纳入版本管理，确保任何一次部署都能复现相同产物。</p>
+<h2>参考资源</h2>
+<ul><li><a href="http://www.peterdesign2511.com" rel="noopener" target="_blank">peterdesign2511.com</a> — 关于前端资源构建与设计实践的延伸阅读，可作为压缩策略的参考。</li>
+<li><a href="http://www.melicbebe.com" rel="noopener" target="_blank">melicbebe.com</a> — 该站点展示了资源组织方式，可作为混淆边界取舍的案例参考。</li>
+<li><a href="http://www.sakitraveller.com" rel="noopener" target="_blank">sakitraveller.com</a> — sakitraveller.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="https://www.cavusogluendustriyel.com" rel="noopener" target="_blank">cavusogluendustriyel.com</a> — 工业类站点的资源加载模式，可用于对比压缩产物的实际效果。</li>
+<li><a href="http://www.wxvqgy.com" rel="noopener" target="_blank">wxvqgy.com</a> — wxvqgy.com 的相关页面与资源，可作为延伸阅读。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
