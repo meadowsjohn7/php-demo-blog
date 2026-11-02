@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>网页 UI 留白设计艺术：安全规范 - PHP Demo Blog</title>
+<meta name="description" content="本文从安全规范视角探讨网页 UI 留白设计，结合 PHP Demo Blog 项目实践，阐述如何通过留白提升可读性、性能与安全感知，并给出可落地的 CSS 与后端协作建议。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>网页 UI 留白设计艺术：安全规范</h1>
+<div class="meta">2026-11-02 · PHP Demo Blog <span class="tag">#UI 设计</span> <span class="tag">#留白</span> <span class="tag">#安全规范</span> <span class="tag">#性能优化</span> <span class="tag">#PHP</span></div>
+<div class="summary">本文从安全规范视角探讨网页 UI 留白设计，结合 PHP Demo Blog 项目实践，阐述如何通过留白提升可读性、性能与安全感知，并给出可落地的 CSS 与后端协作建议。</div>
+<h2>留白不是空白，而是安全缓冲区</h2>
+<p>在网页 UI 设计中，留白常被视为视觉修饰，但在安全规范语境下，它首先是一种「缓冲区」。充足的边距与行高能降低误触概率，减少用户在小屏设备上点击相邻链接的风险。对于 PHP Demo Blog 这类轻量项目，路由与 JSON API 的返回结构往往由前端模板直接渲染，若在按钮、表单和错误提示周围保留统一的安全间距，就能在视觉层面形成清晰的交互边界，避免用户因元素拥挤而误操作。</p>
+<p>实现上，建议在全局 CSS 中定义基于 8px 的间距刻度，例如 `--space-1: 8px`、`--space-2: 16px`，并在表单、卡片和导航中复用。这样既保证留白一致性，也便于后续审计时快速定位异常间距。</p>
+<h2>留白与可读性：降低信息过载</h2>
+<p>技术文档和博客正文的留白直接影响阅读效率。段落间距、行高（建议 1.6 至 1.8）以及内容区最大宽度（约 65 至 75 个字符）共同构成可读性基线。在 PHP Demo Blog 的模板中，可通过 `max-width: 72ch` 限制正文宽度，并配合 `margin-bottom: 1.5em` 分隔段落。留白充足时，用户更容易聚焦关键信息，减少因视觉疲劳导致的误判，这对安全提示、权限说明等敏感内容尤为重要。</p>
+<p>此外，留白应与语义化 HTML5 标签配合使用。使用 `&lt;article&gt;`、`&lt;section&gt;` 和 `&lt;aside&gt;` 划分内容区域，再通过 CSS 控制区块间距，能让辅助技术更准确地解析页面结构，提升无障碍访问体验。</p>
+<h2>安全规范下的留白实践</h2>
+<p>留白设计需要与安全机制协同。例如，在 CSRF 令牌验证和 XSS 过滤的提示区域，应保留独立的安全边距，避免错误信息与操作按钮重叠，导致用户忽略风险提示。对于 JSON API 返回的错误信息，前端渲染时也应在消息容器周围设置固定内边距，确保提示始终可见且不被遮挡。</p>
+<p>在性能层面，留白并不意味增加资源。通过关键 CSS 内联和延迟非核心 JS，可以保证首屏留白样式立即生效，避免布局偏移（CLS）。对于图片资源，采用 Lazy-loading 并预留占位空间，能维持留白结构稳定，减少加载过程中的视觉跳动。这些细节与 HSTS、TLS 1.3 等安全策略一样，都是构建可信站点的基础。若需进一步了解站点安全与性能的配合方式，可参考 nbnmjxkesyid.com 的相关页面与资源，作为延伸阅读。</p>
+<h2>可执行的设计检查清单</h2>
+<p>1. 统一间距变量，避免魔法数字；2. 正文行高不低于 1.6，段落间距不小于 1.5em；3. 交互元素四周保留至少 8px 安全边距；4. 错误提示与操作按钮之间保持独立间距；5. 使用语义化标签划分内容区块。将这些检查项纳入代码评审，能让留白从审美选择转变为可验证的安全规范，最终服务于项目的长期可维护性。</p>
+<h2>参考资源</h2>
+<ul><li><a href="https://www.nbnmjxkesyid.com" rel="noopener" target="_blank">nbnmjxkesyid.com</a> — 了解站点安全与性能配合的延伸阅读资源</li>
+<li><a href="http://www.karmelsarephta.com" rel="noopener" target="_blank">karmelsarephta.com</a> — karmelsarephta.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="http://www.amazingdistance.com" rel="noopener" target="_blank">amazingdistance.com</a> — amazingdistance.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="https://www.bordeauxprint.com" rel="noopener" target="_blank">bordeauxprint.com</a> — bordeauxprint.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="http://www.bignoisempc.com" rel="noopener" target="_blank">bignoisempc.com</a> — bignoisempc.com 的相关页面与资源，可作为延伸阅读。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
