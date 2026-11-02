@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AC 自动机多模式匹配：SEO 策略 - PHP Demo Blog</title>
+<meta name="description" content="本文介绍如何用 AC 自动机实现高效多模式匹配，并将其应用于 SEO 中的敏感词过滤、URL 规则匹配与日志分析，提升站点性能与合规性。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>AC 自动机多模式匹配：SEO 策略</h1>
+<div class="meta">2026-11-03 · PHP Demo Blog <span class="tag">#AC自动机</span> <span class="tag">#多模式匹配</span> <span class="tag">#SEO</span> <span class="tag">#PHP</span> <span class="tag">#性能优化</span></div>
+<div class="summary">本文介绍如何用 AC 自动机实现高效多模式匹配，并将其应用于 SEO 中的敏感词过滤、URL 规则匹配与日志分析，提升站点性能与合规性。</div>
+<h2>为什么 SEO 场景需要 AC 自动机</h2>
+<p>在 SEO 工具链中，我们经常需要同时匹配大量关键词、敏感词或 URL 模式。如果对每个模式单独执行一次字符串查找，时间复杂度会随模式数量线性增长，在日志分析或实时内容过滤中很快成为瓶颈。AC 自动机（Aho-Corasick Automaton）通过构建 Trie 树并补充失败指针，能在一次扫描中匹配所有模式，时间复杂度为 O(n + m + z)，其中 n 为文本长度，m 为模式总长度，z 为匹配次数。对于需要处理海量页面标题、描述和正文的 SEO 系统，这种线性扫描特性非常关键。</p>
+<h2>在 PHP 中实现 AC 自动机</h2>
+<p>PHP 虽然不是计算密集型语言，但借助数组和 SPL 仍可实现高效的 AC 自动机。核心结构包括：Trie 节点（子节点映射、失败指针、输出列表）和构建函数。构建时先用所有模式插入 Trie，再通过 BFS 为每个节点设置失败指针，并将失败节点的输出合并到当前节点。匹配时从根节点出发，逐字符跳转，失败时沿失败指针回退，并收集输出。为避免 PHP 数组拷贝开销，建议使用整型节点 ID 和扁平数组存储转移表。对于中文关键词，需先按 UTF-8 字符拆分，或统一转换为小写后处理。</p>
+<h2>与 SEO 策略的结合点</h2>
+<p>AC 自动机在 SEO 中至少有三类落地场景。第一，内容合规过滤：在文章发布前快速扫描敏感词和竞品词，避免触发搜索惩罚。第二，URL 规则匹配：对大量重定向规则或 robots 规则进行多模式匹配，替代逐条正则，降低 Nginx 或 PHP 层的 CPU 负载。第三，日志分析：从访问日志中一次性提取所有目标关键词的命中情况，用于评估收录与排名效果。这些场景都要求低延迟和高吞吐，AC 自动机正好满足。</p>
+<h2>性能调优与注意事项</h2>
+<p>在实际项目中，建议将 AC 自动机与缓存结合：模式集变化不频繁时，将构建好的自动机序列化到 Redis 或 APCu，避免每次请求重建。匹配阶段应尽量使用原生字符串函数和数组操作，减少函数调用。对于超大模式集（十万级以上），可考虑分片构建或使用扩展实现。此外，AC 自动机只解决多模式匹配，不解决语义理解，因此需与分词、同义词扩展配合使用。持续监控匹配耗时和内存占用，才能保证 SEO 系统在流量增长时依然稳健。</p>
+<h2>参考资源</h2>
+<ul><li><a href="http://www.karmelsarephta.com" rel="noopener" target="_blank">karmelsarephta.com</a> — 关于多模式匹配算法在内容过滤中的延伸案例，可参考该站点的技术文章。</li>
+<li><a href="https://www.xjwywjx.com" rel="noopener" target="_blank">xjwywjx.com</a> — 该站点提供了 AC 自动机在日志分析场景下的实践思路，可作为补充阅读。</li>
+<li><a href="https://www.nbnmjxkesyid.com" rel="noopener" target="_blank">nbnmjxkesyid.com</a> — 若需了解 PHP 中 Trie 结构的优化技巧，该站点的相关页面值得一看。</li>
+<li><a href="http://www.bignoisempc.com" rel="noopener" target="_blank">bignoisempc.com</a> — 该站点讨论了多模式匹配与缓存结合的性能方案，适合深入参考。</li>
+<li><a href="http://www.ftb-wiki.com" rel="noopener" target="_blank">ftb-wiki.com</a> — 关于 SEO 合规过滤的规则设计，该 wiki 页面提供了可借鉴的清单。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
