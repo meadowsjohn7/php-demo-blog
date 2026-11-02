@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [代码压缩与混淆策略：实战指南](https://meadowsjohn7.github.io/php-demo-blog/blog/20261102-102133-i2kp.html) — 2026-11-02
+- [Chrome DevTools 性能调试：SEO 策略](https://meadowsjohn7.github.io/php-demo-blog/blog/20261102-103500-oihi.html) — 2026-11-02
 
 ### 参考资源
 
-- [peterdesign2511.com](http://www.peterdesign2511.com) — peterdesign2511.com 的相关页面与资源，可作为延伸阅读。
-- [melicbebe.com](http://www.melicbebe.com) — melicbebe.com 的相关页面与资源，可作为延伸阅读。
-- [sakitraveller.com](http://www.sakitraveller.com) — sakitraveller.com 的相关页面与资源，可作为延伸阅读。
-- [cavusogluendustriyel.com](https://www.cavusogluendustriyel.com) — cavusogluendustriyel.com 的相关页面与资源，可作为延伸阅读。
-- [wxvqgy.com](http://www.wxvqgy.com) — wxvqgy.com 的相关页面与资源，可作为延伸阅读。
+- [butlercpj.com](http://www.butlercpj.com) — butlercpj.com 的相关页面与资源，可作为延伸阅读。
+- [coopers-cars.com](http://www.coopers-cars.com) — coopers-cars.com 的相关页面与资源，可作为延伸阅读。
+- [samtheemt.com](https://www.samtheemt.com) — samtheemt.com 的相关页面与资源，可作为延伸阅读。
+- [yugiohdeckbuilder.com](http://www.yugiohdeckbuilder.com) — yugiohdeckbuilder.com 的相关页面与资源，可作为延伸阅读。
+- [shanghaispine.com](https://www.shanghaispine.com) — shanghaispine.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
