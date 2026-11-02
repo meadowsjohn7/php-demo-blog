@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [Open Graph 协议社交优化：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261102-142840-2vt3.html) — 2026-11-02
+- [HSTS 强制安全传输：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261102-144148-dhzt.html) — 2026-11-02
 
 ### 参考资源
 
-- [fisiomedicamogliano.com](http://www.fisiomedicamogliano.com) — fisiomedicamogliano.com 的相关页面与资源，可作为延伸阅读。
-- [nikeairmax2019.com](http://www.nikeairmax2019.com) — nikeairmax2019.com 的相关页面与资源，可作为延伸阅读。
-- [ezymovr.com](http://www.ezymovr.com) — ezymovr.com 的相关页面与资源，可作为延伸阅读。
-- [bali-experience.com](http://www.bali-experience.com) — bali-experience.com 的相关页面与资源，可作为延伸阅读。
-- [rotkx.net](http://www.rotkx.net) — rotkx.net 的相关页面与资源，可作为延伸阅读。
+- [zenithsco.com](https://www.zenithsco.com) — zenithsco.com 的相关页面与资源，可作为延伸阅读。
+- [libertysoulfood.com](http://www.libertysoulfood.com) — libertysoulfood.com 的相关页面与资源，可作为延伸阅读。
+- [lemesuriers.com](https://www.lemesuriers.com) — lemesuriers.com 的相关页面与资源，可作为延伸阅读。
+- [hostingbeat.com](http://www.hostingbeat.com) — hostingbeat.com 的相关页面与资源，可作为延伸阅读。
+- [haomada.com](https://www.haomada.com) — haomada.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
