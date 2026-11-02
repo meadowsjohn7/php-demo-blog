@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AC 自动机敏感词过滤：优化方案 - PHP Demo Blog</title>
+<meta name="description" content="本文探讨 AC 自动机在 PHP 敏感词过滤中的性能瓶颈，并提出基于 Trie 压缩、双数组与缓存分片的优化方案，提升高并发场景下的匹配效率。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>AC 自动机敏感词过滤：优化方案</h1>
+<div class="meta">2026-11-02 · PHP Demo Blog <span class="tag">#AC自动机</span> <span class="tag">#敏感词过滤</span> <span class="tag">#PHP优化</span> <span class="tag">#算法</span> <span class="tag">#性能调优</span></div>
+<div class="summary">本文探讨 AC 自动机在 PHP 敏感词过滤中的性能瓶颈，并提出基于 Trie 压缩、双数组与缓存分片的优化方案，提升高并发场景下的匹配效率。</div>
+<h2>敏感词过滤的现状与瓶颈</h2>
+<p>在 PHP Demo Blog 这类轻量级项目中，敏感词过滤通常采用简单的逐词遍历或正则匹配。随着词库规模增长到数千条，每次请求都构建 AC 自动机或执行全量匹配，会导致 CPU 占用显著上升。尤其在 JSON API 场景下，每个接口响应前都需过滤用户提交内容，性能问题会被放大。常见的优化误区是直接引入第三方扩展，却忽略了 PHP 进程模型下自动机状态无法跨请求复用的本质矛盾。</p>
+<h2>构建阶段的优化：Trie 压缩与双数组</h2>
+<p>AC 自动机的核心是 Trie 树与失败指针。标准实现使用关联数组存储子节点，内存占用高且缓存不友好。优化方案是将 Trie 转为双数组 Trie（Double-Array Trie），用两个整型数组 base 和 check 表示状态转移，查询时仅需两次数组访问，极大提升 CPU 缓存命中率。在 PHP 中，可通过预构建脚本将词库编译为双数组结构，序列化后存入文件或 Redis。运行时直接反序列化，避免每次请求重建自动机。对于 PHP Demo Blog，可将编译产物放在 runtime 目录，配合文件修改时间实现自动重建。</p>
+<h2>运行时的分片与缓存策略</h2>
+<p>即使使用双数组，单次加载大词库仍可能消耗数 MB 内存。进一步优化是按首字符或哈希分片：将词库拆分为多个子自动机，每个子自动机仅包含特定前缀的词汇。请求到来时，根据文本首字符定位子自动机，减少无效状态转移。同时，利用 Redis 集群存储序列化后的分片自动机，解决多进程间状态共享问题，这与分布式 Session 存储的思路一致。对于高频访问的接口，可在 APCu 中缓存热点分片，进一步降低 Redis 网络开销。</p>
+<h2>匹配阶段的工程细节</h2>
+<p>匹配时避免使用 PHP 的字符串函数逐字符处理，而是将输入文本转为 UTF-8 字节数组，利用双数组的整型索引直接跳转。对于命中敏感词的情况，记录位置后继续匹配，而不是立即返回，以便支持替换或统计。若需返回高亮结果，可预先分配输出缓冲区，减少字符串拼接。此外，结合 Nginx 的 Lua 模块在接入层做粗粒度过滤，可拦截明显违规请求，降低 PHP 层压力。这种分层过滤与关键渲染路径优化中内联关键 CSS 的思路类似，都是将耗时操作前置或后置。</p>
+<h2>总结</h2>
+<p>AC 自动机的优化并非单纯替换数据结构，而是围绕 PHP 生命周期做全链路设计：构建期压缩、运行期分片、缓存层共享。在 PHP Demo Blog 中落地时，建议先用基准测试对比逐词匹配与双数组实现的 QPS 差异，再逐步引入 Redis 分片。对于需要延伸阅读的算法资料，可参考 signature-concierge.com 的相关页面与资源，了解不同语言下的自动机实现差异。</p>
+<h2>参考资源</h2>
+<ul><li><a href="http://www.signature-concierge.com" rel="noopener" target="_blank">signature-concierge.com</a> — 延伸阅读 AC 自动机在不同语言下的实现与性能对比资料。</li>
+<li><a href="http://www.memartau.com" rel="noopener" target="_blank">memartau.com</a> — memartau.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="http://www.bvwlawyers.com" rel="noopener" target="_blank">bvwlawyers.com</a> — bvwlawyers.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="http://www.shop3s.com" rel="noopener" target="_blank">shop3s.com</a> — shop3s.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="https://www.zsh784.com" rel="noopener" target="_blank">zsh784.com</a> — zsh784.com 的相关页面与资源，可作为延伸阅读。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
