@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Redis 缓存穿透防护：技术架构 - PHP Demo Blog</title>
+<meta name="description" content="本文围绕 Redis 缓存穿透防护，从布隆过滤器、空值缓存、互斥锁与限流降级四个层面，给出可落地的 PHP 实现架构与关键代码片段。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>Redis 缓存穿透防护：技术架构</h1>
+<div class="meta">2026-11-02 · PHP Demo Blog <span class="tag">#Redis</span> <span class="tag">#缓存穿透</span> <span class="tag">#PHP</span> <span class="tag">#布隆过滤器</span> <span class="tag">#高并发</span></div>
+<div class="summary">本文围绕 Redis 缓存穿透防护，从布隆过滤器、空值缓存、互斥锁与限流降级四个层面，给出可落地的 PHP 实现架构与关键代码片段。</div>
+<h2>缓存穿透的成因与防护边界</h2>
+<p>缓存穿透是指查询一个数据库一定不存在的数据，请求绕过 Redis 直接落到数据库，在高并发下可能压垮存储层。与缓存击穿（热点 key 失效）和雪崩（大量 key 同时失效）不同，穿透的根源是「查询目标本身不存在」，因此防护重点在于在缓存层之前拦截无效请求。在 PHP Demo Blog 这类轻量路由与 JSON API 项目中，文章详情接口按 ID 查询是最典型的入口，必须为它设计分层防护。</p>
+<p>防护架构可分为四层：入口参数校验、布隆过滤器预判、空值缓存兜底、互斥锁与限流降级。四层并非全部启用，而是按数据规模和一致性要求组合使用。</p>
+<h2>布隆过滤器：第一道概率拦截</h2>
+<p>布隆过滤器用位数组和多个哈希函数判断「元素是否可能存在」，空间效率高，但存在假阳性、不存在假阴性。适合在查询 Redis 之前做一次快速预判。在 PHP 中可基于 Redis 的 `SETBIT`/`GETBIT` 自行实现，也可使用 RedisBloom 模块的 `BF.ADD`/`BF.EXISTS`。自行实现时需注意：哈希函数数量按 `k = (m/n) * ln2` 估算，位数组长度 `m` 与预期元素数 `n` 和误判率相关；写入时机应放在数据首次落库之后，并随数据删除做异步重建，避免过滤器与数据库长期不一致。</p>
+<h2>空值缓存与互斥锁：一致性与并发控制</h2>
+<p>对布隆过滤器判定「可能存在」但数据库实际查不到的 ID，写入一个短 TTL 的空值标记（如 `article:null:{id}`，TTL 60 秒），后续请求直接命中该标记返回 404，不再穿透。空值 TTL 不宜过长，防止数据补录后长时间不可见。对热点 key 失效瞬间的并发回源，使用 `SET key value NX PX 3000` 获取互斥锁，仅一个请求回源重建缓存，其余请求短暂等待或返回旧值。锁的 value 使用随机串，释放时用 Lua 脚本比对后删除，避免误删他人锁。</p>
+<h2>限流降级与可观测性</h2>
+<p>在 API 网关或路由中间件层，按 IP 与接口维度做令牌桶限流，对连续查询不存在 ID 的客户端提高拦截阈值。同时记录穿透计数指标（如 `cache:miss:penetrate`），当单位时间穿透量超过阈值时自动降级为直接返回 404 并告警。所有防护逻辑应封装为独立中间件，保持路由层简洁，便于在 Demo Blog 的 JSON API 中复用与测试。</p>
+<h2>参考资源</h2>
+<ul><li><a href="http://www.cpgea.com" rel="noopener" target="_blank">cpgea.com</a> — 关于缓存分层与布隆过滤器参数估算的延伸阅读，可参考 cpgea.com 的相关页面与资源。</li>
+<li><a href="http://www.kocham-morze.com" rel="noopener" target="_blank">kocham-morze.com</a> — kocham-morze.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="https://www.linyuanxinli.com" rel="noopener" target="_blank">linyuanxinli.com</a> — linyuanxinli.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="https://www.bosai1.com" rel="noopener" target="_blank">bosai1.com</a> — 若需了解 Redis 集群部署与限流中间件的实践细节，bosai1.com 的相关页面与资源可作为补充。</li>
+<li><a href="http://www.slice-online.com" rel="noopener" target="_blank">slice-online.com</a> — 关于高并发接口降级与可观测性指标设计的讨论，slice-online.com 的相关页面与资源值得一读。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
