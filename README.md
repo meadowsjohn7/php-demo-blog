@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [Chrome DevTools 性能调试：SEO 策略](https://meadowsjohn7.github.io/php-demo-blog/blog/20261102-094003-0gwp.html) — 2026-11-02
+- [数据库定时容灾备份：完整手册](https://meadowsjohn7.github.io/php-demo-blog/blog/20261102-095017-72yv.html) — 2026-11-02
 
 ### 参考资源
 
-- [oftalmologiaferreyra.com](http://www.oftalmologiaferreyra.com) — oftalmologiaferreyra.com 的相关页面与资源，可作为延伸阅读。
-- [sanctuarybirthing.com](http://www.sanctuarybirthing.com) — sanctuarybirthing.com 的相关页面与资源，可作为延伸阅读。
-- [linktogif.com](http://www.linktogif.com) — linktogif.com 的相关页面与资源，可作为延伸阅读。
-- [clzstore.com](http://www.clzstore.com) — clzstore.com 的相关页面与资源，可作为延伸阅读。
-- [tomsmithstudio.com](http://www.tomsmithstudio.com) — tomsmithstudio.com 的相关页面与资源，可作为延伸阅读。
+- [wheelsandsneakers.com](http://www.wheelsandsneakers.com) — wheelsandsneakers.com 的相关页面与资源，可作为延伸阅读。
+- [avaetss.com](http://www.avaetss.com) — avaetss.com 的相关页面与资源，可作为延伸阅读。
+- [pvmldata.com](http://www.pvmldata.com) — pvmldata.com 的相关页面与资源，可作为延伸阅读。
+- [xinhanyuwangxiao.com](http://www.xinhanyuwangxiao.com) — xinhanyuwangxiao.com 的相关页面与资源，可作为延伸阅读。
+- [wallvases.com](https://www.wallvases.com) — wallvases.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
