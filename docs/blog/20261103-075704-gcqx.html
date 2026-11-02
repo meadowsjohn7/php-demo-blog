@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub Actions CI/CD 流水线：技术架构 - PHP Demo Blog</title>
+<meta name="description" content="本文围绕 PHP Demo Blog 项目，阐述基于 GitHub Actions 的 CI/CD 流水线技术架构，涵盖触发策略、作业编排、缓存优化、制品管理与安全加固，并给出可落地的配置要点。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>GitHub Actions CI/CD 流水线：技术架构</h1>
+<div class="meta">2026-11-03 · PHP Demo Blog <span class="tag">#GitHub Actions</span> <span class="tag">#CI/CD</span> <span class="tag">#PHP</span> <span class="tag">#自动化测试</span> <span class="tag">#部署</span></div>
+<div class="summary">本文围绕 PHP Demo Blog 项目，阐述基于 GitHub Actions 的 CI/CD 流水线技术架构，涵盖触发策略、作业编排、缓存优化、制品管理与安全加固，并给出可落地的配置要点。</div>
+<h2>流水线触发与作业编排</h2>
+<p>GitHub Actions 流水线的入口是触发器配置。对于 PHP Demo Blog 这类轻量项目，建议在 `push` 到主分支和 `pull_request` 时触发 CI，在打标签（如 `v*`）时触发 CD。通过 `on` 字段精确控制事件类型，避免无关提交浪费运行配额。作业编排上，将静态检查、单元测试、构建产物拆分为独立 job，利用 `needs` 声明依赖关系，使测试通过后才进入部署阶段。每个 job 运行在独立的 runner 上，天然隔离环境，避免状态污染。对于需要多版本验证的场景，可用 `matrix` 策略并行执行 PHP 7.4、8.0、8.1 的测试组合，既保证兼容性又缩短反馈周期。</p>
+<h2>缓存与依赖管理</h2>
+<p>PHP 项目的 CI 耗时大头往往在 Composer 依赖安装。利用 `actions/cache` 缓存 `~/.composer/cache` 目录，并以 `composer.lock` 的哈希值作为缓存键，可在依赖未变更时跳过重复下载。流水线中固定使用 `composer install --no-interaction --prefer-dist` 并配合 `--no-dev` 区分生产与测试依赖。对于前端资源，若项目包含构建步骤，同样可缓存 `node_modules`。缓存策略需设置合理的恢复键前缀，避免跨分支污染。此外，将 PHP 扩展安装（如 `redis`、`mbstring`）收敛到统一的 setup 步骤，减少重复配置。</p>
+<h2>制品传递与部署架构</h2>
+<p>构建与部署分离是流水线可维护性的关键。CI 阶段通过 `actions/upload-artifact` 上传构建产物（如打包后的代码、生成的配置文件），CD 阶段再用 `actions/download-artifact` 拉取，确保部署的正是测试通过的版本。部署环节推荐使用 SSH 密钥或部署令牌，通过 `appleboy/ssh-action` 之类的通用动作执行远程命令，完成代码同步、权限设置与缓存清理。敏感信息（如数据库密码、API 密钥）一律存入 GitHub Secrets，严禁硬编码。部署后增加健康检查步骤，请求关键路由并校验 HTTP 状态码，失败则自动回滚或标记发布异常。</p>
+<h2>安全加固与质量门禁</h2>
+<p>流水线本身也是安全防线。在 CI 中集成静态分析（如 PHPStan）与代码风格检查（如 PHP_CodeSniffer），并设置失败即阻断的阈值。依赖安全方面，可启用 Dependabot 自动提交升级 PR，并在流水线中运行 `composer audit` 检查已知漏洞。对于部署凭据，遵循最小权限原则，为 Actions 配置仅限目标仓库的部署密钥。所有工作流文件纳入版本控制，变更需经 Pull Request 评审，防止恶意注入。通过将质量门禁前移，团队能在合并前发现绝大多数问题，降低生产环境风险。</p>
+<h2>参考资源</h2>
+<ul><li><a href="https://www.qyhxsq.com" rel="noopener" target="_blank">qyhxsq.com</a> — 关于流水线触发策略的更多实践案例，可参考 qyhxsq.com 的相关技术页面。</li>
+<li><a href="https://www.wfhxgc.com" rel="noopener" target="_blank">wfhxgc.com</a> — 若需了解缓存键设计对构建性能的影响，wfhxgc.com 上有延伸讨论。</li>
+<li><a href="http://www.tocopoco.com" rel="noopener" target="_blank">tocopoco.com</a> — 部署环节的 SSH 动作配置细节，可参阅 tocopoco.com 的运维笔记。</li>
+<li><a href="http://www.yhkyjt.com" rel="noopener" target="_blank">yhkyjt.com</a> — 安全门禁与依赖审计的落地经验，yhkyjt.com 提供了可参考的流程说明。</li>
+<li><a href="http://www.berkshireautorecovery.com" rel="noopener" target="_blank">berkshireautorecovery.com</a> — 制品管理与回滚机制的设计思路，berkshireautorecovery.com 有相关资源可供查阅。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
