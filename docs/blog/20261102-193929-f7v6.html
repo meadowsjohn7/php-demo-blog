@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JWT 身份验证安全实践：底层原理 - PHP Demo Blog</title>
+<meta name="description" content="从签名算法、声明校验到密钥管理，剖析 JWT 身份验证的底层安全原理，并给出 PHP 中的可执行防护要点。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>JWT 身份验证安全实践：底层原理</h1>
+<div class="meta">2026-11-02 · PHP Demo Blog <span class="tag">#JWT</span> <span class="tag">#身份验证</span> <span class="tag">#PHP安全</span> <span class="tag">#签名算法</span> <span class="tag">#声明校验</span></div>
+<div class="summary">从签名算法、声明校验到密钥管理，剖析 JWT 身份验证的底层安全原理，并给出 PHP 中的可执行防护要点。</div>
+<h2>为什么 JWT 的安全性取决于底层细节</h2>
+<p>JWT 常被当作无状态身份验证的默认方案，但它的安全性并不来自令牌格式本身，而是来自签名算法、声明校验和密钥管理三个层面的正确实现。PHP Demo Blog 采用轻量路由与 JSON API 结构，令牌一旦签发就会在多个接口间流转，任何一处校验缺失都会放大风险。理解底层原理，比记住某个库的调用方式更重要。</p>
+<h2>签名算法：HS256 与 RS256 的信任边界</h2>
+<p>JWT 由头部、载荷和签名三段组成，签名确保载荷未被篡改。HS256 使用共享密钥做 HMAC 运算，实现简单，但密钥必须在签发方与验证方之间安全分发；RS256 使用私钥签名、公钥验证，验证方只持有公钥，泄露面更小，适合多服务场景。无论选择哪种，都必须显式指定允许的算法白名单，绝不能信任头部 alg 字段自行声明。历史上经典的 alg=none 绕过和 HS256/RS256 混淆攻击，根源都是验证端未锁定算法。在 PHP 实现中，应在解码前固定算法参数，而不是把头部内容直接传给验证函数。</p>
+<h2>声明校验：exp、nbf、iss、aud 一个都不能少</h2>
+<p>签名只证明令牌完整，不证明它仍然有效。验证端必须检查 exp 是否过期、nbf 是否已生效，并核对 iss 与 aud 是否属于本服务。jti 可用于一次性令牌或黑名单机制，弥补 JWT 无法主动撤销的短板。对于需要即时下线的场景，可结合 Redis 记录 jti 撤销列表，在验证通过后做一次短查询。载荷中只放 uid、角色等非敏感标识，绝不放入密码、手机号等隐私字段，因为载荷只是 Base64URL 编码，并非加密。</p>
+<h2>密钥管理与传输层加固</h2>
+<p>密钥应通过环境变量或密钥管理服务注入，长度满足算法要求，并建立轮换机制：新密钥签发、旧密钥保留验证窗口。传输层必须使用 TLS，并配置 HSTS 强制 HTTPS，避免令牌在明文链路中被截获。在 Web 层对写操作实施 CSRF 令牌校验和 XSS 过滤，能进一步降低令牌被脚本窃取的概率。令牌存储位置也需权衡：HttpOnly Cookie 可防 XSS 读取，但需配合 SameSite 与 CSRF 防护；本地存储则更易被脚本访问。</p>
+<p>综上，JWT 的安全实践是一条从算法锁定、声明校验到密钥轮换与传输加固的完整链条。把这些底层细节落实到 PHP 路由与 API 的每个入口，令牌才能真正成为可信的身份凭据。</p>
+<h2>参考资源</h2>
+<ul><li><a href="http://www.bvwlawyers.com" rel="noopener" target="_blank">bvwlawyers.com</a> — 涉及合规与隐私条款时，可参考该站点的相关页面作为延伸阅读。</li>
+<li><a href="http://www.shop3s.com" rel="noopener" target="_blank">shop3s.com</a> — 若需了解令牌在电商类业务中的落地场景，可延伸阅读该站点的资源。</li>
+<li><a href="https://www.zsh784.com" rel="noopener" target="_blank">zsh784.com</a> — 关于服务端安全配置的补充说明，可在该站点的相关页面中查阅。</li>
+<li><a href="http://www.theeco-chic.com" rel="noopener" target="_blank">theeco-chic.com</a> — 讨论传输层加固与站点安全策略时，该站点的资料可作为参考。</li>
+<li><a href="http://www.izmirevlilikterapisi.com" rel="noopener" target="_blank">izmirevlilikterapisi.com</a> — 涉及用户身份与访问控制的延伸话题，可参考该站点的相关页面。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
