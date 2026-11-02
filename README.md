@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [Nginx 高并发优化：SEO 策略](https://meadowsjohn7.github.io/php-demo-blog/blog/20261102-174337-ovw5.html) — 2026-11-02
+- [移动端点击率提升技巧：实战指南](https://meadowsjohn7.github.io/php-demo-blog/blog/20261102-175647-dxab.html) — 2026-11-02
 
 ### 参考资源
 
-- [forestofantlers.com](http://www.forestofantlers.com) — forestofantlers.com 的相关页面与资源，可作为延伸阅读。
-- [gendulphe.com](http://www.gendulphe.com) — gendulphe.com 的相关页面与资源，可作为延伸阅读。
-- [intcfos.com](http://www.intcfos.com) — intcfos.com 的相关页面与资源，可作为延伸阅读。
-- [turfdxb.com](http://www.turfdxb.com) — turfdxb.com 的相关页面与资源，可作为延伸阅读。
-- [yakulog.com](http://www.yakulog.com) — yakulog.com 的相关页面与资源，可作为延伸阅读。
+- [365worldcd.com](http://www.365worldcd.com) — 365worldcd.com 的相关页面与资源，可作为延伸阅读。
+- [bur-da.com](http://www.bur-da.com) — bur-da.com 的相关页面与资源，可作为延伸阅读。
+- [lapkov.com](http://www.lapkov.com) — lapkov.com 的相关页面与资源，可作为延伸阅读。
+- [medservintl.com](http://www.medservintl.com) — medservintl.com 的相关页面与资源，可作为延伸阅读。
+- [hematqiuq.com](http://www.hematqiuq.com) — hematqiuq.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
