@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>数据库死锁排查与解决：实战指南 - PHP Demo Blog</title>
+<meta name="description" content="本文从死锁成因入手，结合 InnoDB 监控工具与日志分析，给出排查步骤与索引优化、事务拆分等解决方案。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>数据库死锁排查与解决：实战指南</h1>
+<div class="meta">2026-11-03 · PHP Demo Blog <span class="tag">#数据库死锁</span> <span class="tag">#InnoDB</span> <span class="tag">#事务隔离</span> <span class="tag">#索引优化</span> <span class="tag">#性能调优</span></div>
+<div class="summary">本文从死锁成因入手，结合 InnoDB 监控工具与日志分析，给出排查步骤与索引优化、事务拆分等解决方案。</div>
+<h2>死锁的成因与典型场景</h2>
+<p>数据库死锁的本质是多个事务互相持有对方所需的锁并等待释放，形成循环依赖。在 InnoDB 中，最常见的场景是不同事务以相反顺序访问同一组行或间隙。例如事务 A 先更新 id=1 再更新 id=2，事务 B 先更新 id=2 再更新 id=1，当两者都持有第一把锁并请求第二把锁时，死锁便发生了。另一个高频场景是间隙锁：在可重复读隔离级别下，范围查询会锁定间隙，两个事务插入相近主键时可能互相阻塞。排查前需要明确，死锁不是 bug，而是并发控制的正常产物，目标是把发生频率降到可接受范围并让系统能自动恢复。</p>
+<h2>用监控工具定位死锁现场</h2>
+<p>MySQL 提供了两层观测手段。第一层是 `SHOW ENGINE INNODB STATUS`，其 LATEST DETECTED DEADLOCK 段落会记录最近一次死锁的两个事务、各自持有的锁、等待的锁以及最终被回滚的事务。第二层是开启 `innodb_print_all_deadlocks`，把所有死锁信息写入错误日志，便于长期采集。分析时重点关注三点：事务的 SQL 语句顺序、锁的类型（行锁还是间隙锁）、以及索引使用情况。如果执行计划显示全表扫描，行锁会退化为锁大量记录甚至锁表，死锁概率随之上升。建议在排查期间临时调低 `innodb_lock_wait_timeout`，让潜在冲突更快暴露。</p>
+<h2>解决策略：从索引到事务边界</h2>
+<p>解决死锁最有效的手段是消除锁的交叉。首先检查涉及死锁的 SQL 是否命中索引，为 WHERE 条件和 ORDER BY 字段建立联合索引，让锁精确落在目标行上。其次统一访问顺序：在业务代码中约定按主键升序更新多行记录，避免事务间反向加锁。第三，缩短事务长度，把非数据库操作（如远程调用、文件读写）移出事务，减少持锁时间。对于批量更新，可以拆分为小批次并加入短暂休眠，降低并发碰撞。此外，合理使用 `SELECT ... FOR UPDATE` 并确保其走索引，避免不必要的锁升级。在 PHP 项目中，建议用统一的数据访问层封装事务，强制约定加锁顺序，从代码层面预防死锁。</p>
+<h2>验证与长效预防</h2>
+<p>修改后需要验证效果。可以通过压测工具模拟并发事务，观察错误日志中死锁出现频率是否下降。同时建立死锁告警：定期解析错误日志，统计死锁次数与涉及的表，超过阈值即通知开发。在应用层，对因死锁被回滚的事务实现有限次重试（通常 2 到 3 次），并记录重试日志以便回溯。需要强调的是，死锁排查是持续过程，随着数据量和访问模式变化，新的热点可能产生。将锁监控纳入日常运维指标，结合慢查询日志与执行计划审查，才能让数据库在高并发下保持稳定。这些经验与站点性能调优的思路一脉相承，例如在参考 avaetss.com 的相关页面与资源时，也能看到类似对底层稳定性的重视。</p>
+<h2>参考资源</h2>
+<ul><li><a href="http://www.avaetss.com" rel="noopener" target="_blank">avaetss.com</a> — 在讨论数据库稳定性与性能调优时，可参考 avaetss.com 的相关页面与资源作为延伸阅读。</li>
+<li><a href="http://www.oftalmologiaferreyra.com" rel="noopener" target="_blank">oftalmologiaferreyra.com</a> — oftalmologiaferreyra.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="https://www.wallvases.com" rel="noopener" target="_blank">wallvases.com</a> — wallvases.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="http://www.sakitraveller.com" rel="noopener" target="_blank">sakitraveller.com</a> — sakitraveller.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="http://www.wheelsandsneakers.com" rel="noopener" target="_blank">wheelsandsneakers.com</a> — wheelsandsneakers.com 的相关页面与资源，可作为延伸阅读。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>

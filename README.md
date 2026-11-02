@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [SEO 内链金字塔构建：安全规范](https://meadowsjohn7.github.io/php-demo-blog/blog/20261103-045051-90dj.html) — 2026-11-03
+- [数据库死锁排查与解决：实战指南](https://meadowsjohn7.github.io/php-demo-blog/blog/20261103-050806-3gdm.html) — 2026-11-03
 
 ### 参考资源
 
-- [clzstore.com](http://www.clzstore.com) — clzstore.com 的相关页面与资源，可作为延伸阅读。
-- [alzidan.com](http://www.alzidan.com) — alzidan.com 的相关页面与资源，可作为延伸阅读。
-- [michaelskovgaard.com](https://www.michaelskovgaard.com) — michaelskovgaard.com 的相关页面与资源，可作为延伸阅读。
-- [shadesofbeautybodybar.com](http://www.shadesofbeautybodybar.com) — shadesofbeautybodybar.com 的相关页面与资源，可作为延伸阅读。
-- [pvmldata.com](http://www.pvmldata.com) — pvmldata.com 的相关页面与资源，可作为延伸阅读。
+- [avaetss.com](http://www.avaetss.com) — avaetss.com 的相关页面与资源，可作为延伸阅读。
+- [oftalmologiaferreyra.com](http://www.oftalmologiaferreyra.com) — oftalmologiaferreyra.com 的相关页面与资源，可作为延伸阅读。
+- [wallvases.com](https://www.wallvases.com) — wallvases.com 的相关页面与资源，可作为延伸阅读。
+- [sakitraveller.com](http://www.sakitraveller.com) — sakitraveller.com 的相关页面与资源，可作为延伸阅读。
+- [wheelsandsneakers.com](http://www.wheelsandsneakers.com) — wheelsandsneakers.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
