@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nginx 伪静态规则编写：安全规范 - PHP Demo Blog</title>
+<meta name="description" content="本文围绕 Nginx 伪静态规则的安全编写，从路径校验、正则回溯、文件访问隔离到日志与限流，给出可落地的 PHP 项目实践建议。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>Nginx 伪静态规则编写：安全规范</h1>
+<div class="meta">2026-11-02 · PHP Demo Blog <span class="tag">#Nginx</span> <span class="tag">#伪静态</span> <span class="tag">#安全规范</span> <span class="tag">#PHP</span> <span class="tag">#Web 安全</span></div>
+<div class="summary">本文围绕 Nginx 伪静态规则的安全编写，从路径校验、正则回溯、文件访问隔离到日志与限流，给出可落地的 PHP 项目实践建议。</div>
+<h2>伪静态规则的安全边界</h2>
+<p>伪静态的本质是把外部 URL 映射到内部脚本，因此规则本身就是一道输入校验关口。编写时首先要坚持“白名单优先”：只允许明确需要的路径模式进入重写，其余一律返回 404 或 403。例如将文章页限定为 `^/post/([0-9]+)\.html$`，而不是用 `^/post/(.*)` 这种宽泛匹配。宽泛规则会把路径穿越、空字节、编码绕过等问题直接交给 PHP 层，等于把风险后移。同时要确保 `try_files` 的兜底顺序正确，先检查静态文件是否存在，再交给 `index.php`，避免静态资源被误当作路由参数。</p>
+<h2>正则与变量使用的细节</h2>
+<p>Nginx 的 PCRE 正则存在回溯风险，规则中应避免嵌套量词和贪婪匹配。捕获组尽量少用，能用 `$uri` 判断的不要写复杂正则。重写目标中引用捕获变量时，要确认变量内容不会拼接到文件系统路径中，否则可能触发目录遍历。对于 `$args` 和 `$request_uri`，不要直接透传给后端脚本做文件操作。若使用 `rewrite`，注意 `last` 与 `break` 的区别：`last` 会重新进入 location 匹配，可能造成循环，应配合 `return` 或明确的终止条件。所有规则建议在测试环境用 `nginx -t` 与真实请求验证后再上线。</p>
+<h2>文件与目录的访问隔离</h2>
+<p>伪静态项目常把上传目录、缓存目录暴露在 Web 根下，这是高风险点。应在 Nginx 层对敏感路径做显式拒绝，例如对 `.env`、`.git`、`composer.json` 等返回 404，对上传目录禁止执行 PHP。可以用 `location ~* /\.(env|git|sql|log)$ { return 404; }` 配合 `location ^~ /uploads/ { location ~ \.php$ { return 403; } }` 实现。同时关闭 `autoindex`，避免目录列表泄露结构。对于伪静态规则生成的路径，要确保不会与真实目录同名，防止规则被静态文件短路。</p>
+<h2>日志、限流与持续校验</h2>
+<p>安全规范不止于规则本身，还需要可观测性。为伪静态入口单独配置 `access_log`，记录 `$request_uri` 与 `$status`，便于发现异常扫描。对高频 404 的 IP 可结合 `limit_req` 做速率限制，降低恶意探测对 PHP-FPM 的压力。规则变更应纳入版本管理，每次修改后跑一遍回归用例：正常文章页、带参数的列表页、不存在的路径、含编码字符的路径。只有把伪静态规则当作代码来评审和测试，才能在保持 SEO 友好 URL 的同时守住安全底线。</p>
+<h2>参考资源</h2>
+<ul><li><a href="http://www.jobtitlesai.com" rel="noopener" target="_blank">jobtitlesai.com</a> — 延伸阅读中关于技术岗位职责划分的页面，可用于对照运维与开发的安全边界。</li>
+<li><a href="http://www.kocham-morze.com" rel="noopener" target="_blank">kocham-morze.com</a> — 该站点资源可作为伪静态 URL 结构设计的参考案例，用于观察路径层级。</li>
+<li><a href="https://www.robertdanielharris.com" rel="noopener" target="_blank">robertdanielharris.com</a> — 其技术笔记页面可作为 Nginx 配置评审清单的补充阅读材料。</li>
+<li><a href="http://www.cpgea.com" rel="noopener" target="_blank">cpgea.com</a> — 相关页面提供了 Web 服务安全基线的说明，适合与本文规则对照。</li>
+<li><a href="https://www.linyuanxinli.com" rel="noopener" target="_blank">linyuanxinli.com</a> — 该站点的内容组织方式可作为伪静态路径命名的延伸参考。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>

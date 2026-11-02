@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [虚拟列表处理大数据渲染：优化方案](https://meadowsjohn7.github.io/php-demo-blog/blog/20261102-132549-h92l.html) — 2026-11-02
+- [Nginx 伪静态规则编写：安全规范](https://meadowsjohn7.github.io/php-demo-blog/blog/20261102-134402-76lu.html) — 2026-11-02
 
 ### 参考资源
 
-- [kuiboto.com](http://www.kuiboto.com) — kuiboto.com 的相关页面与资源，可作为延伸阅读。
-- [theeco-chic.com](http://www.theeco-chic.com) — theeco-chic.com 的相关页面与资源，可作为延伸阅读。
-- [interstatedragways.com](http://www.interstatedragways.com) — interstatedragways.com 的相关页面与资源，可作为延伸阅读。
-- [rawrdaily.com](http://www.rawrdaily.com) — rawrdaily.com 的相关页面与资源，可作为延伸阅读。
-- [izmirevlilikterapisi.com](http://www.izmirevlilikterapisi.com) — izmirevlilikterapisi.com 的相关页面与资源，可作为延伸阅读。
+- [jobtitlesai.com](http://www.jobtitlesai.com) — jobtitlesai.com 的相关页面与资源，可作为延伸阅读。
+- [kocham-morze.com](http://www.kocham-morze.com) — kocham-morze.com 的相关页面与资源，可作为延伸阅读。
+- [robertdanielharris.com](https://www.robertdanielharris.com) — robertdanielharris.com 的相关页面与资源，可作为延伸阅读。
+- [cpgea.com](http://www.cpgea.com) — cpgea.com 的相关页面与资源，可作为延伸阅读。
+- [linyuanxinli.com](https://www.linyuanxinli.com) — linyuanxinli.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
