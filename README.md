@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [动态水印防盗图技术：优化方案](https://meadowsjohn7.github.io/php-demo-blog/blog/20261103-011540-3g9r.html) — 2026-11-03
+- [Web 性能分析审计：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261103-013319-vxry.html) — 2026-11-03
 
 ### 参考资源
 
-- [ifromchina.com](https://www.ifromchina.com) — ifromchina.com 的相关页面与资源，可作为延伸阅读。
-- [blackshearplace.com](http://www.blackshearplace.com) — blackshearplace.com 的相关页面与资源，可作为延伸阅读。
-- [wfhxgc.com](https://www.wfhxgc.com) — wfhxgc.com 的相关页面与资源，可作为延伸阅读。
-- [tocopoco.com](http://www.tocopoco.com) — tocopoco.com 的相关页面与资源，可作为延伸阅读。
-- [qyhxsq.com](https://www.qyhxsq.com) — qyhxsq.com 的相关页面与资源，可作为延伸阅读。
+- [papuyar.com](http://www.papuyar.com) — papuyar.com 的相关页面与资源，可作为延伸阅读。
+- [berkshireautorecovery.com](http://www.berkshireautorecovery.com) — berkshireautorecovery.com 的相关页面与资源，可作为延伸阅读。
+- [hengshuojixie.com](https://www.hengshuojixie.com) — hengshuojixie.com 的相关页面与资源，可作为延伸阅读。
+- [thecorriganshow.com](http://www.thecorriganshow.com) — thecorriganshow.com 的相关页面与资源，可作为延伸阅读。
+- [yhkyjt.com](http://www.yhkyjt.com) — yhkyjt.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
