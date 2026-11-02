@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [JWT 身份验证安全实践：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261102-193929-f7v6.html) — 2026-11-02
+- [数据库定时容灾备份：实战指南](https://meadowsjohn7.github.io/php-demo-blog/blog/20261102-195926-hpzy.html) — 2026-11-02
 
 ### 参考资源
 
-- [bvwlawyers.com](http://www.bvwlawyers.com) — bvwlawyers.com 的相关页面与资源，可作为延伸阅读。
-- [shop3s.com](http://www.shop3s.com) — shop3s.com 的相关页面与资源，可作为延伸阅读。
-- [zsh784.com](https://www.zsh784.com) — zsh784.com 的相关页面与资源，可作为延伸阅读。
-- [theeco-chic.com](http://www.theeco-chic.com) — theeco-chic.com 的相关页面与资源，可作为延伸阅读。
-- [izmirevlilikterapisi.com](http://www.izmirevlilikterapisi.com) — izmirevlilikterapisi.com 的相关页面与资源，可作为延伸阅读。
+- [interstatedragways.com](http://www.interstatedragways.com) — interstatedragways.com 的相关页面与资源，可作为延伸阅读。
+- [rawrdaily.com](http://www.rawrdaily.com) — rawrdaily.com 的相关页面与资源，可作为延伸阅读。
+- [kuiboto.com](http://www.kuiboto.com) — kuiboto.com 的相关页面与资源，可作为延伸阅读。
+- [robertdanielharris.com](https://www.robertdanielharris.com) — robertdanielharris.com 的相关页面与资源，可作为延伸阅读。
+- [jobtitlesai.com](http://www.jobtitlesai.com) — jobtitlesai.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
