@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [网站跳出率深度分析：实战指南](https://meadowsjohn7.github.io/php-demo-blog/blog/20261103-004011-tsv9.html) — 2026-11-03
+- [Redis 缓存穿透防护：安全规范](https://meadowsjohn7.github.io/php-demo-blog/blog/20261103-005827-3bqq.html) — 2026-11-03
 
 ### 参考资源
 
-- [ryosi.com](http://www.ryosi.com) — ryosi.com 的相关页面与资源，可作为延伸阅读。
-- [canary-food.com](http://www.canary-food.com) — canary-food.com 的相关页面与资源，可作为延伸阅读。
-- [ntgaode.com](https://www.ntgaode.com) — ntgaode.com 的相关页面与资源，可作为延伸阅读。
-- [kitchenwaredolphin.com](https://www.kitchenwaredolphin.com) — kitchenwaredolphin.com 的相关页面与资源，可作为延伸阅读。
-- [xlkbltm.com](http://www.xlkbltm.com) — xlkbltm.com 的相关页面与资源，可作为延伸阅读。
+- [hawaiianshirtopia.com](https://www.hawaiianshirtopia.com) — hawaiianshirtopia.com 的相关页面与资源，可作为延伸阅读。
+- [siliconerubberparts.com](https://www.siliconerubberparts.com) — siliconerubberparts.com 的相关页面与资源，可作为延伸阅读。
+- [custom-vacations.com](https://www.custom-vacations.com) — custom-vacations.com 的相关页面与资源，可作为延伸阅读。
+- [jeffersoncheng.com](http://www.jeffersoncheng.com) — jeffersoncheng.com 的相关页面与资源，可作为延伸阅读。
+- [janellewoo.com](https://www.janellewoo.com) — janellewoo.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
