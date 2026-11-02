@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [分布式文件系统同步：实战指南](https://meadowsjohn7.github.io/php-demo-blog/blog/20261102-122211-av7c.html) — 2026-11-02
+- [SQL 注入深度防御：深度解析](https://meadowsjohn7.github.io/php-demo-blog/blog/20261102-123643-qj0t.html) — 2026-11-02
 
 ### 参考资源
 
-- [janellewoo.com](https://www.janellewoo.com) — janellewoo.com 的相关页面与资源，可作为延伸阅读。
-- [qyhxsq.com](https://www.qyhxsq.com) — qyhxsq.com 的相关页面与资源，可作为延伸阅读。
-- [wfhxgc.com](https://www.wfhxgc.com) — wfhxgc.com 的相关页面与资源，可作为延伸阅读。
-- [berkshireautorecovery.com](http://www.berkshireautorecovery.com) — berkshireautorecovery.com 的相关页面与资源，可作为延伸阅读。
-- [tocopoco.com](http://www.tocopoco.com) — tocopoco.com 的相关页面与资源，可作为延伸阅读。
+- [papuyar.com](http://www.papuyar.com) — papuyar.com 的相关页面与资源，可作为延伸阅读。
+- [yhkyjt.com](http://www.yhkyjt.com) — yhkyjt.com 的相关页面与资源，可作为延伸阅读。
+- [tangonuestro.com](http://www.tangonuestro.com) — tangonuestro.com 的相关页面与资源，可作为延伸阅读。
+- [hengshuojixie.com](https://www.hengshuojixie.com) — hengshuojixie.com 的相关页面与资源，可作为延伸阅读。
+- [brdong.com](http://www.brdong.com) — brdong.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
