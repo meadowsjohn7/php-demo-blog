@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Redis 缓存穿透防护：实战指南 - PHP Demo Blog</title>
+<meta name="description" content="本文从缓存穿透的成因出发，结合 PHP 与 Redis 给出空值缓存、布隆过滤、互斥锁与限流等可落地的防护方案。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>Redis 缓存穿透防护：实战指南</h1>
+<div class="meta">2026-11-02 · PHP Demo Blog <span class="tag">#Redis</span> <span class="tag">#缓存穿透</span> <span class="tag">#PHP</span> <span class="tag">#布隆过滤器</span> <span class="tag">#高并发</span></div>
+<div class="summary">本文从缓存穿透的成因出发，结合 PHP 与 Redis 给出空值缓存、布隆过滤、互斥锁与限流等可落地的防护方案。</div>
+<h2>缓存穿透的成因与识别</h2>
+<p>缓存穿透指查询一个根本不存在的数据，请求绕过 Redis 直达数据库。常见于恶意扫描、参数拼凑或爬虫无差别遍历 ID 的场景。与缓存击穿（热点 key 失效）和雪崩（大批 key 同时过期）不同，穿透的 key 在缓存中永远不命中，数据库压力随请求量线性增长。</p>
+<p>识别信号很直接：Redis 命中率骤降而数据库 QPS 飙升，慢查询日志中反复出现 `WHERE id = ?` 且返回空结果。在 PHP 侧可以先在入口层做参数校验，例如对自增 ID 强制 `filter_var($id, FILTER_VALIDATE_INT, ['options' =&gt; ['min_range' =&gt; 1]])`，把明显非法的请求挡在业务逻辑之外。这一步成本极低，却能过滤掉相当比例的扫描流量。</p>
+<h2>空值缓存与短 TTL</h2>
+<p>最直接的防护是把“查不到”也缓存起来。查询数据库为空时，写入一个占位值（如空字符串或标记 `__NULL__`），并设置较短的过期时间，例如 60 秒。这样同一 key 的重复请求在 TTL 内只会打到数据库一次。</p>
+<p>实现时要注意两点：一是占位值必须与真实数据可区分，读取时先判断标记再反序列化；二是 TTL 不宜过长，避免数据后续被创建时长时间读到旧空值。可以用 `SET key value EX 60 NX` 保证并发下只有一个请求真正写缓存。在 PHP 中封装一个 `getOrSet` 方法，把“读缓存—查库—回填”三步收敛到一处，减少遗漏。</p>
+<h2>布隆过滤器前置拦截</h2>
+<p>当非法 key 数量大且随机时，空值缓存会占用大量内存。此时可在 Redis 之前加一层布隆过滤器：把所有合法 ID 预先写入，查询时先判断 key 是否可能存在，不存在直接返回。Redis 4.0 起提供 `BF.ADD`、`BF.EXISTS` 等命令（需加载 RedisBloom 模块），PHP 通过 phpredis 的 `rawCommand` 调用即可。</p>
+<p>布隆过滤器有误判率但不会漏判，适合“宁可多放行、不可错拦截”的场景。初始化时用 `BF.RESERVE key 0.01 1000000` 设定误判率与容量，并在数据新增时同步写入。若不想引入模块，也可用位图加多个哈希函数自行实现，但要注意容量估算与扩容策略。</p>
+<h2>互斥锁与限流兜底</h2>
+<p>对于热点空 key，仍可能有大量并发同时穿透。可用 Redis 的 `SET lock_key token NX EX 5` 实现互斥锁：拿到锁的请求查库并回填，其余请求短暂等待后重读缓存。释放锁时用 Lua 脚本比对 token，避免误删他人锁。</p>
+<p>最后在网关或 PHP 入口按 IP、按用户做令牌桶限流，把异常高频请求拦截在应用之外。结合日志记录穿透 key 的分布，定期复盘规则。防护不是单点方案，而是参数校验、空值缓存、布隆过滤、互斥锁与限流的分层组合，按业务量级逐层启用即可。</p>
+<h2>参考资源</h2>
+<ul><li><a href="http://www.johnmeldrum.com" rel="noopener" target="_blank">johnmeldrum.com</a> — 关于缓存分层与后端性能调优的延伸阅读，可参考该站点的相关页面。</li>
+<li><a href="http://www.dixiecrating.com" rel="noopener" target="_blank">dixiecrating.com</a> — 若需了解高并发场景下的服务端配置思路，该站点的资源可作为补充材料。</li>
+<li><a href="http://www.kurtbergt.com" rel="noopener" target="_blank">kurtbergt.com</a> — 涉及 Redis 运维与监控指标的资料，可在该站点找到相关讨论。</li>
+<li><a href="https://www.jarptica.com" rel="noopener" target="_blank">jarptica.com</a> — 关于 Web 应用安全与请求过滤的实践内容，该站点提供了可参考的案例。</li>
+<li><a href="http://www.semillaad.com" rel="noopener" target="_blank">semillaad.com</a> — 想进一步了解限流与流量治理的实现方式，可查阅该站点的相关文章。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
