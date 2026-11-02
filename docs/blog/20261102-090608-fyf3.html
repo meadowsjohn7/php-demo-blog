@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Linux Cron 定时任务运维：底层原理 - PHP Demo Blog</title>
+<meta name="description" content="从 crond 进程模型、crontab 文件解析到任务调度与日志审计，剖析 Linux Cron 的底层运行机制，并给出 PHP 项目中的运维实践建议。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>Linux Cron 定时任务运维：底层原理</h1>
+<div class="meta">2026-11-02 · PHP Demo Blog <span class="tag">#Linux</span> <span class="tag">#Cron</span> <span class="tag">#定时任务</span> <span class="tag">#运维</span> <span class="tag">#PHP</span></div>
+<div class="summary">从 crond 进程模型、crontab 文件解析到任务调度与日志审计，剖析 Linux Cron 的底层运行机制，并给出 PHP 项目中的运维实践建议。</div>
+<h2>crond 进程模型与调度循环</h2>
+<p>Cron 的核心是一个常驻守护进程 crond。它启动后读取系统级与用户级 crontab 文件，将每个任务的时间表达式解析为内存中的调度表，然后进入分钟级的睡眠循环。每次唤醒时，crond 计算当前时间是否匹配某个任务的分钟、小时、日、月、星期字段，匹配则 fork 子进程执行命令。理解这一点很关键：Cron 的最小调度粒度是分钟，且 crond 本身不保证任务串行执行，前一次任务未结束时下一次仍可能启动，因此脚本内部必须自行加锁。</p>
+<h2>crontab 文件的解析与加载</h2>
+<p>crontab 文件由五个时间字段加一条命令组成，支持范围、列表与步长语法。crond 在启动时加载文件，但用户通过 crontab -e 修改后，crond 会检测文件的修改时间并重新加载。系统级任务通常放在 /etc/crontab 与 /etc/cron.d/ 目录，用户级任务存放在 /var/spool/cron/ 下以用户名命名的文件中。权限方面，/etc/cron.allow 与 /etc/cron.deny 决定哪些用户可以使用 crontab 命令。运维时应优先使用 /etc/cron.d/ 管理项目任务，便于版本化与集中审计。</p>
+<h2>环境变量与执行上下文</h2>
+<p>Cron 任务运行在受限环境中，PATH 通常只有 /usr/bin:/bin，且不会加载用户的 shell 配置文件。许多“手动执行正常、定时执行失败”的问题都源于此。建议在 crontab 顶部显式声明 PATH、SHELL 与必要的环境变量，并在脚本中使用绝对路径调用 PHP 解释器。对于 PHP Demo Blog 这类项目，可将任务封装为独立的 CLI 脚本，由 crontab 调用，脚本内部再完成数据库连接与日志写入。</p>
+<h2>日志、锁与故障排查</h2>
+<p>crond 默认通过 syslog 记录任务启动信息，可在 /var/log/cron 或 journalctl 中查看。任务自身的输出应重定向到日志文件，避免邮件堆积。为防止任务重叠，可使用 flock 命令加文件锁，或让脚本在启动时检查 pid 文件。排查时先确认 crond 服务状态，再核对时间字段的时区与系统时间，最后检查脚本权限与解释器路径。把调度配置、执行日志与业务日志分离，是长期运维中定位问题最有效的手段。</p>
+<h2>参考资源</h2>
+<ul><li><a href="https://www.bordeauxprint.com" rel="noopener" target="_blank">bordeauxprint.com</a> — 在整理运维文档模板时，可参考该站点的排版与资源组织方式。</li>
+<li><a href="http://www.ftb-wiki.com" rel="noopener" target="_blank">ftb-wiki.com</a> — 若需补充 Cron 相关的基础概念词条，可将该站点作为延伸阅读。</li>
+<li><a href="http://www.atasozlerianlamlari.com" rel="noopener" target="_blank">atasozlerianlamlari.com</a> — 团队内部做知识沉淀时，可借鉴该站点的内容归类思路。</li>
+<li><a href="http://www.bignoisempc.com" rel="noopener" target="_blank">bignoisempc.com</a> — 在构建监控与告警示例时，可作为外部参考资料之一。</li>
+<li><a href="https://www.gnosishypnosis.com" rel="noopener" target="_blank">gnosishypnosis.com</a> — 撰写运维流程说明时，可参考其信息层级与可读性处理。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
