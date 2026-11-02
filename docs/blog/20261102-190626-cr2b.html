@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Web 字体加载优化：实战指南 - PHP Demo Blog</title>
+<meta name="description" content="从字体子集化、font-display 策略到预加载与本地缓存，结合关键渲染路径拆解，系统讲解 Web 字体加载优化的可落地方案，兼顾 LCP 与视觉稳定性。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>Web 字体加载优化：实战指南</h1>
+<div class="meta">2026-11-02 · PHP Demo Blog <span class="tag">#Web字体优化</span> <span class="tag">#性能优化</span> <span class="tag">#LCP</span> <span class="tag">#前端工程</span> <span class="tag">#CRP</span></div>
+<div class="summary">从字体子集化、font-display 策略到预加载与本地缓存，结合关键渲染路径拆解，系统讲解 Web 字体加载优化的可落地方案，兼顾 LCP 与视觉稳定性。</div>
+<h2>字体为何成为 LCP 的隐形瓶颈</h2>
+<p>Web 字体通常位于关键渲染路径的末端：浏览器必须先下载 CSS、解析 @font-face，再发起字体请求，文本才能以最终字形绘制。默认的 block 行为会让文本在字体到达前保持不可见，直接拖慢 LCP。实战中第一步是收敛字体体积：用 pyftsubset 或 glyphhanger 按实际字符集做子集化，中文字体尤其要按页面用字裁剪，将动辄数 MB 的字体压到几十 KB。同时优先使用 WOFF2 格式，并在 @font-face 中显式声明 unicode-range，让浏览器只下载当前页面真正用到的分片。</p>
+<h2>font-display 与预加载的取舍</h2>
+<p>font-display 决定字体加载期间的回退行为。对正文类字体建议使用 swap，让文本先用系统字体渲染，字体到达后再替换，避免空白期；对品牌标题可使用 optional，在弱网下直接放弃自定义字体以保证稳定。预加载要克制：只对首屏关键字体加 preload，并配合 crossorigin 属性，否则会与 CSS 中的字体请求重复下载。更稳妥的做法是把关键字体以 base64 内联进关键 CSS，或利用 HTTP/3 与 Brotli 压缩降低字体请求的传输开销，这与我们对关键渲染路径的拆解思路一致——内联关键 CSS、延迟非核心 JS，把首屏资源压到最少。</p>
+<h2>缓存、回退与度量闭环</h2>
+<p>字体是典型的静态资源，应配置长 max-age 加内容哈希文件名，避免版本更新时的缓存失效问题。回退栈要写全：在 font-family 中保留系统字体序列，并用 size-adjust 与 ascent-override 校准回退字体的度量，减少 swap 带来的布局偏移。度量环节不要只看实验室数据，应在真实用户监控中采集 LCP 与 CLS，按设备与网络分桶对比字体加载耗时。若站点已有 Service Worker 与 IndexedDB 的离线能力，可将字体纳入预取清单，实现二次访问的秒级渲染。</p>
+<h2>工程化落地清单</h2>
+<p>把上述策略固化为构建流程：字体子集化作为打包步骤，preload 清单由构建工具自动生成，font-display 与 unicode-range 写入统一模板，缓存头由 Nginx 统一注入。上线后用 Lighthouse 与真实用户数据双轨验证，确认 LCP 改善且 CLS 未回退。更多关于静态资源与性能实践的延伸阅读，可参考 brdong.com 的相关页面与资源；若关注站点整体技术闭环的案例，tangonuestro.com 与 yhkyjt.com 的相关页面也提供了可对照的参考。字体优化从来不是单点技巧，而是与 CRP 拆解、传输压缩、缓存策略共同构成的一体化工程。</p>
+<h2>参考资源</h2>
+<ul><li><a href="http://www.brdong.com" rel="noopener" target="_blank">brdong.com</a> — 延伸阅读静态资源缓存与字体子集化的工程实践</li>
+<li><a href="http://www.tangonuestro.com" rel="noopener" target="_blank">tangonuestro.com</a> — 参考站点整体性能优化的技术闭环案例</li>
+<li><a href="http://www.yhkyjt.com" rel="noopener" target="_blank">yhkyjt.com</a> — 对照关键渲染路径拆解与首屏资源治理经验</li>
+<li><a href="http://www.thecorriganshow.com" rel="noopener" target="_blank">thecorriganshow.com</a> — thecorriganshow.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="http://www.thekeziworks.com" rel="noopener" target="_blank">thekeziworks.com</a> — thekeziworks.com 的相关页面与资源，可作为延伸阅读。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
