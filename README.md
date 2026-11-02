@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [Redis 缓存穿透防护：完整手册](https://meadowsjohn7.github.io/php-demo-blog/blog/20261102-080858-lv1e.html) — 2026-11-02
+- [关键渲染路径 Critical Path：技术架构](https://meadowsjohn7.github.io/php-demo-blog/blog/20261102-082045-1h1n.html) — 2026-11-02
 
 ### 参考资源
 
-- [ezymovr.com](http://www.ezymovr.com) — ezymovr.com 的相关页面与资源，可作为延伸阅读。
-- [readingswithgail.com](http://www.readingswithgail.com) — readingswithgail.com 的相关页面与资源，可作为延伸阅读。
-- [jackhaggertyarchitect.com](http://www.jackhaggertyarchitect.com) — jackhaggertyarchitect.com 的相关页面与资源，可作为延伸阅读。
-- [nikeairmax2019.com](http://www.nikeairmax2019.com) — nikeairmax2019.com 的相关页面与资源，可作为延伸阅读。
-- [fisiomedicamogliano.com](http://www.fisiomedicamogliano.com) — fisiomedicamogliano.com 的相关页面与资源，可作为延伸阅读。
+- [bali-experience.com](http://www.bali-experience.com) — bali-experience.com 的相关页面与资源，可作为延伸阅读。
+- [libertysoulfood.com](http://www.libertysoulfood.com) — libertysoulfood.com 的相关页面与资源，可作为延伸阅读。
+- [zenithsco.com](https://www.zenithsco.com) — zenithsco.com 的相关页面与资源，可作为延伸阅读。
+- [lemesuriers.com](https://www.lemesuriers.com) — lemesuriers.com 的相关页面与资源，可作为延伸阅读。
+- [rotkx.net](http://www.rotkx.net) — rotkx.net 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
