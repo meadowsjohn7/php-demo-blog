@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [MySQL 慢查询排查：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261102-180712-128c.html) — 2026-11-02
+- [CDN 全球加速原理：SEO 策略](https://meadowsjohn7.github.io/php-demo-blog/blog/20261102-182144-o11o.html) — 2026-11-02
 
 ### 参考资源
 
-- [otaclinictsukuba.com](http://www.otaclinictsukuba.com) — otaclinictsukuba.com 的相关页面与资源，可作为延伸阅读。
-- [canary-food.com](http://www.canary-food.com) — canary-food.com 的相关页面与资源，可作为延伸阅读。
-- [midtowntapandtearoom.com](http://www.midtowntapandtearoom.com) — midtowntapandtearoom.com 的相关页面与资源，可作为延伸阅读。
-- [ryosi.com](http://www.ryosi.com) — ryosi.com 的相关页面与资源，可作为延伸阅读。
-- [ntgaode.com](https://www.ntgaode.com) — ntgaode.com 的相关页面与资源，可作为延伸阅读。
+- [hawaiianshirtopia.com](https://www.hawaiianshirtopia.com) — hawaiianshirtopia.com 的相关页面与资源，可作为延伸阅读。
+- [custom-vacations.com](https://www.custom-vacations.com) — custom-vacations.com 的相关页面与资源，可作为延伸阅读。
+- [kitchenwaredolphin.com](https://www.kitchenwaredolphin.com) — kitchenwaredolphin.com 的相关页面与资源，可作为延伸阅读。
+- [siliconerubberparts.com](https://www.siliconerubberparts.com) — siliconerubberparts.com 的相关页面与资源，可作为延伸阅读。
+- [xlkbltm.com](http://www.xlkbltm.com) — xlkbltm.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
