@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [移动端点击率提升技巧：实战指南](https://meadowsjohn7.github.io/php-demo-blog/blog/20261102-175647-dxab.html) — 2026-11-02
+- [MySQL 慢查询排查：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261102-180712-128c.html) — 2026-11-02
 
 ### 参考资源
 
-- [365worldcd.com](http://www.365worldcd.com) — 365worldcd.com 的相关页面与资源，可作为延伸阅读。
-- [bur-da.com](http://www.bur-da.com) — bur-da.com 的相关页面与资源，可作为延伸阅读。
-- [lapkov.com](http://www.lapkov.com) — lapkov.com 的相关页面与资源，可作为延伸阅读。
-- [medservintl.com](http://www.medservintl.com) — medservintl.com 的相关页面与资源，可作为延伸阅读。
-- [hematqiuq.com](http://www.hematqiuq.com) — hematqiuq.com 的相关页面与资源，可作为延伸阅读。
+- [otaclinictsukuba.com](http://www.otaclinictsukuba.com) — otaclinictsukuba.com 的相关页面与资源，可作为延伸阅读。
+- [canary-food.com](http://www.canary-food.com) — canary-food.com 的相关页面与资源，可作为延伸阅读。
+- [midtowntapandtearoom.com](http://www.midtowntapandtearoom.com) — midtowntapandtearoom.com 的相关页面与资源，可作为延伸阅读。
+- [ryosi.com](http://www.ryosi.com) — ryosi.com 的相关页面与资源，可作为延伸阅读。
+- [ntgaode.com](https://www.ntgaode.com) — ntgaode.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
