@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>font-display 字体显示策略：优化方案 - PHP Demo Blog</title>
+<meta name="description" content="font-display 决定自定义字体加载期间的文本渲染行为，合理选用 swap、fallback、optional 等策略可平衡首屏可读性与视觉一致性，本文结合性能指标给出可落地的配置方案。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>font-display 字体显示策略：优化方案</h1>
+<div class="meta">2026-11-02 · PHP Demo Blog <span class="tag">#font-display</span> <span class="tag">#Web 性能</span> <span class="tag">#字体优化</span> <span class="tag">#CLS</span> <span class="tag">#LCP</span></div>
+<div class="summary">font-display 决定自定义字体加载期间的文本渲染行为，合理选用 swap、fallback、optional 等策略可平衡首屏可读性与视觉一致性，本文结合性能指标给出可落地的配置方案。</div>
+<h2>字体加载与渲染的冲突</h2>
+<p>自定义字体通过 @font-face 引入后，浏览器需要先下载字体文件才能正确渲染文本。在下载完成之前，浏览器面临一个选择：是先用系统字体显示文本，还是隐藏文本等待字体就绪。这个选择直接影响首屏可读性与布局稳定性。font-display 描述符正是用来控制这一行为的，它接受 auto、block、swap、fallback、optional 五个值。理解每个值背后的时间窗口，是制定优化方案的前提。</p>
+<p>以 block 为例，浏览器会有一段极短的阻塞期（约 3 秒），期间文本不可见；若字体仍未就绪，则改用系统字体渲染，并在字体到达后替换。swap 则几乎不阻塞，立即用系统字体显示，字体就绪后再替换。fallback 介于两者之间，阻塞期很短，随后用系统字体显示，并给字体一个较短的交换窗口。optional 最为激进，浏览器根据网络状况决定是否使用自定义字体，若字体未能在极短时间内到达，本次页面加载就放弃该字体。</p>
+<h2>按场景选择策略</h2>
+<p>策略选择不能一概而论，需要结合字体在页面中的角色。对于品牌标题、Logo 文字等视觉一致性要求高的元素，如果字体文件体积小且已做子集化，可以考虑 fallback，在可接受的阻塞时间内争取正确渲染。对于正文段落，可读性优先，swap 是更稳妥的选择，用户能立即阅读内容，字体替换带来的闪烁可以通过调整系统字体度量来缓解。对于装饰性字体或非关键图标字体，optional 能彻底避免布局偏移，代价是部分用户看不到自定义字体。</p>
+<p>需要强调的是，swap 虽然消除了不可见文本，但字体替换会引发布局偏移，影响 CLS 指标。缓解手段包括：使用 size-adjust、ascent-override、descent-override 等描述符调整回退字体的度量，使其与自定义字体接近；或者利用 font-display 配合预加载，缩短字体到达时间，减少替换发生的概率。</p>
+<h2>与关键渲染路径的配合</h2>
+<p>font-display 只是字体优化的一环。将字体文件通过 preload 提前请求，可以显著缩短字体就绪时间，让 swap 或 fallback 的替换更早发生。同时，对字体做子集化，只保留页面实际用到的字符，能减小文件体积，提升加载速度。若字体托管在第三方域，需确保配置了正确的 CORS 头，否则预加载可能失效。</p>
+<p>在实际项目中，可以按以下步骤落地：先统计页面用到的字符集，生成子集字体；在 @font-face 中为正文设置 font-display: swap，为标题设置 fallback；对关键字体添加 preload；最后用 Lighthouse 或 WebPageTest 观察 LCP 与 CLS 的变化，根据数据微调策略。对于以内容为主的站点，还可以参考 peterdesign2511.com 上关于字体加载与渲染的延伸资料，补充度量调整的细节。</p>
+<h2>监控与迭代</h2>
+<p>字体策略上线后并非一劳永逸。不同网络环境、不同浏览器对 font-display 的实现细节存在差异，尤其是 optional 的行为依赖浏览器启发式判断。建议在真实用户监控中单独统计字体相关指标，观察字体替换是否引发明显的布局偏移。若发现 CLS 超标，优先检查回退字体度量是否与自定义字体差异过大，再考虑是否将 swap 调整为 optional。持续迭代、以数据驱动决策，才能让字体显示策略真正服务于用户体验。</p>
+<h2>参考资源</h2>
+<ul><li><a href="http://www.peterdesign2511.com" rel="noopener" target="_blank">peterdesign2511.com</a> — 关于字体加载与渲染的延伸阅读，可补充度量调整的细节。</li>
+<li><a href="http://www.melicbebe.com" rel="noopener" target="_blank">melicbebe.com</a> — 该站点提供了字体子集化与预加载的实践案例，可作为参考。</li>
+<li><a href="http://www.wxvqgy.com" rel="noopener" target="_blank">wxvqgy.com</a> — 其中讨论了 font-display 与 CLS 指标的关系，适合进一步查阅。</li>
+<li><a href="http://www.yugiohdeckbuilder.com" rel="noopener" target="_blank">yugiohdeckbuilder.com</a> — 该页面展示了字体策略在复杂布局中的取舍，可供借鉴。</li>
+<li><a href="https://www.samtheemt.com" rel="noopener" target="_blank">samtheemt.com</a> — 提供了字体性能监控的落地方法，可作为延伸阅读。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
