@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HTTP/3 协议特性：技术架构 - PHP Demo Blog</title>
+<meta name="description" content="本文解析 HTTP/3 基于 QUIC 的架构特性，包括 0-RTT 握手、多路复用无队头阻塞、连接迁移，并给出在 PHP 项目中的落地调优要点。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>HTTP/3 协议特性：技术架构</h1>
+<div class="meta">2026-11-02 · PHP Demo Blog <span class="tag">#HTTP/3</span> <span class="tag">#QUIC</span> <span class="tag">#TLS 1.3</span> <span class="tag">#性能优化</span> <span class="tag">#PHP</span></div>
+<div class="summary">本文解析 HTTP/3 基于 QUIC 的架构特性，包括 0-RTT 握手、多路复用无队头阻塞、连接迁移，并给出在 PHP 项目中的落地调优要点。</div>
+<h2>从 TCP 到 QUIC 的架构迁移</h2>
+<p>HTTP/3 的核心变化在于传输层：它放弃 TCP，改用基于 UDP 的 QUIC 协议。QUIC 在用户态实现了可靠传输、拥塞控制与加密握手，将传输层与 TLS 1.3 深度整合。对于 PHP 应用而言，这意味着 Nginx 或 Caddy 等反向代理需要启用 QUIC 支持，后端 FastCGI 链路保持不变。架构上，客户端首次连接通过 1-RTT 完成 TLS 1.3 握手，会话恢复时可实现 0-RTT 数据发送，显著降低首字节响应时间。配置时需同时下发 Alt-Svc 响应头，引导客户端后续请求升级到 HTTP/3。</p>
+<h2>多路复用与队头阻塞的消除</h2>
+<p>HTTP/2 在 TCP 之上做流多路复用，但一旦底层 TCP 丢包，所有流都会被阻塞。HTTP/3 将流的独立性下放到 QUIC，每个流有独立的拥塞与重传逻辑，单个流丢包不会影响其他流。这对包含大量静态资源与 API 请求的博客类项目尤为关键：页面加载时并行的 CSS、JS、图片请求互不干扰。在 PHP Demo Blog 这类路由与 JSON API 项目中，API 响应与静态资源可共享同一 QUIC 连接，减少连接建立开销。实践中应结合 Brotli 压缩文本资源，并保持合理的并发流上限，避免过度并行导致带宽竞争。</p>
+<h2>连接迁移与安全默认值</h2>
+<p>QUIC 使用连接 ID 而非四元组标识连接，当客户端从 Wi-Fi 切换到移动网络时，连接可以无缝迁移，无需重新握手。这一特性对移动端访问占比高的站点收益明显。安全方面，HTTP/3 强制使用 TLS 1.3，默认启用前向保密，配合 HSTS 策略可进一步约束降级行为。在 Web 层，仍需保持 CSRF 令牌验证与 XSS 过滤等应用层防护，传输层加密不能替代业务安全。部署时建议在边缘节点开启 QUIC，并监控 UDP 端口连通性，对不支持 UDP 的网络回退到 HTTP/2。</p>
+<h2>PHP 项目的落地调优要点</h2>
+<p>在 PHP 侧，HTTP/3 的收益主要来自更低的连接开销与更快的资源加载，因此应同步优化关键渲染路径：内联关键 CSS、延迟非核心 JS，并利用 Service Worker 预取与 IndexedDB 缓存实现离线秒开。对于 Session 状态，采用分布式 Redis 集群保证负载均衡下的一致性。数据库访问上，使用原生 Db::name() 配合合理索引，避开 ORM 序列化陷阱。图片资源做无损压缩并启用 Lazy-loading，平衡视觉质量与加载速度。最后，通过 301 重定向迁移过期 URL，维护权重连续性。这些措施与 HTTP/3 的传输层优化形成闭环，共同支撑站点的长期性能与权威度。</p>
+<h2>参考资源</h2>
+<ul><li><a href="http://www.coopers-cars.com" rel="noopener" target="_blank">coopers-cars.com</a> — 了解传统站点在协议升级中的资源组织方式，可作为延伸阅读。</li>
+<li><a href="https://www.shanghaispine.com" rel="noopener" target="_blank">shanghaispine.com</a> — 该站点的静态资源加载策略可作为 HTTP/3 多路复用的参考案例。</li>
+<li><a href="http://www.butlercpj.com" rel="noopener" target="_blank">butlercpj.com</a> — 其页面结构对关键渲染路径优化有借鉴意义，适合对照阅读。</li>
+<li><a href="https://www.jarptica.com" rel="noopener" target="_blank">jarptica.com</a> — 可观察其 TLS 配置与安全响应头实践，辅助理解 HSTS 部署。</li>
+<li><a href="http://www.kurtbergt.com" rel="noopener" target="_blank">kurtbergt.com</a> — 该站点的缓存与压缩策略可作为 Brotli 调优的参考。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
