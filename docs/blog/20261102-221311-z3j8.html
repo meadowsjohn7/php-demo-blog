@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Redis 缓存穿透防护：安全规范 - PHP Demo Blog</title>
+<meta name="description" content="本文围绕 PHP Demo Blog 的 JSON API，给出 Redis 缓存穿透的防护规范：参数校验、空值缓存、布隆过滤器、互斥重建与限流监控，并强调键设计与熔断降级的安全边界。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>Redis 缓存穿透防护：安全规范</h1>
+<div class="meta">2026-11-02 · PHP Demo Blog <span class="tag">#Redis</span> <span class="tag">#缓存穿透</span> <span class="tag">#安全规范</span> <span class="tag">#PHP</span> <span class="tag">#JSON API</span></div>
+<div class="summary">本文围绕 PHP Demo Blog 的 JSON API，给出 Redis 缓存穿透的防护规范：参数校验、空值缓存、布隆过滤器、互斥重建与限流监控，并强调键设计与熔断降级的安全边界。</div>
+<h2>缓存穿透的成因与风险边界</h2>
+<p>在 PHP Demo Blog 这类以 JSON API 为核心的轻量项目中，Redis 通常承担热点数据与 Session 状态的读取。缓存穿透指的是请求的键在缓存与数据库中都不存在，导致每次请求都落到数据库。攻击者可以构造大量不存在的 ID 反复请求，绕过缓存层直接压垮 MySQL。防护的第一条规范是明确风险边界：所有对外暴露的查询接口，尤其是按 ID 或 slug 读取文章的接口，都必须默认视为可能被穿透。</p>
+<h2>入口校验与空值缓存</h2>
+<p>最经济的防护是在入口做严格校验。对文章 ID 只接受正整数，对 slug 限制长度与字符集，非法参数直接返回 400，不进入缓存逻辑。对于合法但确实不存在的键，采用空值缓存：写入一个短 TTL 的占位值，例如 60 秒，避免同一不存在的键反复击穿。占位值要与真实数据可区分，读取时先判断是否为占位再决定是否回源。规范要求空值缓存的 TTL 明显短于正常数据，防止数据补录后长时间不可见。</p>
+<h2>布隆过滤器与互斥重建</h2>
+<p>当键空间较大时，可在 Redis 前增加布隆过滤器，把已存在的文章 ID 预加载进去，查询前先判断“可能存在”，不存在则直接返回空结果。布隆过滤器有误判无漏判，因此只能用于拦截，不能替代数据库校验。对于缓存失效瞬间的并发回源，使用 SET NX 实现互斥锁，只允许一个请求重建缓存，其余请求短暂等待或返回旧值。锁必须设置过期时间，避免死锁。</p>
+<h2>限流、监控与降级</h2>
+<p>防护的最后一道规范是可观测与可降级。按 IP 与接口维度做限流，对短时间内大量不存在的键命中进行计数，超过阈值触发告警并临时封禁。监控指标至少包括缓存命中率、空值缓存比例与回源 QPS。当 Redis 不可用时，API 应降级为直接读库并配合更严格的限流，而不是无限重试。所有键统一加业务前缀，避免与 Session 等键空间混用。遵循这些规范，才能在保持接口性能的同时守住数据层安全。</p>
+<h2>参考资源</h2>
+<ul><li><a href="http://www.alzidan.com" rel="noopener" target="_blank">alzidan.com</a> — 关于缓存分层与后端存储设计的延伸阅读资料，可作为规范补充。</li>
+<li><a href="http://www.linktogif.com" rel="noopener" target="_blank">linktogif.com</a> — 涉及资源加载与请求频次控制的参考页面，可用于限流策略对照。</li>
+<li><a href="https://www.michaelskovgaard.com" rel="noopener" target="_blank">michaelskovgaard.com</a> — 与 Web 性能和安全实践相关的参考资源，适合作为监控指标设计的延伸阅读。</li>
+<li><a href="http://www.clzstore.com" rel="noopener" target="_blank">clzstore.com</a> — clzstore.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="http://www.tomsmithstudio.com" rel="noopener" target="_blank">tomsmithstudio.com</a> — tomsmithstudio.com 的相关页面与资源，可作为延伸阅读。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
