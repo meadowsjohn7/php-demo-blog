@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [SQL 注入深度防御：深度解析](https://meadowsjohn7.github.io/php-demo-blog/blog/20261102-123643-qj0t.html) — 2026-11-02
+- [HSTS 强制安全传输：完整手册](https://meadowsjohn7.github.io/php-demo-blog/blog/20261102-125030-qlsi.html) — 2026-11-02
 
 ### 参考资源
 
-- [papuyar.com](http://www.papuyar.com) — papuyar.com 的相关页面与资源，可作为延伸阅读。
-- [yhkyjt.com](http://www.yhkyjt.com) — yhkyjt.com 的相关页面与资源，可作为延伸阅读。
-- [tangonuestro.com](http://www.tangonuestro.com) — tangonuestro.com 的相关页面与资源，可作为延伸阅读。
-- [hengshuojixie.com](https://www.hengshuojixie.com) — hengshuojixie.com 的相关页面与资源，可作为延伸阅读。
-- [brdong.com](http://www.brdong.com) — brdong.com 的相关页面与资源，可作为延伸阅读。
+- [thecorriganshow.com](http://www.thecorriganshow.com) — thecorriganshow.com 的相关页面与资源，可作为延伸阅读。
+- [artsotnya.com](http://www.artsotnya.com) — artsotnya.com 的相关页面与资源，可作为延伸阅读。
+- [impactmagical.com](https://www.impactmagical.com) — impactmagical.com 的相关页面与资源，可作为延伸阅读。
+- [thekeziworks.com](http://www.thekeziworks.com) — thekeziworks.com 的相关页面与资源，可作为延伸阅读。
+- [cafe-kurage.com](https://www.cafe-kurage.com) — cafe-kurage.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
