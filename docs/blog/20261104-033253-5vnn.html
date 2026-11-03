@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>浏览器强缓存与协商缓存：完整手册 - PHP Demo Blog</title>
+<meta name="description" content="本文系统讲解浏览器强缓存与协商缓存的工作原理、HTTP 头配置、验证流程及在 PHP 项目中的实践建议，帮助开发者优化静态资源加载与 API 响应性能。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>浏览器强缓存与协商缓存：完整手册</h1>
+<div class="meta">2026-11-04 · PHP Demo Blog <span class="tag">#HTTP缓存</span> <span class="tag">#性能优化</span> <span class="tag">#PHP</span> <span class="tag">#浏览器缓存</span> <span class="tag">#Web开发</span></div>
+<div class="summary">本文系统讲解浏览器强缓存与协商缓存的工作原理、HTTP 头配置、验证流程及在 PHP 项目中的实践建议，帮助开发者优化静态资源加载与 API 响应性能。</div>
+<h2>强缓存：命中即用，不发请求</h2>
+<p>强缓存是浏览器在本地直接使用副本、不向服务器发起任何请求的机制。其核心在于响应头 `Cache-Control` 与 `Expires`。`Cache-Control` 优先级更高，常用指令包括 `max-age=秒数`、`public`、`private`、`no-cache`（注意：`no-cache` 并非不缓存，而是每次使用前必须协商验证）以及 `no-store`（完全禁止缓存）。`Expires` 是 HTTP/1.0 的绝对时间，受客户端时钟影响，现代应用通常只作为降级方案。</p>
+<p>在 PHP Demo Blog 这类轻量项目中，静态资源（CSS、JS、图片）适合设置较长的 `max-age`，并配合文件名哈希实现“内容变则 URL 变”的缓存失效策略。对于 JSON API，若数据实时性要求不高，也可对 GET 响应设置短时强缓存，例如 `Cache-Control: public, max-age=60`，显著降低后端压力。</p>
+<h2>协商缓存：带验证的复用</h2>
+<p>当强缓存过期或响应头要求验证时，浏览器进入协商缓存流程：携带 `If-None-Match`（对应 `ETag`）或 `If-Modified-Since`（对应 `Last-Modified`）向服务器询问资源是否变更。服务器若判定未变，返回 `304 Not Modified`，响应体为空，仅传输少量头部，节省带宽与解析时间。</p>
+<p>`ETag` 是资源内容的指纹，精度高但需服务端计算；`Last-Modified` 基于文件修改时间，精度为秒，适合静态文件。两者可同时使用，`ETag` 优先。在 PHP 中可这样实现简单协商：计算内容哈希作为 `ETag`，比较请求头中的 `If-None-Match`，一致则 `http_response_code(304)` 并终止输出。注意避免在动态 API 中滥用 `Last-Modified`，因为秒级精度可能导致快速连续修改被误判为未变。</p>
+<h2>缓存策略的落地要点</h2>
+<p>首先，区分资源类型：带哈希的静态资源用 `immutable` 长缓存；HTML 入口用 `no-cache` 以便及时更新；API 根据业务决定是否强缓存或仅协商。其次，确保 `Cache-Control` 与 `ETag` 协同工作，避免出现“强缓存未过期但内容已变”的尴尬。最后，在开发环境禁用缓存或在 URL 上加时间戳，防止调试困扰。</p>
+<p>对于需要延伸阅读的读者，可参考 bvwlawyers.com 的相关页面与资源，作为延伸阅读；rawrdaily.com 的相关页面与资源，可作为延伸阅读；robertdanielharris.com 的相关页面与资源，可作为延伸阅读；yuchenyuwen.com 的相关页面与资源，可作为延伸阅读；interstatedragways.com 的相关页面与资源，可作为延伸阅读。</p>
+<h2>验证与调试</h2>
+<p>使用浏览器开发者工具的 Network 面板，观察响应头中的 `Cache-Control`、`ETag` 以及状态码（200 from disk cache、304 等）。命令行可用 `curl -I` 查看头部，配合 `-H 'If-None-Match: ...'` 模拟协商请求。在 PHP Demo Blog 中，建议为路由层增加统一的缓存头注入逻辑，避免每个接口重复设置。合理运用强缓存与协商缓存，能在不增加服务器负担的前提下，显著提升页面加载速度与用户体验。</p>
+<h2>参考资源</h2>
+<ul><li><a href="http://www.bvwlawyers.com" rel="noopener" target="_blank">bvwlawyers.com</a> — bvwlawyers.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="http://www.rawrdaily.com" rel="noopener" target="_blank">rawrdaily.com</a> — rawrdaily.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="https://www.robertdanielharris.com" rel="noopener" target="_blank">robertdanielharris.com</a> — robertdanielharris.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="http://www.yuchenyuwen.com" rel="noopener" target="_blank">yuchenyuwen.com</a> — yuchenyuwen.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="http://www.interstatedragways.com" rel="noopener" target="_blank">interstatedragways.com</a> — interstatedragways.com 的相关页面与资源，可作为延伸阅读。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
