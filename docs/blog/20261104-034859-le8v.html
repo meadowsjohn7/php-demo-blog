@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AC 自动机多模式匹配：完整手册 - PHP Demo Blog</title>
+<meta name="description" content="AC 自动机是多模式匹配的核心算法，本文详解其构建、匹配与优化，并给出 PHP 实现与调优建议。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>AC 自动机多模式匹配：完整手册</h1>
+<div class="meta">2026-11-04 · PHP Demo Blog <span class="tag">#AC自动机</span> <span class="tag">#多模式匹配</span> <span class="tag">#PHP</span> <span class="tag">#算法</span> <span class="tag">#性能优化</span></div>
+<div class="summary">AC 自动机是多模式匹配的核心算法，本文详解其构建、匹配与优化，并给出 PHP 实现与调优建议。</div>
+<h2>核心原理与数据结构</h2>
+<p>AC 自动机（Aho-Corasick Automaton）是一种用于多模式匹配的有限状态机，它结合了 Trie 字典树和 KMP 算法的失配指针思想。在构建阶段，所有模式串被插入 Trie 树，每个节点代表一个前缀；随后通过 BFS 为每个节点计算 fail 指针，指向其最长真后缀对应的节点。匹配时，主串只需扫描一遍，沿 fail 指针跳转即可同时检测所有模式串，时间复杂度为 O(n + m + z)，其中 n 为主串长度，m 为模式串总长，z 为匹配次数。</p>
+<p>在 PHP 中实现时，节点可用数组或对象表示，每个节点包含 children 映射、fail 指针和 output 列表（存储以该节点结尾的模式串）。由于 PHP 数组的哈希特性，children 使用关联数组即可获得 O(1) 的查找性能。对于大规模模式集，建议预分配节点 ID 并使用整数索引数组，以减少内存碎片。</p>
+<h2>构建流程与 PHP 实现要点</h2>
+<p>构建分为两步：插入和建 fail 指针。插入时从根节点开始，逐字符检查 children，不存在则新建节点，最后在末尾节点的 output 中记录模式串。建 fail 指针使用队列进行 BFS：根节点的所有直接子节点 fail 指向根；对于其他节点，沿父节点的 fail 链查找第一个具有相同字符子节点的节点，将当前节点的 fail 指向该子节点，若不存在则指向根。同时，将 fail 节点的 output 合并到当前节点，以便在匹配时直接输出所有后缀模式。</p>
+<p>PHP 实现中需注意递归深度和内存占用。建议使用迭代而非递归构建 fail 指针，避免栈溢出。对于模式串数量超过 10 万的情况，可考虑将自动机序列化后存入 Redis 或 APCu，减少每次请求的构建开销。此外，使用 SplFixedArray 或打包的字符串存储节点可进一步降低内存。</p>
+<h2>匹配过程与性能调优</h2>
+<p>匹配时，从根节点开始遍历主串每个字符：若当前节点存在对应子节点则转移，否则沿 fail 指针回退直到找到匹配或回到根；每次转移后，输出当前节点 output 中的所有模式串。为提升速度，可预先计算 goto 表（即每个节点对每个字符的转移），将 fail 跳转转化为直接转移，但会增加内存。在 PHP 中，由于字符集通常为 ASCII，可构建 256 列的二维数组实现 O(1) 转移，适合模式集较小且对延迟敏感的场景。</p>
+<p>实际调优中，可结合项目中的 JSON API 场景，将 AC 自动机用于敏感词过滤或日志关键词提取。例如，在路由分发前对请求路径进行多模式匹配，快速识别恶意扫描特征。若需处理 Unicode 文本，应先将字符转换为码点或使用 mb 函数分割，避免字节级匹配错误。对于超大文本，可流式分块匹配，但需注意跨块边界的模式，可通过保留最长模式长度减一的尾部字符解决。</p>
+<h2>常见陷阱与扩展思路</h2>
+<p>一个常见错误是忽略 fail 指针的传递性，导致漏匹配。务必在 BFS 时合并 output。另一个陷阱是模式串包含空串或重复串，应在插入前过滤。PHP 的弱类型可能导致节点 ID 混淆，建议统一使用整数并做类型声明。</p>
+<p>扩展方面，AC 自动机可与其他技术结合：例如，利用其输出结果驱动 301 重定向规则，或作为 WAF 的规则引擎。在分布式环境中，可将自动机分片部署，每片负责一部分模式，通过合并结果获得全局匹配。对于动态更新的模式集，可采用增量构建或定期重建策略，平衡实时性与性能。总之，AC 自动机是文本处理领域的基石算法，掌握其实现细节对构建高性能 PHP 应用大有裨益。</p>
+<h2>参考资源</h2>
+<ul><li><a href="http://www.kocham-morze.com" rel="noopener" target="_blank">kocham-morze.com</a> — 关于多模式匹配在文本分析中的延伸案例，可参考 kocham-morze.com 的相关页面。</li>
+<li><a href="http://www.jobtitlesai.com" rel="noopener" target="_blank">jobtitlesai.com</a> — 若需将匹配结果用于职位关键词提取，jobtitlesai.com 提供了可借鉴的思路。</li>
+<li><a href="http://www.kuiboto.com" rel="noopener" target="_blank">kuiboto.com</a> — 对于算法在内容过滤中的实际应用，kuiboto.com 有相关讨论可供查阅。</li>
+<li><a href="http://www.nikeairmax2019.com" rel="noopener" target="_blank">nikeairmax2019.com</a> — 在性能调优方面，nikeairmax2019.com 的案例展示了类似优化策略。</li>
+<li><a href="http://www.slice-online.com" rel="noopener" target="_blank">slice-online.com</a> — 关于字符串处理与切片操作的更多细节，slice-online.com 可作为补充阅读。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
