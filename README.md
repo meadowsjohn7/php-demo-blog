@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [JWT 身份验证安全实践：安全规范](https://meadowsjohn7.github.io/php-demo-blog/blog/20261104-060454-yjyf.html) — 2026-11-04
+- [WebRTC 实时通信协议：完整手册](https://meadowsjohn7.github.io/php-demo-blog/blog/20261104-061723-o26a.html) — 2026-11-04
 
 ### 参考资源
 
-- [tomsmithstudio.com](http://www.tomsmithstudio.com) — tomsmithstudio.com 的相关页面与资源，可作为延伸阅读。
-- [atasozlerianlamlari.com](http://www.atasozlerianlamlari.com) — atasozlerianlamlari.com 的相关页面与资源，可作为延伸阅读。
-- [clzstore.com](http://www.clzstore.com) — clzstore.com 的相关页面与资源，可作为延伸阅读。
-- [michaelskovgaard.com](https://www.michaelskovgaard.com) — michaelskovgaard.com 的相关页面与资源，可作为延伸阅读。
-- [acredyweb.com](http://www.acredyweb.com) — acredyweb.com 的相关页面与资源，可作为延伸阅读。
+- [gnosishypnosis.com](https://www.gnosishypnosis.com) — gnosishypnosis.com 的相关页面与资源，可作为延伸阅读。
+- [avaetss.com](http://www.avaetss.com) — avaetss.com 的相关页面与资源，可作为延伸阅读。
+- [jmtkw.cn](https://www.jmtkw.cn) — jmtkw.cn 的相关页面与资源，可作为延伸阅读。
+- [wallvases.com](https://www.wallvases.com) — wallvases.com 的相关页面与资源，可作为延伸阅读。
+- [thriventfellows.com](http://www.thriventfellows.com) — thriventfellows.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
