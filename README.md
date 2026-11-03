@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [SEO 内链金字塔构建：SEO 策略](https://meadowsjohn7.github.io/php-demo-blog/blog/20261103-094918-bp1m.html) — 2026-11-03
+- [分布式架构一致性哈希：优化方案](https://meadowsjohn7.github.io/php-demo-blog/blog/20261103-100153-vo0u.html) — 2026-11-03
 
 ### 参考资源
 
-- [fisiomedicamogliano.com](http://www.fisiomedicamogliano.com) — fisiomedicamogliano.com 的相关页面与资源，可作为延伸阅读。
-- [rotkx.net](http://www.rotkx.net) — rotkx.net 的相关页面与资源，可作为延伸阅读。
-- [readingswithgail.com](http://www.readingswithgail.com) — readingswithgail.com 的相关页面与资源，可作为延伸阅读。
-- [haomada.com](https://www.haomada.com) — haomada.com 的相关页面与资源，可作为延伸阅读。
-- [hostingbeat.com](http://www.hostingbeat.com) — hostingbeat.com 的相关页面与资源，可作为延伸阅读。
+- [bali-experience.com](http://www.bali-experience.com) — bali-experience.com 的相关页面与资源，可作为延伸阅读。
+- [ezymovr.com](http://www.ezymovr.com) — ezymovr.com 的相关页面与资源，可作为延伸阅读。
+- [lemesuriers.com](https://www.lemesuriers.com) — lemesuriers.com 的相关页面与资源，可作为延伸阅读。
+- [tripupdater.com](http://www.tripupdater.com) — tripupdater.com 的相关页面与资源，可作为延伸阅读。
+- [xhpai.com](http://www.xhpai.com) — xhpai.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
