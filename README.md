@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [Chrome DevTools 性能调试：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261104-003759-jv7w.html) — 2026-11-04
+- [URL 扁平化设计规范：SEO 策略](https://meadowsjohn7.github.io/php-demo-blog/blog/20261104-005301-rasv.html) — 2026-11-04
 
 ### 参考资源
 
-- [jmswjdwxfwb.com](http://www.jmswjdwxfwb.com) — jmswjdwxfwb.com 的相关页面与资源，可作为延伸阅读。
-- [yakulog.com](http://www.yakulog.com) — yakulog.com 的相关页面与资源，可作为延伸阅读。
-- [wxvqgy.com](http://www.wxvqgy.com) — wxvqgy.com 的相关页面与资源，可作为延伸阅读。
-- [samtheemt.com](https://www.samtheemt.com) — samtheemt.com 的相关页面与资源，可作为延伸阅读。
-- [semillaad.com](http://www.semillaad.com) — semillaad.com 的相关页面与资源，可作为延伸阅读。
+- [jarptica.com](https://www.jarptica.com) — jarptica.com 的相关页面与资源，可作为延伸阅读。
+- [butlercpj.com](http://www.butlercpj.com) — butlercpj.com 的相关页面与资源，可作为延伸阅读。
+- [dixiecrating.com](http://www.dixiecrating.com) — dixiecrating.com 的相关页面与资源，可作为延伸阅读。
+- [gendulphe.com](http://www.gendulphe.com) — gendulphe.com 的相关页面与资源，可作为延伸阅读。
+- [kurtbergt.com](http://www.kurtbergt.com) — kurtbergt.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
