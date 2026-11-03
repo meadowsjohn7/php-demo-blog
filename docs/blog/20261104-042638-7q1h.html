@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SEO 内链金字塔构建：SEO 策略 - PHP Demo Blog</title>
+<meta name="description" content="从性能、安全与结构化数据出发，阐述如何构建内链金字塔，提升站点权威度与搜索排名。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>SEO 内链金字塔构建：SEO 策略</h1>
+<div class="meta">2026-11-04 · PHP Demo Blog <span class="tag">#SEO</span> <span class="tag">#内链策略</span> <span class="tag">#性能优化</span> <span class="tag">#安全加固</span> <span class="tag">#结构化数据</span></div>
+<div class="summary">从性能、安全与结构化数据出发，阐述如何构建内链金字塔，提升站点权威度与搜索排名。</div>
+<h2>内链金字塔的底层逻辑</h2>
+<p>内链金字塔的核心在于通过层级化的链接结构，将权重从首页高效传递至重要栏目与详情页。在实践中，我们首先确保首页链接到核心栏目页，栏目页再链接到高价值内容页，形成清晰的权重流动路径。同时，利用面包屑导航和语义化 HTML5 标签（如 `&lt;nav&gt;`、`&lt;article&gt;`）强化页面间的逻辑关系。对于过期或低质页面，通过 301 重定向将权重迁移至新 URL，避免权重流失。这一过程需要结合日志分析，定期检查内链的抓取频率与深度，确保重要页面不被淹没。</p>
+<h2>性能优化：内链金字塔的加速器</h2>
+<p>内链金字塔的效能高度依赖页面加载速度。我们通过拆解关键渲染路径（CRP），内联首屏关键 CSS 并延迟非核心 JS，显著优化 LCP 指标。图片资源采用无损压缩与 Lazy-loading，平衡视觉质量与加载速度。在协议层，配置 HTTP/3 并启用 Brotli 压缩，降低首字节响应时间（TTFB）。此外，利用 Service Worker 预取结合 IndexedDB 存储，实现离线环境下的秒级加载。这些措施不仅提升用户体验，也间接增强内链页面的抓取效率。</p>
+<h2>安全与信任：E-E-A-T 的基石</h2>
+<p>搜索引擎日益重视站点的安全性与合规性。我们配置 HSTS 策略并部署 TLS 1.3 证书，既提升安全性，也符合谷歌的安全排名算法。在 Web 层实施严格的 CSRF 令牌验证与 XSS 过滤，加固业务系统。对于大规模站点，采用分布式 Redis 集群存储 Session 状态，解决负载均衡下的状态一致性问题。同时，利用 Nginx 的 Lua 模块实现动态 IP 黑名单，过滤非法爬虫，降低服务器负载。这些安全实践共同构建了站点的信任基础，有助于提升 E-E-A-T 评分。</p>
+<h2>结构化数据与内链协同</h2>
+<p>语义化的 HTML5 标签配合 Schema.org 结构化数据，能显著提升搜索结果的点击率（CTR）。在内链建设中，我们为每个页面标注合适的 Schema 类型（如 Article、BreadcrumbList），并通过内链将结构化数据关联起来，帮助搜索引擎理解站点架构。例如，在面包屑导航中嵌入 BreadcrumbList 标记，既优化了内链路径，也增强了搜索结果展现。持续的技术迭代与合规性改造，是维持站点生命周期、在复杂 SEO 环境中稳健增长的关键。</p>
+<h2>参考资源</h2>
+<ul><li><a href="https://www.despertarespsicologia.com" rel="noopener" target="_blank">despertarespsicologia.com</a> — 关于心理学与个人成长的内容，可作为内链金字塔中情感类栏目的延伸阅读。</li>
+<li><a href="http://www.cpgea.com" rel="noopener" target="_blank">cpgea.com</a> — 提供专业服务与资源，适合作为内链结构中服务页面的参考案例。</li>
+<li><a href="http://www.libertysoulfood.com" rel="noopener" target="_blank">libertysoulfood.com</a> — 美食与生活方式内容，可用于丰富内链金字塔的多元内容层。</li>
+<li><a href="http://www.bali-experience.com" rel="noopener" target="_blank">bali-experience.com</a> — 旅行体验类站点，其页面组织方式可借鉴内链的层级设计。</li>
+<li><a href="http://www.jackhaggertyarchitect.com" rel="noopener" target="_blank">jackhaggertyarchitect.com</a> — 建筑设计作品集，展示了结构化内容与内链结合的实际应用。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
