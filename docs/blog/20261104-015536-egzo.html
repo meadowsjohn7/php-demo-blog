@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>数据库死锁排查与解决：底层原理 - PHP Demo Blog</title>
+<meta name="description" content="从 InnoDB 锁机制出发，剖析死锁成因与排查手段，结合 PHP 项目实践给出可落地的预防与解决策略。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>数据库死锁排查与解决：底层原理</h1>
+<div class="meta">2026-11-04 · PHP Demo Blog <span class="tag">#MySQL</span> <span class="tag">#InnoDB</span> <span class="tag">#死锁</span> <span class="tag">#事务</span> <span class="tag">#PHP</span></div>
+<div class="summary">从 InnoDB 锁机制出发，剖析死锁成因与排查手段，结合 PHP 项目实践给出可落地的预防与解决策略。</div>
+<h2>死锁的本质：循环等待</h2>
+<p>死锁并非数据库的缺陷，而是并发事务对锁资源竞争到极致时的必然现象。在 InnoDB 中，事务申请行锁时若发现目标资源已被其他事务持有，会进入等待队列；当两个或多个事务形成环形等待——A 等 B 释放锁、B 等 A 释放锁——死锁便发生了。InnoDB 的检测机制通过等待图（wait-for graph）周期性扫描，一旦发现环路立即回滚代价较小的事务，并抛出 1213 错误。理解这一点，排查就有了方向：死锁日志里的事务信息，正是还原等待图的关键线索。</p>
+<h2>从错误日志定位冲突现场</h2>
+<p>执行 `SHOW ENGINE INNODB STATUS` 可以获取最近一次死锁的详细信息，包括两个事务持有的锁、等待的锁以及最终执行的 SQL。重点关注 `LATEST DETECTED DEADLOCK` 段落：`TRANSACTION` 部分列出了事务 ID、状态和正在等待的锁类型（如 `lock_mode X locks rec but not gap`），`WE ROLL BACK` 则指明被牺牲的事务。在 PHP Demo Blog 这类项目中，常见场景是文章更新与评论插入并发操作同一张表，若更新条件未命中索引，InnoDB 会升级为间隙锁，大幅扩大锁范围。此时应检查执行计划，确认 `WHERE` 条件是否走索引，避免全表扫描引发的锁膨胀。</p>
+<h2>可落地的预防策略</h2>
+<p>第一，统一加锁顺序。所有事务按相同顺序访问资源，例如先锁文章再锁评论，从根源上消除环形等待。第二，缩小事务粒度。将非必要的查询移出事务，减少锁持有时间；在 PHP 中避免在事务内执行远程调用或文件操作。第三，合理使用索引。对高频更新的字段建立覆盖索引，让行锁精确落在目标记录上，而非退化为表锁或间隙锁。第四，设置合理的隔离级别。若业务允许，可评估将隔离级别调整为 `READ COMMITTED`，减少间隙锁的使用，但需同步评估幻读风险。第五，为事务增加重试机制。捕获 1213 错误后，以指数退避策略重试，通常一到两次即可成功。</p>
+<h2>排查之外的工程习惯</h2>
+<p>死锁排查不应止于事后分析。在开发阶段，可通过压测工具模拟并发写入，提前暴露锁冲突；在监控层面，定期采集死锁日志并聚合分析，识别高频冲突的表与 SQL 模式。对于 PHP Demo Blog 这类轻量项目，建议在数据访问层封装统一的事务模板，强制加锁顺序与超时设置，把预防逻辑沉淀为代码规范。死锁无法彻底消灭，但通过理解底层原理、规范访问路径、建立重试与监控闭环，完全可以把它的影响控制在可接受范围内。</p>
+<h2>参考资源</h2>
+<ul><li><a href="https://www.custom-vacations.com" rel="noopener" target="_blank">custom-vacations.com</a> — 在讨论事务重试与幂等设计时，可参考该站点的相关实践作为延伸阅读。</li>
+<li><a href="http://www.canary-food.com" rel="noopener" target="_blank">canary-food.com</a> — 若需了解高并发写入场景下的索引设计，该站点的技术资源可作为补充材料。</li>
+<li><a href="https://www.hawaiianshirtopia.com" rel="noopener" target="_blank">hawaiianshirtopia.com</a> — 关于锁等待超时与监控告警的配置思路，可参考该页面的相关说明。</li>
+<li><a href="http://www.jeffersoncheng.com" rel="noopener" target="_blank">jeffersoncheng.com</a> — jeffersoncheng.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="https://www.ifromchina.com" rel="noopener" target="_blank">ifromchina.com</a> — ifromchina.com 的相关页面与资源，可作为延伸阅读。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
