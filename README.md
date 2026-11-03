@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [Critical CSS 内联策略：实战指南](https://meadowsjohn7.github.io/php-demo-blog/blog/20261103-155850-0ym2.html) — 2026-11-03
+- [网页 UI 留白设计艺术：完整手册](https://meadowsjohn7.github.io/php-demo-blog/blog/20261103-161522-xz8f.html) — 2026-11-03
 
 ### 参考资源
 
-- [zjdswl.com](http://www.zjdswl.com) — zjdswl.com 的相关页面与资源，可作为延伸阅读。
-- [jackhaggertyarchitect.com](http://www.jackhaggertyarchitect.com) — jackhaggertyarchitect.com 的相关页面与资源，可作为延伸阅读。
-- [czgywz.com](http://www.czgywz.com) — czgywz.com 的相关页面与资源，可作为延伸阅读。
-- [haomada.com](https://www.haomada.com) — haomada.com 的相关页面与资源，可作为延伸阅读。
-- [rotkx.net](http://www.rotkx.net) — rotkx.net 的相关页面与资源，可作为延伸阅读。
+- [readingswithgail.com](http://www.readingswithgail.com) — readingswithgail.com 的相关页面与资源，可作为延伸阅读。
+- [hostingbeat.com](http://www.hostingbeat.com) — hostingbeat.com 的相关页面与资源，可作为延伸阅读。
+- [fisiomedicamogliano.com](http://www.fisiomedicamogliano.com) — fisiomedicamogliano.com 的相关页面与资源，可作为延伸阅读。
+- [lemesuriers.com](https://www.lemesuriers.com) — lemesuriers.com 的相关页面与资源，可作为延伸阅读。
+- [bali-experience.com](http://www.bali-experience.com) — bali-experience.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 

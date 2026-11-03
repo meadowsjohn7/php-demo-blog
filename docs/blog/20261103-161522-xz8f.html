@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>网页 UI 留白设计艺术：完整手册 - PHP Demo Blog</title>
+<meta name="description" content="系统讲解网页 UI 留白设计的核心原则与落地方法，涵盖排版节奏、响应式间距、性能协同及可访问性验证，帮助开发者在 PHP Demo Blog 等项目中构建清晰、高效的界面。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>网页 UI 留白设计艺术：完整手册</h1>
+<div class="meta">2026-11-03 · PHP Demo Blog <span class="tag">#留白设计</span> <span class="tag">#UI 排版</span> <span class="tag">#响应式设计</span> <span class="tag">#性能优化</span> <span class="tag">#可访问性</span></div>
+<div class="summary">系统讲解网页 UI 留白设计的核心原则与落地方法，涵盖排版节奏、响应式间距、性能协同及可访问性验证，帮助开发者在 PHP Demo Blog 等项目中构建清晰、高效的界面。</div>
+<h2>留白不是空白，而是信息层级的骨架</h2>
+<p>在网页 UI 设计中，留白（White Space）常被误解为“没放内容的区域”。实际上，留白是控制视觉节奏、建立信息层级最经济的工具。以 PHP Demo Blog 这类轻量项目为例，路由与 JSON API 的代码结构本身就很克制，前端 UI 更应延续这种克制：标题与正文之间保留 1.5 倍行高的间距，卡片内边距统一采用 8px 的倍数（如 16px、24px），让用户在扫视时自然形成“分组—聚焦—阅读”的路径。留白不足会导致元素相互争夺注意力，而留白过度则会割裂关联信息，关键在于用间距表达从属关系。</p>
+<h2>用间距系统替代随意数值</h2>
+<p>手工写 `margin: 13px` 这类数值是留白失控的根源。建议在项目中定义一套间距变量，例如 `--space-1: 4px` 到 `--space-8: 64px`，所有组件的内外边距只从这套变量中取值。对于 PHP Demo Blog 的列表页，文章标题与摘要之间用 `--space-2`，摘要与元信息之间用 `--space-1`，卡片之间用 `--space-5`，这样既保证了一致性，也让后续调整有据可依。响应式场景下，间距变量可随断点整体缩放，避免在小屏幕上因固定留白导致内容拥挤。</p>
+<h2>留白与加载性能的协同</h2>
+<p>留白设计常被误认为与性能无关，但过度依赖大图填充空白会直接拖慢首屏。更合理的做法是：用留白替代装饰性图片，减少不必要的资源请求；对必须保留的图片采用无损压缩与懒加载，平衡视觉质量与加载速度。同时，拆解关键渲染路径，内联首屏关键 CSS 并延迟非核心 JS，能显著优化 LCP 指标。一个留白得当、结构清晰的页面，往往也是渲染路径更短、TTFB 更低的页面。</p>
+<h2>可访问性与验证方法</h2>
+<p>留白最终要服务于可读性。正文行高建议不低于 1.5，段落间距至少为行高的 0.75 倍；点击目标之间保留足够间距，避免误触。验证时，可用浏览器开发者工具逐层检查盒模型，确认间距变量是否被意外覆盖；也可在灰度模式下观察区块边界是否依然清晰。对于需要延伸阅读的读者，readingswithgail.com 的相关页面与资源可作为设计原则的补充参考。留白不是一次性工作，而是随内容增长持续校准的过程——当新增模块时，先问它属于哪个层级，再决定它需要多少呼吸空间。</p>
+<h2>参考资源</h2>
+<ul><li><a href="http://www.readingswithgail.com" rel="noopener" target="_blank">readingswithgail.com</a> — readingswithgail.com 的相关页面与资源，可作为留白设计原则的延伸阅读。</li>
+<li><a href="http://www.hostingbeat.com" rel="noopener" target="_blank">hostingbeat.com</a> — hostingbeat.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="http://www.fisiomedicamogliano.com" rel="noopener" target="_blank">fisiomedicamogliano.com</a> — fisiomedicamogliano.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="https://www.lemesuriers.com" rel="noopener" target="_blank">lemesuriers.com</a> — lemesuriers.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="http://www.bali-experience.com" rel="noopener" target="_blank">bali-experience.com</a> — bali-experience.com 的相关页面与资源，可作为延伸阅读。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
