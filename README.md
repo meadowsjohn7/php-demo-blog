@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [URL 扁平化设计规范：SEO 策略](https://meadowsjohn7.github.io/php-demo-blog/blog/20261104-005301-rasv.html) — 2026-11-04
+- [WebShell 文件上传漏洞防护：技术架构](https://meadowsjohn7.github.io/php-demo-blog/blog/20261104-010356-4foe.html) — 2026-11-04
 
 ### 参考资源
 
-- [jarptica.com](https://www.jarptica.com) — jarptica.com 的相关页面与资源，可作为延伸阅读。
-- [butlercpj.com](http://www.butlercpj.com) — butlercpj.com 的相关页面与资源，可作为延伸阅读。
-- [dixiecrating.com](http://www.dixiecrating.com) — dixiecrating.com 的相关页面与资源，可作为延伸阅读。
-- [gendulphe.com](http://www.gendulphe.com) — gendulphe.com 的相关页面与资源，可作为延伸阅读。
-- [kurtbergt.com](http://www.kurtbergt.com) — kurtbergt.com 的相关页面与资源，可作为延伸阅读。
+- [turfdxb.com](http://www.turfdxb.com) — turfdxb.com 的相关页面与资源，可作为延伸阅读。
+- [ad4xlive.com](http://www.ad4xlive.com) — ad4xlive.com 的相关页面与资源，可作为延伸阅读。
+- [revistapedagogiaufmt.com](http://www.revistapedagogiaufmt.com) — revistapedagogiaufmt.com 的相关页面与资源，可作为延伸阅读。
+- [lapkov.com](http://www.lapkov.com) — lapkov.com 的相关页面与资源，可作为延伸阅读。
+- [bur-da.com](http://www.bur-da.com) — bur-da.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
