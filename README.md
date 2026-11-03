@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [HTTPS 与 SSL 证书配置：技术架构](https://meadowsjohn7.github.io/php-demo-blog/blog/20261103-192438-qoh9.html) — 2026-11-03
+- [链接提交工具对比：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261103-194017-25xz.html) — 2026-11-03
 
 ### 参考资源
 
-- [medservintl.com](http://www.medservintl.com) — medservintl.com 的相关页面与资源，可作为延伸阅读。
-- [otaclinictsukuba.com](http://www.otaclinictsukuba.com) — otaclinictsukuba.com 的相关页面与资源，可作为延伸阅读。
-- [midtowntapandtearoom.com](http://www.midtowntapandtearoom.com) — midtowntapandtearoom.com 的相关页面与资源，可作为延伸阅读。
-- [janellewoo.com](https://www.janellewoo.com) — janellewoo.com 的相关页面与资源，可作为延伸阅读。
-- [hematqiuq.com](http://www.hematqiuq.com) — hematqiuq.com 的相关页面与资源，可作为延伸阅读。
+- [ntgaode.com](https://www.ntgaode.com) — ntgaode.com 的相关页面与资源，可作为延伸阅读。
+- [canary-food.com](http://www.canary-food.com) — canary-food.com 的相关页面与资源，可作为延伸阅读。
+- [kitchenwaredolphin.com](https://www.kitchenwaredolphin.com) — kitchenwaredolphin.com 的相关页面与资源，可作为延伸阅读。
+- [custom-vacations.com](https://www.custom-vacations.com) — custom-vacations.com 的相关页面与资源，可作为延伸阅读。
+- [hawaiianshirtopia.com](https://www.hawaiianshirtopia.com) — hawaiianshirtopia.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
