@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [链接提交工具对比：完整手册](https://meadowsjohn7.github.io/php-demo-blog/blog/20261103-141402-e7ob.html) — 2026-11-03
+- [Trie 树高性能搜索：安全规范](https://meadowsjohn7.github.io/php-demo-blog/blog/20261103-142644-v884.html) — 2026-11-03
 
 ### 参考资源
 
-- [wfhxgc.com](https://www.wfhxgc.com) — wfhxgc.com 的相关页面与资源，可作为延伸阅读。
-- [yhkyjt.com](http://www.yhkyjt.com) — yhkyjt.com 的相关页面与资源，可作为延伸阅读。
-- [qyhxsq.com](https://www.qyhxsq.com) — qyhxsq.com 的相关页面与资源，可作为延伸阅读。
-- [papuyar.com](http://www.papuyar.com) — papuyar.com 的相关页面与资源，可作为延伸阅读。
-- [hengshuojixie.com](https://www.hengshuojixie.com) — hengshuojixie.com 的相关页面与资源，可作为延伸阅读。
+- [thecorriganshow.com](http://www.thecorriganshow.com) — thecorriganshow.com 的相关页面与资源，可作为延伸阅读。
+- [brdong.com](http://www.brdong.com) — brdong.com 的相关页面与资源，可作为延伸阅读。
+- [tangonuestro.com](http://www.tangonuestro.com) — tangonuestro.com 的相关页面与资源，可作为延伸阅读。
+- [cafe-kurage.com](https://www.cafe-kurage.com) — cafe-kurage.com 的相关页面与资源，可作为延伸阅读。
+- [signature-concierge.com](http://www.signature-concierge.com) — signature-concierge.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
