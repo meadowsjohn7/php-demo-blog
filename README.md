@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [富文本编辑器安全过滤：技术架构](https://meadowsjohn7.github.io/php-demo-blog/blog/20261103-220755-7k5v.html) — 2026-11-03
+- [URL 扁平化设计规范：SEO 策略](https://meadowsjohn7.github.io/php-demo-blog/blog/20261103-222422-fpqb.html) — 2026-11-03
 
 ### 参考资源
 
-- [jackhaggertyarchitect.com](http://www.jackhaggertyarchitect.com) — jackhaggertyarchitect.com 的相关页面与资源，可作为延伸阅读。
-- [rotkx.net](http://www.rotkx.net) — rotkx.net 的相关页面与资源，可作为延伸阅读。
-- [zjdswl.com](http://www.zjdswl.com) — zjdswl.com 的相关页面与资源，可作为延伸阅读。
-- [bali-experience.com](http://www.bali-experience.com) — bali-experience.com 的相关页面与资源，可作为延伸阅读。
-- [lemesuriers.com](https://www.lemesuriers.com) — lemesuriers.com 的相关页面与资源，可作为延伸阅读。
+- [hostingbeat.com](http://www.hostingbeat.com) — hostingbeat.com 的相关页面与资源，可作为延伸阅读。
+- [fisiomedicamogliano.com](http://www.fisiomedicamogliano.com) — fisiomedicamogliano.com 的相关页面与资源，可作为延伸阅读。
+- [readingswithgail.com](http://www.readingswithgail.com) — readingswithgail.com 的相关页面与资源，可作为延伸阅读。
+- [zenithsco.com](https://www.zenithsco.com) — zenithsco.com 的相关页面与资源，可作为延伸阅读。
+- [xhpai.com](http://www.xhpai.com) — xhpai.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
