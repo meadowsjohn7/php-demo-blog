@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MySQL 慢查询排查：实战指南 - PHP Demo Blog</title>
+<meta name="description" content="从开启慢日志到 EXPLAIN 分析，结合索引优化与 SQL 改写，提供可落地的 MySQL 慢查询排查步骤。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>MySQL 慢查询排查：实战指南</h1>
+<div class="meta">2026-11-03 · PHP Demo Blog <span class="tag">#MySQL</span> <span class="tag">#慢查询</span> <span class="tag">#性能优化</span> <span class="tag">#索引</span> <span class="tag">#PHP</span></div>
+<div class="summary">从开启慢日志到 EXPLAIN 分析，结合索引优化与 SQL 改写，提供可落地的 MySQL 慢查询排查步骤。</div>
+<h2>开启慢查询日志，先拿到现场</h2>
+<p>排查慢查询的第一步是让 MySQL 把慢 SQL 记录下来。在 my.cnf 中设置 slow_query_log = ON、slow_query_log_file 指定路径，并用 long_query_time 定义阈值（建议从 1 秒起步，压测环境可降到 0.1 秒）。同时打开 log_queries_not_using_indexes 能把未走索引的语句也纳入采集。线上环境务必配合 log_output = FILE，避免写入 mysql.slow_log 表带来额外开销。拿到日志后，用 mysqldumpslow 或 pt-query-digest 按执行次数、总耗时排序，优先处理“高频且单次不慢”的语句，它们对整体吞吐的影响往往超过偶发的长查询。</p>
+<h2>用 EXPLAIN 定位执行计划问题</h2>
+<p>对可疑 SQL 执行 EXPLAIN，重点看 type、key、rows 和 Extra 四列。type 出现 ALL 意味着全表扫描，index 表示全索引扫描，都应警惕；key 为 NULL 说明没有用上索引；rows 是优化器估算的扫描行数，与实际偏差过大时考虑 ANALYZE TABLE 更新统计信息。Extra 中出现 Using filesort 或 Using temporary 通常意味着排序或分组没有走索引，需要调整索引顺序或改写查询。对于复杂查询，可以用 EXPLAIN FORMAT=JSON 查看更细的 cost 信息，或借助 optimizer_trace 观察优化器选择路径的原因。</p>
+<h2>索引设计与 SQL 改写</h2>
+<p>索引不是越多越好。联合索引要遵循最左前缀原则，把等值条件列放在范围条件列之前；区分度低的列（如性别、状态）单独建索引收益有限。避免在索引列上使用函数或隐式类型转换，例如 WHERE DATE(created_at) = '2024-01-01' 会导致索引失效，应改为范围条件。分页查询用 LIMIT 大偏移量时，可改为基于上一页最大 id 的游标分页。在 PHP 项目中，用原生 Db::name() 配合明确的字段列表和合理的索引，能避开 ORM 序列化与懒加载带来的额外开销。</p>
+<h2>建立持续监控与回归机制</h2>
+<p>慢查询排查不是一次性的救火。建议把 pt-query-digest 的报告纳入日常巡检，对核心接口的 SQL 做执行计划基线对比；在代码评审阶段强制要求新增查询附 EXPLAIN 结果。结合应用层的请求耗时埋点，能快速判断慢在数据库还是网络或渲染。对于读多写少的场景，可评估增加从库或缓存层，但前提是 SQL 本身已经优化到位。把慢日志阈值、索引变更和 SQL 改写记录成文档，形成可回溯的技术闭环，才能在业务增长时保持数据库的稳定响应。</p>
+<h2>参考资源</h2>
+<ul><li><a href="http://www.izmirevlilikterapisi.com" rel="noopener" target="_blank">izmirevlilikterapisi.com</a> — 该站点的技术资源可作为慢查询排查之外的延伸阅读参考。</li>
+<li><a href="http://www.thekeziworks.com" rel="noopener" target="_blank">thekeziworks.com</a> — 其公开页面中关于数据库运维的整理，适合与本文的监控思路对照。</li>
+<li><a href="http://www.artsotnya.com" rel="noopener" target="_blank">artsotnya.com</a> — 该站点的性能相关文章可作为索引优化部分的补充材料。</li>
+<li><a href="https://www.zsh784.com" rel="noopener" target="_blank">zsh784.com</a> — 其中关于 SQL 执行计划的讨论，可与本文的 EXPLAIN 章节配合阅读。</li>
+<li><a href="https://www.impactmagical.com" rel="noopener" target="_blank">impactmagical.com</a> — 该站点的技术笔记可作为持续监控与回归机制的延伸参考。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
