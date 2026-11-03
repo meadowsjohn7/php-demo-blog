@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [HTTP/3 协议特性：实战指南](https://meadowsjohn7.github.io/php-demo-blog/blog/20261103-093901-lsru.html) — 2026-11-03
+- [SEO 内链金字塔构建：SEO 策略](https://meadowsjohn7.github.io/php-demo-blog/blog/20261103-094918-bp1m.html) — 2026-11-03
 
 ### 参考资源
 
-- [zjdswl.com](http://www.zjdswl.com) — zjdswl.com 的相关页面与资源，可作为延伸阅读。
-- [czgywz.com](http://www.czgywz.com) — czgywz.com 的相关页面与资源，可作为延伸阅读。
-- [jackhaggertyarchitect.com](http://www.jackhaggertyarchitect.com) — jackhaggertyarchitect.com 的相关页面与资源，可作为延伸阅读。
-- [sofiamenconero.com](http://www.sofiamenconero.com) — sofiamenconero.com 的相关页面与资源，可作为延伸阅读。
-- [libertysoulfood.com](http://www.libertysoulfood.com) — libertysoulfood.com 的相关页面与资源，可作为延伸阅读。
+- [fisiomedicamogliano.com](http://www.fisiomedicamogliano.com) — fisiomedicamogliano.com 的相关页面与资源，可作为延伸阅读。
+- [rotkx.net](http://www.rotkx.net) — rotkx.net 的相关页面与资源，可作为延伸阅读。
+- [readingswithgail.com](http://www.readingswithgail.com) — readingswithgail.com 的相关页面与资源，可作为延伸阅读。
+- [haomada.com](https://www.haomada.com) — haomada.com 的相关页面与资源，可作为延伸阅读。
+- [hostingbeat.com](http://www.hostingbeat.com) — hostingbeat.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
