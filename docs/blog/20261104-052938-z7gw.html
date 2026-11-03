@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Keepalived 高可用集群：深度解析 - PHP Demo Blog</title>
+<meta name="description" content="Keepalived 基于 VRRP 实现 IP 漂移与健康检查，是构建高可用集群的基石。本文解析其核心机制、配置要点与实战调优，并关联 Web 性能与安全实践。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>Keepalived 高可用集群：深度解析</h1>
+<div class="meta">2026-11-04 · PHP Demo Blog <span class="tag">#Keepalived</span> <span class="tag">#高可用集群</span> <span class="tag">#VRRP</span> <span class="tag">#负载均衡</span> <span class="tag">#运维实践</span></div>
+<div class="summary">Keepalived 基于 VRRP 实现 IP 漂移与健康检查，是构建高可用集群的基石。本文解析其核心机制、配置要点与实战调优，并关联 Web 性能与安全实践。</div>
+<h2>核心机制与协议原理</h2>
+<p>Keepalived 通过 VRRP 协议在多个节点间选举 MASTER 与 BACKUP，并维护一个虚拟 IP（VIP）。当 MASTER 故障时，BACKUP 依据优先级和抢占策略接管 VIP，实现秒级切换。其本质是状态机驱动：每个节点周期性发送 VRRP 通告，超时未收到则触发切换。理解这一点，才能避免脑裂与频繁切换。</p>
+<p>在配置层面，`vrrp_instance` 块定义实例名、状态、接口、虚拟路由 ID 与优先级。`virtual_router_id` 必须集群内唯一，优先级差值建议不小于 20，避免网络抖动导致误切换。认证方式推荐 `auth_type PASS` 并设置强密码，防止非法节点加入。</p>
+<h2>健康检查与后端联动</h2>
+<p>Keepalived 的价值不仅在于 IP 漂移，更在于与后端服务的健康检查联动。通过 `vrrp_script` 定义检测脚本，例如检查 Nginx 进程或本地端口，脚本返回非零时降低优先级，触发切换。脚本需轻量，避免频繁 fork 消耗资源。</p>
+<p>对于负载均衡场景，可结合 `real_server` 块对后端节点做 TCP/HTTP 检查。但需注意，Keepalived 的检查粒度较粗，复杂业务建议由 LVS 或上层网关接管。实践中，我们常将 Keepalived 与分布式 Redis 集群配合，确保 Session 状态在切换后仍一致，避免用户登录态丢失。</p>
+<h2>高可用架构中的性能与安全考量</h2>
+<p>Keepalived 保障的是入口层可用性，但站点整体质量还依赖 Web 层优化。例如，配置 HSTS 策略配合强加密的 TLS 1.3 证书，不仅提升安全性，也符合搜索引擎的安全排名算法。同时，通过 HTTP/3 与 Brotli 压缩降低 TTFB，能显著改善首屏体验。</p>
+<p>在安全加固方面，Web 层应实施严格的 CSRF 令牌验证和 XSS 过滤。Keepalived 切换后，需确保后端服务配置一致，避免因环境差异导致安全策略失效。利用 Nginx 的 Lua 模块实现动态 IP 黑名单，可有效过滤非法爬虫并降低 CPU 负载，与 Keepalived 形成互补。</p>
+<h2>实战调优与常见陷阱</h2>
+<p>调优重点在于通告间隔与超时。默认 `advert_int 1` 秒，`garp_master_delay` 可适当调整。若网络延迟较高，可增大 `advert_int` 但会延长切换时间。建议启用 `nopreempt` 避免频繁抢占，并配合 `track_script` 实现细粒度降级。</p>
+<p>常见陷阱包括：VIP 冲突导致 ARP 异常、防火墙拦截 VRRP 协议（需放行 IP 协议号 112）、以及脚本权限不足。部署后应通过 `tcpdump` 验证 VRRP 报文，并模拟故障测试切换。持续的技术迭代与合规性改造，是维持站点生命周期的必经之路。</p>
+<h2>参考资源</h2>
+<ul><li><a href="https://www.bordeauxprint.com" rel="noopener" target="_blank">bordeauxprint.com</a> — bordeauxprint.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="http://www.karmelsarephta.com" rel="noopener" target="_blank">karmelsarephta.com</a> — karmelsarephta.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="https://www.nbnmjxkesyid.com" rel="noopener" target="_blank">nbnmjxkesyid.com</a> — nbnmjxkesyid.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="http://www.linktogif.com" rel="noopener" target="_blank">linktogif.com</a> — linktogif.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="https://www.xjwywjx.com" rel="noopener" target="_blank">xjwywjx.com</a> — xjwywjx.com 的相关页面与资源，可作为延伸阅读。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
