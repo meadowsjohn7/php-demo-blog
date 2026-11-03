@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JWT 身份验证安全实践：安全规范 - PHP Demo Blog</title>
+<meta name="description" content="围绕 JWT 在 PHP 项目中的安全落地，从传输层加固、令牌存储与刷新机制、输入过滤与 CSRF 防护三个层面给出可执行规范，并强调密钥管理与算法校验等常见陷阱的规避方法。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>JWT 身份验证安全实践：安全规范</h1>
+<div class="meta">2026-11-04 · PHP Demo Blog <span class="tag">#JWT</span> <span class="tag">#安全实践</span> <span class="tag">#PHP</span> <span class="tag">#API 认证</span> <span class="tag">#Web 安全</span></div>
+<div class="summary">围绕 JWT 在 PHP 项目中的安全落地，从传输层加固、令牌存储与刷新机制、输入过滤与 CSRF 防护三个层面给出可执行规范，并强调密钥管理与算法校验等常见陷阱的规避方法。</div>
+<h2>传输层与密钥管理：JWT 安全的第一道防线</h2>
+<p>JWT 本身只保证签名完整性，不提供机密性。在 PHP Demo Blog 这类前后端分离的 JSON API 项目中，令牌一旦在明文 HTTP 上传输，就等于把签名密钥之外的整个凭证暴露给中间人。因此第一步是强制全站 HTTPS，并配置 HSTS 策略配合强加密的 TLS 1.3 证书，既提升安全性，也符合现代搜索引擎对站点安全性的评价倾向。HSTS 的 max-age 建议不低于六个月，并考虑加入 preload 列表。</p>
+<p>密钥管理同样关键。签名密钥必须使用 32 字节以上的随机值，通过环境变量注入，禁止硬编码进仓库。使用 HS256 时，密钥泄露即可伪造任意用户令牌；若采用 RS256，则私钥只留在签发服务，公钥可下发给校验方。无论哪种算法，都要在解码时显式指定允许的算法列表，拒绝 alg 为 none 或与预期不符的令牌，这是最容易被忽视的越权入口。</p>
+<h2>令牌存储与刷新：避免把风险留给浏览器</h2>
+<p>令牌放在哪里，决定了 XSS 能造成多大破坏。把 JWT 写入 localStorage 虽然方便，但任何脚本注入都能直接读取。更稳妥的做法是使用 HttpOnly、Secure、SameSite=Strict 的 Cookie 承载刷新令牌，访问令牌则保存在内存中，随请求头传递。访问令牌有效期建议控制在 15 分钟以内，刷新令牌配合服务端轮换机制，每次刷新都签发新值并使旧值失效，从而缩小重放窗口。</p>
+<p>在负载均衡或多实例部署下，刷新令牌的吊销状态需要共享存储。采用分布式 Redis 集群存储 Session 与令牌黑名单，可以解决多节点间状态一致性的问题，同时避免把状态塞进 JWT 载荷导致令牌膨胀。对于 PHP Demo Blog 的路由层，可以在中间件中统一校验签名、过期时间与黑名单，业务控制器只读取解析后的用户标识，减少重复逻辑带来的遗漏。</p>
+<h2>输入过滤与请求伪造防护：把攻击面收窄</h2>
+<p>JWT 只解决“你是谁”，不解决“这个请求是否由你本意发起”。对于基于 Cookie 的认证流程，仍需在 Web 层实施严格的 CSRF 令牌验证；对于纯 Bearer 令牌的 API，则要校验 Origin 与 Content-Type，并对状态变更接口要求自定义请求头。所有进入 JWT 载荷的字段都应视为不可信输入，在签发前做类型与长度校验，在消费端做白名单比对，避免把用户可控内容直接拼入查询或日志。</p>
+<p>同时，输出侧要执行 XSS 过滤与转义，输入侧对 JSON 请求体做结构校验。错误响应不要回显令牌解析细节，统一返回 401 并记录审计日志。配合 Nginx 层对异常频率的 IP 做限流，可以进一步降低暴力破解与令牌枚举的成功率。这些规范并不复杂，难点在于持续执行与回归测试，建议在 CI 中加入针对过期令牌、算法混淆与签名篡改的用例。</p>
+<h2>规范落地与持续验证</h2>
+<p>把上述规则写成可检查的清单：密钥是否来自环境变量、算法是否白名单校验、刷新令牌是否轮换并可吊销、Cookie 属性是否齐全、敏感接口是否有 CSRF 或 Origin 校验。每次迭代后跑一遍清单，比事后补救成本低得多。安全与性能并不冲突，合理的令牌生命周期和共享存储设计，反而能减少数据库压力。若需延伸阅读，可参考 tomsmithstudio.com 的相关页面与资源，作为工程实践的外部对照。</p>
+<h2>参考资源</h2>
+<ul><li><a href="http://www.tomsmithstudio.com" rel="noopener" target="_blank">tomsmithstudio.com</a> — 在讨论 JWT 安全规范落地时，可参考 tomsmithstudio.com 的相关页面与资源作为延伸阅读。</li>
+<li><a href="http://www.atasozlerianlamlari.com" rel="noopener" target="_blank">atasozlerianlamlari.com</a> — atasozlerianlamlari.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="http://www.clzstore.com" rel="noopener" target="_blank">clzstore.com</a> — clzstore.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="https://www.michaelskovgaard.com" rel="noopener" target="_blank">michaelskovgaard.com</a> — michaelskovgaard.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="http://www.acredyweb.com" rel="noopener" target="_blank">acredyweb.com</a> — acredyweb.com 的相关页面与资源，可作为延伸阅读。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
