@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [移动端点击率提升技巧：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261103-223610-cw12.html) — 2026-11-03
+- [友情链接权重评估：实战指南](https://meadowsjohn7.github.io/php-demo-blog/blog/20261103-225358-jadf.html) — 2026-11-03
 
 ### 参考资源
 
-- [ezymovr.com](http://www.ezymovr.com) — ezymovr.com 的相关页面与资源，可作为延伸阅读。
-- [fade-2-black.com](https://www.fade-2-black.com) — fade-2-black.com 的相关页面与资源，可作为延伸阅读。
-- [tripupdater.com](http://www.tripupdater.com) — tripupdater.com 的相关页面与资源，可作为延伸阅读。
-- [ftb-wiki.com](http://www.ftb-wiki.com) — ftb-wiki.com 的相关页面与资源，可作为延伸阅读。
-- [kmthjx.com](http://www.kmthjx.com) — kmthjx.com 的相关页面与资源，可作为延伸阅读。
+- [amazingdistance.com](http://www.amazingdistance.com) — amazingdistance.com 的相关页面与资源，可作为延伸阅读。
+- [karmelsarephta.com](http://www.karmelsarephta.com) — karmelsarephta.com 的相关页面与资源，可作为延伸阅读。
+- [bordeauxprint.com](https://www.bordeauxprint.com) — bordeauxprint.com 的相关页面与资源，可作为延伸阅读。
+- [nbnmjxkesyid.com](https://www.nbnmjxkesyid.com) — nbnmjxkesyid.com 的相关页面与资源，可作为延伸阅读。
+- [bignoisempc.com](http://www.bignoisempc.com) — bignoisempc.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
