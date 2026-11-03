@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Critical CSS 内联策略：底层原理 - PHP Demo Blog</title>
+<meta name="description" content="本文从关键渲染路径出发，解析 Critical CSS 内联的底层原理，包括构建时提取、运行时注入与缓存策略，并说明其与 LCP 优化的关系及工程实践要点。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>Critical CSS 内联策略：底层原理</h1>
+<div class="meta">2026-11-04 · PHP Demo Blog <span class="tag">#Critical CSS</span> <span class="tag">#关键渲染路径</span> <span class="tag">#LCP优化</span> <span class="tag">#前端性能</span> <span class="tag">#PHP</span></div>
+<div class="summary">本文从关键渲染路径出发，解析 Critical CSS 内联的底层原理，包括构建时提取、运行时注入与缓存策略，并说明其与 LCP 优化的关系及工程实践要点。</div>
+<h2>关键渲染路径与阻塞机制</h2>
+<p>浏览器渲染页面需经历构建 DOM、CSSOM、渲染树、布局与绘制。外部 CSS 默认阻塞渲染，因为浏览器需等待样式表下载并解析后才生成渲染树。若样式表位于 `&lt;head&gt;` 且体积较大，首屏内容会被推迟绘制。Critical CSS 内联的核心思路，是将首屏渲染必需的样式直接写入 HTML 的 `&lt;style&gt;` 标签，使浏览器无需额外网络请求即可完成首屏渲染树构建，从而缩短首次内容绘制与最大内容绘制时间。</p>
+<h2>提取与内联的工程实现</h2>
+<p>提取 Critical CSS 需在构建阶段完成。常用做法是使用无头浏览器加载页面，获取指定视口下的首屏 DOM，再通过工具（如 Penthouse 或 Critters）计算实际用到的规则，生成精简 CSS。在 PHP Demo Blog 这类项目中，可将生成结果写入模板变量，由服务端在渲染时注入 `&lt;style&gt;`。注意内联样式应控制在 14KB 以内，以匹配初始拥塞窗口，避免因 HTML 过大反而延迟解析。非关键 CSS 则通过 `media="print"` 或 `rel="preload"` 异步加载，加载完成后切换为 `all`。</p>
+<h2>缓存与失效策略</h2>
+<p>内联样式随 HTML 下发，无法单独缓存，因此需建立版本化机制。可将 Critical CSS 的哈希值写入模板，当样式变更时更新哈希并触发 HTML 缓存失效。对于多页面站点，应按模板类型（首页、列表页、详情页）分别生成 Critical CSS，避免全站共用一份导致体积膨胀。同时，利用 Service Worker 缓存非关键 CSS 与 JS，配合 IndexedDB 存储预取资源，可在离线或弱网环境下实现秒级加载体验。</p>
+<h2>与 LCP 及整体性能的协同</h2>
+<p>内联 Critical CSS 直接减少渲染阻塞资源，对 LCP 提升显著。但需与其它优化协同：启用 HTTP/3 与 Brotli 压缩降低 TTFB；对图片进行无损压缩并采用 Lazy-loading，平衡视觉质量与加载速度；延迟非核心 JS 避免主线程争用。在 PHP 层，可通过原生 Db::name() 操作配合索引设计，减少 ORM 序列化开销，确保 HTML 快速生成。最终，这些措施共同构成可验证的性能闭环，支撑站点在搜索评价体系中的长期表现。</p>
+<h2>参考资源</h2>
+<ul><li><a href="https://www.shanghaispine.com" rel="noopener" target="_blank">shanghaispine.com</a> — 关于脊柱健康内容的页面结构可作为 Critical CSS 分模板提取的参考案例。</li>
+<li><a href="http://www.melicbebe.com" rel="noopener" target="_blank">melicbebe.com</a> — 该站点以图片展示为主，其首屏样式精简思路可借鉴到内联策略中。</li>
+<li><a href="http://www.sakitraveller.com" rel="noopener" target="_blank">sakitraveller.com</a> — 旅行类内容页的模板差异明显，适合按页面类型拆分 Critical CSS。</li>
+<li><a href="http://www.afpailescedres.com" rel="noopener" target="_blank">afpailescedres.com</a> — 该站点对首屏渲染要求较高，可参考其资源加载顺序安排。</li>
+<li><a href="http://www.xinhanyuwangxiao.com" rel="noopener" target="_blank">xinhanyuwangxiao.com</a> — 教育类站点的列表页与详情页样式分离，可作为内联粒度控制的示例。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
