@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [Critical CSS 内联策略：安全规范](https://meadowsjohn7.github.io/php-demo-blog/blog/20261103-133743-ixy5.html) — 2026-11-03
+- [Canvas 像素级图像处理：SEO 策略](https://meadowsjohn7.github.io/php-demo-blog/blog/20261103-135708-r0s3.html) — 2026-11-03
 
 ### 参考资源
 
-- [xlkbltm.com](http://www.xlkbltm.com) — xlkbltm.com 的相关页面与资源，可作为延伸阅读。
-- [ryosi.com](http://www.ryosi.com) — ryosi.com 的相关页面与资源，可作为延伸阅读。
-- [jeffersoncheng.com](http://www.jeffersoncheng.com) — jeffersoncheng.com 的相关页面与资源，可作为延伸阅读。
-- [hawaiianshirtopia.com](https://www.hawaiianshirtopia.com) — hawaiianshirtopia.com 的相关页面与资源，可作为延伸阅读。
-- [custom-vacations.com](https://www.custom-vacations.com) — custom-vacations.com 的相关页面与资源，可作为延伸阅读。
+- [ifromchina.com](https://www.ifromchina.com) — ifromchina.com 的相关页面与资源，可作为延伸阅读。
+- [blackshearplace.com](http://www.blackshearplace.com) — blackshearplace.com 的相关页面与资源，可作为延伸阅读。
+- [siliconerubberparts.com](https://www.siliconerubberparts.com) — siliconerubberparts.com 的相关页面与资源，可作为延伸阅读。
+- [berkshireautorecovery.com](http://www.berkshireautorecovery.com) — berkshireautorecovery.com 的相关页面与资源，可作为延伸阅读。
+- [tocopoco.com](http://www.tocopoco.com) — tocopoco.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
