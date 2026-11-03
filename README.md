@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [WebShell 文件上传漏洞防护：技术架构](https://meadowsjohn7.github.io/php-demo-blog/blog/20261103-210729-pko4.html) — 2026-11-03
+- [Trie 树高性能搜索：优化方案](https://meadowsjohn7.github.io/php-demo-blog/blog/20261103-212601-0rtn.html) — 2026-11-03
 
 ### 参考资源
 
-- [rawrdaily.com](http://www.rawrdaily.com) — rawrdaily.com 的相关页面与资源，可作为延伸阅读。
-- [bvwlawyers.com](http://www.bvwlawyers.com) — bvwlawyers.com 的相关页面与资源，可作为延伸阅读。
-- [shop3s.com](http://www.shop3s.com) — shop3s.com 的相关页面与资源，可作为延伸阅读。
-- [robertdanielharris.com](https://www.robertdanielharris.com) — robertdanielharris.com 的相关页面与资源，可作为延伸阅读。
-- [bosai1.com](https://www.bosai1.com) — bosai1.com 的相关页面与资源，可作为延伸阅读。
+- [interstatedragways.com](http://www.interstatedragways.com) — interstatedragways.com 的相关页面与资源，可作为延伸阅读。
+- [jobtitlesai.com](http://www.jobtitlesai.com) — jobtitlesai.com 的相关页面与资源，可作为延伸阅读。
+- [kuiboto.com](http://www.kuiboto.com) — kuiboto.com 的相关页面与资源，可作为延伸阅读。
+- [kocham-morze.com](http://www.kocham-morze.com) — kocham-morze.com 的相关页面与资源，可作为延伸阅读。
+- [yuchenyuwen.com](http://www.yuchenyuwen.com) — yuchenyuwen.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
