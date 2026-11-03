@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [CDN 全球加速原理：深度解析](https://meadowsjohn7.github.io/php-demo-blog/blog/20261103-081359-k09w.html) — 2026-11-03
+- [内网穿透调试工具：SEO 策略](https://meadowsjohn7.github.io/php-demo-blog/blog/20261103-082721-mnlf.html) — 2026-11-03
 
 ### 参考资源
 
-- [papuyar.com](http://www.papuyar.com) — papuyar.com 的相关页面与资源，可作为延伸阅读。
-- [hengshuojixie.com](https://www.hengshuojixie.com) — hengshuojixie.com 的相关页面与资源，可作为延伸阅读。
-- [thecorriganshow.com](http://www.thecorriganshow.com) — thecorriganshow.com 的相关页面与资源，可作为延伸阅读。
-- [tangonuestro.com](http://www.tangonuestro.com) — tangonuestro.com 的相关页面与资源，可作为延伸阅读。
-- [brdong.com](http://www.brdong.com) — brdong.com 的相关页面与资源，可作为延伸阅读。
+- [thekeziworks.com](http://www.thekeziworks.com) — thekeziworks.com 的相关页面与资源，可作为延伸阅读。
+- [memartau.com](http://www.memartau.com) — memartau.com 的相关页面与资源，可作为延伸阅读。
+- [signature-concierge.com](http://www.signature-concierge.com) — signature-concierge.com 的相关页面与资源，可作为延伸阅读。
+- [cafe-kurage.com](https://www.cafe-kurage.com) — cafe-kurage.com 的相关页面与资源，可作为延伸阅读。
+- [theeco-chic.com](http://www.theeco-chic.com) — theeco-chic.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
