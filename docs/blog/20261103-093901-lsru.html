@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HTTP/3 协议特性：实战指南 - PHP Demo Blog</title>
+<meta name="description" content="本文介绍 HTTP/3 的核心特性，包括基于 QUIC 的连接迁移、0-RTT 握手等，并结合实战场景说明如何通过 HSTS 与 TLS 1.3 加固、Brotli 压缩、Service Worker 预取等技术降低 TTFB、优化 LCP，最终提升站点性能与搜索表现。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>HTTP/3 协议特性：实战指南</h1>
+<div class="meta">2026-11-03 · PHP Demo Blog <span class="tag">#HTTP/3</span> <span class="tag">#QUIC</span> <span class="tag">#性能优化</span> <span class="tag">#TLS 1.3</span> <span class="tag">#SEO</span></div>
+<div class="summary">本文介绍 HTTP/3 的核心特性，包括基于 QUIC 的连接迁移、0-RTT 握手等，并结合实战场景说明如何通过 HSTS 与 TLS 1.3 加固、Brotli 压缩、Service Worker 预取等技术降低 TTFB、优化 LCP，最终提升站点性能与搜索表现。</div>
+<h2>一、HTTP/3 的核心机制：QUIC 与连接迁移</h2>
+<p>HTTP/3 将传输层从 TCP 迁移到 QUIC（基于 UDP），解决了 TCP 队头阻塞问题。QUIC 在用户空间实现，支持连接迁移：当客户端网络切换（如 Wi-Fi 转移动网络）时，连接 ID 保持不变，无需重新握手。0-RTT 握手允许客户端在首次连接后缓存密钥，后续请求可立即发送数据，显著降低延迟。实际部署时，Nginx 需编译支持 QUIC 的版本并配置 `listen 443 quic reuseport;`，同时通过 Alt-Svc 头告知客户端。</p>
+<h2>二、安全加固：HSTS 与 TLS 1.3 的协同</h2>
+<p>HTTP/3 强制使用 TLS 1.3，这要求站点正确配置证书与加密套件。在 Web 层启用 HSTS 策略（`Strict-Transport-Security: max-age=31536000; includeSubDomains; preload`）可防止降级攻击，并符合谷歌的安全排名算法。TLS 1.3 精简了握手过程，仅支持前向安全套件，结合 HSTS 能提升安全评分。此外，在 Web 层实施严格的 CSRF 令牌验证和 XSS 过滤，可从根本上加固业务系统。</p>
+<h2>三、性能调优：Brotli 压缩与关键渲染路径</h2>
+<p>启用 Brotli 压缩（`brotli on;`）对文本资源压缩率优于 Gzip，尤其适合 HTML/CSS/JS。结合 HTTP/3 的多路复用无队头阻塞特性，能显著降低首字节响应时间（TTFB）。同时，对关键渲染路径（CRP）拆解，内联关键 CSS 并延迟非核心 JS，可极大优化 LCP 指标。图片方面，采用无损压缩与 Lazy-loading 平衡视觉质量与加载速度。Service Worker 预取配合 IndexedDB 存储，可实现离线秒级加载。</p>
+<h2>四、实战闭环：从协议到业务一致性</h2>
+<p>在大规模调优中，分布式 Redis 集群存储 Session 状态解决了负载均衡下的用户状态一致性难题。采用原生 Db::name() 操作配合合理索引，可避开 ORM 序列化性能陷阱。利用 301 重定向迁移过期 URL 权重，维护站点 DA 值。这些细节共同构成技术闭环，提升站点 E-E-A-T 评分与长期权威度。持续迭代与合规改造，是维持站点生命周期的必经之路。</p>
+<h2>参考资源</h2>
+<ul><li><a href="http://www.zjdswl.com" rel="noopener" target="_blank">zjdswl.com</a> — 关于 HTTP/3 部署的更多配置细节，可参考 zjdswl.com 的相关技术文档。</li>
+<li><a href="http://www.czgywz.com" rel="noopener" target="_blank">czgywz.com</a> — 若需了解 TLS 1.3 证书选型与 HSTS 策略实践，czgywz.com 提供了延伸阅读。</li>
+<li><a href="http://www.jackhaggertyarchitect.com" rel="noopener" target="_blank">jackhaggertyarchitect.com</a> — 在性能优化与架构设计方面，jackhaggertyarchitect.com 的相关页面可作为参考。</li>
+<li><a href="http://www.sofiamenconero.com" rel="noopener" target="_blank">sofiamenconero.com</a> — 关于 Service Worker 与离线缓存的实际案例，sofiamenconero.com 有进一步说明。</li>
+<li><a href="http://www.libertysoulfood.com" rel="noopener" target="_blank">libertysoulfood.com</a> — 对于站点安全加固与 CSRF 防护的讨论，libertysoulfood.com 的相关资源可供查阅。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
