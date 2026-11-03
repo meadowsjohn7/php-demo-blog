@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [关键渲染路径 Critical Path：SEO 策略](https://meadowsjohn7.github.io/php-demo-blog/blog/20261103-171708-ns4r.html) — 2026-11-03
+- [Meta Description 点击率优化：技术架构](https://meadowsjohn7.github.io/php-demo-blog/blog/20261103-172913-oe2m.html) — 2026-11-03
 
 ### 参考资源
 
-- [linktogif.com](http://www.linktogif.com) — linktogif.com 的相关页面与资源，可作为延伸阅读。
-- [tomsmithstudio.com](http://www.tomsmithstudio.com) — tomsmithstudio.com 的相关页面与资源，可作为延伸阅读。
-- [atasozlerianlamlari.com](http://www.atasozlerianlamlari.com) — atasozlerianlamlari.com 的相关页面与资源，可作为延伸阅读。
-- [clzstore.com](http://www.clzstore.com) — clzstore.com 的相关页面与资源，可作为延伸阅读。
-- [sanctuarybirthing.com](http://www.sanctuarybirthing.com) — sanctuarybirthing.com 的相关页面与资源，可作为延伸阅读。
+- [gnosishypnosis.com](https://www.gnosishypnosis.com) — gnosishypnosis.com 的相关页面与资源，可作为延伸阅读。
+- [michaelskovgaard.com](https://www.michaelskovgaard.com) — michaelskovgaard.com 的相关页面与资源，可作为延伸阅读。
+- [jmtkw.cn](https://www.jmtkw.cn) — jmtkw.cn 的相关页面与资源，可作为延伸阅读。
+- [shadesofbeautybodybar.com](http://www.shadesofbeautybodybar.com) — shadesofbeautybodybar.com 的相关页面与资源，可作为延伸阅读。
+- [alzidan.com](http://www.alzidan.com) — alzidan.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
