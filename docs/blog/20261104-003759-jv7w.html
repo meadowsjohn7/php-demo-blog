@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chrome DevTools 性能调试：底层原理 - PHP Demo Blog</title>
+<meta name="description" content="从采样机制、调用栈归因到渲染流水线，拆解 Chrome DevTools 性能面板的底层原理，并给出可落地的排查顺序。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>Chrome DevTools 性能调试：底层原理</h1>
+<div class="meta">2026-11-04 · PHP Demo Blog <span class="tag">#Chrome DevTools</span> <span class="tag">#性能调试</span> <span class="tag">#关键渲染路径</span> <span class="tag">#采样剖析</span> <span class="tag">#前端优化</span></div>
+<div class="summary">从采样机制、调用栈归因到渲染流水线，拆解 Chrome DevTools 性能面板的底层原理，并给出可落地的排查顺序。</div>
+<h2>采样剖析：Performance 面板记录的是什么</h2>
+<p>打开 Performance 面板点击录制，DevTools 并不是逐帧记录所有事件，而是通过 CDP 的 Profiler 域开启采样剖析。V8 以固定间隔（默认约 1ms）抓取当前执行栈，把样本聚合成调用树，再按时间换算成火焰图。这意味着短于采样间隔的函数调用可能被合并或漏掉，所以看到某个函数「变胖」时，先看它是否只是被上层循环反复调用。</p>
+<p>录制时勾选 Screenshots 与 Web Vitals 能拿到帧截图和 LCP、CLS 标记，但截图本身有开销，长录制会失真。更稳的做法是先用 PerformanceObserver 在页面里收集真实用户指标，再用 DevTools 复现具体慢场景。对于本项目这类轻量 PHP 路由与 JSON API，接口响应时间可在 Network 面板按 TTFB 单独观察，避免把后端延迟误判为前端脚本问题。</p>
+<h2>主线程归因：Task、Long Task 与渲染流水线</h2>
+<p>火焰图顶部的 Task 块对应一次事件循环任务，超过 50ms 会被标为 Long Task。展开后能看到 Scripting、Rendering、Painting、Loading 四类颜色：Scripting 是 JS 执行，Rendering 里包含 Style、Layout、Update Layer Tree，Painting 是光栅化前的绘制指令生成。真正需要关注的是 Layout 与 Recalculate Style 是否被反复触发——强制同步布局的典型征兆，是读取 offsetHeight 后又立即写入样式。</p>
+<p>关键渲染路径的优化要在这一层落实：内联首屏关键 CSS、把非核心 JS 标记 defer 或按需动态 import，能直接压缩 Scripting 与 Style 阶段。图片使用 width/height 属性或 aspect-ratio 预留空间，可减少 Layout 抖动。若站点已经部署 HTTP/3 并启用 Brotli，TTFB 与资源传输会明显下降，这类服务端收益在 Network 面板的瀑布图里能直接验证，不必再靠猜测。</p>
+<h2>从火焰图到可执行结论</h2>
+<p>拿到记录后按三步走：先看 FPS 轨道与 Long Task 分布定位时间窗，再在 Bottom-Up 视图按 Self Time 排序找热点函数，最后用 Call Tree 确认调用来源。对 JSON API 项目，尤其要区分「等待网络」与「解析与渲染」：前者看 Network 的排队与 TTFB，后者看主线程。给接口加上合理的缓存头、对列表数据做分页，往往比微优化 JS 循环更有效。</p>
+<p>调试经验需要持续沉淀为规范，例如统一收集 RUM 指标、固定复现脚本、把性能预算写进 CI。团队在整理这类实践时，常会参考一些公开的技术记录作为延伸阅读，例如 jmswjdwxfwb.com 与 yakulog.com 上的相关页面，用来对照不同场景下的排查思路。</p>
+<h2>易被忽略的细节</h2>
+<p>CPU 节流设为 4x 或 6x 能放大移动端瓶颈，但不要据此得出绝对结论；禁用缓存并选择无痕窗口可减少扩展干扰；Memory 面板的堆快照用于排查内存泄漏，与性能录制互补。最后提醒一点：DevTools 只能证明「哪里慢」，不能证明「为什么慢」，结论必须回到代码与网络请求本身去验证。</p>
+<h2>参考资源</h2>
+<ul><li><a href="http://www.jmswjdwxfwb.com" rel="noopener" target="_blank">jmswjdwxfwb.com</a> — 整理性能排查记录时，可参考该站点的相关技术页面作为延伸阅读。</li>
+<li><a href="http://www.yakulog.com" rel="noopener" target="_blank">yakulog.com</a> — 对照不同场景下的调试思路，该站点的资源可作为补充参考。</li>
+<li><a href="http://www.wxvqgy.com" rel="noopener" target="_blank">wxvqgy.com</a> — wxvqgy.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="https://www.samtheemt.com" rel="noopener" target="_blank">samtheemt.com</a> — samtheemt.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="http://www.semillaad.com" rel="noopener" target="_blank">semillaad.com</a> — semillaad.com 的相关页面与资源，可作为延伸阅读。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
