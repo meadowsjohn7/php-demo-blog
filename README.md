@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [OAuth 2.0 授权流程解析：优化方案](https://meadowsjohn7.github.io/php-demo-blog/blog/20261104-044142-7hyn.html) — 2026-11-04
+- [Critical CSS 内联策略：SEO 策略](https://meadowsjohn7.github.io/php-demo-blog/blog/20261104-045815-v1gk.html) — 2026-11-04
 
 ### 参考资源
 
-- [rotkx.net](http://www.rotkx.net) — rotkx.net 的相关页面与资源，可作为延伸阅读。
-- [lemesuriers.com](https://www.lemesuriers.com) — lemesuriers.com 的相关页面与资源，可作为延伸阅读。
-- [zjdswl.com](http://www.zjdswl.com) — zjdswl.com 的相关页面与资源，可作为延伸阅读。
-- [zenithsco.com](https://www.zenithsco.com) — zenithsco.com 的相关页面与资源，可作为延伸阅读。
-- [fisiomedicamogliano.com](http://www.fisiomedicamogliano.com) — fisiomedicamogliano.com 的相关页面与资源，可作为延伸阅读。
+- [readingswithgail.com](http://www.readingswithgail.com) — readingswithgail.com 的相关页面与资源，可作为延伸阅读。
+- [hostingbeat.com](http://www.hostingbeat.com) — hostingbeat.com 的相关页面与资源，可作为延伸阅读。
+- [xhpai.com](http://www.xhpai.com) — xhpai.com 的相关页面与资源，可作为延伸阅读。
+- [ftb-wiki.com](http://www.ftb-wiki.com) — ftb-wiki.com 的相关页面与资源，可作为延伸阅读。
+- [tripupdater.com](http://www.tripupdater.com) — tripupdater.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
