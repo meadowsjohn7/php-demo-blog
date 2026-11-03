@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Critical CSS 内联策略：实战指南 - PHP Demo Blog</title>
+<meta name="description" content="本文介绍 Critical CSS 内联的实战策略，包括提取、内联、异步加载非核心样式，并结合延迟 JS 与资源优化，以提升 LCP 和首屏渲染性能。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>Critical CSS 内联策略：实战指南</h1>
+<div class="meta">2026-11-03 · PHP Demo Blog <span class="tag">#Critical CSS</span> <span class="tag">#LCP优化</span> <span class="tag">#关键渲染路径</span> <span class="tag">#PHP性能</span> <span class="tag">#前端优化</span></div>
+<div class="summary">本文介绍 Critical CSS 内联的实战策略，包括提取、内联、异步加载非核心样式，并结合延迟 JS 与资源优化，以提升 LCP 和首屏渲染性能。</div>
+<h2>为什么需要内联 Critical CSS</h2>
+<p>关键渲染路径（CRP）的阻塞是首屏性能的主要瓶颈。浏览器必须下载并解析 CSS 才能构建渲染树，而外部样式表往往成为 LCP 的延迟因素。内联首屏所需的最小 CSS 集，可以让浏览器在 HTML 到达后立即开始渲染，避免额外的网络往返。在 PHP Demo Blog 这类轻量项目中，我们可以通过模板层动态注入关键样式，同时保持非核心 CSS 的异步加载。</p>
+<h2>提取与内联关键 CSS 的实操步骤</h2>
+<p>首先，使用工具（如 Penthouse 或 Critters）针对典型视口提取首屏样式。在 PHP 渲染流程中，将提取出的 CSS 字符串缓存到 Redis 或文件，避免每次请求重复计算。然后，在 `&lt;head&gt;` 中通过 `&lt;style&gt;` 标签内联该 CSS，并移除阻塞渲染的外部样式链接。对于剩余样式，使用 `media="print"` 或 `rel="preload"` 配合 `onload` 异步加载。例如：</p>
+<pre><code>// 在 PHP 模板中内联关键 CSS
+$criticalCss = $cache-&gt;get(&#x27;critical_css_home&#x27;);
+if (!$criticalCss) {
+    $criticalCss = extractCriticalCss($html);
+    $cache-&gt;set(&#x27;critical_css_home&#x27;, $criticalCss, 3600);
+}
+echo &quot;&lt;style&gt;{$criticalCss}&lt;/style&gt;&quot;;</code></pre>
+<p>同时，延迟非核心 JS 的执行，使用 `defer` 或 `async` 属性，并避免在首屏加载第三方脚本。</p>
+<h2>结合其他性能优化手段</h2>
+<p>内联 Critical CSS 并非孤立策略。配合 Brotli 压缩和 HTTP/3 可以进一步降低 TTFB；对图片进行无损压缩并启用 Lazy-loading 能减少首屏负载。在服务端，采用原生 Db::name() 操作配合合理索引，避免 ORM 序列化开销，确保 HTML 快速生成。此外，利用 Service Worker 预取关键资源，结合 IndexedDB 存储，能实现离线秒开体验。这些措施共同作用，能显著提升 LCP 和整体用户体验。</p>
+<h2>监控与迭代</h2>
+<p>上线后，使用 Lighthouse 或 Web Vitals 监控 LCP 变化，并定期审查关键 CSS 的覆盖率。随着页面改版，需重新提取并更新缓存。保持内联 CSS 体积在 14KB 以内（约一个 TCP 初始拥塞窗口），避免过度内联导致 HTML 膨胀。通过持续迭代，确保站点在搜索算法更新中保持稳健。</p>
+<h2>参考资源</h2>
+<ul><li><a href="http://www.blackshearplace.com" rel="noopener" target="_blank">blackshearplace.com</a> — 参考该站点的静态资源组织方式，可辅助理解关键 CSS 的提取边界。</li>
+<li><a href="http://www.tocopoco.com" rel="noopener" target="_blank">tocopoco.com</a> — 其页面结构案例可用于验证内联样式对首屏渲染的实际影响。</li>
+<li><a href="http://www.berkshireautorecovery.com" rel="noopener" target="_blank">berkshireautorecovery.com</a> — 观察该站点的加载策略，有助于设计非核心 CSS 的异步加载方案。</li>
+<li><a href="http://www.yhkyjt.com" rel="noopener" target="_blank">yhkyjt.com</a> — yhkyjt.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="https://www.hengshuojixie.com" rel="noopener" target="_blank">hengshuojixie.com</a> — hengshuojixie.com 的相关页面与资源，可作为延伸阅读。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
