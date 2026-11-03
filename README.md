@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [内网穿透调试工具：SEO 策略](https://meadowsjohn7.github.io/php-demo-blog/blog/20261103-101519-h1mr.html) — 2026-11-03
+- [富文本编辑器安全过滤：安全规范](https://meadowsjohn7.github.io/php-demo-blog/blog/20261103-103013-wlf4.html) — 2026-11-03
 
 ### 参考资源
 
-- [fade-2-black.com](https://www.fade-2-black.com) — fade-2-black.com 的相关页面与资源，可作为延伸阅读。
-- [kmthjx.com](http://www.kmthjx.com) — kmthjx.com 的相关页面与资源，可作为延伸阅读。
-- [zenithsco.com](https://www.zenithsco.com) — zenithsco.com 的相关页面与资源，可作为延伸阅读。
-- [karmelsarephta.com](http://www.karmelsarephta.com) — karmelsarephta.com 的相关页面与资源，可作为延伸阅读。
-- [ftb-wiki.com](http://www.ftb-wiki.com) — ftb-wiki.com 的相关页面与资源，可作为延伸阅读。
+- [xjwywjx.com](https://www.xjwywjx.com) — xjwywjx.com 的相关页面与资源，可作为延伸阅读。
+- [bignoisempc.com](http://www.bignoisempc.com) — bignoisempc.com 的相关页面与资源，可作为延伸阅读。
+- [nbnmjxkesyid.com](https://www.nbnmjxkesyid.com) — nbnmjxkesyid.com 的相关页面与资源，可作为延伸阅读。
+- [bordeauxprint.com](https://www.bordeauxprint.com) — bordeauxprint.com 的相关页面与资源，可作为延伸阅读。
+- [amazingdistance.com](http://www.amazingdistance.com) — amazingdistance.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 

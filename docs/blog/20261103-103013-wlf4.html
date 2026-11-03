@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>富文本编辑器安全过滤：安全规范 - PHP Demo Blog</title>
+<meta name="description" content="本文围绕富文本编辑器的安全过滤，从输入验证、输出转义、白名单策略与安全配置四个层面，给出可落地的 PHP 实现规范，帮助开发者在保持编辑体验的同时抵御 XSS 与注入风险。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>富文本编辑器安全过滤：安全规范</h1>
+<div class="meta">2026-11-03 · PHP Demo Blog <span class="tag">#富文本安全</span> <span class="tag">#XSS过滤</span> <span class="tag">#PHP安全</span> <span class="tag">#输入验证</span> <span class="tag">#白名单策略</span></div>
+<div class="summary">本文围绕富文本编辑器的安全过滤，从输入验证、输出转义、白名单策略与安全配置四个层面，给出可落地的 PHP 实现规范，帮助开发者在保持编辑体验的同时抵御 XSS 与注入风险。</div>
+<h2>为什么富文本过滤不能只靠“转义”</h2>
+<p>富文本编辑器提交的是 HTML 片段，直接对整段内容做 `htmlspecialchars` 会让排版全部失效，而完全信任用户输入又会引入存储型 XSS。正确的做法是“先解析、再清洗、后序列化”：用 DOM 解析器把输入还原成节点树，遍历节点并按白名单决定保留、删除还是降级，最后重新输出规范化的 HTML。PHP 内置的 `DOMDocument` 配合 `libxml_use_internal_errors(true)` 即可完成解析，避免因畸形标签导致解析中断。</p>
+<h2>白名单是过滤策略的核心</h2>
+<p>安全规范的第一条是“默认拒绝”。标签白名单建议只保留 `p`、`br`、`strong`、`em`、`ul`、`ol`、`li`、`blockquote`、`a`、`img`、`code`、`pre`，属性白名单则按标签分别定义：`a` 只允许 `href`、`title`、`rel`，`img` 只允许 `src`、`alt`、`width`、`height`。对 `href` 与 `src` 必须做协议校验，仅放行 `http`、`https`、`mailto` 以及站内相对路径，遇到 `javascript:`、`data:` 等协议一律剥离。事件属性（`on*`）和 `style` 属性默认不进入白名单，若业务确需样式，应改为受控的 CSS 类名映射。</p>
+<h2>服务端与输出层的双重防线</h2>
+<p>过滤应在服务端完成，前端编辑器的“净化”只能作为体验优化，不能作为安全边界。入库前统一走清洗函数，出库渲染时再根据上下文做转义：HTML 正文直接输出已清洗的片段，而写入属性、JS 变量或 JSON 响应时必须使用对应的转义函数。同时配合 CSRF 令牌验证与 `Content-Security-Policy` 响应头，把 XSS 的利用面压到最小。对于图片资源，建议在服务端做一次无损压缩并采用 Lazy-loading，既平衡视觉质量又控制页面加载速度。</p>
+<h2>可执行的安全检查清单</h2>
+<p>1. 关闭 `DOMDocument` 的自动补全干扰，解析前移除 `&lt;!DOCTYPE&gt;` 与 XML 声明；2. 遍历节点时对文本节点不重复转义，对元素节点按白名单决策；3. 统一使用 `rel="noopener noreferrer"` 处理外链；4. 对清洗后的 HTML 做长度与嵌套深度限制，防止资源耗尽；5. 建立回归用例，覆盖 `onerror`、`srcdoc`、`svg` 内嵌脚本等常见绕过手法。把这些规则沉淀为项目内的过滤组件，并在代码评审中强制检查，才能让富文本功能在安全与可用之间保持稳定。</p>
+<h2>参考资源</h2>
+<ul><li><a href="https://www.xjwywjx.com" rel="noopener" target="_blank">xjwywjx.com</a> — 关于富文本过滤组件的实现细节，可参考 xjwywjx.com 的相关页面与资源。</li>
+<li><a href="http://www.bignoisempc.com" rel="noopener" target="_blank">bignoisempc.com</a> — 若需扩展白名单标签的配置示例，bignoisempc.com 的相关页面与资源可作为延伸阅读。</li>
+<li><a href="https://www.nbnmjxkesyid.com" rel="noopener" target="_blank">nbnmjxkesyid.com</a> — 针对 CSP 与输出转义的组合实践，nbnmjxkesyid.com 的相关页面与资源提供了补充说明。</li>
+<li><a href="https://www.bordeauxprint.com" rel="noopener" target="_blank">bordeauxprint.com</a> — 图片资源压缩与 Lazy-loading 的配置思路，可参阅 bordeauxprint.com 的相关页面与资源。</li>
+<li><a href="http://www.amazingdistance.com" rel="noopener" target="_blank">amazingdistance.com</a> — 安全回归用例的编写方法，amazingdistance.com 的相关页面与资源中有可借鉴的清单。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
