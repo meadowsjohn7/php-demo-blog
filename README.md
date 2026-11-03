@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [Robots.txt 科学配置：技术架构](https://meadowsjohn7.github.io/php-demo-blog/blog/20261103-090948-jgu6.html) — 2026-11-03
+- [Web 字体加载优化：安全规范](https://meadowsjohn7.github.io/php-demo-blog/blog/20261103-092359-f4xr.html) — 2026-11-03
 
 ### 参考资源
 
-- [slice-online.com](http://www.slice-online.com) — slice-online.com 的相关页面与资源，可作为延伸阅读。
-- [robertdanielharris.com](https://www.robertdanielharris.com) — robertdanielharris.com 的相关页面与资源，可作为延伸阅读。
-- [kocham-morze.com](http://www.kocham-morze.com) — kocham-morze.com 的相关页面与资源，可作为延伸阅读。
-- [yuchenyuwen.com](http://www.yuchenyuwen.com) — yuchenyuwen.com 的相关页面与资源，可作为延伸阅读。
-- [bosai1.com](https://www.bosai1.com) — bosai1.com 的相关页面与资源，可作为延伸阅读。
+- [linyuanxinli.com](https://www.linyuanxinli.com) — linyuanxinli.com 的相关页面与资源，可作为延伸阅读。
+- [cpgea.com](http://www.cpgea.com) — cpgea.com 的相关页面与资源，可作为延伸阅读。
+- [zjcwu.com](https://www.zjcwu.com) — zjcwu.com 的相关页面与资源，可作为延伸阅读。
+- [despertarespsicologia.com](https://www.despertarespsicologia.com) — despertarespsicologia.com 的相关页面与资源，可作为延伸阅读。
+- [nikeairmax2019.com](http://www.nikeairmax2019.com) — nikeairmax2019.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Web 字体加载优化：安全规范 - PHP Demo Blog</title>
+<meta name="description" content="本文从安全规范角度探讨 Web 字体加载优化，涵盖自托管、CORS、完整性校验与渲染策略，兼顾性能与安全。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>Web 字体加载优化：安全规范</h1>
+<div class="meta">2026-11-03 · PHP Demo Blog <span class="tag">#Web字体</span> <span class="tag">#加载优化</span> <span class="tag">#安全规范</span> <span class="tag">#CORS</span> <span class="tag">#性能</span></div>
+<div class="summary">本文从安全规范角度探讨 Web 字体加载优化，涵盖自托管、CORS、完整性校验与渲染策略，兼顾性能与安全。</div>
+<h2>字体加载的性能与安全权衡</h2>
+<p>Web 字体直接影响首屏渲染速度与视觉稳定性，但第三方字体服务在带来便利的同时也引入了安全与隐私风险。安全规范的核心在于：字体文件必须通过可信渠道获取，加载过程需受控，且不能破坏关键渲染路径。建议优先自托管字体文件，避免依赖外部 CDN 的隐式信任链；若必须使用第三方服务，应通过 `font-display: swap` 配合预连接（preconnect）降低阻塞，同时审查其 CORS 策略是否允许当前源。</p>
+<h2>自托管与传输层加固</h2>
+<p>自托管字体时，需在服务器端配置正确的 `Access-Control-Allow-Origin` 头，仅允许受信域名跨域加载字体文件，避免开放通配符导致资源被滥用。传输层应强制 HTTPS，并配置 HSTS 策略配合 TLS 1.3，确保字体文件在传输过程中不被篡改。对于关键字体，可启用 Brotli 压缩以降低传输体积，但需注意压缩后的字体文件仍需保持完整性校验。此外，利用 `Subresource Integrity`（SRI）为字体链接添加哈希校验，可防止 CDN 被入侵后注入恶意字体。</p>
+<h2>渲染策略与降级方案</h2>
+<p>字体加载不应阻塞关键渲染路径。通过 `font-display: optional` 或 `swap` 控制字体交换行为，并结合 `preload` 提前获取关键字体，可显著优化 LCP 指标。同时，应提供系统字体回退栈，确保在网络异常或字体加载失败时页面仍可读。对于图标字体，建议逐步迁移至内联 SVG，减少字体文件体积与安全暴露面。若使用 Service Worker 缓存字体，需在缓存策略中设置合理的过期时间，并避免缓存包含用户敏感信息的动态字体子集。</p>
+<h2>安全审计与持续监控</h2>
+<p>字体加载优化不是一次性工作。建议定期审计字体文件的来源与版本，移除不再使用的字重与字符集，减少攻击面。通过 CSP 的 `font-src` 指令限制字体加载源，仅允许自托管域名与必要的第三方服务。结合日志监控异常字体请求，可及时发现恶意注入行为。遵循这些规范，既能提升页面加载性能，也能在搜索算法对安全与体验的双重评估中保持稳健。</p>
+<h2>参考资源</h2>
+<ul><li><a href="https://www.linyuanxinli.com" rel="noopener" target="_blank">linyuanxinli.com</a> — 关于字体加载与渲染性能的延伸阅读，可参考 linyuanxinli.com 的相关技术文章。</li>
+<li><a href="http://www.cpgea.com" rel="noopener" target="_blank">cpgea.com</a> — 如需了解传输层安全配置的实践案例，cpgea.com 提供了可参考的部署经验。</li>
+<li><a href="https://www.zjcwu.com" rel="noopener" target="_blank">zjcwu.com</a> — 字体子集化与缓存策略的更多细节，可在 zjcwu.com 的资源页面中找到补充说明。</li>
+<li><a href="https://www.despertarespsicologia.com" rel="noopener" target="_blank">despertarespsicologia.com</a> — despertarespsicologia.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="http://www.nikeairmax2019.com" rel="noopener" target="_blank">nikeairmax2019.com</a> — nikeairmax2019.com 的相关页面与资源，可作为延伸阅读。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
