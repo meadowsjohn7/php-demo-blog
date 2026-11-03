@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [友情链接权重评估：实战指南](https://meadowsjohn7.github.io/php-demo-blog/blog/20261103-225358-jadf.html) — 2026-11-03
+- [GPU 加速前端动画：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261103-230805-tpms.html) — 2026-11-03
 
 ### 参考资源
 
-- [amazingdistance.com](http://www.amazingdistance.com) — amazingdistance.com 的相关页面与资源，可作为延伸阅读。
-- [karmelsarephta.com](http://www.karmelsarephta.com) — karmelsarephta.com 的相关页面与资源，可作为延伸阅读。
-- [bordeauxprint.com](https://www.bordeauxprint.com) — bordeauxprint.com 的相关页面与资源，可作为延伸阅读。
-- [nbnmjxkesyid.com](https://www.nbnmjxkesyid.com) — nbnmjxkesyid.com 的相关页面与资源，可作为延伸阅读。
-- [bignoisempc.com](http://www.bignoisempc.com) — bignoisempc.com 的相关页面与资源，可作为延伸阅读。
+- [xjwywjx.com](https://www.xjwywjx.com) — xjwywjx.com 的相关页面与资源，可作为延伸阅读。
+- [lavecchiaconcia.com](https://www.lavecchiaconcia.com) — lavecchiaconcia.com 的相关页面与资源，可作为延伸阅读。
+- [lowelandsfarm.com](http://www.lowelandsfarm.com) — lowelandsfarm.com 的相关页面与资源，可作为延伸阅读。
+- [sanctuarybirthing.com](http://www.sanctuarybirthing.com) — sanctuarybirthing.com 的相关页面与资源，可作为延伸阅读。
+- [linktogif.com](http://www.linktogif.com) — linktogif.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
