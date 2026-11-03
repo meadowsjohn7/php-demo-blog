@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [MySQL 慢查询排查：实战指南](https://meadowsjohn7.github.io/php-demo-blog/blog/20261103-205513-6ryo.html) — 2026-11-03
+- [WebShell 文件上传漏洞防护：技术架构](https://meadowsjohn7.github.io/php-demo-blog/blog/20261103-210729-pko4.html) — 2026-11-03
 
 ### 参考资源
 
-- [izmirevlilikterapisi.com](http://www.izmirevlilikterapisi.com) — izmirevlilikterapisi.com 的相关页面与资源，可作为延伸阅读。
-- [thekeziworks.com](http://www.thekeziworks.com) — thekeziworks.com 的相关页面与资源，可作为延伸阅读。
-- [artsotnya.com](http://www.artsotnya.com) — artsotnya.com 的相关页面与资源，可作为延伸阅读。
-- [zsh784.com](https://www.zsh784.com) — zsh784.com 的相关页面与资源，可作为延伸阅读。
-- [impactmagical.com](https://www.impactmagical.com) — impactmagical.com 的相关页面与资源，可作为延伸阅读。
+- [rawrdaily.com](http://www.rawrdaily.com) — rawrdaily.com 的相关页面与资源，可作为延伸阅读。
+- [bvwlawyers.com](http://www.bvwlawyers.com) — bvwlawyers.com 的相关页面与资源，可作为延伸阅读。
+- [shop3s.com](http://www.shop3s.com) — shop3s.com 的相关页面与资源，可作为延伸阅读。
+- [robertdanielharris.com](https://www.robertdanielharris.com) — robertdanielharris.com 的相关页面与资源，可作为延伸阅读。
+- [bosai1.com](https://www.bosai1.com) — bosai1.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
