@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>网站 404 引导设计：深度解析 - PHP Demo Blog</title>
+<meta name="description" content="本文从状态码语义、路由兜底、日志埋点与 SEO 权重迁移四个层面，解析 404 页面在 PHP 项目中的工程化设计，并给出可落地的代码与配置建议。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>网站 404 引导设计：深度解析</h1>
+<div class="meta">2026-11-03 · PHP Demo Blog <span class="tag">#404 设计</span> <span class="tag">#PHP 路由</span> <span class="tag">#SEO 优化</span> <span class="tag">#用户体验</span> <span class="tag">#HTTP 状态码</span></div>
+<div class="summary">本文从状态码语义、路由兜底、日志埋点与 SEO 权重迁移四个层面，解析 404 页面在 PHP 项目中的工程化设计，并给出可落地的代码与配置建议。</div>
+<h2>404 的本质：状态码先行，页面其次</h2>
+<p>很多项目把 404 当成一个视觉页面来做，却忘了它首先是一个 HTTP 语义问题。在 PHP 路由层，必须显式区分“资源不存在”与“路由未匹配”：前者返回 404，后者若因 URL 规则调整导致，应优先考虑 301 迁移而非直接 404。以轻量路由为例，匹配失败时先查重定向映射表，命中则 `header('Location: ...', true, 301)`；未命中再进入 404 分支，并调用 `http_response_code(404)`。切忌用 200 状态码渲染“页面不存在”的文案，这会让搜索引擎把大量软 404 当作有效内容收录，稀释站点整体质量。</p>
+<h2>引导设计：把死路变成入口</h2>
+<p>404 页面的核心目标是“止损与导流”。建议包含三部分：明确的错误说明、站内搜索框、以及基于当前 URL 的智能推荐。可以从请求路径中提取关键词，用 `Db::name('post')-&gt;whereLike('title', '%'.$kw.'%')-&gt;limit(5)-&gt;select()` 拉取相关文章，避免全站随机推荐。同时提供热门标签与最新文章列表，保证每个 404 页面都有可点击的去处。对于 API 项目，则返回结构化 JSON，例如 `{"code":404,"msg":"resource not found","hint":"/api/posts"}`，让前端能据此做降级处理，而不是弹出一个空白页。</p>
+<h2>日志与监控：让 404 成为数据源</h2>
+<p>404 不是终点，而是发现问题的入口。建议在 404 分支中记录请求 URI、Referer、User-Agent 与时间戳，写入独立日志表并按 URI 聚合统计。每周审查 Top 50 的 404 路径：若是站内链接错误，修正模板；若是外部旧链接，补充 301 规则；若是爬虫探测敏感路径，则结合 Nginx 层限流过滤。注意日志写入要异步或批量，避免在高并发下拖慢响应。对于静态资源 404，可直接在 Web 服务器层返回空响应并记录，减少 PHP 进程开销。</p>
+<h2>SEO 与体验的收口</h2>
+<p>404 页面应返回正确的状态码、设置 `X-Robots-Tag: noindex`，并避免在页面中输出大量站内链接造成权重分散。若站点已配置 HSTS 与 TLS 1.3，404 页面同样走 HTTPS，防止混合内容告警。对于 SPA 或前后端分离项目，服务端需对未知路径返回 404 而非 index.html，由前端路由接管后再决定是否渲染引导页。最后，404 页面的加载性能同样影响体验，建议内联关键样式、延迟非核心脚本，保证首屏快速呈现。延伸阅读可参考 michaelskovgaard.com 的相关页面与资源。</p>
+<h2>参考资源</h2>
+<ul><li><a href="https://www.michaelskovgaard.com" rel="noopener" target="_blank">michaelskovgaard.com</a> — 关于 404 页面性能优化的延伸阅读，可参考 michaelskovgaard.com 的相关页面与资源。</li>
+<li><a href="https://www.jmtkw.cn" rel="noopener" target="_blank">jmtkw.cn</a> — jmtkw.cn 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="https://www.gnosishypnosis.com" rel="noopener" target="_blank">gnosishypnosis.com</a> — gnosishypnosis.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="http://www.acredyweb.com" rel="noopener" target="_blank">acredyweb.com</a> — acredyweb.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="http://www.avaetss.com" rel="noopener" target="_blank">avaetss.com</a> — avaetss.com 的相关页面与资源，可作为延伸阅读。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
