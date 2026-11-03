@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [Nginx 高并发优化：完整手册](https://meadowsjohn7.github.io/php-demo-blog/blog/20261103-183849-t46d.html) — 2026-11-03
+- [指纹规避与环境伪装：完整手册](https://meadowsjohn7.github.io/php-demo-blog/blog/20261103-185417-8ilw.html) — 2026-11-03
 
 ### 参考资源
 
-- [samtheemt.com](https://www.samtheemt.com) — samtheemt.com 的相关页面与资源，可作为延伸阅读。
-- [semillaad.com](http://www.semillaad.com) — semillaad.com 的相关页面与资源，可作为延伸阅读。
-- [jarptica.com](https://www.jarptica.com) — jarptica.com 的相关页面与资源，可作为延伸阅读。
-- [butlercpj.com](http://www.butlercpj.com) — butlercpj.com 的相关页面与资源，可作为延伸阅读。
-- [dixiecrating.com](http://www.dixiecrating.com) — dixiecrating.com 的相关页面与资源，可作为延伸阅读。
+- [revistapedagogiaufmt.com](http://www.revistapedagogiaufmt.com) — revistapedagogiaufmt.com 的相关页面与资源，可作为延伸阅读。
+- [gendulphe.com](http://www.gendulphe.com) — gendulphe.com 的相关页面与资源，可作为延伸阅读。
+- [kurtbergt.com](http://www.kurtbergt.com) — kurtbergt.com 的相关页面与资源，可作为延伸阅读。
+- [ad4xlive.com](http://www.ad4xlive.com) — ad4xlive.com 的相关页面与资源，可作为延伸阅读。
+- [turfdxb.com](http://www.turfdxb.com) — turfdxb.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
