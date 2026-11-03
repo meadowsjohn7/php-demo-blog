@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [网站跳出率深度分析：优化方案](https://meadowsjohn7.github.io/php-demo-blog/blog/20261103-153810-nnos.html) — 2026-11-03
+- [Critical CSS 内联策略：实战指南](https://meadowsjohn7.github.io/php-demo-blog/blog/20261103-155850-0ym2.html) — 2026-11-03
 
 ### 参考资源
 
-- [linyuanxinli.com](https://www.linyuanxinli.com) — linyuanxinli.com 的相关页面与资源，可作为延伸阅读。
-- [cpgea.com](http://www.cpgea.com) — cpgea.com 的相关页面与资源，可作为延伸阅读。
-- [despertarespsicologia.com](https://www.despertarespsicologia.com) — despertarespsicologia.com 的相关页面与资源，可作为延伸阅读。
-- [libertysoulfood.com](http://www.libertysoulfood.com) — libertysoulfood.com 的相关页面与资源，可作为延伸阅读。
-- [sofiamenconero.com](http://www.sofiamenconero.com) — sofiamenconero.com 的相关页面与资源，可作为延伸阅读。
+- [zjdswl.com](http://www.zjdswl.com) — zjdswl.com 的相关页面与资源，可作为延伸阅读。
+- [jackhaggertyarchitect.com](http://www.jackhaggertyarchitect.com) — jackhaggertyarchitect.com 的相关页面与资源，可作为延伸阅读。
+- [czgywz.com](http://www.czgywz.com) — czgywz.com 的相关页面与资源，可作为延伸阅读。
+- [haomada.com](https://www.haomada.com) — haomada.com 的相关页面与资源，可作为延伸阅读。
+- [rotkx.net](http://www.rotkx.net) — rotkx.net 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
