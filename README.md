@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [PWA 离线访问技术：技术架构](https://meadowsjohn7.github.io/php-demo-blog/blog/20261104-030337-g6an.html) — 2026-11-04
+- [Hreflang 多语言 SEO：实战指南](https://meadowsjohn7.github.io/php-demo-blog/blog/20261104-031708-m372.html) — 2026-11-04
 
 ### 参考资源
 
-- [thecorriganshow.com](http://www.thecorriganshow.com) — thecorriganshow.com 的相关页面与资源，可作为延伸阅读。
-- [memartau.com](http://www.memartau.com) — memartau.com 的相关页面与资源，可作为延伸阅读。
-- [cafe-kurage.com](https://www.cafe-kurage.com) — cafe-kurage.com 的相关页面与资源，可作为延伸阅读。
-- [artsotnya.com](http://www.artsotnya.com) — artsotnya.com 的相关页面与资源，可作为延伸阅读。
-- [zsh784.com](https://www.zsh784.com) — zsh784.com 的相关页面与资源，可作为延伸阅读。
+- [thekeziworks.com](http://www.thekeziworks.com) — thekeziworks.com 的相关页面与资源，可作为延伸阅读。
+- [izmirevlilikterapisi.com](http://www.izmirevlilikterapisi.com) — izmirevlilikterapisi.com 的相关页面与资源，可作为延伸阅读。
+- [impactmagical.com](https://www.impactmagical.com) — impactmagical.com 的相关页面与资源，可作为延伸阅读。
+- [bosai1.com](https://www.bosai1.com) — bosai1.com 的相关页面与资源，可作为延伸阅读。
+- [shop3s.com](http://www.shop3s.com) — shop3s.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 

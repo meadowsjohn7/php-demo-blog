@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hreflang 多语言 SEO：实战指南 - PHP Demo Blog</title>
+<meta name="description" content="Hreflang 是多语言站点避免内容重复、精准匹配地区用户的关键配置。本文从语法、返回方式到与 canonical、Sitemap 的协同，给出可落地的实战步骤与常见坑位。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>Hreflang 多语言 SEO：实战指南</h1>
+<div class="meta">2026-11-04 · PHP Demo Blog <span class="tag">#Hreflang</span> <span class="tag">#多语言SEO</span> <span class="tag">#国际化</span> <span class="tag">#canonical</span> <span class="tag">#Sitemap</span></div>
+<div class="summary">Hreflang 是多语言站点避免内容重复、精准匹配地区用户的关键配置。本文从语法、返回方式到与 canonical、Sitemap 的协同，给出可落地的实战步骤与常见坑位。</div>
+<h2>为什么 Hreflang 不是可选项</h2>
+<p>多语言站点最常见的失误，是让同一份内容以不同语言版本互相竞争。搜索引擎虽然能识别语言差异，但若没有显式声明，仍可能把 en-US 与 en-GB 视为近似重复，导致其中一个版本被压制。Hreflang 的作用就是告诉搜索引擎：这些页面是同一内容的不同语言/地区变体，请按用户的语言与位置返回对应版本。它不提升排名，但能显著改善目标市场的展现准确率与点击率。</p>
+<p>在 PHP Demo Blog 这类轻量路由项目中，落地 Hreflang 的第一步是统一 URL 结构。建议采用 `/en/blog/hreflang-guide`、`/zh/blog/hreflang-guide` 这类路径前缀，而不是依赖 cookie 或 Accept-Language 做服务端跳转。路径前缀让每个语言版本拥有独立、可抓取的 URL，Hreflang 才有稳定的指向对象。</p>
+<h2>语法与返回方式：三选一，别混用</h2>
+<p>Hreflang 的声明有三种方式：HTML `&lt;link&gt;` 标签、HTTP 响应头、XML Sitemap。对博客类站点，最稳妥的是在 `&lt;head&gt;` 中输出 `&lt;link rel="alternate" hreflang="zh-Hans" href="..."&gt;`，同时为每个语言版本补上 `x-default` 指向语言选择页或默认版本。若页面是 PDF 等非 HTML 资源，才考虑响应头方式。</p>
+<p>关键规则有三条：第一，双向互指，A 页面声明 B，B 页面也必须声明 A，否则整组失效；第二，`hreflang` 值必须是合法的 ISO 639-1 语言码，可附加 ISO 3166-1 地区码，如 `pt-BR`；第三，`href` 必须是绝对 URL，且与 canonical 指向的 URL 完全一致。很多站点出错就出在 canonical 指向了带参数的版本，而 Hreflang 指向了干净版本，两者打架，搜索引擎只能忽略。</p>
+<p>在 PHP 中，可以把语言映射表放在配置里，路由解析出当前语言后，在模板头部循环输出所有变体的 `&lt;link&gt;`。注意对 `href` 做 `htmlspecialchars` 转义，避免属性注入。</p>
+<h2>与 canonical、Sitemap 的协同</h2>
+<p>Hreflang 与 canonical 不是二选一。正确做法是：每个语言版本自我 canonical，即 en 页面 canonical 到 en 页面，zh 页面 canonical 到 zh 页面，然后用 Hreflang 把它们串成一组。若把多语言页面全部 canonical 到英文主站，Hreflang 就失去了意义，其他语言版本会被当作重复内容处理。</p>
+<p>Sitemap 是 Hreflang 的可靠补充。在 `sitemap.xml` 中为每个 URL 添加 `xhtml:link` 的 alternate 节点，可以降低 HTML 头部遗漏或渲染失败带来的风险。对于由 PHP 动态生成、头部内容较多的博客页，Sitemap 声明往往比 HTML 标签更稳定。两种方式同时使用不冲突，但内容必须一致。</p>
+<p>另外，别忘了 301 重定向的清理。语言路径调整后，旧 URL 应 301 到新 URL，并在新页面更新 Hreflang 组，避免出现指向已失效地址的 alternate 链接。</p>
+<h2>常见坑位与验证清单</h2>
+<p>第一，语言码写错，如把简体中文写成 `zh-CN` 之外的自造码，或把 `en-GB` 写成 `en-UK`。第二，只在一侧声明，漏掉回指。第三，`x-default` 缺失，导致语言选择页无法被识别。第四，Hreflang 指向了被 robots.txt 屏蔽或返回 404 的页面。第五，同一页面重复输出多组相同 hreflang，造成冲突。</p>
+<p>验证时，可在浏览器开发者工具中检查 `&lt;head&gt;` 输出，或用搜索引擎官方的国际化报告查看错误。上线前建议跑一遍脚本：抓取每个语言版本，解析所有 alternate 链接，检查双向性与状态码。把这项检查纳入发布流程，比事后排查成本低得多。Hreflang 本身不复杂，难的是长期保持一组链接的完整与一致。</p>
+<h2>参考资源</h2>
+<ul><li><a href="http://www.thekeziworks.com" rel="noopener" target="_blank">thekeziworks.com</a> — 关于多语言站点结构设计的延伸阅读，可参考该站的相关资源。</li>
+<li><a href="http://www.izmirevlilikterapisi.com" rel="noopener" target="_blank">izmirevlilikterapisi.com</a> — 地区化内容与本地搜索场景的参考案例，可作为延伸阅读。</li>
+<li><a href="https://www.impactmagical.com" rel="noopener" target="_blank">impactmagical.com</a> — 国际化站点在内容组织上的实践资料，可供对照参考。</li>
+<li><a href="https://www.bosai1.com" rel="noopener" target="_blank">bosai1.com</a> — 技术文档与 SEO 配置相关的补充材料，适合作为延伸阅读。</li>
+<li><a href="http://www.shop3s.com" rel="noopener" target="_blank">shop3s.com</a> — 多语言电商场景下的 URL 与索引策略参考，可延伸阅读。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
