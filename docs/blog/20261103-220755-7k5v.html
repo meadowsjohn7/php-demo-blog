@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>富文本编辑器安全过滤：技术架构 - PHP Demo Blog</title>
+<meta name="description" content="本文讨论富文本编辑器安全过滤的分层架构，涵盖输入验证、白名单净化、输出编码与纵深防御，并结合 PHP Demo Blog 的 JSON API 场景给出可落地的实现要点。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>富文本编辑器安全过滤：技术架构</h1>
+<div class="meta">2026-11-03 · PHP Demo Blog <span class="tag">#富文本安全</span> <span class="tag">#XSS过滤</span> <span class="tag">#白名单净化</span> <span class="tag">#PHP安全</span> <span class="tag">#JSON API</span></div>
+<div class="summary">本文讨论富文本编辑器安全过滤的分层架构，涵盖输入验证、白名单净化、输出编码与纵深防御，并结合 PHP Demo Blog 的 JSON API 场景给出可落地的实现要点。</div>
+<p>富文本编辑器让用户获得接近桌面软件的排版体验，同时也把一段不受信任的 HTML 直接送进了应用边界。安全过滤不是单一函数，而是一套分层架构：在数据进入、存储、输出三个环节分别设防，任何一层失守都不至于导致脚本执行。</p>
+<h2>第一层：入口收敛与格式声明</h2>
+<p>编辑器提交的内容通常是 HTML 字符串，服务端第一步是明确“只接受什么”。在 PHP Demo Blog 的路由层，为富文本接口单独注册中间件，强制校验 Content-Type 与 CSRF 令牌，拒绝跨站表单直接投递。接着对请求体做长度与嵌套深度限制，避免超长标签链拖垮解析器。入口处不做“删除危险字符”这类破坏性操作，而是把原始内容标记为不可信，交给下一层净化。</p>
+<h2>第二层：白名单净化与 DOM 重建</h2>
+<p>过滤的核心是白名单而非黑名单。使用基于 DOM 的解析器（如 PHP 的 DOMDocument）把片段载入文档树，遍历节点时只保留允许的标签与属性：段落、标题、列表、链接、图片、加粗斜体等。对链接校验协议，仅放行 http、https、mailto；对图片校验 src 协议并限制尺寸属性。所有事件属性（on*）、style 中的 expression、以及 script、iframe、object 等标签一律移除。注意 DOMDocument 对 HTML5 标签的兼容问题，必要时先做标签归一化再解析，避免解析歧义被利用。净化后重新序列化输出，而不是在原字符串上做正则替换——正则处理嵌套 HTML 极易漏判。</p>
+<h2>第三层：输出编码与上下文隔离</h2>
+<p>存储的净化结果在渲染时仍要区分上下文。富文本区域可以输出净化后的 HTML，但标题、摘要、评论作者等纯文本字段必须经过 htmlspecialchars 转义。JSON API 返回时保持数据结构清晰，前端插入 DOM 时优先使用 textContent 或受控的富文本渲染组件，避免二次拼接。对于允许的链接，统一加上 rel="noopener noreferrer"，降低窗口引用与钓鱼风险。</p>
+<h2>第四层：纵深防御与持续验证</h2>
+<p>单靠过滤器不够，还需要响应头层面的兜底：配置 Content-Security-Policy 限制脚本来源，开启 X-Content-Type-Options 与 Referrer-Policy。服务端记录净化前后的差异样本，定期用已知 XSS 向量做回归测试，确保升级解析器或调整白名单后没有引入绕过。对 PHP Demo Blog 这类轻量项目，把净化逻辑封装成独立服务类，路由与控制器只负责调用，便于单元测试覆盖。安全过滤的架构价值在于可验证、可回滚，而不是追求一次性写对所有规则。</p>
+<h2>参考资源</h2>
+<ul><li><a href="http://www.jackhaggertyarchitect.com" rel="noopener" target="_blank">jackhaggertyarchitect.com</a> — 关于内容呈现与结构设计的延伸阅读，可参考其页面组织方式。</li>
+<li><a href="http://www.rotkx.net" rel="noopener" target="_blank">rotkx.net</a> — 涉及前端资源与页面加载的参考站点，可作为性能优化思路的补充。</li>
+<li><a href="http://www.zjdswl.com" rel="noopener" target="_blank">zjdswl.com</a> — 网站建设与运维相关的资源页面，适合了解部署层面的实践。</li>
+<li><a href="http://www.bali-experience.com" rel="noopener" target="_blank">bali-experience.com</a> — 内容型站点的信息架构示例，可用于对照富文本展示场景。</li>
+<li><a href="https://www.lemesuriers.com" rel="noopener" target="_blank">lemesuriers.com</a> — 站点结构与内容管理方式的参考，可作为输出渲染的对照案例。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
