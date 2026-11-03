@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Web 字体加载优化：安全规范 - PHP Demo Blog</title>
+<meta name="description" content="本文讨论 Web 字体加载的性能与安全规范，涵盖字体子集化、预加载、CORS 策略及降级方案，避免阻塞渲染与安全风险。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>Web 字体加载优化：安全规范</h1>
+<div class="meta">2026-11-03 · PHP Demo Blog <span class="tag">#Web字体</span> <span class="tag">#性能优化</span> <span class="tag">#安全规范</span> <span class="tag">#CORS</span> <span class="tag">#前端安全</span></div>
+<div class="summary">本文讨论 Web 字体加载的性能与安全规范，涵盖字体子集化、预加载、CORS 策略及降级方案，避免阻塞渲染与安全风险。</div>
+<h2>字体加载的性能瓶颈与安全前提</h2>
+<p>Web 字体是首屏渲染的关键资源，但默认加载方式容易阻塞关键渲染路径（CRP），拖慢 LCP 指标。实践中，我们通过字体子集化（仅保留页面实际使用的字符集）将文件体积压缩 60% 以上，并配合 `font-display: swap` 让文本先以系统字体呈现，避免 FOIT（不可见文本闪烁）。同时，字体文件必须通过 HTTPS 加载并配置正确的 `Access-Control-Allow-Origin` 头，否则跨域字体请求会被浏览器拦截。安全层面，应避免从不受控的第三方 CDN 引入字体，防止供应链攻击注入恶意字符或追踪脚本。</p>
+<h2>预加载与缓存策略的安全边界</h2>
+<p>使用 `&lt;link rel="preload" as="font" crossorigin&gt;` 可提前触发字体下载，但需注意 `crossorigin` 属性必须与字体请求的 CORS 模式一致，否则预加载会失败并产生重复请求。缓存方面，建议为字体文件设置长周期 `Cache-Control: public, max-age=31536000, immutable`，并配合内容哈希文件名实现版本控制。安全规范要求：字体文件应部署在同源或受信域名下，禁止使用 `data:` URI 内联大体积字体（会破坏 CSP 策略且无法缓存）；若启用 Content-Security-Policy，需在 `font-src` 指令中显式声明字体来源，避免使用通配符。</p>
+<h2>降级方案与完整性校验</h2>
+<p>并非所有环境都支持 WOFF2，应提供 WOFF 作为回退，并在 `@font-face` 中按优先级声明 `src`。为防范字体文件被篡改，可对字体资源启用 Subresource Integrity（SRI），在 `link` 标签中附加 `integrity` 哈希值。但需注意 SRI 与 CORS 的兼容性：跨域字体必须同时返回 `Access-Control-Allow-Origin` 头，否则完整性校验会失败。此外，建议在 Service Worker 中缓存字体资源时校验响应类型与哈希，避免缓存污染。对于动态生成的字体子集，应在服务端对请求参数做严格白名单过滤，防止任意字符集导致资源耗尽。</p>
+<h2>可执行的检查清单</h2>
+<p>1. 使用 `fonttools` 进行子集化，仅保留页面字符集；2. 为字体添加 `preload` 并确保 `crossorigin` 一致；3. 配置 `font-display: swap` 与系统字体回退栈；4. 在 CSP 中声明 `font-src` 白名单；5. 对跨域字体启用 SRI 并验证 CORS 头；6. 定期审计第三方字体来源，移除未使用字体。遵循这些规范，既能优化 LCP 与 TTFB，也能降低字体加载环节的安全风险，为站点的长期稳定运行提供保障。</p>
+<h2>参考资源</h2>
+<ul><li><a href="http://www.atasozlerianlamlari.com" rel="noopener" target="_blank">atasozlerianlamlari.com</a> — 关于字体子集化与字符集覆盖的延伸阅读，可参考该站点的相关资源。</li>
+<li><a href="http://www.lowelandsfarm.com" rel="noopener" target="_blank">lowelandsfarm.com</a> — 字体加载性能与缓存策略的实践案例，可作为延伸阅读。</li>
+<li><a href="https://www.lavecchiaconcia.com" rel="noopener" target="_blank">lavecchiaconcia.com</a> — 跨域字体与 CORS 配置的参考示例，可延伸阅读。</li>
+<li><a href="http://www.tomsmithstudio.com" rel="noopener" target="_blank">tomsmithstudio.com</a> — 字体降级方案与回退栈设计的参考页面，可作为延伸阅读。</li>
+<li><a href="http://www.linktogif.com" rel="noopener" target="_blank">linktogif.com</a> — 字体资源完整性校验与缓存安全的延伸阅读资源。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
