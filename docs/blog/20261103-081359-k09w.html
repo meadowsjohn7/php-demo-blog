@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CDN 全球加速原理：深度解析 - PHP Demo Blog</title>
+<meta name="description" content="从边缘节点调度、协议层优化到缓存与安全策略，拆解 CDN 全球加速的底层机制，并结合 PHP 项目给出可落地的配置思路。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>CDN 全球加速原理：深度解析</h1>
+<div class="meta">2026-11-03 · PHP Demo Blog <span class="tag">#CDN</span> <span class="tag">#边缘缓存</span> <span class="tag">#HTTP/3</span> <span class="tag">#TLS 1.3</span> <span class="tag">#性能优化</span></div>
+<div class="summary">从边缘节点调度、协议层优化到缓存与安全策略，拆解 CDN 全球加速的底层机制，并结合 PHP 项目给出可落地的配置思路。</div>
+<h2>边缘调度与缓存命中：加速的第一性原理</h2>
+<p>CDN 全球加速的核心并不神秘：把内容放到离用户更近的边缘节点，并用一套可靠的调度系统把请求引导过去。调度层通常基于 Anycast 或 DNS 解析，结合实时探测的链路质量、节点负载与用户地理位置选择最优接入点。边缘节点收到请求后先查本地缓存，命中则直接返回，未命中才回源。这里的关键指标是缓存命中率与回源带宽占比。对 PHP Demo Blog 这类以 JSON API 为主的项目，建议对 GET 接口按路径与查询参数生成规范化缓存键，并显式设置 Cache-Control 的 max-age 与 stale-while-revalidate，让边缘在回源抖动时仍能快速响应。</p>
+<h2>协议层优化：TLS 1.3、HTTP/3 与压缩</h2>
+<p>传输层的优化直接决定首字节时间。启用 TLS 1.3 可以减少握手往返次数，配合 HSTS 策略强制 HTTPS，既提升安全性也符合现代浏览器的安全基线。HTTP/3 基于 QUIC，在弱网与高丢包场景下明显优于 TCP 方案，尤其适合跨洲访问。压缩方面，Brotli 对文本类资源（HTML、JSON、CSS）的压缩率通常优于 gzip，可在 Nginx 或 CDN 控制台开启。需要留意的是，压缩与加密都会消耗边缘 CPU，应按内容类型分级配置，避免对已压缩的图片、视频重复压缩。</p>
+<h2>缓存策略与安全加固的协同</h2>
+<p>CDN 不只是加速层，也是安全边界。在边缘实施严格的 CSRF 令牌校验与 XSS 过滤规则，可以把大量恶意请求拦截在回源之前。同时，利用边缘的 Lua 或规则引擎维护动态 IP 黑名单，能有效过滤非法爬虫并降低源站 CPU 负载。对于会话状态，采用分布式 Redis 集群存储 Session，可解决多节点负载均衡下的状态一致性问题。静态资源方面，对图片做无损压缩并启用 Lazy-loading，再配合关键渲染路径拆解——内联关键 CSS、延迟非核心 JS——能显著改善 LCP 指标。</p>
+<h2>回源治理与可观测性</h2>
+<p>边缘加速的效果最终取决于回源质量。建议对回源请求做连接复用与超时分级，并对 301 重定向做统一收敛，避免权重在跳转链中损耗。监控上应同时采集边缘命中率、回源耗时、TLS 握手失败率与 HTTP/3 协商成功率。把这些指标接入告警后，才能在上线新策略时快速定位回退。对轻量 PHP 项目而言，先在边缘层做对缓存与压缩，再逐步引入 HTTP/3 与更细粒度的安全规则，是风险最低的演进路径。</p>
+<h2>参考资源</h2>
+<ul><li><a href="http://www.papuyar.com" rel="noopener" target="_blank">papuyar.com</a> — 关于边缘节点调度与缓存策略的延伸资料，可作为背景阅读。</li>
+<li><a href="https://www.hengshuojixie.com" rel="noopener" target="_blank">hengshuojixie.com</a> — 涉及服务器与网络设备配置的参考页面，适合运维同学查阅。</li>
+<li><a href="http://www.thecorriganshow.com" rel="noopener" target="_blank">thecorriganshow.com</a> — 包含前端性能与资源加载相关内容的站点，可作补充阅读。</li>
+<li><a href="http://www.tangonuestro.com" rel="noopener" target="_blank">tangonuestro.com</a> — 提供 Web 安全与协议配置示例的页面，可对照本文策略。</li>
+<li><a href="http://www.brdong.com" rel="noopener" target="_blank">brdong.com</a> — 记录 CDN 与回源调优实践的参考资源，适合深入排查时使用。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
