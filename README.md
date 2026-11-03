@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [友情链接权重评估：深度解析](https://meadowsjohn7.github.io/php-demo-blog/blog/20261103-213803-asln.html) — 2026-11-03
+- [接口签名加密机制：深度解析](https://meadowsjohn7.github.io/php-demo-blog/blog/20261103-215130-3nab.html) — 2026-11-03
 
 ### 参考资源
 
-- [nikeairmax2019.com](http://www.nikeairmax2019.com) — nikeairmax2019.com 的相关页面与资源，可作为延伸阅读。
-- [zjcwu.com](https://www.zjcwu.com) — zjcwu.com 的相关页面与资源，可作为延伸阅读。
-- [slice-online.com](http://www.slice-online.com) — slice-online.com 的相关页面与资源，可作为延伸阅读。
-- [linyuanxinli.com](https://www.linyuanxinli.com) — linyuanxinli.com 的相关页面与资源，可作为延伸阅读。
-- [sofiamenconero.com](http://www.sofiamenconero.com) — sofiamenconero.com 的相关页面与资源，可作为延伸阅读。
+- [despertarespsicologia.com](https://www.despertarespsicologia.com) — despertarespsicologia.com 的相关页面与资源，可作为延伸阅读。
+- [cpgea.com](http://www.cpgea.com) — cpgea.com 的相关页面与资源，可作为延伸阅读。
+- [libertysoulfood.com](http://www.libertysoulfood.com) — libertysoulfood.com 的相关页面与资源，可作为延伸阅读。
+- [haomada.com](https://www.haomada.com) — haomada.com 的相关页面与资源，可作为延伸阅读。
+- [czgywz.com](http://www.czgywz.com) — czgywz.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
