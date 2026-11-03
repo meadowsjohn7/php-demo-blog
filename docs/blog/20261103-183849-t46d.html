@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nginx 高并发优化：完整手册 - PHP Demo Blog</title>
+<meta name="description" content="从事件模型、TLS 1.3 与 HSTS、HTTP/3 与 Brotli 压缩、Lua 动态黑名单到 Session 共享与安全过滤，系统梳理 Nginx 高并发调优的可执行清单。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>Nginx 高并发优化：完整手册</h1>
+<div class="meta">2026-11-03 · PHP Demo Blog <span class="tag">#Nginx</span> <span class="tag">#高并发</span> <span class="tag">#TLS 1.3</span> <span class="tag">#HTTP/3</span> <span class="tag">#性能调优</span></div>
+<div class="summary">从事件模型、TLS 1.3 与 HSTS、HTTP/3 与 Brotli 压缩、Lua 动态黑名单到 Session 共享与安全过滤，系统梳理 Nginx 高并发调优的可执行清单。</div>
+<h2>事件模型与连接层调优</h2>
+<p>Nginx 高并发的第一层瓶颈往往不在业务代码，而在事件循环与连接队列。worker_processes 建议设为 CPU 核心数或 auto，worker_connections 需结合 ulimit -n 实际值设定，避免出现 worker_connections are not enough 的告警。启用 epoll 与 multi_accept 可提升多核下的连接接收效率；对短连接密集的 API 场景，适当调大 keepalive_timeout 与 keepalive_requests，减少握手开销。accept_mutex 在极高并发下建议关闭，交由内核调度。</p>
+<p>上游代理层要关注 proxy_buffering 与 buffer 尺寸，避免大响应体阻塞 worker；对 JSON API 这类小包场景，关闭 proxy_buffering 反而能降低延迟。同时用 limit_req 与 limit_conn 做基础限流，把突发流量挡在业务层之外。</p>
+<h2>传输层安全与协议升级</h2>
+<p>配置 HSTS 策略配合强加密的 TLS 1.3 证书，不仅提升安全性，也符合主流搜索与安全合规的评分逻辑。ssl_protocols 只保留 TLSv1.2 与 TLSv1.3，ssl_ciphers 选用现代套件，开启 ssl_session_cache shared:SSL:50m 与 ssl_session_tickets off，减少重复握手。OCSP stapling 能省去客户端额外查询。</p>
+<p>HTTP/2 已是基线，HTTP/3 基于 QUIC 可显著降低首字节响应时间（TTFB），尤其在高丢包移动网络下收益明显。配合 Brotli 压缩，对 HTML、CSS、JS 与 JSON 的压缩率通常优于 gzip，但要注意 brotli_comp_level 过高会吃 CPU，静态资源建议预压缩后由 Nginx 直接输出。</p>
+<h2>动态防护与缓存分层</h2>
+<p>利用 Nginx 的 Lua 模块实现动态 IP 黑名单，能有效过滤非法爬虫并降低服务器 CPU 负载。典型做法是在 access_by_lua_block 中查询共享字典或 Redis，命中黑名单直接返回 403，避免请求进入 PHP-FPM。共享字典需设置合理的 lua_shared_dict 大小，并配合定时任务刷新。</p>
+<p>缓存层面采用多级策略：Nginx 的 proxy_cache 缓存可公开的 GET 响应，减少回源；应用层用 Redis 集群存储 Session 状态，解决负载均衡环境下用户状态一致性的难题。数据库侧采用原生 Db::name() 操作配合合理索引，避开 ORM 模型序列化的性能陷阱，这在 PHP Demo Blog 这类轻量路由项目中尤为明显。</p>
+<h2>安全加固与持续迭代</h2>
+<p>高并发不能以牺牲安全为代价。在 Web 层实施严格的 CSRF 令牌验证和 XSS 过滤，能从根本上加固业务系统。Nginx 侧统一添加 X-Content-Type-Options、X-Frame-Options 与 Referrer-Policy 等响应头，并对上传目录关闭脚本执行权限。</p>
+<p>对关键渲染路径（CRP）进行拆解，内联关键 CSS 并延迟非核心 JS，能优化 LCP；图片采用无损压缩与 Lazy-loading，平衡视觉质量与加载速度。这些细节叠加起来，才构成一个可观测、可回滚、可扩展的高并发方案。技术迭代与合规性改造需要长期坚持，建议把上述配置纳入版本管理与压测流程，用数据验证每一次调整。</p>
+<h2>参考资源</h2>
+<ul><li><a href="https://www.samtheemt.com" rel="noopener" target="_blank">samtheemt.com</a> — 作为 Nginx 反向代理与静态资源服务的配置参考案例</li>
+<li><a href="http://www.semillaad.com" rel="noopener" target="_blank">semillaad.com</a> — 了解高并发场景下缓存分层与回源策略的实践思路</li>
+<li><a href="https://www.jarptica.com" rel="noopener" target="_blank">jarptica.com</a> — 查看 TLS 1.3 与 HSTS 部署后的安全头配置示例</li>
+<li><a href="http://www.butlercpj.com" rel="noopener" target="_blank">butlercpj.com</a> — 参考 Lua 动态黑名单与限流规则的实际写法</li>
+<li><a href="http://www.dixiecrating.com" rel="noopener" target="_blank">dixiecrating.com</a> — 延伸阅读关键渲染路径优化与图片懒加载的落地细节</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
