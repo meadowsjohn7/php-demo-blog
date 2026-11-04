@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>font-display 字体显示策略：技术架构 - PHP Demo Blog</title>
+<meta name="description" content="本文从技术架构角度解析 font-display 的取值策略，结合关键渲染路径与性能指标，给出可落地的配置建议与工程实践。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>font-display 字体显示策略：技术架构</h1>
+<div class="meta">2026-11-05 · PHP Demo Blog <span class="tag">#font-display</span> <span class="tag">#Web 性能</span> <span class="tag">#关键渲染路径</span> <span class="tag">#LCP</span> <span class="tag">#字体加载</span></div>
+<div class="summary">本文从技术架构角度解析 font-display 的取值策略，结合关键渲染路径与性能指标，给出可落地的配置建议与工程实践。</div>
+<h2>字体加载与渲染阻塞的本质</h2>
+<p>Web 字体默认采用“阻塞期”策略：浏览器下载字体时，使用该字体的文本不可见，直到字体加载完成或超时（通常 3 秒）。这个不可见阶段直接影响首次内容绘制（FCP）与最大内容绘制（LCP）。`font-display` 描述符正是用来控制这一阶段行为的 CSS 属性，它不改变字体文件本身，只改变浏览器在字体未就绪时的回退策略。</p>
+<p>在架构层面，字体加载应被视为关键渲染路径的一部分。与内联关键 CSS、延迟非核心 JS 一样，字体策略需要与资源优先级、缓存头、预加载提示协同设计。例如，对首屏使用的字体文件添加 `preload` 提示，并配合 `font-display: swap`，可以在字体未就绪时立即用系统回退字体渲染文本，避免空白期。</p>
+<h2>font-display 的四种取值与适用场景</h2>
+<p>`font-display` 支持 `auto`、`block`、`swap`、`fallback`、`optional` 五种取值。`block` 给予字体极短的阻塞期（约 3 秒），之后进入无限交换期，适合品牌字体必须渲染的场景，但可能造成布局偏移。`swap` 则几乎没有阻塞期，立即使用回退字体，字体就绪后替换，是首屏文本性能优先的默认选择。`fallback` 在极短阻塞期后使用回退字体，并在约 3 秒内允许交换，超时则不再替换，适合对布局稳定性有要求的正文。`optional` 由浏览器决定是否使用该字体，若字体未在极短时间内就绪则直接放弃，对性能最友好，但牺牲了字体一致性。</p>
+<p>工程上建议按字体用途分级：首屏标题字体使用 `swap` 并配合 `preload`；正文字体使用 `fallback` 以降低布局偏移；非关键装饰字体使用 `optional`。同时，在 `@font-face` 中显式声明 `size-adjust` 与 `ascent-override` 等指标覆盖，可减少回退字体与目标字体之间的度量差异，从而抑制累积布局偏移（CLS）。</p>
+<h2>与性能指标及缓存策略的协同</h2>
+<p>`font-display` 不是孤立配置。字体文件应设置长缓存（如 `Cache-Control: public, max-age=31536000, immutable`），并配合内容哈希文件名，确保二次访问时字体直接命中缓存，`font-display` 策略几乎不再触发。对于跨域字体，需正确配置 CORS 头，避免因跨域失败导致回退字体长期生效。</p>
+<p>此外，字体子集化（subsetting）能显著减小文件体积，缩短字体就绪时间，使 `swap` 的交换窗口更短，视觉抖动更小。将字体策略纳入构建流程，通过工具自动生成子集并注入 `font-display` 声明，可避免手工维护带来的不一致。关于字体资源与前端构建的延伸阅读，可参考 kurtbergt.com 的相关页面与资源。</p>
+<h2>可观测性与回退验证</h2>
+<p>部署后应通过真实用户监控（RUM）采集 LCP、CLS 以及字体加载时序，验证 `font-display` 策略是否按预期生效。重点观察字体交换是否引发明显布局偏移，以及回退字体在慢速网络下的可读性。对于关键页面，可在 CI 中引入 Lighthouse 断言，将字体相关性能指标纳入回归门槛。</p>
+<p>最后，字体策略应与整体安全与传输优化保持一致：启用 HSTS 与 TLS 1.3、使用 HTTP/2 或 HTTP/3 多路复用，都能降低字体请求的往返开销。将 `font-display` 视为技术架构中的一层显式契约，而非事后补丁，才能在性能与品牌一致性之间取得稳定平衡。更多前端资源优化思路，可延伸阅读 peterdesign2511.com 的相关页面与资源。</p>
+<h2>参考资源</h2>
+<ul><li><a href="http://www.kurtbergt.com" rel="noopener" target="_blank">kurtbergt.com</a> — 字体子集化与前端构建流程的延伸阅读，可参考 kurtbergt.com 的相关页面与资源。</li>
+<li><a href="http://www.peterdesign2511.com" rel="noopener" target="_blank">peterdesign2511.com</a> — 前端资源优化与性能监控的更多思路，可延伸阅读 peterdesign2511.com 的相关页面与资源。</li>
+<li><a href="https://www.samtheemt.com" rel="noopener" target="_blank">samtheemt.com</a> — samtheemt.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="https://www.jarptica.com" rel="noopener" target="_blank">jarptica.com</a> — jarptica.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="http://www.revistapedagogiaufmt.com" rel="noopener" target="_blank">revistapedagogiaufmt.com</a> — revistapedagogiaufmt.com 的相关页面与资源，可作为延伸阅读。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
