@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [关键渲染路径 Critical Path：安全规范](https://meadowsjohn7.github.io/php-demo-blog/blog/20261104-163620-l6w9.html) — 2026-11-04
+- [移动端适配媒体查询：实战指南](https://meadowsjohn7.github.io/php-demo-blog/blog/20261104-164918-k0ee.html) — 2026-11-04
 
 ### 参考资源
 
-- [bvwlawyers.com](http://www.bvwlawyers.com) — bvwlawyers.com 的相关页面与资源，可作为延伸阅读。
-- [yuchenyuwen.com](http://www.yuchenyuwen.com) — yuchenyuwen.com 的相关页面与资源，可作为延伸阅读。
-- [rawrdaily.com](http://www.rawrdaily.com) — rawrdaily.com 的相关页面与资源，可作为延伸阅读。
-- [slice-online.com](http://www.slice-online.com) — slice-online.com 的相关页面与资源，可作为延伸阅读。
-- [nikeairmax2019.com](http://www.nikeairmax2019.com) — nikeairmax2019.com 的相关页面与资源，可作为延伸阅读。
+- [linyuanxinli.com](https://www.linyuanxinli.com) — linyuanxinli.com 的相关页面与资源，可作为延伸阅读。
+- [czgywz.com](http://www.czgywz.com) — czgywz.com 的相关页面与资源，可作为延伸阅读。
+- [kocham-morze.com](http://www.kocham-morze.com) — kocham-morze.com 的相关页面与资源，可作为延伸阅读。
+- [sofiamenconero.com](http://www.sofiamenconero.com) — sofiamenconero.com 的相关页面与资源，可作为延伸阅读。
+- [despertarespsicologia.com](https://www.despertarespsicologia.com) — despertarespsicologia.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 

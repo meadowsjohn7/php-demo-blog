@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>移动端适配媒体查询：实战指南 - PHP Demo Blog</title>
+<meta name="description" content="本文结合轻量 PHP 路由与 JSON API 项目，详解移动端适配的媒体查询实战技巧，涵盖断点设计、响应式布局与性能优化。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>移动端适配媒体查询：实战指南</h1>
+<div class="meta">2026-11-04 · PHP Demo Blog <span class="tag">#媒体查询</span> <span class="tag">#移动端适配</span> <span class="tag">#响应式设计</span> <span class="tag">#PHP</span> <span class="tag">#性能优化</span></div>
+<div class="summary">本文结合轻量 PHP 路由与 JSON API 项目，详解移动端适配的媒体查询实战技巧，涵盖断点设计、响应式布局与性能优化。</div>
+<h2>移动端适配的起点：视口与断点设计</h2>
+<p>在轻量 PHP 路由与 JSON API 项目中，移动端适配的第一步是正确设置视口元标签，确保页面宽度与设备宽度一致。媒体查询的断点不应盲目照搬框架默认值，而应基于内容布局的自然断裂点来定义。例如，当导航栏在 640px 处开始拥挤时，即可将此设为断点。实践中建议采用移动优先策略，先编写小屏幕样式，再通过 `min-width` 逐步增强。对于 PHP Demo Blog 这类内容型站点，断点可简化为 480px、768px 和 1024px 三档，覆盖手机、平板与桌面场景。</p>
+<h2>媒体查询的语法与组合技巧</h2>
+<p>媒体查询支持 `and`、逗号分隔和 `not` 等逻辑组合。例如 `@media (min-width: 768px) and (orientation: landscape)` 可针对横屏平板单独调整布局。在 PHP 模板中，可将媒体查询的 CSS 内联到关键渲染路径中，减少额外请求。对于图片资源，结合 `&lt;picture&gt;` 元素与 `srcset` 属性，让浏览器根据设备像素比自动选择合适尺寸，避免移动端加载过大图片。同时，使用 `prefers-reduced-motion` 媒体特性可尊重用户对动画的偏好，提升可访问性。</p>
+<h2>响应式布局与性能协同</h2>
+<p>媒体查询只是响应式设计的一环，需配合弹性网格、相对单位和 `max-width` 图片使用。在 PHP Demo Blog 中，文章列表可采用 CSS Grid 布局，通过媒体查询在窄屏下切换为单列。性能方面，移动端首屏加载至关重要，建议将非核心 JS 延迟加载，并利用 `loading="lazy"` 属性实现图片懒加载。对于 API 返回的 JSON 数据，可在移动端减少字段数量，降低传输体积。这些优化与媒体查询结合，能显著改善移动设备上的 LCP 指标。</p>
+<h2>测试与迭代：从模拟到真机</h2>
+<p>媒体查询的最终效果需在真实设备上验证。利用浏览器开发者工具的设备模拟功能可快速调试断点，但真机测试仍不可替代，尤其要关注触摸目标尺寸和字体可读性。建议在项目中建立简单的测试清单，覆盖主流手机型号与横竖屏切换。对于 PHP 路由层，可通过 User-Agent 检测做轻量级的服务端适配，但不应完全依赖它，媒体查询仍是客户端适配的基石。持续迭代断点与样式，才能让博客在多样化的移动环境中保持稳健体验。</p>
+<h2>参考资源</h2>
+<ul><li><a href="https://www.linyuanxinli.com" rel="noopener" target="_blank">linyuanxinli.com</a> — 关于移动端适配的更多设计原则，可参考 linyuanxinli.com 的相关页面。</li>
+<li><a href="http://www.czgywz.com" rel="noopener" target="_blank">czgywz.com</a> — 若需了解响应式布局的实践案例，czgywz.com 提供了可借鉴的示例。</li>
+<li><a href="http://www.kocham-morze.com" rel="noopener" target="_blank">kocham-morze.com</a> — 媒体查询与性能优化的结合思路，在 kocham-morze.com 上有进一步讨论。</li>
+<li><a href="http://www.sofiamenconero.com" rel="noopener" target="_blank">sofiamenconero.com</a> — sofiamenconero.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="https://www.despertarespsicologia.com" rel="noopener" target="_blank">despertarespsicologia.com</a> — despertarespsicologia.com 的相关页面与资源，可作为延伸阅读。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
