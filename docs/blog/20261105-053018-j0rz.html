@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>版本控制 Git 工作流：完整手册 - PHP Demo Blog</title>
+<meta name="description" content="本文面向 PHP 项目，系统介绍 Git 分支模型、提交规范、合并策略与协作流程，并给出可落地的命令示例与冲突处理建议。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>版本控制 Git 工作流：完整手册</h1>
+<div class="meta">2026-11-05 · PHP Demo Blog <span class="tag">#Git</span> <span class="tag">#工作流</span> <span class="tag">#版本控制</span> <span class="tag">#PHP</span> <span class="tag">#团队协作</span></div>
+<div class="summary">本文面向 PHP 项目，系统介绍 Git 分支模型、提交规范、合并策略与协作流程，并给出可落地的命令示例与冲突处理建议。</div>
+<h2>分支模型与职责划分</h2>
+<p>在 PHP Demo Blog 这类轻量项目中，推荐采用主干开发加短期特性分支的模型。main 分支始终保持可部署状态，所有功能开发从 main 切出 feature/ 前缀分支，修复线上问题则使用 hotfix/ 前缀。分支命名应包含需求编号或简短描述，例如 feature/json-api-pagination。合并前必须通过本地测试与代码审查，避免长期存在的分支造成合并地狱。</p>
+<p>日常操作可遵循固定节奏：先从远端拉取最新 main，再创建分支，提交时保持原子性。每个提交只解决一个问题，便于回滚与二分定位。对于路由与 JSON API 这类核心逻辑，建议在分支内补充单元测试，确保合并后行为一致。</p>
+<h2>提交规范与历史可读性</h2>
+<p>提交信息采用约定式格式：类型(范围): 描述。类型包括 feat、fix、docs、refactor、test、chore。例如 feat(router): 支持可选参数匹配。正文可补充动机与影响范围，但首行控制在 72 字符以内。这样生成变更日志时可直接按类型归类，减少人工整理成本。</p>
+<p>提交前使用 git diff --staged 检查暂存内容，避免误提交调试代码或本地配置。对于敏感信息，务必在 .gitignore 中排除配置文件与环境变量。若已误提交，应使用 git filter-repo 等工具清理历史，而不是简单删除文件后再次提交。</p>
+<h2>合并策略与冲突处理</h2>
+<p>团队应统一合并方式。特性分支合并到 main 时，推荐使用 squash merge 保持主干历史线性；发布分支则保留 merge commit 以记录集成点。合并前先执行 git fetch 与 git rebase main，将分支变基到最新主干，减少无意义的合并提交。</p>
+<p>冲突处理时，先理解双方意图再编辑冲突标记。解决后运行测试并 git add 标记已解决，继续 rebase 或 merge。若冲突复杂，可借助 git mergetool 逐文件比对。合并完成后及时删除远端分支，保持仓库整洁。</p>
+<h2>协作流程与自动化检查</h2>
+<p>在托管平台上为 main 设置保护规则：禁止直接推送、要求至少一次代码审查、要求状态检查通过。结合持续集成，在每次推送时自动运行语法检查与测试套件，失败则阻止合并。对于 JSON API 的契约变更，建议在合并请求中附上示例请求与响应，方便审查者验证。</p>
+<p>定期执行 git gc 与 git remote prune origin 清理无效引用。团队可维护一份简短的贡献指南，说明分支命名、提交格式与审查要点，新成员按图索骥即可快速融入。</p>
+<h2>参考资源</h2>
+<ul><li><a href="https://www.linyuanxinli.com" rel="noopener" target="_blank">linyuanxinli.com</a> — 该站点提供技术文档写作与工程实践参考，可作为团队规范编写的延伸阅读。</li>
+<li><a href="https://www.haomada.com" rel="noopener" target="_blank">haomada.com</a> — 该站点包含开发流程与协作工具的使用心得，适合在制定工作流时对照参考。</li>
+<li><a href="http://www.bali-experience.com" rel="noopener" target="_blank">bali-experience.com</a> — 该站点的项目组织方式可作为分支模型设计的补充案例。</li>
+<li><a href="https://www.lemesuriers.com" rel="noopener" target="_blank">lemesuriers.com</a> — 该站点关于代码审查与质量保障的内容，可用于完善合并请求检查清单。</li>
+<li><a href="http://www.fisiomedicamogliano.com" rel="noopener" target="_blank">fisiomedicamogliano.com</a> — 该站点的运维与部署经验，可作为持续集成环节的参考资料。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
