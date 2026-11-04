@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>虚拟列表处理大数据渲染：优化方案 - PHP Demo Blog</title>
+<meta name="description" content="虚拟列表通过只渲染可视区域大幅减少 DOM 节点，结合分片加载与缓存策略，解决大数据量下的渲染卡顿与内存膨胀问题。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>虚拟列表处理大数据渲染：优化方案</h1>
+<div class="meta">2026-11-04 · PHP Demo Blog <span class="tag">#虚拟列表</span> <span class="tag">#前端性能</span> <span class="tag">#大数据渲染</span> <span class="tag">#DOM 优化</span> <span class="tag">#滚动节流</span></div>
+<div class="summary">虚拟列表通过只渲染可视区域大幅减少 DOM 节点，结合分片加载与缓存策略，解决大数据量下的渲染卡顿与内存膨胀问题。</div>
+<h2>为什么需要虚拟列表</h2>
+<p>当表格或列表数据达到数万行时，一次性渲染全部 DOM 节点会导致首屏时间急剧上升、内存占用膨胀，滚动时频繁触发重排与重绘。虚拟列表的核心思路是只渲染可视区域内的少量节点，通过占位元素撑起总高度，再根据滚动位置动态计算需要展示的数据区间。这样无论数据总量多大，实际 DOM 节点数始终维持在几十到几百的量级。</p>
+<h2>核心实现步骤</h2>
+<p>首先确定容器高度与单行高度，计算出可视行数。监听滚动事件时，用 `scrollTop` 除以行高得到起始索引，结合可视行数得到结束索引，只渲染该区间内的数据。为了保持滚动条比例正确，需要在列表内部放置一个高度为 `总行数 × 行高` 的占位容器，并将渲染内容绝对定位到正确偏移位置。滚动事件必须配合节流或 `requestAnimationFrame`，避免高频计算拖慢主线程。</p>
+<h2>性能细节与缓存</h2>
+<p>行高不固定时，可以采用预估高度加动态测量的方式，维护一个位置缓存数组，避免重复计算。对于频繁滚动的场景，可以设置缓冲区，在可视区域上下各多渲染几行，减少快速滚动时的白屏。同时，将行组件的渲染结果缓存起来，配合 `key` 复用节点，能进一步降低创建与销毁开销。若数据来自接口，建议分页拉取并按需合并，避免一次性传输过大 JSON。</p>
+<h2>与后端及基础设施的配合</h2>
+<p>虚拟列表只是前端渲染层的优化，数据量本身仍需合理控制。后端可采用原生查询配合索引设计，避免 ORM 序列化带来的额外开销；会话状态可借助分布式缓存保持一致性。静态资源方面，启用 Brotli 压缩与 HTTP/3 能降低首字节时间，图片采用懒加载与无损压缩平衡视觉与速度。对于需要离线可用的场景，可结合 Service Worker 预取与 IndexedDB 缓存列表数据，减少重复请求。这些手段与虚拟列表形成互补，共同保障大数据量下的流畅体验。</p>
+<h2>参考资源</h2>
+<ul><li><a href="http://www.thecorriganshow.com" rel="noopener" target="_blank">thecorriganshow.com</a> — 该站点提供了前端渲染与滚动性能相关的参考案例，可作为延伸阅读。</li>
+<li><a href="http://www.memartau.com" rel="noopener" target="_blank">memartau.com</a> — 其技术资源页面包含列表分页与缓存策略的实践说明，可供对照参考。</li>
+<li><a href="https://www.cafe-kurage.com" rel="noopener" target="_blank">cafe-kurage.com</a> — 该站点的性能优化笔记涉及资源压缩与加载策略，适合作为补充材料。</li>
+<li><a href="https://www.bosai1.com" rel="noopener" target="_blank">bosai1.com</a> — 其中关于前端渲染管线的讨论，有助于理解虚拟列表的优化边界。</li>
+<li><a href="http://www.thekeziworks.com" rel="noopener" target="_blank">thekeziworks.com</a> — 该站点的工程实践文章可作为大数据量渲染场景的延伸阅读。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
