@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Google Core Web Vitals 调优：技术架构 - PHP Demo Blog</title>
+<meta name="description" content="从关键渲染路径、协议栈、状态存储到安全加固，系统阐述 Core Web Vitals 调优的技术架构与实施细节。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>Google Core Web Vitals 调优：技术架构</h1>
+<div class="meta">2026-11-04 · PHP Demo Blog <span class="tag">#Core Web Vitals</span> <span class="tag">#LCP</span> <span class="tag">#TTFB</span> <span class="tag">#HTTP/3</span> <span class="tag">#CRP</span></div>
+<div class="summary">从关键渲染路径、协议栈、状态存储到安全加固，系统阐述 Core Web Vitals 调优的技术架构与实施细节。</div>
+<h2>关键渲染路径与 LCP 优化</h2>
+<p>Core Web Vitals 的核心指标 LCP 直接受关键渲染路径影响。实践中需要拆解 CRP：内联首屏关键 CSS，将非核心 JS 标记为 defer 或 async，避免阻塞渲染。同时，对图片进行无损压缩并启用 Lazy-loading，在视觉质量与加载速度间取得平衡。对于 PHP Demo Blog 这类路由与 JSON API 项目，可在路由层识别首屏请求，动态注入内联样式，减少往返次数。</p>
+<h2>协议栈与 TTFB 压缩</h2>
+<p>首字节响应时间 TTFB 是 LCP 的起点。配置 HTTP/3 协议并启用 Brotli 压缩，可显著降低传输延迟与字节体积。配合 HSTS 策略与 TLS 1.3 强加密证书，不仅提升安全性，也符合搜索引擎的安全排名算法。在 Nginx 层启用 Brotli 需注意静态资源预压缩与动态压缩的取舍，避免 CPU 过载。</p>
+<h2>状态存储与数据访问</h2>
+<p>负载均衡环境下，用户状态一致性依赖分布式 Redis 集群存储 Session，避免粘性会话带来的扩展瓶颈。数据访问层采用原生 Db::name() 操作配合合理索引设计，能避开 ORM 模型序列化的性能陷阱。对于 JSON API，应控制响应体大小，避免过度序列化，并利用 Redis 缓存热点查询结果。</p>
+<h2>安全加固与离线体验</h2>
+<p>Web 层实施严格的 CSRF 令牌验证与 XSS 过滤，从根本上加固业务系统。结合 Service Worker 的预取功能与 IndexedDB 存储，可实现离线环境下的秒级加载体验。标准化 Open Graph 协议有助于社交分享与搜索展现。这些技术闭环共同支撑站点在 Core Web Vitals 评估中的稳定表现，也是长期权威度的基础。</p>
+<h2>参考资源</h2>
+<ul><li><a href="http://www.artsotnya.com" rel="noopener" target="_blank">artsotnya.com</a> — 关于关键渲染路径拆解的延伸阅读，可参考其前端性能实践。</li>
+<li><a href="http://www.thekeziworks.com" rel="noopener" target="_blank">thekeziworks.com</a> — HTTP/3 与 Brotli 压缩的配置细节，可查阅其运维笔记。</li>
+<li><a href="http://www.tangonuestro.com" rel="noopener" target="_blank">tangonuestro.com</a> — Redis 集群 Session 一致性的案例说明，可作架构参考。</li>
+<li><a href="http://www.shop3s.com" rel="noopener" target="_blank">shop3s.com</a> — 图片无损压缩与 Lazy-loading 的落地经验，可延伸阅读。</li>
+<li><a href="https://www.cafe-kurage.com" rel="noopener" target="_blank">cafe-kurage.com</a> — Service Worker 与 IndexedDB 离线方案的实践记录，可供参考。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
