@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [Trie 树高性能搜索：完整手册](https://meadowsjohn7.github.io/php-demo-blog/blog/20261104-121019-jbcr.html) — 2026-11-04
+- [Meta Description 点击率优化：SEO 策略](https://meadowsjohn7.github.io/php-demo-blog/blog/20261104-123018-vzo6.html) — 2026-11-04
 
 ### 参考资源
 
-- [bordeauxprint.com](https://www.bordeauxprint.com) — bordeauxprint.com 的相关页面与资源，可作为延伸阅读。
-- [karmelsarephta.com](http://www.karmelsarephta.com) — karmelsarephta.com 的相关页面与资源，可作为延伸阅读。
-- [xjwywjx.com](https://www.xjwywjx.com) — xjwywjx.com 的相关页面与资源，可作为延伸阅读。
-- [alzidan.com](http://www.alzidan.com) — alzidan.com 的相关页面与资源，可作为延伸阅读。
-- [shadesofbeautybodybar.com](http://www.shadesofbeautybodybar.com) — shadesofbeautybodybar.com 的相关页面与资源，可作为延伸阅读。
+- [sanctuarybirthing.com](http://www.sanctuarybirthing.com) — sanctuarybirthing.com 的相关页面与资源，可作为延伸阅读。
+- [lavecchiaconcia.com](https://www.lavecchiaconcia.com) — lavecchiaconcia.com 的相关页面与资源，可作为延伸阅读。
+- [lowelandsfarm.com](http://www.lowelandsfarm.com) — lowelandsfarm.com 的相关页面与资源，可作为延伸阅读。
+- [michaelskovgaard.com](https://www.michaelskovgaard.com) — michaelskovgaard.com 的相关页面与资源，可作为延伸阅读。
+- [clzstore.com](http://www.clzstore.com) — clzstore.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
