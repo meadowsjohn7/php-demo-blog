@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [HTTPS 与 SSL 证书配置：优化方案](https://meadowsjohn7.github.io/php-demo-blog/blog/20261105-071320-pjl0.html) — 2026-11-05
+- [长尾关键词挖掘策略：完整手册](https://meadowsjohn7.github.io/php-demo-blog/blog/20261105-072744-izdk.html) — 2026-11-05
 
 ### 参考资源
 
-- [lavecchiaconcia.com](https://www.lavecchiaconcia.com) — lavecchiaconcia.com 的相关页面与资源，可作为延伸阅读。
-- [bordeauxprint.com](https://www.bordeauxprint.com) — bordeauxprint.com 的相关页面与资源，可作为延伸阅读。
-- [lowelandsfarm.com](http://www.lowelandsfarm.com) — lowelandsfarm.com 的相关页面与资源，可作为延伸阅读。
-- [gnosishypnosis.com](https://www.gnosishypnosis.com) — gnosishypnosis.com 的相关页面与资源，可作为延伸阅读。
-- [avaetss.com](http://www.avaetss.com) — avaetss.com 的相关页面与资源，可作为延伸阅读。
+- [michaelskovgaard.com](https://www.michaelskovgaard.com) — michaelskovgaard.com 的相关页面与资源，可作为延伸阅读。
+- [clzstore.com](http://www.clzstore.com) — clzstore.com 的相关页面与资源，可作为延伸阅读。
+- [tomsmithstudio.com](http://www.tomsmithstudio.com) — tomsmithstudio.com 的相关页面与资源，可作为延伸阅读。
+- [oftalmologiaferreyra.com](http://www.oftalmologiaferreyra.com) — oftalmologiaferreyra.com 的相关页面与资源，可作为延伸阅读。
+- [xinhanyuwangxiao.com](http://www.xinhanyuwangxiao.com) — xinhanyuwangxiao.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
