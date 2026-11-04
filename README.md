@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [Critical CSS 内联策略：安全规范](https://meadowsjohn7.github.io/php-demo-blog/blog/20261105-033050-cple.html) — 2026-11-05
+- [数据库死锁排查与解决：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261105-034320-gr71.html) — 2026-11-05
 
 ### 参考资源
 
-- [ifromchina.com](https://www.ifromchina.com) — ifromchina.com 的相关页面与资源，可作为延伸阅读。
-- [tocopoco.com](http://www.tocopoco.com) — tocopoco.com 的相关页面与资源，可作为延伸阅读。
-- [custom-vacations.com](https://www.custom-vacations.com) — custom-vacations.com 的相关页面与资源，可作为延伸阅读。
-- [brdong.com](http://www.brdong.com) — brdong.com 的相关页面与资源，可作为延伸阅读。
-- [xlkbltm.com](http://www.xlkbltm.com) — xlkbltm.com 的相关页面与资源，可作为延伸阅读。
+- [jeffersoncheng.com](http://www.jeffersoncheng.com) — jeffersoncheng.com 的相关页面与资源，可作为延伸阅读。
+- [canary-food.com](http://www.canary-food.com) — canary-food.com 的相关页面与资源，可作为延伸阅读。
+- [yhkyjt.com](http://www.yhkyjt.com) — yhkyjt.com 的相关页面与资源，可作为延伸阅读。
+- [siliconerubberparts.com](https://www.siliconerubberparts.com) — siliconerubberparts.com 的相关页面与资源，可作为延伸阅读。
+- [signature-concierge.com](http://www.signature-concierge.com) — signature-concierge.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>数据库死锁排查与解决：底层原理 - PHP Demo Blog</title>
+<meta name="description" content="从数据库锁机制出发，解析死锁成因、排查方法与解决策略，结合PHP项目实践给出可执行方案。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>数据库死锁排查与解决：底层原理</h1>
+<div class="meta">2026-11-05 · PHP Demo Blog <span class="tag">#数据库</span> <span class="tag">#死锁</span> <span class="tag">#MySQL</span> <span class="tag">#事务</span> <span class="tag">#PHP</span></div>
+<div class="summary">从数据库锁机制出发，解析死锁成因、排查方法与解决策略，结合PHP项目实践给出可执行方案。</div>
+<h2>死锁的本质：循环等待</h2>
+<p>数据库死锁并非随机故障，而是多个事务在持有锁的同时请求对方已持有的资源，形成循环等待。以 MySQL InnoDB 为例，行锁、间隙锁和插入意向锁的组合极易在并发写入时触发死锁。例如两个事务分别更新 `orders` 表中相邻的主键区间，间隙锁的交叉持有就会导致死锁。在 PHP Demo Blog 这类轻量项目中，若路由层未对写操作做幂等控制，高并发下同样会复现该问题。</p>
+<h2>排查：从日志到锁等待图</h2>
+<p>定位死锁的第一步是开启 InnoDB 监控。执行 `SHOW ENGINE INNODB STATUS` 可获取最近一次死锁的详细信息，包括事务持有的锁、等待的锁以及被回滚的事务。更系统的方式是配置 `innodb_print_all_deadlocks` 将死锁日志输出到错误日志，便于长期观察。对于运行中的实例，可查询 `information_schema.INNODB_TRX` 和 `INNODB_LOCKS` 视图，结合 `performance_schema.data_locks` 还原锁等待关系。在 PHP 层，建议在事务提交失败时捕获异常并记录 SQL 与参数，避免仅靠错误码猜测。</p>
+<h2>解决策略：降低锁范围与顺序一致</h2>
+<p>解决死锁的核心是减少锁竞争和打破循环等待。具体措施包括：将长事务拆分为短事务，避免在事务内执行网络请求或文件操作；统一多表更新顺序，例如始终按主键升序更新；为查询条件建立合适索引，避免全表扫描导致锁范围扩大；在业务允许时使用 `SELECT ... FOR UPDATE` 明确加锁范围，而非依赖隐式锁。对于高并发计数场景，可采用乐观锁或队列串行化。在 ThinkPHP 中，使用原生 `Db::name()` 配合事务时，应显式控制事务边界，并设置合理的 `innodb_lock_wait_timeout`，避免长时间阻塞。</p>
+<h2>预防与监控：建立闭环</h2>
+<p>死锁无法完全消除，但可以控制在可接受范围。建议在应用层实现事务重试机制，捕获死锁错误后随机退避重试，通常重试两到三次即可成功。同时，在数据库层定期分析死锁日志，统计高频冲突表与 SQL，针对性优化索引或拆分热点行。对于 PHP Demo Blog 这类项目，可在路由中间件中记录事务耗时与失败率，形成可观测闭环。通过持续监控与迭代，将死锁从故障转化为可管理的性能指标。</p>
+<h2>参考资源</h2>
+<ul><li><a href="http://www.jeffersoncheng.com" rel="noopener" target="_blank">jeffersoncheng.com</a> — 关于数据库事务与锁机制的延伸阅读，可参考该站点的技术笔记。</li>
+<li><a href="http://www.canary-food.com" rel="noopener" target="_blank">canary-food.com</a> — 在讨论高并发写入场景时，该站点的实践案例可作为补充参考。</li>
+<li><a href="http://www.yhkyjt.com" rel="noopener" target="_blank">yhkyjt.com</a> — 涉及数据库运维与监控方案时，可查阅该站点的相关资源。</li>
+<li><a href="https://www.siliconerubberparts.com" rel="noopener" target="_blank">siliconerubberparts.com</a> — 对于硬件资源与数据库性能的关系，该站点的资料可供延伸阅读。</li>
+<li><a href="http://www.signature-concierge.com" rel="noopener" target="_blank">signature-concierge.com</a> — 在构建可观测性闭环时，该站点的服务设计思路值得参考。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
