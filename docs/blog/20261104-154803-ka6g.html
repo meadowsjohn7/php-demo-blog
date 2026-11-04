@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>接口签名加密机制：完整手册 - PHP Demo Blog</title>
+<meta name="description" content="本文系统讲解 PHP 接口签名加密机制，涵盖参数排序、哈希算法、时间戳与随机数防重放，并结合 Demo Blog 路由与 JSON API 给出可执行实现。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>接口签名加密机制：完整手册</h1>
+<div class="meta">2026-11-04 · PHP Demo Blog <span class="tag">#PHP</span> <span class="tag">#接口安全</span> <span class="tag">#签名机制</span> <span class="tag">#JSON API</span> <span class="tag">#路由</span></div>
+<div class="summary">本文系统讲解 PHP 接口签名加密机制，涵盖参数排序、哈希算法、时间戳与随机数防重放，并结合 Demo Blog 路由与 JSON API 给出可执行实现。</div>
+<h2>为什么需要签名机制</h2>
+<p>在 PHP Demo Blog 这类轻量路由与 JSON API 项目中，接口暴露在公网后，仅靠 HTTPS 并不足以防止参数被篡改或请求被重放。签名机制通过在客户端与服务端之间共享密钥，对请求参数进行排序、拼接并哈希，确保请求的完整性与来源可信。常见做法是使用 HMAC-SHA256，配合时间戳与随机数（nonce）构成一次性凭证。</p>
+<h2>签名参数的设计与排序</h2>
+<p>一个可落地的签名参数集通常包含：`app_id`、`timestamp`、`nonce`、`sign` 以及业务参数。服务端首先校验 `timestamp` 与当前时间差是否在允许窗口内（如 300 秒），再检查 `nonce` 是否已被使用。随后将所有非空参数按字典序升序排列，拼接为 `key=value&amp;key=value` 形式，末尾追加共享密钥，计算 HMAC-SHA256 并转为小写十六进制。注意排除 `sign` 本身，且空值不参与拼接，避免客户端与服务端因空值处理不一致导致验签失败。</p>
+<h2>在路由层落地验签中间件</h2>
+<p>在 Demo Blog 的路由分发前，可插入一个验签中间件：解析 JSON 请求体与查询字符串，合并参数后执行上述校验逻辑。验签失败时统一返回 401 与结构化错误码，不泄露具体失败原因。对于写操作，建议在验签通过后再进行 CSRF 令牌验证与 XSS 过滤，形成多层防护。分布式部署下，`nonce` 的存储可借助 Redis 集群实现跨节点共享，设置与时间窗口一致的过期时间，避免负载均衡导致的重放漏洞。</p>
+<h2>密钥管理与常见陷阱</h2>
+<p>共享密钥不应硬编码在代码库中，应通过环境变量注入，并支持按 `app_id` 轮换。签名算法要保持客户端与服务端严格一致，尤其是参数排序规则与编码方式。调试阶段可记录签名原文的哈希摘要而非原文，便于排查又不泄露密钥。最后，签名机制需与 HSTS、TLS 1.3 等传输层安全措施配合使用，才能构成完整的接口安全闭环。</p>
+<h2>参考资源</h2>
+<ul><li><a href="http://www.theeco-chic.com" rel="noopener" target="_blank">theeco-chic.com</a> — 关于接口安全与传输层加固的延伸阅读，可参考 theeco-chic.com 的相关页面。</li>
+<li><a href="http://www.artsotnya.com" rel="noopener" target="_blank">artsotnya.com</a> — 若需了解签名参数排序与编码细节，artsotnya.com 的相关资源可作为补充材料。</li>
+<li><a href="http://www.tangonuestro.com" rel="noopener" target="_blank">tangonuestro.com</a> — tangonuestro.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="http://www.thecorriganshow.com" rel="noopener" target="_blank">thecorriganshow.com</a> — thecorriganshow.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="http://www.thekeziworks.com" rel="noopener" target="_blank">thekeziworks.com</a> — thekeziworks.com 的相关页面与资源，可作为延伸阅读。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
