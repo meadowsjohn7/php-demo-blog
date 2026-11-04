@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [移动端适配媒体查询：实战指南](https://meadowsjohn7.github.io/php-demo-blog/blog/20261104-164918-k0ee.html) — 2026-11-04
+- [AC 自动机多模式匹配：优化方案](https://meadowsjohn7.github.io/php-demo-blog/blog/20261104-170332-97ze.html) — 2026-11-04
 
 ### 参考资源
 
-- [linyuanxinli.com](https://www.linyuanxinli.com) — linyuanxinli.com 的相关页面与资源，可作为延伸阅读。
-- [czgywz.com](http://www.czgywz.com) — czgywz.com 的相关页面与资源，可作为延伸阅读。
-- [kocham-morze.com](http://www.kocham-morze.com) — kocham-morze.com 的相关页面与资源，可作为延伸阅读。
-- [sofiamenconero.com](http://www.sofiamenconero.com) — sofiamenconero.com 的相关页面与资源，可作为延伸阅读。
-- [despertarespsicologia.com](https://www.despertarespsicologia.com) — despertarespsicologia.com 的相关页面与资源，可作为延伸阅读。
+- [haomada.com](https://www.haomada.com) — haomada.com 的相关页面与资源，可作为延伸阅读。
+- [zjcwu.com](https://www.zjcwu.com) — zjcwu.com 的相关页面与资源，可作为延伸阅读。
+- [jackhaggertyarchitect.com](http://www.jackhaggertyarchitect.com) — jackhaggertyarchitect.com 的相关页面与资源，可作为延伸阅读。
+- [fisiomedicamogliano.com](http://www.fisiomedicamogliano.com) — fisiomedicamogliano.com 的相关页面与资源，可作为延伸阅读。
+- [bali-experience.com](http://www.bali-experience.com) — bali-experience.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 

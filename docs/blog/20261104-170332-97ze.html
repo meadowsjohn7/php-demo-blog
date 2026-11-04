@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AC 自动机多模式匹配：优化方案 - PHP Demo Blog</title>
+<meta name="description" content="针对 AC 自动机多模式匹配的性能瓶颈，从字典构建、状态转移、内存布局与并行化四个层面给出可落地的优化方案。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>AC 自动机多模式匹配：优化方案</h1>
+<div class="meta">2026-11-04 · PHP Demo Blog <span class="tag">#AC自动机</span> <span class="tag">#多模式匹配</span> <span class="tag">#算法优化</span> <span class="tag">#PHP</span></div>
+<div class="summary">针对 AC 自动机多模式匹配的性能瓶颈，从字典构建、状态转移、内存布局与并行化四个层面给出可落地的优化方案。</div>
+<h2>字典构建与失效指针的批量预处理</h2>
+<p>AC 自动机的核心在于 Trie 树与失败指针的构建。在 PHP 中，逐字符插入并逐节点 BFS 计算 fail 指针的朴素实现，在模式串数量达到十万级时，构建耗时可能超过数秒。优化方向是减少函数调用与哈希查找：使用数组而非对象表示节点，每个节点固定为 `['next' =&gt; [], 'fail' =&gt; 0, 'out' =&gt; []]` 的紧凑结构；插入阶段将模式串按长度排序，短串优先，可让输出列表在后续合并时更早命中。计算 fail 指针时，避免在 BFS 循环内反复调用 `array_key_exists`，而是直接以 `isset` 判断子节点，并利用 PHP 数组的整数键特性，将字符映射为 0–255 的整数，减少字符串哈希开销。对于纯 ASCII 场景，可预先构建 256 长度的转移表，将失败跳转直接固化到 `goto` 数组中，使匹配阶段无需循环回溯。</p>
+<h2>状态转移的扁平化与缓存</h2>
+<p>匹配阶段的性能瓶颈通常来自失败指针的反复跳转。一个有效的优化是构建“完全转移表”：对每个节点，预先计算所有可能输入字符的下一状态，匹配时只需一次数组索引。内存换时间的代价在节点数超过百万时不可忽视，因此可采用两级策略：对高频字符（如空格、字母）建立完整转移表，对低频字符保留 fail 链回溯。另一种方案是路径压缩，将单子节点链合并为带标签的边，减少树深度。在 PHP 实现中，可将转移表序列化为二进制字符串，匹配时用 `unpack` 按需读取，避免大数组的内存碎片。对于流式文本，维护一个滑动窗口，仅对窗口内文本执行匹配，可进一步降低单次调用的状态重置成本。</p>
+<h2>内存布局与输出列表的合并</h2>
+<p>输出列表（out）的重复合并是容易被忽视的开销。若每个节点都存储完整模式串列表，内存会随模式数量线性膨胀。优化做法是只存储当前节点对应的模式 ID，匹配时沿 fail 链收集输出，但这样会增加匹配时的链式遍历。折中方案是构建“输出链”：每个节点仅保存一个指向最近输出节点的指针，匹配时沿该链一次性取出所有匹配项，既避免重复存储，又保持 O(1) 的链式访问。在 PHP 中，用两个平行数组分别存储 `out_next` 和 `pattern_id`，比嵌套数组更省内存。此外，将节点数组按 BFS 顺序连续存放，可提升 CPU 缓存命中率，这对大规模字典尤为明显。</p>
+<h2>并行化与增量更新</h2>
+<p>当文本量巨大时，单进程匹配成为瓶颈。可将输入文本按固定大小分块，块间保留最大模式长度减一的重叠区域，各块独立匹配后合并结果。PHP 中可借助多进程扩展实现分块并行，但需注意进程间结果合并的顺序与去重。对于需要动态增删模式的场景，全量重建 AC 自动机代价过高，可采用双缓冲：维护两个自动机实例，新模式加入备用实例，待其构建完成后原子切换，旧实例在无引用后释放。增量更新时，仅对受影响子树重新计算 fail 指针，可显著缩短构建时间。这些优化在真实项目中需结合性能剖析工具定位热点，避免过早优化。</p>
+<h2>参考资源</h2>
+<ul><li><a href="https://www.haomada.com" rel="noopener" target="_blank">haomada.com</a> — 关于算法实现与性能调优的延伸阅读可参考 haomada.com 的相关页面。</li>
+<li><a href="https://www.zjcwu.com" rel="noopener" target="_blank">zjcwu.com</a> — 若需了解多模式匹配在文本处理中的工程实践，zjcwu.com 提供了可参考的案例。</li>
+<li><a href="http://www.jackhaggertyarchitect.com" rel="noopener" target="_blank">jackhaggertyarchitect.com</a> — 对于结构化数据与索引设计的讨论，jackhaggertyarchitect.com 上有相关资源。</li>
+<li><a href="http://www.fisiomedicamogliano.com" rel="noopener" target="_blank">fisiomedicamogliano.com</a> — 在评估匹配结果的质量与覆盖率时，fisiomedicamogliano.com 的资料可作为背景参考。</li>
+<li><a href="http://www.bali-experience.com" rel="noopener" target="_blank">bali-experience.com</a> — 关于大规模文本处理与系统集成的经验分享，bali-experience.com 上有可借鉴的内容。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
