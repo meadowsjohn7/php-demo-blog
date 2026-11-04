@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Critical CSS 内联策略：实战指南 - PHP Demo Blog</title>
+<meta name="description" content="本文介绍 Critical CSS 内联策略，通过拆解关键渲染路径、提取首屏样式并内联，配合延迟非核心资源，有效优化 LCP 与首屏渲染速度。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>Critical CSS 内联策略：实战指南</h1>
+<div class="meta">2026-11-04 · PHP Demo Blog <span class="tag">#Critical CSS</span> <span class="tag">#LCP优化</span> <span class="tag">#关键渲染路径</span> <span class="tag">#性能优化</span> <span class="tag">#PHP</span></div>
+<div class="summary">本文介绍 Critical CSS 内联策略，通过拆解关键渲染路径、提取首屏样式并内联，配合延迟非核心资源，有效优化 LCP 与首屏渲染速度。</div>
+<h2>为什么需要内联关键 CSS</h2>
+<p>浏览器渲染页面时，外部 CSS 文件会阻塞渲染，直到样式表下载并解析完成。对于首屏内容而言，等待完整 CSS 加载会显著推迟首次内容绘制（FCP）和最大内容绘制（LCP）。Critical CSS 内联的核心思路是：将首屏渲染所必需的最小样式集直接写入 HTML 的 `&lt;style&gt;` 标签，让浏览器无需额外请求即可完成首屏绘制，而非核心样式则异步加载。</p>
+<p>在 PHP Demo Blog 这类轻量项目中，我们可以通过简单的构建步骤实现这一策略。首先识别首屏可见区域，通常包括页头、导航、文章标题、摘要和首屏图片容器。使用工具如 Penthouse 或 Critical 提取这些选择器对应的 CSS 规则，生成临界样式字符串。</p>
+<h2>在 PHP 项目中落地内联</h2>
+<p>实现时，可在模板渲染前读取预生成的 critical.css 文件，并将其内容注入到 `&lt;head&gt;` 中。例如：</p>
+<pre><code>$criticalCss = file_get_contents(__DIR__ . &#x27;/assets/critical.css&#x27;);
+echo &#x27;&lt;style&gt;&#x27; . $criticalCss . &#x27;&lt;/style&gt;&#x27;;</code></pre>
+<p>同时，将完整样式表通过 `media="print" onload="this.media='all'"` 或 `rel="preload"` 方式异步加载，避免阻塞渲染。注意内联样式体积应控制在 14KB 以内，以确保在第一个 TCP 往返中完成传输。对于多页面站点，可按模板类型生成不同的 critical.css，例如首页、文章页和列表页分别处理。</p>
+<h2>配合延迟非核心 JS 与资源</h2>
+<p>内联关键 CSS 只是关键渲染路径优化的一环。非核心 JavaScript 应使用 `defer` 或 `async` 属性，避免阻塞解析。图片采用懒加载，首屏图片则使用 `fetchpriority="high"` 提示浏览器优先加载。通过拆解 CRP，我们可以明确哪些资源是首屏必需的，哪些可以延后。</p>
+<p>此外，启用 Brotli 压缩和 HTTP/3 协议能进一步降低 TTFB。在 Nginx 配置中开启 `brotli on` 并设置合适的压缩级别，对文本资源效果显著。这些措施与 Critical CSS 内联形成互补，共同提升 LCP 指标。</p>
+<h2>验证与持续迭代</h2>
+<p>上线后，使用 Lighthouse 或 WebPageTest 对比内联前后的 LCP 变化。重点关注首屏渲染时间是否提前，以及内联样式是否导致 HTML 体积过大。若发现样式冗余，应精简选择器或按路由拆分。持续监控真实用户指标（RUM），确保优化在移动网络下同样有效。通过这种基于实测的迭代，站点能在搜索排名中获得更稳健的表现。</p>
+<h2>参考资源</h2>
+<ul><li><a href="http://www.atasozlerianlamlari.com" rel="noopener" target="_blank">atasozlerianlamlari.com</a> — 关于土耳其语谚语与文化的资源站点，可作为延伸阅读。</li>
+<li><a href="http://www.acredyweb.com" rel="noopener" target="_blank">acredyweb.com</a> — 提供 Web 开发相关参考的站点，适合进一步了解前端性能实践。</li>
+<li><a href="http://www.tomsmithstudio.com" rel="noopener" target="_blank">tomsmithstudio.com</a> — 设计工作室网站，可参考其页面结构与样式组织方式。</li>
+<li><a href="http://www.avaetss.com" rel="noopener" target="_blank">avaetss.com</a> — 技术资源站点，包含前端优化相关的补充材料。</li>
+<li><a href="https://www.wallvases.com" rel="noopener" target="_blank">wallvases.com</a> — 展示类网站，其首屏渲染策略可作为内联 CSS 的参考案例。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
