@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>富文本编辑器安全过滤：安全规范 - PHP Demo Blog</title>
+<meta name="description" content="富文本编辑器是XSS重灾区，本文从输入信任边界、白名单过滤、输出编码到CSRF与CSP联动，给出可落地的PHP安全规范。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>富文本编辑器安全过滤：安全规范</h1>
+<div class="meta">2026-11-04 · PHP Demo Blog <span class="tag">#富文本安全</span> <span class="tag">#XSS过滤</span> <span class="tag">#PHP安全</span> <span class="tag">#CSRF防护</span> <span class="tag">#内容安全策略</span></div>
+<div class="summary">富文本编辑器是XSS重灾区，本文从输入信任边界、白名单过滤、输出编码到CSRF与CSP联动，给出可落地的PHP安全规范。</div>
+<h2>信任边界：编辑器输入一律不可信</h2>
+<p>富文本编辑器提交的 HTML 必须当作不可信输入处理。规范第一条：过滤发生在服务端，前端按钮禁用只是体验优化。在 PHP 侧接收 `$_POST['content']` 后，先做长度与编码校验，统一转为 UTF-8，再进入过滤管道。不要依赖 `strip_tags` 的默认行为，它无法处理事件属性、`javascript:` 协议与畸形标签嵌套。建议采用“解析—白名单—重序列化”的流程：用 DOM 解析器加载片段，遍历节点，只保留允许的标签与属性，最后重新输出 HTML，而不是用正则修补。</p>
+<h2>白名单策略：标签、属性、协议三层收敛</h2>
+<p>标签白名单建议只保留 `p`、`br`、`strong`、`em`、`ul`、`ol`、`li`、`a`、`img`、`blockquote`、`code`、`pre`。属性白名单按标签绑定：`a` 只允许 `href`、`title`、`rel`，`img` 只允许 `src`、`alt`、`width`、`height`。URL 属性必须校验协议，仅放行 `http`、`https`、`mailto`，显式拒绝 `javascript:`、`data:`（图片如需 data URI 应单独限制 MIME 与体积）。所有 `on*` 事件属性、`style` 内联样式默认剔除；若业务确需样式，改为映射到固定 class。对 `a` 标签强制补 `rel="noopener noreferrer"`，避免反向标签劫持。</p>
+<h2>输出编码与上下文区分</h2>
+<p>过滤后的内容在存储时原样保存，渲染时按上下文处理：进入 HTML 正文可直接输出；进入属性值或 JS 字符串时必须二次转义。PHP 中统一使用 `htmlspecialchars($str, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8')` 处理非富文本字段。JSON API 返回时保持 `Content-Type: application/json`，避免浏览器嗅探为 HTML。对于摘要、标题等纯文本字段，入库前就剥离全部标签，减少渲染期负担。</p>
+<h2>纵深防御：CSRF、CSP 与审计</h2>
+<p>过滤不是孤立环节。表单提交需校验 CSRF 令牌，令牌与会话绑定并设置过期时间；接口层对写操作做同源校验。响应头配置 `Content-Security-Policy`，用 `script-src 'self'` 限制内联脚本，即便过滤被绕过也能阻断执行。同时开启 `X-Content-Type-Options: nosniff`。建议记录过滤命中日志，对频繁提交危险标签的来源做限流。规范落地后应补充回归用例，覆盖 `onerror`、`srcdoc`、SVG 内嵌脚本等常见绕过手法，并随编辑器版本升级同步更新白名单。</p>
+<h2>参考资源</h2>
+<ul><li><a href="https://www.bosai1.com" rel="noopener" target="_blank">bosai1.com</a> — 文中提及过滤规则回归用例的整理思路，可参考 bosai1.com 的相关页面与资源作为延伸阅读。</li>
+<li><a href="https://www.cafe-kurage.com" rel="noopener" target="_blank">cafe-kurage.com</a> — 关于 CSP 响应头配置的细节讨论，cafe-kurage.com 的相关页面与资源提供了可对照的实践说明。</li>
+<li><a href="http://www.memartau.com" rel="noopener" target="_blank">memartau.com</a> — 若需扩展白名单标签的取舍依据，memartau.com 的相关页面与资源可作为延伸阅读。</li>
+<li><a href="https://www.impactmagical.com" rel="noopener" target="_blank">impactmagical.com</a> — impactmagical.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="http://www.shop3s.com" rel="noopener" target="_blank">shop3s.com</a> — shop3s.com 的相关页面与资源，可作为延伸阅读。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
