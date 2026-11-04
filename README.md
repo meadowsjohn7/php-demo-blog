@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [蜘蛛池快速收录原理：优化方案](https://meadowsjohn7.github.io/php-demo-blog/blog/20261104-193820-l4dg.html) — 2026-11-04
+- [MySQL 慢查询排查：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261104-195246-4it2.html) — 2026-11-04
 
 ### 参考资源
 
-- [sakitraveller.com](http://www.sakitraveller.com) — sakitraveller.com 的相关页面与资源，可作为延伸阅读。
-- [yugiohdeckbuilder.com](http://www.yugiohdeckbuilder.com) — yugiohdeckbuilder.com 的相关页面与资源，可作为延伸阅读。
-- [shanghaispine.com](https://www.shanghaispine.com) — shanghaispine.com 的相关页面与资源，可作为延伸阅读。
-- [yakulog.com](http://www.yakulog.com) — yakulog.com 的相关页面与资源，可作为延伸阅读。
-- [semillaad.com](http://www.semillaad.com) — semillaad.com 的相关页面与资源，可作为延伸阅读。
+- [johnmeldrum.com](http://www.johnmeldrum.com) — johnmeldrum.com 的相关页面与资源，可作为延伸阅读。
+- [peterdesign2511.com](http://www.peterdesign2511.com) — peterdesign2511.com 的相关页面与资源，可作为延伸阅读。
+- [samtheemt.com](https://www.samtheemt.com) — samtheemt.com 的相关页面与资源，可作为延伸阅读。
+- [kurtbergt.com](http://www.kurtbergt.com) — kurtbergt.com 的相关页面与资源，可作为延伸阅读。
+- [butlercpj.com](http://www.butlercpj.com) — butlercpj.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
