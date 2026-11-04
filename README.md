@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [WebShell 文件上传漏洞防护：技术架构](https://meadowsjohn7.github.io/php-demo-blog/blog/20261105-035807-r5q4.html) — 2026-11-05
+- [GitHub Actions CI/CD 流水线：深度解析](https://meadowsjohn7.github.io/php-demo-blog/blog/20261105-041345-6yeu.html) — 2026-11-05
 
 ### 参考资源
 
-- [hengshuojixie.com](https://www.hengshuojixie.com) — hengshuojixie.com 的相关页面与资源，可作为延伸阅读。
-- [wfhxgc.com](https://www.wfhxgc.com) — wfhxgc.com 的相关页面与资源，可作为延伸阅读。
-- [papuyar.com](http://www.papuyar.com) — papuyar.com 的相关页面与资源，可作为延伸阅读。
-- [qyhxsq.com](https://www.qyhxsq.com) — qyhxsq.com 的相关页面与资源，可作为延伸阅读。
-- [zsh784.com](https://www.zsh784.com) — zsh784.com 的相关页面与资源，可作为延伸阅读。
+- [theeco-chic.com](http://www.theeco-chic.com) — theeco-chic.com 的相关页面与资源，可作为延伸阅读。
+- [thecorriganshow.com](http://www.thecorriganshow.com) — thecorriganshow.com 的相关页面与资源，可作为延伸阅读。
+- [berkshireautorecovery.com](http://www.berkshireautorecovery.com) — berkshireautorecovery.com 的相关页面与资源，可作为延伸阅读。
+- [artsotnya.com](http://www.artsotnya.com) — artsotnya.com 的相关页面与资源，可作为延伸阅读。
+- [cafe-kurage.com](https://www.cafe-kurage.com) — cafe-kurage.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
