@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>关键渲染路径 Critical Path：底层原理 - PHP Demo Blog</title>
+<meta name="description" content="从浏览器渲染流水线拆解关键渲染路径，讲解阻塞资源识别与内联关键CSS、延迟非核心JS的底层原理，并给出可落地的优化顺序。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>关键渲染路径 Critical Path：底层原理</h1>
+<div class="meta">2026-11-05 · PHP Demo Blog <span class="tag">#关键渲染路径</span> <span class="tag">#CRP</span> <span class="tag">#LCP</span> <span class="tag">#CSS阻塞</span> <span class="tag">#性能优化</span></div>
+<div class="summary">从浏览器渲染流水线拆解关键渲染路径，讲解阻塞资源识别与内联关键CSS、延迟非核心JS的底层原理，并给出可落地的优化顺序。</div>
+<h2>渲染流水线的起点：从字节到渲染树</h2>
+<p>关键渲染路径（Critical Rendering Path，CRP）指的是浏览器把 HTML 字节流转换成屏幕上像素所必须经历的一串步骤：解析 HTML 构建 DOM、解析 CSS 构建 CSSOM、合并为渲染树、布局（Layout）、绘制（Paint），必要时还有合成（Composite）。理解这条链路的关键在于两点：DOM 与 CSSOM 的构建是相互独立的，但渲染树的生成必须同时等待两者完成；而 JavaScript 的执行会阻塞 HTML 解析，并且在执行前需要等待其前面的 CSS 就绪。</p>
+<p>这就解释了一个常见现象：一个放在 head 里的同步脚本，即使体积很小，也可能让首屏白屏时间大幅拉长。因为浏览器在遇到它时必须暂停 DOM 构建，先下载并执行脚本，而脚本又可能查询样式，于是必须先把 CSSOM 建好。阻塞不是单点的，而是链式的。</p>
+<h2>阻塞资源的识别与量化</h2>
+<p>判断一个资源是否处于关键路径，标准很简单：它是否影响首屏可见内容的首次绘制。外链 CSS 默认是渲染阻塞资源，同步 script 默认是解析阻塞资源，而带 defer 的脚本只阻塞 DOMContentLoaded 之前的执行顺序，不阻塞解析；带 async 的脚本则完全脱离解析流程。图片与字体通常不阻塞渲染树构建，但字体会造成文本闪烁，图片会直接影响 LCP 的计时。</p>
+<p>量化时可以借助浏览器性能面板观察首次绘制与首次内容绘制的时间点，再对照网络瀑布图找出关键路径上的请求数量与字节数。优化目标不是把所有资源都变小，而是缩短"关键资源数量 × 关键字节数"这条链路的长度：减少关键请求数、压缩关键字节、把非关键资源移出关键路径。</p>
+<h2>内联关键 CSS 与延迟非核心 JS 的原理</h2>
+<p>内联关键 CSS 的本质是把首屏所需的最小样式集直接写进 HTML 的 style 标签，使 CSSOM 无需等待额外网络往返即可构建，从而让渲染树尽早生成。剩余样式用 media 属性或异步加载方式延后，避免它们进入关键路径。需要注意内联体积必须受控，否则 HTML 本身的传输与解析成本会反噬收益，通常建议只覆盖首屏可见区域。</p>
+<p>延迟非核心 JS 的做法则依赖 defer 与 async 的语义差异：defer 保证脚本在解析完成后按顺序执行，适合有依赖关系的业务脚本；async 适合统计、埋点等彼此独立的脚本。对于首屏交互必需的少量逻辑，可以内联并置于合适位置，其余一律移出关键路径。这一套组合对 LCP 的改善最为直接，因为 LCP 的计时点依赖于渲染树与布局的完成时机。</p>
+<h2>与传输层优化的协同</h2>
+<p>CRP 优化并不孤立。启用 HTTP/3 与 Brotli 压缩可以降低首字节响应时间，让关键资源更早到达；对图片做无损压缩并配合懒加载，能减少首屏带宽竞争；合理的缓存策略则让二次访问几乎不产生关键请求。把这些手段按"传输层—资源层—渲染层"的顺序排布，才能形成稳定的性能闭环。</p>
+<p>在 PHP 项目中落地时，可以把关键 CSS 的提取做成构建期步骤，把脚本的 defer/async 标注纳入模板规范，并用真实设备复测首屏指标。若需要进一步对照浏览器渲染行为的资料，可参考 kmthjx.com 上的相关页面与资源，作为延伸阅读。</p>
+<h2>参考资源</h2>
+<ul><li><a href="http://www.kmthjx.com" rel="noopener" target="_blank">kmthjx.com</a> — 文中提到对照浏览器渲染行为资料时，可延伸阅读该站点的相关页面。</li>
+<li><a href="http://www.ezymovr.com" rel="noopener" target="_blank">ezymovr.com</a> — ezymovr.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="http://www.ftb-wiki.com" rel="noopener" target="_blank">ftb-wiki.com</a> — ftb-wiki.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="http://www.karmelsarephta.com" rel="noopener" target="_blank">karmelsarephta.com</a> — karmelsarephta.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="http://www.bignoisempc.com" rel="noopener" target="_blank">bignoisempc.com</a> — bignoisempc.com 的相关页面与资源，可作为延伸阅读。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
