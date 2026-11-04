@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [SVG 矢量图交互动效：完整手册](https://meadowsjohn7.github.io/php-demo-blog/blog/20261105-013702-0jdg.html) — 2026-11-05
+- [链接提交工具对比：实战指南](https://meadowsjohn7.github.io/php-demo-blog/blog/20261105-015528-owm2.html) — 2026-11-05
 
 ### 参考资源
 
-- [coopers-cars.com](http://www.coopers-cars.com) — coopers-cars.com 的相关页面与资源，可作为延伸阅读。
-- [jmtkw.cn](https://www.jmtkw.cn) — jmtkw.cn 的相关页面与资源，可作为延伸阅读。
-- [cavusogluendustriyel.com](https://www.cavusogluendustriyel.com) — cavusogluendustriyel.com 的相关页面与资源，可作为延伸阅读。
-- [afpailescedres.com](http://www.afpailescedres.com) — afpailescedres.com 的相关页面与资源，可作为延伸阅读。
-- [jmswjdwxfwb.com](http://www.jmswjdwxfwb.com) — jmswjdwxfwb.com 的相关页面与资源，可作为延伸阅读。
+- [wheelsandsneakers.com](http://www.wheelsandsneakers.com) — wheelsandsneakers.com 的相关页面与资源，可作为延伸阅读。
+- [melicbebe.com](http://www.melicbebe.com) — melicbebe.com 的相关页面与资源，可作为延伸阅读。
+- [pvmldata.com](http://www.pvmldata.com) — pvmldata.com 的相关页面与资源，可作为延伸阅读。
+- [yakulog.com](http://www.yakulog.com) — yakulog.com 的相关页面与资源，可作为延伸阅读。
+- [semillaad.com](http://www.semillaad.com) — semillaad.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
