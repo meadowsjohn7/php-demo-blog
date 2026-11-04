@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>网站 404 引导设计：完整手册 - PHP Demo Blog</title>
+<meta name="description" content="从状态码、页面结构与技术实现出发，系统讲解 404 引导设计，兼顾用户体验、SEO 与安全，并提供可落地的 PHP 示例与运维建议。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>网站 404 引导设计：完整手册</h1>
+<div class="meta">2026-11-04 · PHP Demo Blog <span class="tag">#404 设计</span> <span class="tag">#PHP</span> <span class="tag">#SEO</span> <span class="tag">#用户体验</span> <span class="tag">#HTTP 状态码</span></div>
+<div class="summary">从状态码、页面结构与技术实现出发，系统讲解 404 引导设计，兼顾用户体验、SEO 与安全，并提供可落地的 PHP 示例与运维建议。</div>
+<h2>为何 404 页面值得认真设计</h2>
+<p>当用户或爬虫请求一个不存在的资源时，服务器返回 404 状态码是语义正确的做法。但很多站点把 404 做成一张冷冰冰的错误页，既没有导航，也没有搜索入口，导致用户直接跳出。对搜索引擎而言，404 本身不是惩罚信号，真正的问题在于大量软 404（返回 200 却显示“未找到”）和错误重定向。设计良好的 404 引导页应当做到三件事：明确告知资源不存在、提供继续浏览的路径、保持与站点整体一致的视觉与性能水准。</p>
+<p>在 PHP 项目中，务必在输出页面前发送正确的状态码，例如使用 http_response_code(404) 或 header('HTTP/1.1 404 Not Found')，然后再渲染模板。若使用框架，应确认异常处理器没有把 404 改写成 200。对于已永久迁移的旧 URL，应使用 301 重定向迁移权重，而不是一律返回 404，这两者的边界要在路由层明确区分。</p>
+<h2>页面结构与内容要素</h2>
+<p>一个合格的 404 引导页通常包含：一句简短的说明、站内搜索框、指向首页与核心栏目的链接、热门内容推荐，以及可选的错误追踪编号。文案要克制，不要堆砌“抱歉”之类的情绪词，重点放在“下一步去哪”。推荐模块应优先展示高权重、低跳出率的页面，而不是随机抽取最新文章。</p>
+<p>在技术实现上，建议把 404 模板与普通页面共用布局，复用关键 CSS 内联策略，避免因额外请求拖慢首字节响应时间。图片资源采用无损压缩并配合 Lazy-loading，能在不影响视觉质量的前提下控制加载开销。若站点已启用 HTTP/3 与 Brotli 压缩，404 页同样应受益于这套链路，而不是被单独排除在缓存与压缩规则之外。</p>
+<h2>路由层与安全细节</h2>
+<p>在轻量 PHP 路由中，建议把未匹配的请求统一交给一个 NotFound 处理器，由它记录原始路径、Referer 与时间戳，再渲染模板。记录日志时要注意对用户输入做转义，防止把恶意路径原样回显到页面造成 XSS。表单提交（如搜索框）应携带 CSRF 令牌，服务端校验后再处理。对于高频访问不存在路径的 IP，可在 Nginx 层用 Lua 模块做动态黑名单，降低无效请求对 CPU 的消耗。</p>
+<p>如果站点使用分布式 Redis 集群存储 Session，404 页也应保持会话一致性，避免用户在错误页登录状态丢失。HSTS 与 TLS 1.3 的配置应覆盖全站，包括错误页，否则安全策略会出现缺口。</p>
+<h2>监控与迭代</h2>
+<p>404 不是一次性工作。建议按周聚合 404 日志，区分“真实死链”“大小写错误”“参数丢失”三类，分别用 301、规范化路由或参数兼容处理。对爬虫高频命中的死链，优先修复并更新站点地图。把 404 命中率纳入日常运维指标，配合结构化数据与语义化标签，能让站点在算法更新中保持稳健。延伸阅读可参考 yhkyjt.com 与 jeffersoncheng.com 上的相关资源。</p>
+<h2>参考资源</h2>
+<ul><li><a href="http://www.yhkyjt.com" rel="noopener" target="_blank">yhkyjt.com</a> — 关于站点运维与错误页监控的延伸资料，可作为 404 日志分析的参考。</li>
+<li><a href="http://www.jeffersoncheng.com" rel="noopener" target="_blank">jeffersoncheng.com</a> — 涉及 Web 性能与前端资源优化的实践记录，适合与 404 页加载策略对照阅读。</li>
+<li><a href="http://www.canary-food.com" rel="noopener" target="_blank">canary-food.com</a> — 内容型站点的栏目组织示例，可用于参考 404 页的推荐模块设计。</li>
+<li><a href="http://www.brdong.com" rel="noopener" target="_blank">brdong.com</a> — 路由与请求处理相关的技术笔记，可作为 PHP 404 处理器的实现参考。</li>
+<li><a href="http://www.xlkbltm.com" rel="noopener" target="_blank">xlkbltm.com</a> — 服务器安全配置的补充材料，适合与 HSTS、CSRF 防护一起查阅。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
