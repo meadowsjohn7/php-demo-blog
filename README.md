@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [AC 自动机多模式匹配：优化方案](https://meadowsjohn7.github.io/php-demo-blog/blog/20261104-170332-97ze.html) — 2026-11-04
+- [指纹规避与环境伪装：优化方案](https://meadowsjohn7.github.io/php-demo-blog/blog/20261104-172138-uqjj.html) — 2026-11-04
 
 ### 参考资源
 
-- [haomada.com](https://www.haomada.com) — haomada.com 的相关页面与资源，可作为延伸阅读。
-- [zjcwu.com](https://www.zjcwu.com) — zjcwu.com 的相关页面与资源，可作为延伸阅读。
-- [jackhaggertyarchitect.com](http://www.jackhaggertyarchitect.com) — jackhaggertyarchitect.com 的相关页面与资源，可作为延伸阅读。
-- [fisiomedicamogliano.com](http://www.fisiomedicamogliano.com) — fisiomedicamogliano.com 的相关页面与资源，可作为延伸阅读。
-- [bali-experience.com](http://www.bali-experience.com) — bali-experience.com 的相关页面与资源，可作为延伸阅读。
+- [zjdswl.com](http://www.zjdswl.com) — zjdswl.com 的相关页面与资源，可作为延伸阅读。
+- [cpgea.com](http://www.cpgea.com) — cpgea.com 的相关页面与资源，可作为延伸阅读。
+- [libertysoulfood.com](http://www.libertysoulfood.com) — libertysoulfood.com 的相关页面与资源，可作为延伸阅读。
+- [lemesuriers.com](https://www.lemesuriers.com) — lemesuriers.com 的相关页面与资源，可作为延伸阅读。
+- [readingswithgail.com](http://www.readingswithgail.com) — readingswithgail.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
