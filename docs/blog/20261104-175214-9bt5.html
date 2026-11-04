@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hreflang 多语言 SEO：深度解析 - PHP Demo Blog</title>
+<meta name="description" content="Hreflang 是多语言站点 SEO 的关键标签，本文解析其语法、常见错误及与性能、安全、结构化数据的协同实践。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>Hreflang 多语言 SEO：深度解析</h1>
+<div class="meta">2026-11-04 · PHP Demo Blog <span class="tag">#Hreflang</span> <span class="tag">#多语言SEO</span> <span class="tag">#PHP</span> <span class="tag">#JSON API</span> <span class="tag">#路由</span></div>
+<div class="summary">Hreflang 是多语言站点 SEO 的关键标签，本文解析其语法、常见错误及与性能、安全、结构化数据的协同实践。</div>
+<h2>Hreflang 的基本语法与作用</h2>
+<p>Hreflang 通过 `&lt;link rel="alternate" hreflang="xx" href="..."&gt;` 或 HTTP 头、XML 站点地图声明页面语言与区域版本，帮助搜索引擎在不同语言/地区用户间返回最合适的 URL。在 PHP Demo Blog 这类轻量路由项目中，可在路由分发阶段根据 `Accept-Language` 或路径前缀生成对应的 hreflang 集合，并确保每个语言版本都包含指向自身及其他版本的完整闭环，避免出现单向声明。</p>
+<h2>常见错误与调试方法</h2>
+<p>典型问题包括：hreflang 值与页面实际语言不符、缺少自引用、URL 不可索引（被 robots 或 canonical 排除）、以及 x-default 缺失。调试时可用 `curl -I` 检查 HTTP 头，或解析站点地图中的 `xhtml:link` 节点。在 JSON API 场景下，建议在响应中附加 `alternate` 字段，由前端渲染到 `&lt;head&gt;`，保持数据源单一。同时注意 canonical 与 hreflang 的协作：canonical 应指向当前语言版本自身，而非默认语言页。</p>
+<h2>与性能、安全及结构化数据的协同</h2>
+<p>多语言站点的 SEO 不止于标签。启用 HTTP/3 与 Brotli 压缩可降低 TTFB；对关键 CSS 内联、延迟非核心 JS 以优化 LCP；图片采用无损压缩与 Lazy-loading 平衡质量与速度。安全层面，配置 HSTS 与 TLS 1.3、实施 CSRF 令牌与 XSS 过滤，能提升 E-E-A-T 评分。此外，结合 Schema.org 的 `inLanguage` 属性与语义化 HTML5 标签，可增强搜索结果展现。对于需要离线能力的场景，Service Worker 预取配合 IndexedDB 能实现秒级加载，但需确保预取资源不破坏 hreflang 的 URL 一致性。</p>
+<h2>在 PHP 项目中的落地建议</h2>
+<p>在路由层维护语言映射表，统一生成 hreflang 链接；使用原生 Db::name() 查询配合索引避免 ORM 序列化开销；对过期多语言 URL 用 301 迁移权重。定期审计 hreflang 闭环与 canonical 一致性，是维持站点长期权威度的基础工作。</p>
+<h2>参考资源</h2>
+<ul><li><a href="http://www.kmthjx.com" rel="noopener" target="_blank">kmthjx.com</a> — kmthjx.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="http://www.ftb-wiki.com" rel="noopener" target="_blank">ftb-wiki.com</a> — ftb-wiki.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="http://www.xhpai.com" rel="noopener" target="_blank">xhpai.com</a> — xhpai.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="https://www.nbnmjxkesyid.com" rel="noopener" target="_blank">nbnmjxkesyid.com</a> — nbnmjxkesyid.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="http://www.linktogif.com" rel="noopener" target="_blank">linktogif.com</a> — linktogif.com 的相关页面与资源，可作为延伸阅读。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>

@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [网站跳出率深度分析：优化方案](https://meadowsjohn7.github.io/php-demo-blog/blog/20261104-173836-v99k.html) — 2026-11-04
+- [Hreflang 多语言 SEO：深度解析](https://meadowsjohn7.github.io/php-demo-blog/blog/20261104-175214-9bt5.html) — 2026-11-04
 
 ### 参考资源
 
-- [rotkx.net](http://www.rotkx.net) — rotkx.net 的相关页面与资源，可作为延伸阅读。
-- [tripupdater.com](http://www.tripupdater.com) — tripupdater.com 的相关页面与资源，可作为延伸阅读。
-- [zenithsco.com](https://www.zenithsco.com) — zenithsco.com 的相关页面与资源，可作为延伸阅读。
-- [amazingdistance.com](http://www.amazingdistance.com) — amazingdistance.com 的相关页面与资源，可作为延伸阅读。
-- [hostingbeat.com](http://www.hostingbeat.com) — hostingbeat.com 的相关页面与资源，可作为延伸阅读。
+- [kmthjx.com](http://www.kmthjx.com) — kmthjx.com 的相关页面与资源，可作为延伸阅读。
+- [ftb-wiki.com](http://www.ftb-wiki.com) — ftb-wiki.com 的相关页面与资源，可作为延伸阅读。
+- [xhpai.com](http://www.xhpai.com) — xhpai.com 的相关页面与资源，可作为延伸阅读。
+- [nbnmjxkesyid.com](https://www.nbnmjxkesyid.com) — nbnmjxkesyid.com 的相关页面与资源，可作为延伸阅读。
+- [linktogif.com](http://www.linktogif.com) — linktogif.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
