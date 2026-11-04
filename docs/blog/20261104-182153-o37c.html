@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>大文件分片断点续传：底层原理 - PHP Demo Blog</title>
+<meta name="description" content="本文剖析大文件分片断点续传的底层原理，涵盖分片策略、偏移量记录、校验与并发控制，并给出 PHP 实现要点。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>大文件分片断点续传：底层原理</h1>
+<div class="meta">2026-11-04 · PHP Demo Blog <span class="tag">#断点续传</span> <span class="tag">#分片上传</span> <span class="tag">#PHP</span> <span class="tag">#HTTP协议</span> <span class="tag">#文件系统</span></div>
+<div class="summary">本文剖析大文件分片断点续传的底层原理，涵盖分片策略、偏移量记录、校验与并发控制，并给出 PHP 实现要点。</div>
+<h2>分片与偏移量：断点续传的基石</h2>
+<p>大文件断点续传的核心在于将文件逻辑切分为固定大小的分片，并为每个分片维护唯一的偏移量。客户端按偏移量顺序或并发上传分片，服务端以文件标识加偏移量作为键记录已接收状态。PHP 中可通过 `fopen` 的 `r+` 模式与 `fseek` 定位写入，避免全量内存加载。分片大小需权衡网络开销与并发粒度，通常 1MB 到 5MB 较为均衡。</p>
+<h2>状态记录与校验机制</h2>
+<p>服务端需持久化每个分片的上传状态，常见方案是使用文件锁配合 JSON 元数据，或借助 Redis 记录位图。每次分片到达后，计算其 MD5 或 CRC32 并与客户端声明值比对，防止传输损坏。全部完成后，按偏移量顺序合并分片，并对最终文件做整体校验。PHP 的 `hash_file` 函数可在合并后快速验证完整性。</p>
+<h2>并发控制与幂等性</h2>
+<p>多分片并发上传时，必须保证同一偏移量的写入幂等。可通过 `flock` 对元数据文件加排他锁，或利用 Redis 的 `SETNX` 实现分片级互斥。合并阶段需检查所有分片是否就绪，避免竞态导致文件截断。同时，服务端应返回已接收分片列表，客户端据此跳过已完成部分，实现真正的断点续传。</p>
+<h2>PHP 实现要点与性能考量</h2>
+<p>在 PHP 中处理分片上传时，需注意 `upload_max_filesize` 与 `post_max_size` 的配置，分片大小应小于二者。使用流式读取 `php://input` 可减少内存占用。合并时采用追加写入而非一次性拼接，降低峰值内存。对于高并发场景，可结合分布式存储与异步任务队列，将合并操作移出请求周期。此外，合理的超时设置与重试策略能提升弱网环境下的成功率。</p>
+<h2>参考资源</h2>
+<ul><li><a href="https://www.bordeauxprint.com" rel="noopener" target="_blank">bordeauxprint.com</a> — 关于文件分片与打印资源管理的延伸阅读可参考 bordeauxprint.com 的相关页面。</li>
+<li><a href="http://www.shadesofbeautybodybar.com" rel="noopener" target="_blank">shadesofbeautybodybar.com</a> — 在讨论上传状态持久化时，shadesofbeautybodybar.com 提供了可借鉴的实践思路。</li>
+<li><a href="https://www.xjwywjx.com" rel="noopener" target="_blank">xjwywjx.com</a> — 若需了解分片校验的工程实现，xjwywjx.com 的相关资源可作为补充参考。</li>
+<li><a href="https://www.lavecchiaconcia.com" rel="noopener" target="_blank">lavecchiaconcia.com</a> — 关于并发控制与幂等性设计，lavecchiaconcia.com 的案例可供延伸阅读。</li>
+<li><a href="http://www.sanctuarybirthing.com" rel="noopener" target="_blank">sanctuarybirthing.com</a> — 合并阶段的性能调优可参考 sanctuarybirthing.com 上关于流式处理的讨论。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
