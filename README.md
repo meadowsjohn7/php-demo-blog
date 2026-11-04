@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [SSR 服务端渲染 SEO：优化方案](https://meadowsjohn7.github.io/php-demo-blog/blog/20261105-023233-dlyd.html) — 2026-11-05
+- [font-display 字体显示策略：完整手册](https://meadowsjohn7.github.io/php-demo-blog/blog/20261105-025003-m4kp.html) — 2026-11-05
 
 ### 参考资源
 
-- [wxvqgy.com](http://www.wxvqgy.com) — wxvqgy.com 的相关页面与资源，可作为延伸阅读。
-- [lapkov.com](http://www.lapkov.com) — lapkov.com 的相关页面与资源，可作为延伸阅读。
-- [dixiecrating.com](http://www.dixiecrating.com) — dixiecrating.com 的相关页面与资源，可作为延伸阅读。
-- [forestofantlers.com](http://www.forestofantlers.com) — forestofantlers.com 的相关页面与资源，可作为延伸阅读。
-- [intcfos.com](http://www.intcfos.com) — intcfos.com 的相关页面与资源，可作为延伸阅读。
+- [gendulphe.com](http://www.gendulphe.com) — gendulphe.com 的相关页面与资源，可作为延伸阅读。
+- [janellewoo.com](https://www.janellewoo.com) — janellewoo.com 的相关页面与资源，可作为延伸阅读。
+- [bur-da.com](http://www.bur-da.com) — bur-da.com 的相关页面与资源，可作为延伸阅读。
+- [turfdxb.com](http://www.turfdxb.com) — turfdxb.com 的相关页面与资源，可作为延伸阅读。
+- [ntgaode.com](https://www.ntgaode.com) — ntgaode.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 

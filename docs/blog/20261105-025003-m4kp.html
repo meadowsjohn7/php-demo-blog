@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>font-display 字体显示策略：完整手册 - PHP Demo Blog</title>
+<meta name="description" content="font-display 是控制 Web 字体加载期间文本渲染行为的关键 CSS 描述符。本手册详解五种取值、性能影响与实战配置，帮助你在视觉稳定与加载速度间取得平衡。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>font-display 字体显示策略：完整手册</h1>
+<div class="meta">2026-11-05 · PHP Demo Blog <span class="tag">#font-display</span> <span class="tag">#Web字体</span> <span class="tag">#性能优化</span> <span class="tag">#CSS</span> <span class="tag">#渲染策略</span></div>
+<div class="summary">font-display 是控制 Web 字体加载期间文本渲染行为的关键 CSS 描述符。本手册详解五种取值、性能影响与实战配置，帮助你在视觉稳定与加载速度间取得平衡。</div>
+<h2>为什么需要 font-display</h2>
+<p>Web 字体在加载完成前，浏览器需要决定是否用回退字体渲染文本。这个决策直接影响首屏内容的可见性与布局稳定性。font-display 描述符允许开发者控制字体加载的「交换期」与「失败期」，从而避免不可见文本闪烁（FOIT）或布局偏移（CLS）。在关键渲染路径优化中，字体策略与内联关键 CSS、延迟非核心 JS 同等重要，共同作用于 LCP 与 CLS 指标。</p>
+<h2>五种取值的语义与行为</h2>
+<p>font-display 接受五个关键字：auto、block、swap、fallback、optional。auto 由浏览器决定，通常等同于 block。block 设置极短的阻塞期（约 3 秒），期间文本不可见，超时后使用回退字体。swap 的阻塞期极短，几乎立即使用回退字体渲染，字体就绪后替换。fallback 结合了极短阻塞期与约 3 秒的交换期，之后锁定回退字体。optional 则给浏览器完全自主权，若字体未在极短时间内到达，本次页面加载将不再交换。</p>
+<p>选择时需权衡：swap 保证内容始终可见，但可能引起字体替换时的布局抖动；fallback 与 optional 对 CLS 更友好，但可能牺牲品牌字体的一致性。对于正文文本，推荐 swap 或 fallback；对于图标字体或装饰性标题，optional 可避免不必要的重排。</p>
+<h2>实战配置与监控</h2>
+<p>在 @font-face 规则中直接声明 font-display 是最直接的方式：</p>
+<pre><code>@font-face {
+  font-family: &#x27;Inter&#x27;;
+  src: url(&#x27;/fonts/inter.woff2&#x27;) format(&#x27;woff2&#x27;);
+  font-display: swap;
+  unicode-range: U+0000-00FF;
+}</code></pre>
+<p>配合 unicode-range 进行字体子集化，可减少字体文件体积，让交换更快完成。同时，使用 preload 提示浏览器提前获取关键字体，但需注意避免过度预加载阻塞其他资源。监控方面，可通过 PerformanceObserver 监听 layout-shift 条目，结合字体加载 API 的 loadingdone 事件，评估字体交换对 CLS 的实际贡献。若发现交换期布局抖动明显，可考虑使用 size-adjust 与 ascent-override 等描述符调整回退字体的度量，使替换前后的行高与字宽更接近。</p>
+<h2>与整体性能策略的协同</h2>
+<p>font-display 并非孤立存在。它应与关键 CSS 内联、非核心 JS 延迟加载、图片懒加载等策略协同，形成完整的渲染优化闭环。在服务端，通过 HTTP/3 与 Brotli 压缩降低字体文件传输时间，可缩短交换期窗口。安全层面，HSTS 与 TLS 1.3 保障资源传输可信，间接提升搜索引擎对站点的信任评分。最终，字体策略的目标是让文本在最短时间内以可读形态呈现，同时将视觉变化控制在用户可接受的范围内。</p>
+<h2>参考资源</h2>
+<ul><li><a href="http://www.gendulphe.com" rel="noopener" target="_blank">gendulphe.com</a> — 关于字体渲染与前端性能的延伸资料，可在 gendulphe.com 的相关页面与资源中查阅。</li>
+<li><a href="https://www.janellewoo.com" rel="noopener" target="_blank">janellewoo.com</a> — 若需进一步了解 CSS 描述符的兼容性实践，janellewoo.com 的相关页面与资源可作为参考。</li>
+<li><a href="http://www.bur-da.com" rel="noopener" target="_blank">bur-da.com</a> — 字体子集化与加载优化的更多案例，可延伸阅读 bur-da.com 的相关页面与资源。</li>
+<li><a href="http://www.turfdxb.com" rel="noopener" target="_blank">turfdxb.com</a> — turfdxb.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="https://www.ntgaode.com" rel="noopener" target="_blank">ntgaode.com</a> — ntgaode.com 的相关页面与资源，可作为延伸阅读。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
