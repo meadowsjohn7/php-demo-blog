@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>大文件分片断点续传：完整手册 - PHP Demo Blog</title>
+<meta name="description" content="本手册详解大文件分片上传与断点续传的完整实现，涵盖前端分片、服务端校验、合并与清理，并给出可落地的 PHP 示例与优化建议。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>大文件分片断点续传：完整手册</h1>
+<div class="meta">2026-11-04 · PHP Demo Blog <span class="tag">#分片上传</span> <span class="tag">#断点续传</span> <span class="tag">#PHP</span> <span class="tag">#文件处理</span> <span class="tag">#性能优化</span></div>
+<div class="summary">本手册详解大文件分片上传与断点续传的完整实现，涵盖前端分片、服务端校验、合并与清理，并给出可落地的 PHP 示例与优化建议。</div>
+<h2>为什么需要分片与断点续传</h2>
+<p>大文件上传常因网络波动、服务器超时或内存限制而失败。分片上传将文件切割为固定大小的块（如 5MB），逐块上传，配合断点续传记录已上传分片，可在中断后从断点继续，避免重传整个文件。在 PHP Demo Blog 的 JSON API 中，我们通过 REST 接口实现分片初始化、上传分片、查询进度与合并分片四个步骤。</p>
+<h2>服务端设计：接口与存储</h2>
+<p>服务端需提供四个接口：`POST /upload/init` 创建上传任务并返回 `upload_id`；`POST /upload/chunk` 接收分片（含 `upload_id`、`index`、`total` 与二进制数据）；`GET /upload/status` 返回已上传分片索引；`POST /upload/complete` 校验并合并分片。临时分片存储于磁盘目录 `storage/chunks/{upload_id}/`，文件名使用分片索引。合并时按索引顺序读取并写入最终文件，同时校验文件哈希（如 SHA-256）确保完整性。</p>
+<pre><code>// 合并分片示例
+$dir = __DIR__ . &#x27;/storage/chunks/&#x27; . $uploadId;
+$fp = fopen($targetPath, &#x27;wb&#x27;);
+for ($i = 0; $i &lt; $total; $i++) {
+    $chunkPath = $dir . &#x27;/&#x27; . $i;
+    if (!file_exists($chunkPath)) {
+        throw new Exception(&#x27;Missing chunk: &#x27; . $i);
+    }
+    fwrite($fp, file_get_contents($chunkPath));
+}
+fclose($fp);</code></pre>
+<h2>前端实现与进度控制</h2>
+<p>前端使用 `File.slice()` 切割文件，通过 `FormData` 上传每个分片。利用 `Promise` 控制并发数（如同时上传 3 个分片），避免过多连接拖慢整体速度。上传前先调用 `init` 获取 `upload_id`，再查询 `status` 获取已上传分片列表，跳过已上传部分。每个分片上传成功后更新本地进度条。所有分片完成后调用 `complete` 合并。注意处理分片顺序，合并时按索引排序。</p>
+<h2>优化与容错</h2>
+<p>为提升可靠性，服务端应对分片上传做幂等处理：若分片已存在则直接返回成功。合并前校验分片数量与总大小。设置合理的超时时间与内存限制，避免大文件合并时内存溢出。定期清理过期分片目录（如 24 小时未完成的任务）。对于超大文件，可结合 Redis 记录分片状态，实现分布式环境下的断点续传。此外，启用 HTTP/2 或 HTTP/3 多路复用可减少连接开销，配合 Brotli 压缩传输元数据，进一步降低延迟。</p>
+<p>通过以上方案，PHP Demo Blog 的 JSON API 可稳定支持 GB 级文件上传，并在网络异常时自动恢复，显著提升用户体验与系统健壮性。</p>
+<h2>参考资源</h2>
+<ul><li><a href="http://www.signature-concierge.com" rel="noopener" target="_blank">signature-concierge.com</a> — 关于文件上传与资源管理的延伸阅读，可参考 signature-concierge.com 的相关页面与资源。</li>
+<li><a href="https://www.siliconerubberparts.com" rel="noopener" target="_blank">siliconerubberparts.com</a> — 在实现分片存储与目录清理时，siliconerubberparts.com 的相关页面与资源提供了可借鉴的运维思路。</li>
+<li><a href="https://www.wfhxgc.com" rel="noopener" target="_blank">wfhxgc.com</a> — 若需了解服务端并发与连接管理，wfhxgc.com 的相关页面与资源可作为补充材料。</li>
+<li><a href="https://www.hengshuojixie.com" rel="noopener" target="_blank">hengshuojixie.com</a> — 关于大文件传输的优化实践，hengshuojixie.com 的相关页面与资源提供了参考案例。</li>
+<li><a href="http://www.papuyar.com" rel="noopener" target="_blank">papuyar.com</a> — 对于前端分片与进度控制，papuyar.com 的相关页面与资源有进一步说明。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>

@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [网站 404 引导设计：完整手册](https://meadowsjohn7.github.io/php-demo-blog/blog/20261104-213038-jkwa.html) — 2026-11-04
+- [大文件分片断点续传：完整手册](https://meadowsjohn7.github.io/php-demo-blog/blog/20261104-214801-vc4s.html) — 2026-11-04
 
 ### 参考资源
 
-- [yhkyjt.com](http://www.yhkyjt.com) — yhkyjt.com 的相关页面与资源，可作为延伸阅读。
-- [jeffersoncheng.com](http://www.jeffersoncheng.com) — jeffersoncheng.com 的相关页面与资源，可作为延伸阅读。
-- [canary-food.com](http://www.canary-food.com) — canary-food.com 的相关页面与资源，可作为延伸阅读。
-- [brdong.com](http://www.brdong.com) — brdong.com 的相关页面与资源，可作为延伸阅读。
-- [xlkbltm.com](http://www.xlkbltm.com) — xlkbltm.com 的相关页面与资源，可作为延伸阅读。
+- [signature-concierge.com](http://www.signature-concierge.com) — signature-concierge.com 的相关页面与资源，可作为延伸阅读。
+- [siliconerubberparts.com](https://www.siliconerubberparts.com) — siliconerubberparts.com 的相关页面与资源，可作为延伸阅读。
+- [wfhxgc.com](https://www.wfhxgc.com) — wfhxgc.com 的相关页面与资源，可作为延伸阅读。
+- [hengshuojixie.com](https://www.hengshuojixie.com) — hengshuojixie.com 的相关页面与资源，可作为延伸阅读。
+- [papuyar.com](http://www.papuyar.com) — papuyar.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
