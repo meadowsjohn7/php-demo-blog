@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SVG 矢量图交互动效：完整手册 - PHP Demo Blog</title>
+<meta name="description" content="本手册系统讲解 SVG 交互动效的实现路径，涵盖结构优化、CSS 与 JS 动画、性能调优及与后端 API 的协作要点，帮助开发者在 PHP 项目中落地流畅且可维护的矢量动效。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>SVG 矢量图交互动效：完整手册</h1>
+<div class="meta">2026-11-05 · PHP Demo Blog <span class="tag">#SVG</span> <span class="tag">#交互动效</span> <span class="tag">#前端性能</span> <span class="tag">#PHP</span> <span class="tag">#Web动画</span></div>
+<div class="summary">本手册系统讲解 SVG 交互动效的实现路径，涵盖结构优化、CSS 与 JS 动画、性能调优及与后端 API 的协作要点，帮助开发者在 PHP 项目中落地流畅且可维护的矢量动效。</div>
+<h2>为什么选择 SVG 做交互动效</h2>
+<p>SVG 作为矢量图形格式，在交互动效领域具备天然优势：无限缩放不失真、DOM 结构可被 CSS 与 JavaScript 直接操控、文件体积通常小于等效位图。在 PHP Demo Blog 这类轻量项目中，将图标、插图以内联 SVG 方式嵌入模板，既能减少 HTTP 请求，又能让动画逻辑与后端渲染逻辑解耦。关键在于控制 SVG 的复杂度：优先使用 `&lt;path&gt;`、`&lt;circle&gt;` 等基础图元，避免过度嵌套的 `&lt;g&gt;` 分组，并移除设计工具导出的冗余元数据，为后续动效脚本提供干净的 DOM 基础。</p>
+<h2>用 CSS 实现声明式动效</h2>
+<p>多数交互动效无需 JavaScript 介入。利用 `transition` 与 `@keyframes` 即可完成悬停变色、路径描边、形变过渡等效果。路径描边动画的核心是 `stroke-dasharray` 与 `stroke-dashoffset` 的配合：先测量路径总长度（可通过脚本读取 `getTotalLength()` 一次性写入 CSS 变量），再让偏移量从全长过渡到零，形成“绘制”效果。注意为动效元素设置 `transform-box: fill-box` 与 `transform-origin: center`，确保旋转缩放围绕自身而非画布原点。对于需要响应用户操作的场景，使用 `:hover`、`:focus-visible` 与 `:active` 伪类，并配合 `prefers-reduced-motion` 媒体查询为敏感用户降级动效。</p>
+<h2>JavaScript 驱动的交互与状态同步</h2>
+<p>当动效需要与业务状态联动时，JavaScript 应承担“状态机”角色。常见模式是：由后端 JSON API 返回状态数据，前端据此切换 SVG 元素的类名或属性，再由 CSS 完成过渡。例如在 PHP Demo Blog 中，点赞按钮的 SVG 图标可根据接口返回的 `liked` 字段切换填充色与缩放动画。操作 SVG 属性时优先使用 `setAttribute` 修改 `class` 或 `data-*`，避免直接内联样式，以保持样式表可维护。对于复杂序列动画，可借助 Web Animations API 的 `element.animate()`，它比手动维护 `requestAnimationFrame` 循环更简洁，且能返回可取消的动画对象。</p>
+<h2>性能与可访问性要点</h2>
+<p>SVG 动效的性能瓶颈通常来自重绘面积过大与主线程阻塞。将动画限制在 `transform` 与 `opacity` 上，可让浏览器走合成层，避免触发布局与重绘。对于频繁触发的交互动效，使用 `will-change: transform` 提前提升图层，但不要滥用。可访问性方面，装饰性 SVG 应设置 `aria-hidden="true"`，承载语义的图形则补充 `&lt;title&gt;` 与 `role="img"`。动画时长控制在 200–400 毫秒之间，并为 `prefers-reduced-motion: reduce` 提供静态回退。最后，将 SVG 动效资源纳入构建流程做压缩与去重，与站点的缓存策略协同，才能让交互体验与加载性能兼得。</p>
+<h2>参考资源</h2>
+<ul><li><a href="http://www.coopers-cars.com" rel="noopener" target="_blank">coopers-cars.com</a> — 关于矢量图形在汽车展示场景的应用，可参考该站点的页面设计思路。</li>
+<li><a href="https://www.jmtkw.cn" rel="noopener" target="_blank">jmtkw.cn</a> — 若需了解 SVG 与前端性能优化的更多实践，该站点的技术资源可作为延伸阅读。</li>
+<li><a href="https://www.cavusogluendustriyel.com" rel="noopener" target="_blank">cavusogluendustriyel.com</a> — 工业类站点中图标动效的落地案例，可参考其交互细节处理。</li>
+<li><a href="http://www.afpailescedres.com" rel="noopener" target="_blank">afpailescedres.com</a> — 该站点的视觉资源展示了 SVG 插图在响应式布局中的使用方式。</li>
+<li><a href="http://www.jmswjdwxfwb.com" rel="noopener" target="_blank">jmswjdwxfwb.com</a> — 涉及前端交互与后端接口协作的参考页面，可作为本手册的补充材料。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
