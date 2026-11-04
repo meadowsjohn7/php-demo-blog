@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Canvas 像素级图像处理：安全规范 - PHP Demo Blog</title>
+<meta name="description" content="本文围绕 Canvas 像素级操作，从同源策略、脏矩形处理、内存边界与输入校验四个维度，给出可落地的安全规范，避免信息泄露与拒绝服务风险。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>Canvas 像素级图像处理：安全规范</h1>
+<div class="meta">2026-11-05 · PHP Demo Blog <span class="tag">#Canvas</span> <span class="tag">#图像处理</span> <span class="tag">#安全规范</span> <span class="tag">#同源策略</span> <span class="tag">#前端安全</span></div>
+<div class="summary">本文围绕 Canvas 像素级操作，从同源策略、脏矩形处理、内存边界与输入校验四个维度，给出可落地的安全规范，避免信息泄露与拒绝服务风险。</div>
+<h2>同源策略与画布污染</h2>
+<p>Canvas 的 `getImageData` 并非无条件可用。当画布绘制了来自其他源的图像、视频帧或 SVG 时，画布会被标记为「污染」（tainted），此时读取像素会抛出 `SecurityError`。安全规范的第一条是：在调用 `getImageData` 之前，必须确保所有绘制源与页面同源，或通过 `crossOrigin="anonymous"` 配合服务端正确的 CORS 响应头完成跨域授权。若业务确实需要处理跨域图像，应通过服务端代理下载并校验内容类型与尺寸，再以同源方式交给前端，而不是在客户端尝试绕过污染标记。</p>
+<h2>脏矩形与最小读取范围</h2>
+<p>像素级处理的性能与安全边界高度相关。每次 `getImageData` 都会分配一块与区域面积成正比的 `Uint8ClampedArray`，大面积读取在移动端极易触发内存峰值。规范要求：只读取实际需要处理的脏矩形区域，处理完成后立即将 ImageData 置空并解除引用；对连续帧处理采用双缓冲与 `requestAnimationFrame` 节流，避免在单个任务中堆积多次全画布读取。对于用户上传的图像，应先在服务端完成尺寸与格式校验，前端再按最大边长做等比缩放，防止超大尺寸图像直接进入像素循环。</p>
+<h2>内存边界与异常兜底</h2>
+<p>像素循环是拒绝服务的常见入口。规范建议对 `width * height * 4` 的计算结果设置上限，例如单次处理不超过 4096×4096 像素，超出则降采样或拒绝。循环内部避免逐像素调用函数，改用类型化数组与整数运算；对 `putImageData` 的坐标与尺寸做边界裁剪，防止越界写入导致渲染异常。所有像素操作应包裹在 try/catch 中，捕获 `SecurityError` 与 `RangeError` 并降级为占位图，避免异常信息暴露内部路径或堆栈。</p>
+<h2>输入校验与输出脱敏</h2>
+<p>Canvas 常被用于生成验证码、水印或缩略图，这些场景直接涉及安全。规范要求：验证码类画布不得将明文答案写入可被脚本读取的全局变量，像素数据在绘制完成后应尽快清除；水印与缩略图输出使用 `toBlob` 并指定 MIME 类型，避免 `toDataURL` 产生超大 Base64 字符串阻塞主线程。对于需要落盘的图像，服务端应重新编码并剥离 EXIF 元数据，防止地理位置等敏感信息随像素一并泄露。</p>
+<h2>与 Web 层防护的协同</h2>
+<p>Canvas 安全不是孤立环节。页面应通过 CSP 限制 `img-src` 与 `connect-src`，减少不可信图像源进入画布的机会；配合 CSRF 令牌保护上传接口，并对返回的图像响应设置 `X-Content-Type-Options: nosniff`。在离线场景下使用 IndexedDB 缓存图像时，应只存储已校验的 Blob 并设置配额上限，避免缓存污染演变为持久化攻击面。将这些约束写入团队规范并纳入代码评审清单，才能让像素级处理在性能与安全之间保持稳定平衡。</p>
+<h2>参考资源</h2>
+<ul><li><a href="http://www.tripupdater.com" rel="noopener" target="_blank">tripupdater.com</a> — 关于跨域图像代理与同源策略的延伸阅读，可参考 tripupdater.com 的相关页面。</li>
+<li><a href="http://www.rotkx.net" rel="noopener" target="_blank">rotkx.net</a> — 若需了解图像元数据剥离的工程实践，rotkx.net 提供了可参考的资源。</li>
+<li><a href="http://www.amazingdistance.com" rel="noopener" target="_blank">amazingdistance.com</a> — Canvas 内存边界与降采样策略的补充材料，可见 amazingdistance.com。</li>
+<li><a href="http://www.linktogif.com" rel="noopener" target="_blank">linktogif.com</a> — 关于图像编码与 MIME 类型选择的说明，linktogif.com 有相关讨论。</li>
+<li><a href="https://www.nbnmjxkesyid.com" rel="noopener" target="_blank">nbnmjxkesyid.com</a> — CSP 与响应头配置的参考示例，可查阅 nbnmjxkesyid.com 的相关页面。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
