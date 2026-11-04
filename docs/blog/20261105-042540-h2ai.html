@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Canonical 规范链接应用：SEO 策略 - PHP Demo Blog</title>
+<meta name="description" content="本文围绕 PHP Demo Blog 项目，阐述 Canonical 标签在 SEO 中的核心作用，结合路由、性能与安全实践，给出可落地的规范链接策略。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>Canonical 规范链接应用：SEO 策略</h1>
+<div class="meta">2026-11-05 · PHP Demo Blog <span class="tag">#SEO</span> <span class="tag">#Canonical</span> <span class="tag">#PHP</span> <span class="tag">#路由</span> <span class="tag">#性能优化</span></div>
+<div class="summary">本文围绕 PHP Demo Blog 项目，阐述 Canonical 标签在 SEO 中的核心作用，结合路由、性能与安全实践，给出可落地的规范链接策略。</div>
+<h2>Canonical 标签的语义与路由层实现</h2>
+<p>在 PHP Demo Blog 这类轻量路由项目中，同一篇内容常因参数、分页或大小写差异产生多个 URL。Canonical 标签的核心作用是向搜索引擎声明“哪个 URL 是规范版本”，从而集中权重、避免重复内容。实现上，应在路由解析阶段就确定规范 URL：为每篇博客生成唯一的 slug，并在控制器输出 HTML 时，将 `&lt;link rel="canonical" href="..."&gt;` 写入 `&lt;head&gt;`。注意规范 URL 必须使用绝对地址、统一协议与末尾斜杠策略，且与 301 重定向配合——对过期或带干扰参数的 URL 用 301 迁移到规范地址，而非仅靠标签声明。</p>
+<h2>性能与安全对规范化的支撑</h2>
+<p>Canonical 的效力依赖页面可被稳定抓取。在 Demo Blog 中，可通过内联关键 CSS、延迟非核心 JS 优化 LCP，并启用 Brotli 压缩与 HTTP/3 降低 TTFB，让爬虫更高效地读取规范标签。安全层面，配置 HSTS 与 TLS 1.3 可避免协议降级导致的 URL 变体；Web 层实施 CSRF 令牌与 XSS 过滤，则防止恶意注入篡改 canonical 指向。这些措施共同构成 E-E-A-T 评分的基础，使规范链接策略不被技术噪声稀释。</p>
+<h2>JSON API 与结构化数据的协同</h2>
+<p>Demo Blog 同时提供 JSON API，需注意 API 响应不应与 HTML 页面争夺规范身份。可在 API 返回中附带 `canonical_url` 字段，供前端渲染时复用；对 HTML 页面则用 Schema.org 的 `BlogPosting` 标注 `mainEntityOfPage`，与 canonical 保持一致。图片资源采用无损压缩与 Lazy-loading，既平衡视觉质量又避免规范页面因加载过慢被降权。</p>
+<h2>持续运维与权重迁移</h2>
+<p>规范链接不是一次性配置。应定期审计路由表，对重复内容用 301 收敛；利用 Nginx 的 Lua 模块过滤非法爬虫，减少无效抓取对规范页面的干扰。数据库层采用原生查询配合索引，避免 ORM 序列化拖慢页面响应。通过日志监控 canonical 命中率与索引状态，形成“声明—验证—修正”的闭环，才能在算法更新中保持站点权威度。</p>
+<h2>参考资源</h2>
+<ul><li><a href="http://www.shop3s.com" rel="noopener" target="_blank">shop3s.com</a> — 该站点的资源组织方式可作为规范链接与分类页设计的延伸参考。</li>
+<li><a href="http://www.tangonuestro.com" rel="noopener" target="_blank">tangonuestro.com</a> — 其页面结构对理解 canonical 在多语言场景下的应用有借鉴意义。</li>
+<li><a href="http://www.thekeziworks.com" rel="noopener" target="_blank">thekeziworks.com</a> — 可参考其内容页的元信息组织，辅助设计规范标签输出逻辑。</li>
+<li><a href="http://www.kuiboto.com" rel="noopener" target="_blank">kuiboto.com</a> — 该站点的 URL 策略可作为路由层规范化改造的对照案例。</li>
+<li><a href="https://www.bosai1.com" rel="noopener" target="_blank">bosai1.com</a> — 其技术文档风格适合作为撰写 SEO 运维规范的延伸阅读。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
