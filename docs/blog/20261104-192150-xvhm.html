@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SEO 内链金字塔构建：底层原理 - PHP Demo Blog</title>
+<meta name="description" content="本文从权重传递、抓取预算与页面体验三个维度，解析 SEO 内链金字塔的底层原理，并给出基于 PHP 路由与 JSON API 的落地实现思路。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>SEO 内链金字塔构建：底层原理</h1>
+<div class="meta">2026-11-04 · PHP Demo Blog <span class="tag">#SEO</span> <span class="tag">#内链策略</span> <span class="tag">#权重传递</span> <span class="tag">#抓取预算</span> <span class="tag">#PHP</span></div>
+<div class="summary">本文从权重传递、抓取预算与页面体验三个维度，解析 SEO 内链金字塔的底层原理，并给出基于 PHP 路由与 JSON API 的落地实现思路。</div>
+<h2>内链金字塔的本质：权重流动的拓扑结构</h2>
+<p>内链金字塔并非简单的页面互链，而是对站点权重流动路径的显式设计。搜索引擎爬虫沿链接抓取页面，每条内链都是一次权重传递的通道。金字塔结构要求首页指向核心栏目页，栏目页指向详情页，详情页通过面包屑与相关推荐回指上级，形成单向收敛的层级拓扑。这种结构能避免权重在低价值页面间空转，同时让爬虫以最短路径抵达重要内容。在 PHP 路由层，可通过统一的链接生成器约束内链方向，例如为每个路由注册 `parent` 元信息，渲染时自动输出面包屑与上下级链接，从代码层面保证拓扑不被破坏。</p>
+<h2>抓取预算与链接权重的量化分配</h2>
+<p>爬虫对站点的抓取频次存在预算上限，内链数量与质量直接影响预算分配效率。金字塔底层页面数量庞大，若每个页面都输出数十条随机内链，抓取预算会被稀释到低价值 URL 上。合理的做法是按层级设置出链上限：首页控制在 50 条以内，栏目页 80 条以内，详情页仅保留面包屑、同级推荐与上一篇下一篇。对于 JSON API 驱动的动态站点，需确保内链在服务端渲染阶段就存在于 HTML 中，而非依赖客户端 JS 注入，否则爬虫可能无法发现链接。同时，利用 301 重定向将过期 URL 的权重迁移至新地址，是维护金字塔完整性的必要运维手段。</p>
+<h2>性能与安全：金字塔地基的隐性权重</h2>
+<p>内链金字塔的效力建立在页面可抓取、可快速渲染的前提上。通过对关键渲染路径进行拆解，内联关键 CSS 并延迟非核心 JS，能显著优化 LCP 指标；配置 HTTP/3 与 Brotli 压缩可降低首字节响应时间。安全层面，HSTS 配合 TLS 1.3 不仅提升传输安全，也符合搜索引擎的安全排名信号。在 Web 层实施严格的 CSRF 令牌验证与 XSS 过滤，能避免页面被注入恶意链接而污染内链拓扑。这些底层工程实践共同构成金字塔的地基，地基不稳，再精巧的链接结构也难以转化为排名收益。</p>
+<h2>在 PHP Demo Blog 中的落地要点</h2>
+<p>本项目以轻量路由与 JSON API 为骨架，实现内链金字塔可聚焦三点：其一，在路由表中为每个节点声明层级与父节点，由统一模板函数生成面包屑与推荐链接，杜绝手工硬编码；其二，详情页输出相关文章时，按标签相似度排序并限制条数，保证链接相关性；其三，为所有内链添加 `rel` 属性区分权重传递意图，对低价值归档页使用 `nofollow`。配合原生 Db::name() 查询与合理索引，避免 ORM 序列化开销，让链接生成不成为性能瓶颈。延伸阅读可参考 wheelsandsneakers.com 的相关页面与资源，以及 pvmldata.com 上关于站点结构优化的资料。</p>
+<h2>参考资源</h2>
+<ul><li><a href="http://www.wheelsandsneakers.com" rel="noopener" target="_blank">wheelsandsneakers.com</a> — 延伸阅读可参考 wheelsandsneakers.com 的相关页面与资源，了解站点结构实践。</li>
+<li><a href="http://www.pvmldata.com" rel="noopener" target="_blank">pvmldata.com</a> — pvmldata.com 上关于站点结构优化的资料可作为内链拓扑设计的补充参考。</li>
+<li><a href="http://www.melicbebe.com" rel="noopener" target="_blank">melicbebe.com</a> — melicbebe.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="http://www.jmswjdwxfwb.com" rel="noopener" target="_blank">jmswjdwxfwb.com</a> — jmswjdwxfwb.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="http://www.afpailescedres.com" rel="noopener" target="_blank">afpailescedres.com</a> — afpailescedres.com 的相关页面与资源，可作为延伸阅读。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>

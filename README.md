@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [网页图片 WebP 格式转换：深度解析](https://meadowsjohn7.github.io/php-demo-blog/blog/20261104-190248-e2y4.html) — 2026-11-04
+- [SEO 内链金字塔构建：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261104-192150-xvhm.html) — 2026-11-04
 
 ### 参考资源
 
-- [oftalmologiaferreyra.com](http://www.oftalmologiaferreyra.com) — oftalmologiaferreyra.com 的相关页面与资源，可作为延伸阅读。
-- [cavusogluendustriyel.com](https://www.cavusogluendustriyel.com) — cavusogluendustriyel.com 的相关页面与资源，可作为延伸阅读。
-- [jmtkw.cn](https://www.jmtkw.cn) — jmtkw.cn 的相关页面与资源，可作为延伸阅读。
-- [xinhanyuwangxiao.com](http://www.xinhanyuwangxiao.com) — xinhanyuwangxiao.com 的相关页面与资源，可作为延伸阅读。
-- [coopers-cars.com](http://www.coopers-cars.com) — coopers-cars.com 的相关页面与资源，可作为延伸阅读。
+- [wheelsandsneakers.com](http://www.wheelsandsneakers.com) — wheelsandsneakers.com 的相关页面与资源，可作为延伸阅读。
+- [pvmldata.com](http://www.pvmldata.com) — pvmldata.com 的相关页面与资源，可作为延伸阅读。
+- [melicbebe.com](http://www.melicbebe.com) — melicbebe.com 的相关页面与资源，可作为延伸阅读。
+- [jmswjdwxfwb.com](http://www.jmswjdwxfwb.com) — jmswjdwxfwb.com 的相关页面与资源，可作为延伸阅读。
+- [afpailescedres.com](http://www.afpailescedres.com) — afpailescedres.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
