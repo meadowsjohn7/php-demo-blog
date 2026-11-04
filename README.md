@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [Canvas 像素级图像处理：安全规范](https://meadowsjohn7.github.io/php-demo-blog/blog/20261105-000725-ens0.html) — 2026-11-05
+- [CSRF 令牌验证机制：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261105-002638-ebjd.html) — 2026-11-05
 
 ### 参考资源
 
-- [tripupdater.com](http://www.tripupdater.com) — tripupdater.com 的相关页面与资源，可作为延伸阅读。
-- [rotkx.net](http://www.rotkx.net) — rotkx.net 的相关页面与资源，可作为延伸阅读。
-- [amazingdistance.com](http://www.amazingdistance.com) — amazingdistance.com 的相关页面与资源，可作为延伸阅读。
-- [linktogif.com](http://www.linktogif.com) — linktogif.com 的相关页面与资源，可作为延伸阅读。
-- [nbnmjxkesyid.com](https://www.nbnmjxkesyid.com) — nbnmjxkesyid.com 的相关页面与资源，可作为延伸阅读。
+- [ftb-wiki.com](http://www.ftb-wiki.com) — ftb-wiki.com 的相关页面与资源，可作为延伸阅读。
+- [kmthjx.com](http://www.kmthjx.com) — kmthjx.com 的相关页面与资源，可作为延伸阅读。
+- [xhpai.com](http://www.xhpai.com) — xhpai.com 的相关页面与资源，可作为延伸阅读。
+- [alzidan.com](http://www.alzidan.com) — alzidan.com 的相关页面与资源，可作为延伸阅读。
+- [ezymovr.com](http://www.ezymovr.com) — ezymovr.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
