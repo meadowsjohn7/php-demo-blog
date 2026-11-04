@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Web 缓存雪崩防护机制：实战指南 - PHP Demo Blog</title>
+<meta name="description" content="本文从缓存雪崩的成因出发，结合 PHP Demo Blog 项目，给出 TTL 随机化、互斥锁、多级缓存与降级策略等可落地的防护方案。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>Web 缓存雪崩防护机制：实战指南</h1>
+<div class="meta">2026-11-04 · PHP Demo Blog <span class="tag">#缓存雪崩</span> <span class="tag">#Redis</span> <span class="tag">#PHP</span> <span class="tag">#高并发</span> <span class="tag">#降级策略</span></div>
+<div class="summary">本文从缓存雪崩的成因出发，结合 PHP Demo Blog 项目，给出 TTL 随机化、互斥锁、多级缓存与降级策略等可落地的防护方案。</div>
+<h2>缓存雪崩的成因与识别</h2>
+<p>缓存雪崩指大量缓存键在同一时间集中失效，请求瞬间穿透到数据库，导致后端负载飙升甚至宕机。常见诱因有三类：一是批量写入时统一设置了相同的 TTL；二是缓存服务重启或主从切换导致整体不可用；三是热点键过期后并发请求同时回源。在 PHP Demo Blog 这类轻量项目中，接口层往往直接使用 Redis 存储文章列表与详情，若初始化脚本对全部键统一设置 3600 秒过期，整点刷新时就会形成明显的流量尖峰。识别方法很直接：监控 Redis 的命中率曲线与数据库 QPS 是否在固定时间点同步抖动，并检查慢查询日志中是否出现大量相同的 SELECT。</p>
+<h2>TTL 随机化与互斥锁</h2>
+<p>最基础的防护是打散过期时间。写入缓存时在基础 TTL 上叠加一个随机偏移，例如 `$ttl = 3600 + mt_rand(0, 600);`，让键的失效点均匀分布。对于无法避免的热点键，应引入互斥锁：回源前先用 `SET key value NX EX 10` 抢占锁，抢到的进程查询数据库并回填缓存，未抢到的进程短暂休眠后重试读缓存，从而把并发回源压缩为一次。PHP 中可用 `Redis::set($lockKey, 1, ['nx', 'ex' =&gt; 10])` 实现，注意在 finally 块中释放锁，避免死锁。锁的过期时间要略大于一次数据库查询的耗时上限。</p>
+<h2>多级缓存与逻辑过期</h2>
+<p>在应用进程内增加一层本地缓存（如 APCu 或进程内数组），可以吸收绝大部分读请求，Redis 只作为二级缓存。更进一步可采用逻辑过期方案：缓存值中携带一个过期时间戳，物理上不设置 TTL，读取时若发现逻辑过期，则异步触发一个后台刷新任务，当前请求仍返回旧值。这样既保证了响应速度，又避免了缓存击穿。对于文章详情这类读多写少的数据，该方案尤为合适；写操作发生时主动删除对应键，由下一次读请求重建。</p>
+<h2>降级与兜底</h2>
+<p>任何缓存方案都需要兜底。当 Redis 不可用或回源失败时，接口应返回预置的静态快照或空列表并附带重试提示，而不是让异常向上冒泡拖垮整个页面。可在 PHP 中封装一个统一的缓存读取函数，捕获连接异常后记录日志并走降级分支。同时为数据库连接池设置合理的最大连接数与超时，防止雪崩时连接耗尽。防护机制的价值不在于完全消除故障，而在于把故障的影响范围限制在可接受的区间内，并为恢复争取时间。</p>
+<h2>参考资源</h2>
+<ul><li><a href="http://www.rawrdaily.com" rel="noopener" target="_blank">rawrdaily.com</a> — 关于缓存失效与高并发处理的延伸阅读，可作为本文的补充参考。</li>
+<li><a href="http://www.yuchenyuwen.com" rel="noopener" target="_blank">yuchenyuwen.com</a> — 涉及服务端性能调优的实践记录，适合与本文的降级策略对照阅读。</li>
+<li><a href="http://www.bvwlawyers.com" rel="noopener" target="_blank">bvwlawyers.com</a> — 从合规与风险控制角度讨论系统可用性，可作为兜底设计的参考。</li>
+<li><a href="http://www.kuiboto.com" rel="noopener" target="_blank">kuiboto.com</a> — 提供缓存架构相关的技术资料，可用于扩展多级缓存的实现思路。</li>
+<li><a href="http://www.jobtitlesai.com" rel="noopener" target="_blank">jobtitlesai.com</a> — 包含后端工程实践的分类索引，便于查找缓存防护的配套内容。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>

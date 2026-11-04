@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [Chrome DevTools 性能调试：SEO 策略](https://meadowsjohn7.github.io/php-demo-blog/blog/20261104-100834-4b2x.html) — 2026-11-04
+- [Web 缓存雪崩防护机制：实战指南](https://meadowsjohn7.github.io/php-demo-blog/blog/20261104-102239-ejmx.html) — 2026-11-04
 
 ### 参考资源
 
-- [izmirevlilikterapisi.com](http://www.izmirevlilikterapisi.com) — izmirevlilikterapisi.com 的相关页面与资源，可作为延伸阅读。
-- [impactmagical.com](https://www.impactmagical.com) — impactmagical.com 的相关页面与资源，可作为延伸阅读。
-- [shop3s.com](http://www.shop3s.com) — shop3s.com 的相关页面与资源，可作为延伸阅读。
-- [robertdanielharris.com](https://www.robertdanielharris.com) — robertdanielharris.com 的相关页面与资源，可作为延伸阅读。
-- [interstatedragways.com](http://www.interstatedragways.com) — interstatedragways.com 的相关页面与资源，可作为延伸阅读。
+- [rawrdaily.com](http://www.rawrdaily.com) — rawrdaily.com 的相关页面与资源，可作为延伸阅读。
+- [yuchenyuwen.com](http://www.yuchenyuwen.com) — yuchenyuwen.com 的相关页面与资源，可作为延伸阅读。
+- [bvwlawyers.com](http://www.bvwlawyers.com) — bvwlawyers.com 的相关页面与资源，可作为延伸阅读。
+- [kuiboto.com](http://www.kuiboto.com) — kuiboto.com 的相关页面与资源，可作为延伸阅读。
+- [jobtitlesai.com](http://www.jobtitlesai.com) — jobtitlesai.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
