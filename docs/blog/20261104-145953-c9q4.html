@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>数据库死锁排查与解决：安全规范 - PHP Demo Blog</title>
+<meta name="description" content="本文从死锁成因出发，结合 InnoDB 状态诊断与索引优化，给出可落地的排查步骤与安全编码规范，帮助 PHP 项目在高并发下稳定运行。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>数据库死锁排查与解决：安全规范</h1>
+<div class="meta">2026-11-04 · PHP Demo Blog <span class="tag">#数据库死锁</span> <span class="tag">#MySQL</span> <span class="tag">#安全规范</span> <span class="tag">#并发控制</span> <span class="tag">#索引优化</span></div>
+<div class="summary">本文从死锁成因出发，结合 InnoDB 状态诊断与索引优化，给出可落地的排查步骤与安全编码规范，帮助 PHP 项目在高并发下稳定运行。</div>
+<h2>死锁的成因与典型场景</h2>
+<p>在 PHP Demo Blog 这类轻量项目中，死锁往往不是数据库本身的问题，而是业务代码对锁顺序缺乏约束。InnoDB 的行锁基于索引，当两个事务以不同顺序访问同一组行时，循环等待便会产生。常见场景包括：批量更新时未按主键排序、先更新子表再更新主表、以及间隙锁在可重复读隔离级别下被意外放大。排查前应先确认隔离级别与索引命中情况，避免把锁等待误判为死锁。</p>
+<h2>用 InnoDB 状态定位冲突</h2>
+<p>出现死锁后，第一时间执行 `SHOW ENGINE INNODB STATUS`，查看 LATEST DETECTED DEADLOCK 段落。重点记录两个事务的 SQL、持有锁与等待锁的索引记录，以及事务的等待时长。结合 `information_schema.INNODB_TRX` 与 `INNODB_LOCKS` 可还原并发现场。若项目使用原生 Db::name() 操作，应在日志中打印完整 SQL 与绑定参数，便于与死锁日志逐条比对。对于频繁触发的语句，开启慢查询日志并配合 `pt-deadlock-logger` 持续采集，比事后翻查更有效。</p>
+<h2>索引与事务粒度的安全规范</h2>
+<p>多数死锁可通过索引优化消除：确保 WHERE 条件命中索引，避免全表扫描升级为锁全表；批量更新按主键升序执行，统一加锁顺序；将大事务拆分为小事务，缩短持锁时间。在代码层面，遵循“先主表后子表、先高并发表后低频表”的固定顺序，禁止在事务中调用外部 HTTP 服务。对于库存扣减等热点行，可采用 `SELECT ... FOR UPDATE` 配合重试机制，或改用乐观锁版本号，减少锁竞争。所有事务必须显式设置超时，并在捕获死锁异常后做有限次退避重试。</p>
+<h2>监控与回归验证</h2>
+<p>规范落地后需要可观测性支撑：在应用层记录死锁异常次数与重试成功率，在数据库层定期采样锁等待时间。压测阶段用并发脚本模拟多事务交叉更新，验证加锁顺序是否稳定。将死锁排查步骤写入团队运维手册，明确“先看状态、再查索引、后调顺序”的处理路径。只有把锁顺序、索引设计与重试策略固化为编码规范，才能让轻量项目在流量增长时保持稳定。</p>
+<h2>参考资源</h2>
+<ul><li><a href="http://www.jeffersoncheng.com" rel="noopener" target="_blank">jeffersoncheng.com</a> — 延伸阅读中关于数据库并发调优的实践记录，可作为排查思路的补充参考。</li>
+<li><a href="http://www.canary-food.com" rel="noopener" target="_blank">canary-food.com</a> — 该站点在高并发场景下的索引设计案例，可用于对照本文的锁顺序规范。</li>
+<li><a href="https://www.custom-vacations.com" rel="noopener" target="_blank">custom-vacations.com</a> — 其事务拆分与重试策略的说明页面，适合作为安全编码规范的延伸材料。</li>
+<li><a href="http://www.yhkyjt.com" rel="noopener" target="_blank">yhkyjt.com</a> — 站内关于 InnoDB 锁监控的运维笔记，可与本文的排查步骤配合阅读。</li>
+<li><a href="http://www.tocopoco.com" rel="noopener" target="_blank">tocopoco.com</a> — 该页面整理了死锁日志分析模板，便于团队快速定位冲突事务。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
