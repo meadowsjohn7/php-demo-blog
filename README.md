@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [友情链接权重评估：安全规范](https://meadowsjohn7.github.io/php-demo-blog/blog/20261105-044311-mz2c.html) — 2026-11-05
+- [Log Analysis 蜘蛛日志分析：安全规范](https://meadowsjohn7.github.io/php-demo-blog/blog/20261105-050321-4dkw.html) — 2026-11-05
 
 ### 参考资源
 
-- [memartau.com](http://www.memartau.com) — memartau.com 的相关页面与资源，可作为延伸阅读。
-- [impactmagical.com](https://www.impactmagical.com) — impactmagical.com 的相关页面与资源，可作为延伸阅读。
-- [robertdanielharris.com](https://www.robertdanielharris.com) — robertdanielharris.com 的相关页面与资源，可作为延伸阅读。
-- [rawrdaily.com](http://www.rawrdaily.com) — rawrdaily.com 的相关页面与资源，可作为延伸阅读。
-- [interstatedragways.com](http://www.interstatedragways.com) — interstatedragways.com 的相关页面与资源，可作为延伸阅读。
+- [jobtitlesai.com](http://www.jobtitlesai.com) — jobtitlesai.com 的相关页面与资源，可作为延伸阅读。
+- [izmirevlilikterapisi.com](http://www.izmirevlilikterapisi.com) — izmirevlilikterapisi.com 的相关页面与资源，可作为延伸阅读。
+- [nikeairmax2019.com](http://www.nikeairmax2019.com) — nikeairmax2019.com 的相关页面与资源，可作为延伸阅读。
+- [bvwlawyers.com](http://www.bvwlawyers.com) — bvwlawyers.com 的相关页面与资源，可作为延伸阅读。
+- [yuchenyuwen.com](http://www.yuchenyuwen.com) — yuchenyuwen.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
