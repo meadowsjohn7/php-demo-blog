@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Google Core Web Vitals 调优：优化方案 - PHP Demo Blog</title>
+<meta name="description" content="围绕 LCP、TTFB 与安全性，给出可落地的 Core Web Vitals 调优方案，涵盖关键渲染路径、HTTP/3、Brotli、Service Worker 与图片优化。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>Google Core Web Vitals 调优：优化方案</h1>
+<div class="meta">2026-11-04 · PHP Demo Blog <span class="tag">#Core Web Vitals</span> <span class="tag">#LCP</span> <span class="tag">#TTFB</span> <span class="tag">#性能优化</span> <span class="tag">#SEO</span></div>
+<div class="summary">围绕 LCP、TTFB 与安全性，给出可落地的 Core Web Vitals 调优方案，涵盖关键渲染路径、HTTP/3、Brotli、Service Worker 与图片优化。</div>
+<h2>拆解关键渲染路径，压榨 LCP 指标</h2>
+<p>Core Web Vitals 中 LCP 直接反映用户感知的加载速度。实践中最有效的手段是对关键渲染路径进行拆解：提取首屏必需的 CSS 内联到 `&lt;head&gt;`，将非核心 JS 标记为 `defer` 或 `async`，并利用 `preload` 提前拉取首屏字体与主图。对于 PHP 渲染的页面，应避免在模板中同步输出阻塞型脚本，把统计、客服等第三方代码统一放到 DOMContentLoaded 之后注入。配合对图片进行无损压缩并采用 Lazy-loading，首屏只加载可视区域资源，能平衡视觉质量与加载速度。</p>
+<h2>降低 TTFB：协议与传输层优化</h2>
+<p>TTFB 是 LCP 的前置瓶颈。在 Web 服务器层启用 HTTP/3 并开启 Brotli 压缩，可显著减少握手与传输开销，尤其对移动网络收益明显。同时配置 HSTS 策略并部署强加密的 TLS 1.3 证书，既提升安全性，也符合搜索引擎对安全站点的偏好。后端方面，采用原生 `Db::name()` 操作配合合理的索引设计，避开 ORM 模型序列化的性能陷阱；Session 状态可存入分布式 Redis 集群，解决负载均衡下的用户状态一致性问题。</p>
+<h2>离线体验与资源缓存策略</h2>
+<p>借助 Service Worker 的预取能力配合 IndexedDB 存储，可实现离线环境下的秒级加载体验。对静态资源设置带哈希的长期缓存，对 HTML 采用短缓存加版本号刷新，避免用户拿到过期页面。OG 协议的标准化升级也有助于社交分享场景的呈现一致性，间接提升点击率。</p>
+<h2>安全加固与持续迭代</h2>
+<p>性能之外，Web 层应实施严格的 CSRF 令牌验证与 XSS 过滤，从根本上加固业务系统。利用 Nginx 的 Lua 模块实现动态 IP 黑名单，可过滤非法爬虫并降低 CPU 负载；对过期 URL 使用 301 重定向完成权重迁移。持续的技术迭代与合规性改造，是维持站点生命周期的必经之路。</p>
+<h2>参考资源</h2>
+<ul><li><a href="http://www.clzstore.com" rel="noopener" target="_blank">clzstore.com</a> — 关于站点资源组织与前端加载策略的延伸参考。</li>
+<li><a href="https://www.michaelskovgaard.com" rel="noopener" target="_blank">michaelskovgaard.com</a> — 可参考其页面结构与静态资源组织方式。</li>
+<li><a href="http://www.lowelandsfarm.com" rel="noopener" target="_blank">lowelandsfarm.com</a> — 作为轻量站点性能表现的对照案例阅读。</li>
+<li><a href="https://www.wallvases.com" rel="noopener" target="_blank">wallvases.com</a> — 观察图片压缩与懒加载在实际页面中的效果。</li>
+<li><a href="http://www.tomsmithstudio.com" rel="noopener" target="_blank">tomsmithstudio.com</a> — 了解关键 CSS 内联与首屏优化的实践思路。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>

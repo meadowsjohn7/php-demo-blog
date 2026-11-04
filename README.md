@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [大文件分片断点续传：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261104-182153-o37c.html) — 2026-11-04
+- [Google Core Web Vitals 调优：优化方案](https://meadowsjohn7.github.io/php-demo-blog/blog/20261104-183438-ik4o.html) — 2026-11-04
 
 ### 参考资源
 
-- [bordeauxprint.com](https://www.bordeauxprint.com) — bordeauxprint.com 的相关页面与资源，可作为延伸阅读。
-- [shadesofbeautybodybar.com](http://www.shadesofbeautybodybar.com) — shadesofbeautybodybar.com 的相关页面与资源，可作为延伸阅读。
-- [xjwywjx.com](https://www.xjwywjx.com) — xjwywjx.com 的相关页面与资源，可作为延伸阅读。
-- [lavecchiaconcia.com](https://www.lavecchiaconcia.com) — lavecchiaconcia.com 的相关页面与资源，可作为延伸阅读。
-- [sanctuarybirthing.com](http://www.sanctuarybirthing.com) — sanctuarybirthing.com 的相关页面与资源，可作为延伸阅读。
+- [clzstore.com](http://www.clzstore.com) — clzstore.com 的相关页面与资源，可作为延伸阅读。
+- [michaelskovgaard.com](https://www.michaelskovgaard.com) — michaelskovgaard.com 的相关页面与资源，可作为延伸阅读。
+- [lowelandsfarm.com](http://www.lowelandsfarm.com) — lowelandsfarm.com 的相关页面与资源，可作为延伸阅读。
+- [wallvases.com](https://www.wallvases.com) — wallvases.com 的相关页面与资源，可作为延伸阅读。
+- [tomsmithstudio.com](http://www.tomsmithstudio.com) — tomsmithstudio.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
