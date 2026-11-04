@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [Meta Description 点击率优化：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261105-031800-igcb.html) — 2026-11-05
+- [Critical CSS 内联策略：安全规范](https://meadowsjohn7.github.io/php-demo-blog/blog/20261105-033050-cple.html) — 2026-11-05
 
 ### 参考资源
 
-- [365worldcd.com](http://www.365worldcd.com) — 365worldcd.com 的相关页面与资源，可作为延伸阅读。
-- [hematqiuq.com](http://www.hematqiuq.com) — hematqiuq.com 的相关页面与资源，可作为延伸阅读。
-- [otaclinictsukuba.com](http://www.otaclinictsukuba.com) — otaclinictsukuba.com 的相关页面与资源，可作为延伸阅读。
-- [ryosi.com](http://www.ryosi.com) — ryosi.com 的相关页面与资源，可作为延伸阅读。
-- [midtowntapandtearoom.com](http://www.midtowntapandtearoom.com) — midtowntapandtearoom.com 的相关页面与资源，可作为延伸阅读。
+- [ifromchina.com](https://www.ifromchina.com) — ifromchina.com 的相关页面与资源，可作为延伸阅读。
+- [tocopoco.com](http://www.tocopoco.com) — tocopoco.com 的相关页面与资源，可作为延伸阅读。
+- [custom-vacations.com](https://www.custom-vacations.com) — custom-vacations.com 的相关页面与资源，可作为延伸阅读。
+- [brdong.com](http://www.brdong.com) — brdong.com 的相关页面与资源，可作为延伸阅读。
+- [xlkbltm.com](http://www.xlkbltm.com) — xlkbltm.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
