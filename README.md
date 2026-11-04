@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [Web 字体加载优化：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261104-133853-xlj5.html) — 2026-11-04
+- [CDN 全球加速原理：安全规范](https://meadowsjohn7.github.io/php-demo-blog/blog/20261104-135126-5ahn.html) — 2026-11-04
 
 ### 参考资源
 
-- [johnmeldrum.com](http://www.johnmeldrum.com) — johnmeldrum.com 的相关页面与资源，可作为延伸阅读。
-- [peterdesign2511.com](http://www.peterdesign2511.com) — peterdesign2511.com 的相关页面与资源，可作为延伸阅读。
-- [samtheemt.com](https://www.samtheemt.com) — samtheemt.com 的相关页面与资源，可作为延伸阅读。
-- [semillaad.com](http://www.semillaad.com) — semillaad.com 的相关页面与资源，可作为延伸阅读。
-- [yakulog.com](http://www.yakulog.com) — yakulog.com 的相关页面与资源，可作为延伸阅读。
+- [wxvqgy.com](http://www.wxvqgy.com) — wxvqgy.com 的相关页面与资源，可作为延伸阅读。
+- [butlercpj.com](http://www.butlercpj.com) — butlercpj.com 的相关页面与资源，可作为延伸阅读。
+- [dixiecrating.com](http://www.dixiecrating.com) — dixiecrating.com 的相关页面与资源，可作为延伸阅读。
+- [kurtbergt.com](http://www.kurtbergt.com) — kurtbergt.com 的相关页面与资源，可作为延伸阅读。
+- [jarptica.com](https://www.jarptica.com) — jarptica.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
