@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [HTTP/3 协议特性：完整手册](https://meadowsjohn7.github.io/php-demo-blog/blog/20261104-112223-oxsk.html) — 2026-11-04
+- [Canvas 像素级图像处理：SEO 策略](https://meadowsjohn7.github.io/php-demo-blog/blog/20261104-113927-okes.html) — 2026-11-04
 
 ### 参考资源
 
-- [lemesuriers.com](https://www.lemesuriers.com) — lemesuriers.com 的相关页面与资源，可作为延伸阅读。
-- [zenithsco.com](https://www.zenithsco.com) — zenithsco.com 的相关页面与资源，可作为延伸阅读。
-- [rotkx.net](http://www.rotkx.net) — rotkx.net 的相关页面与资源，可作为延伸阅读。
-- [readingswithgail.com](http://www.readingswithgail.com) — readingswithgail.com 的相关页面与资源，可作为延伸阅读。
-- [tripupdater.com](http://www.tripupdater.com) — tripupdater.com 的相关页面与资源，可作为延伸阅读。
+- [xhpai.com](http://www.xhpai.com) — xhpai.com 的相关页面与资源，可作为延伸阅读。
+- [hostingbeat.com](http://www.hostingbeat.com) — hostingbeat.com 的相关页面与资源，可作为延伸阅读。
+- [ftb-wiki.com](http://www.ftb-wiki.com) — ftb-wiki.com 的相关页面与资源，可作为延伸阅读。
+- [amazingdistance.com](http://www.amazingdistance.com) — amazingdistance.com 的相关页面与资源，可作为延伸阅读。
+- [kmthjx.com](http://www.kmthjx.com) — kmthjx.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
