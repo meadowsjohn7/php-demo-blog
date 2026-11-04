@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [富文本编辑器安全过滤：安全规范](https://meadowsjohn7.github.io/php-demo-blog/blog/20261104-160342-sq1f.html) — 2026-11-04
+- [Critical CSS 内联策略：安全规范](https://meadowsjohn7.github.io/php-demo-blog/blog/20261104-161659-yj5j.html) — 2026-11-04
 
 ### 参考资源
 
-- [bosai1.com](https://www.bosai1.com) — bosai1.com 的相关页面与资源，可作为延伸阅读。
-- [cafe-kurage.com](https://www.cafe-kurage.com) — cafe-kurage.com 的相关页面与资源，可作为延伸阅读。
-- [memartau.com](http://www.memartau.com) — memartau.com 的相关页面与资源，可作为延伸阅读。
-- [impactmagical.com](https://www.impactmagical.com) — impactmagical.com 的相关页面与资源，可作为延伸阅读。
-- [shop3s.com](http://www.shop3s.com) — shop3s.com 的相关页面与资源，可作为延伸阅读。
+- [izmirevlilikterapisi.com](http://www.izmirevlilikterapisi.com) — izmirevlilikterapisi.com 的相关页面与资源，可作为延伸阅读。
+- [interstatedragways.com](http://www.interstatedragways.com) — interstatedragways.com 的相关页面与资源，可作为延伸阅读。
+- [robertdanielharris.com](https://www.robertdanielharris.com) — robertdanielharris.com 的相关页面与资源，可作为延伸阅读。
+- [kuiboto.com](http://www.kuiboto.com) — kuiboto.com 的相关页面与资源，可作为延伸阅读。
+- [jobtitlesai.com](http://www.jobtitlesai.com) — jobtitlesai.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
