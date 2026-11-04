@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [Robots.txt 科学配置：优化方案](https://meadowsjohn7.github.io/php-demo-blog/blog/20261104-132544-e3px.html) — 2026-11-04
+- [Web 字体加载优化：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261104-133853-xlj5.html) — 2026-11-04
 
 ### 参考资源
 
-- [afpailescedres.com](http://www.afpailescedres.com) — afpailescedres.com 的相关页面与资源，可作为延伸阅读。
-- [sakitraveller.com](http://www.sakitraveller.com) — sakitraveller.com 的相关页面与资源，可作为延伸阅读。
-- [shanghaispine.com](https://www.shanghaispine.com) — shanghaispine.com 的相关页面与资源，可作为延伸阅读。
-- [jmswjdwxfwb.com](http://www.jmswjdwxfwb.com) — jmswjdwxfwb.com 的相关页面与资源，可作为延伸阅读。
-- [yugiohdeckbuilder.com](http://www.yugiohdeckbuilder.com) — yugiohdeckbuilder.com 的相关页面与资源，可作为延伸阅读。
+- [johnmeldrum.com](http://www.johnmeldrum.com) — johnmeldrum.com 的相关页面与资源，可作为延伸阅读。
+- [peterdesign2511.com](http://www.peterdesign2511.com) — peterdesign2511.com 的相关页面与资源，可作为延伸阅读。
+- [samtheemt.com](https://www.samtheemt.com) — samtheemt.com 的相关页面与资源，可作为延伸阅读。
+- [semillaad.com](http://www.semillaad.com) — semillaad.com 的相关页面与资源，可作为延伸阅读。
+- [yakulog.com](http://www.yakulog.com) — yakulog.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
