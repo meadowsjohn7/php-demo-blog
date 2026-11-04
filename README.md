@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [TLS 1.3 安全协议升级：技术架构](https://meadowsjohn7.github.io/php-demo-blog/blog/20261104-115750-kw4n.html) — 2026-11-04
+- [Trie 树高性能搜索：完整手册](https://meadowsjohn7.github.io/php-demo-blog/blog/20261104-121019-jbcr.html) — 2026-11-04
 
 ### 参考资源
 
-- [fade-2-black.com](https://www.fade-2-black.com) — fade-2-black.com 的相关页面与资源，可作为延伸阅读。
-- [ezymovr.com](http://www.ezymovr.com) — ezymovr.com 的相关页面与资源，可作为延伸阅读。
-- [bignoisempc.com](http://www.bignoisempc.com) — bignoisempc.com 的相关页面与资源，可作为延伸阅读。
-- [nbnmjxkesyid.com](https://www.nbnmjxkesyid.com) — nbnmjxkesyid.com 的相关页面与资源，可作为延伸阅读。
-- [linktogif.com](http://www.linktogif.com) — linktogif.com 的相关页面与资源，可作为延伸阅读。
+- [bordeauxprint.com](https://www.bordeauxprint.com) — bordeauxprint.com 的相关页面与资源，可作为延伸阅读。
+- [karmelsarephta.com](http://www.karmelsarephta.com) — karmelsarephta.com 的相关页面与资源，可作为延伸阅读。
+- [xjwywjx.com](https://www.xjwywjx.com) — xjwywjx.com 的相关页面与资源，可作为延伸阅读。
+- [alzidan.com](http://www.alzidan.com) — alzidan.com 的相关页面与资源，可作为延伸阅读。
+- [shadesofbeautybodybar.com](http://www.shadesofbeautybodybar.com) — shadesofbeautybodybar.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
