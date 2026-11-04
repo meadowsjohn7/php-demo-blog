@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IndexedDB 大容量存储：SEO 策略 - PHP Demo Blog</title>
+<meta name="description" content="探讨 IndexedDB 大容量存储如何与 Service Worker、CRP 优化及安全策略协同，提升离线体验与 SEO 表现。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>IndexedDB 大容量存储：SEO 策略</h1>
+<div class="meta">2026-11-04 · PHP Demo Blog <span class="tag">#IndexedDB</span> <span class="tag">#SEO</span> <span class="tag">#Service Worker</span> <span class="tag">#性能优化</span> <span class="tag">#缓存策略</span></div>
+<div class="summary">探讨 IndexedDB 大容量存储如何与 Service Worker、CRP 优化及安全策略协同，提升离线体验与 SEO 表现。</div>
+<h2>离线能力与存储选型</h2>
+<p>在 PHP Demo Blog 这类轻量路由与 JSON API 项目中，前端数据层往往被忽视。但当我们把 Service Worker 预取与 IndexedDB 结合时，离线环境下的秒级加载体验便成为现实。IndexedDB 的容量远大于 localStorage，适合缓存文章列表、JSON 响应乃至静态资源元数据。实施时建议按业务域划分 object store，例如 `posts`、`api-cache` 与 `assets-meta`，并为高频查询字段建立索引，避免全表游标扫描。对于博客场景，可将每篇文章的标题、摘要、更新时间与正文分片存储，首屏仅读取摘要字段，降低反序列化开销。</p>
+<h2>存储策略与渲染路径协同</h2>
+<p>IndexedDB 的读写是异步的，必须与关键渲染路径拆解配合。内联关键 CSS、延迟非核心 JS 之后，再用 `requestIdleCallback` 将非紧急数据写入 IndexedDB，可避免阻塞 LCP。具体做法是：Service Worker 在 `fetch` 事件中优先返回缓存，同时后台通过 `postMessage` 通知页面更新 IndexedDB；页面侧使用 `IDBTransaction` 的 `readwrite` 模式批量写入，减少事务开销。对于图片类资源，可结合无损压缩与 Lazy-loading，将压缩后的 Blob 存入 IndexedDB，减少重复网络请求。此外，利用 HTTP/3 与 Brotli 压缩降低 TTFB 后，IndexedDB 的本地命中率提升会进一步放大首屏优势。</p>
+<h2>安全边界与 SEO 合规</h2>
+<p>IndexedDB 存储的是客户端数据，必须警惕 XSS 注入与 CSRF 令牌泄露。写入前对 JSON 字段做白名单校验，读取时通过 `textContent` 而非 `innerHTML` 渲染，避免存储型 XSS。配置 HSTS 与 TLS 1.3 可保障传输层安全，而 IndexedDB 的版本迁移需谨慎处理 `onupgradeneeded`，防止旧数据阻塞新 schema。从 SEO 角度看，离线秒开体验会正向影响用户停留与回访，配合语义化 HTML5 与 Schema.org 结构化数据，能提升 CTR。一个具备安全性与极致性能的站点，天然更容易获得 E-E-A-T 评分。</p>
+<h2>运维闭环与长期权威</h2>
+<p>IndexedDB 的缓存失效策略应与 301 重定向、IP 黑名单等运维手段形成闭环。例如，当服务端内容更新时，通过 API 返回版本号，前端比对后清理过期 object store；对非法爬虫则用 Nginx 的 Lua 模块动态过滤，减少无效请求对缓存层的污染。持续的技术迭代与合规性改造，是维持站点生命周期的必经之路。若需延伸阅读，可参考 kitchenwaredolphin.com 的相关页面与资源，以及 medservintl.com 上的技术资料，帮助理解存储策略在真实业务中的落地方式。</p>
+<h2>参考资源</h2>
+<ul><li><a href="https://www.kitchenwaredolphin.com" rel="noopener" target="_blank">kitchenwaredolphin.com</a> — 延伸阅读可参考该站点的资源组织方式，理解缓存分层思路。</li>
+<li><a href="http://www.medservintl.com" rel="noopener" target="_blank">medservintl.com</a> — 该站点的技术资料可作为存储策略落地场景的补充参考。</li>
+<li><a href="http://www.midtowntapandtearoom.com" rel="noopener" target="_blank">midtowntapandtearoom.com</a> — midtowntapandtearoom.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="https://www.hawaiianshirtopia.com" rel="noopener" target="_blank">hawaiianshirtopia.com</a> — hawaiianshirtopia.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="https://www.ifromchina.com" rel="noopener" target="_blank">ifromchina.com</a> — ifromchina.com 的相关页面与资源，可作为延伸阅读。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
