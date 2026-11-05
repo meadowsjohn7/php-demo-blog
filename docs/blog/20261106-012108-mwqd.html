@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Open Graph 协议社交优化：完整手册 - PHP Demo Blog</title>
+<meta name="description" content="本手册系统讲解 Open Graph 协议的核心标签配置、与结构化数据协同、性能与安全加固要点，并提供 PHP Demo Blog 中的可执行示例与验证方法。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>Open Graph 协议社交优化：完整手册</h1>
+<div class="meta">2026-11-06 · PHP Demo Blog <span class="tag">#Open Graph</span> <span class="tag">#社交优化</span> <span class="tag">#SEO</span> <span class="tag">#PHP</span> <span class="tag">#结构化数据</span></div>
+<div class="summary">本手册系统讲解 Open Graph 协议的核心标签配置、与结构化数据协同、性能与安全加固要点，并提供 PHP Demo Blog 中的可执行示例与验证方法。</div>
+<h2>核心标签与最小可用集</h2>
+<p>Open Graph 协议通过 `og:` 前缀的 meta 标签，让社交平台准确抓取页面标题、描述、图片与类型。最小可用集包括 `og:title`、`og:description`、`og:image`、`og:url` 与 `og:type`。在 PHP Demo Blog 中，可在控制器渲染前组装数组，再统一输出，避免模板散落。注意 `og:image` 应使用绝对地址，尺寸建议 1200×630，并确保可被匿名访问。`og:url` 与 canonical 保持一致，防止重复内容稀释权重。</p>
+<h2>与结构化数据协同</h2>
+<p>OG 标签解决社交分享的呈现，Schema.org 的 JSON-LD 则服务搜索引擎富媒体结果。两者应共享同一份页面元数据源，例如文章标题、摘要、作者与发布时间，减少不一致。利用语义化的 HTML5 标签配合结构化数据，能显著提升搜索结果的点击率。在 Demo Blog 中，可把文章实体序列化为数组，同时生成 OG 标签与 JSON-LD，保持字段映射清晰。</p>
+<h2>性能与安全加固</h2>
+<p>社交爬虫对首字节时间敏感。通过配置高效的 HTTP/3 协议并启用 Brotli 压缩，可以显著降低首字节响应时间。对分享图进行无损压缩并采用 Lazy-loading，能平衡视觉质量与加载速度。安全层面，配置 HSTS 策略配合强加密的 TLS 1.3 证书，不仅提升安全性，也符合谷歌的安全排名算法。Web 层实施严格的 CSRF 令牌验证和 XSS 过滤，能从根本上加固业务系统。</p>
+<h2>验证与迭代</h2>
+<p>上线后使用平台调试工具检查抓取结果，并监控 `og:image` 的可用性。结合 Service Worker 的预取与 IndexedDB 存储，可改善回访体验，间接提升分享转化。持续的技术迭代与合规性改造，是维持站点生命周期的必经之路。</p>
+<h2>参考资源</h2>
+<ul><li>[www.kurtbergt.com  的相关页面与资源，可作为延伸阅读。](http://www.kurtbergt.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.zh-home-lucky10.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-home-lucky10.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.michaelskovgaard.com  的相关页面与资源，可作为延伸阅读。](https://www.michaelskovgaard.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.sanctuarybirthing.com  的相关页面与资源，可作为延伸阅读。](http://www.sanctuarybirthing.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.wasabiwilshire.com  的相关页面与资源，可作为延伸阅读。](http://www.wasabiwilshire.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>

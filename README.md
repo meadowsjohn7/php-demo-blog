@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [URL 扁平化设计规范：实战指南](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-010132-3eel.html) — 2026-11-06
+- [Open Graph 协议社交优化：完整手册](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-012108-mwqd.html) — 2026-11-06
 
 ### 参考资源
 
-- [www.tianjx.com  的相关页面与资源，可作为延伸阅读。](http://www.tianjx.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.custom-vacations.com  的相关页面与资源，可作为延伸阅读。](https://www.custom-vacations.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.zh-hans-wpk.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-hans-wpk.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.visualstudiotalkshow.com  的相关页面与资源，可作为延伸阅读。](http://www.visualstudiotalkshow.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.bvwlawyers.com  的相关页面与资源，可作为延伸阅读。](http://www.bvwlawyers.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.kurtbergt.com  的相关页面与资源，可作为延伸阅读。](http://www.kurtbergt.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.zh-home-lucky10.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-home-lucky10.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.michaelskovgaard.com  的相关页面与资源，可作为延伸阅读。](https://www.michaelskovgaard.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.sanctuarybirthing.com  的相关页面与资源，可作为延伸阅读。](http://www.sanctuarybirthing.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.wasabiwilshire.com  的相关页面与资源，可作为延伸阅读。](http://www.wasabiwilshire.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
