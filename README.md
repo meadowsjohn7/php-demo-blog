@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [Chrome DevTools 性能调试：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261105-134822-rhhq.html) — 2026-11-05
+- [虚拟列表处理大数据渲染：实战指南](https://meadowsjohn7.github.io/php-demo-blog/blog/20261105-140215-1ryy.html) — 2026-11-05
 
 ### 参考资源
 
-- [wheelsandsneakers.com](http://www.wheelsandsneakers.com) — wheelsandsneakers.com 的相关页面与资源，可作为延伸阅读。
-- [cavusogluendustriyel.com](https://www.cavusogluendustriyel.com) — cavusogluendustriyel.com 的相关页面与资源，可作为延伸阅读。
-- [coopers-cars.com](http://www.coopers-cars.com) — coopers-cars.com 的相关页面与资源，可作为延伸阅读。
-- [shanghaispine.com](https://www.shanghaispine.com) — shanghaispine.com 的相关页面与资源，可作为延伸阅读。
-- [melicbebe.com](http://www.melicbebe.com) — melicbebe.com 的相关页面与资源，可作为延伸阅读。
+- [pvmldata.com](http://www.pvmldata.com) — pvmldata.com 的相关页面与资源，可作为延伸阅读。
+- [sakitraveller.com](http://www.sakitraveller.com) — sakitraveller.com 的相关页面与资源，可作为延伸阅读。
+- [yakulog.com](http://www.yakulog.com) — yakulog.com 的相关页面与资源，可作为延伸阅读。
+- [peterdesign2511.com](http://www.peterdesign2511.com) — peterdesign2511.com 的相关页面与资源，可作为延伸阅读。
+- [revistapedagogiaufmt.com](http://www.revistapedagogiaufmt.com) — revistapedagogiaufmt.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
