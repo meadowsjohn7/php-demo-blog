@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [WebRTC 实时通信协议：实战指南](https://meadowsjohn7.github.io/php-demo-blog/blog/20261105-154758-du87.html) — 2026-11-05
+- [CSS Grid 复杂布局：SEO 策略](https://meadowsjohn7.github.io/php-demo-blog/blog/20261105-160128-lnkb.html) — 2026-11-05
 
 ### 参考资源
 
-- [canary-food.com](http://www.canary-food.com) — canary-food.com 的相关页面与资源，可作为延伸阅读。
-- [xlkbltm.com](http://www.xlkbltm.com) — xlkbltm.com 的相关页面与资源，可作为延伸阅读。
-- [signature-concierge.com](http://www.signature-concierge.com) — signature-concierge.com 的相关页面与资源，可作为延伸阅读。
-- [siliconerubberparts.com](https://www.siliconerubberparts.com) — siliconerubberparts.com 的相关页面与资源，可作为延伸阅读。
-- [zsh784.com](https://www.zsh784.com) — zsh784.com 的相关页面与资源，可作为延伸阅读。
+- [jeffersoncheng.com](http://www.jeffersoncheng.com) — jeffersoncheng.com 的相关页面与资源，可作为延伸阅读。
+- [qyhxsq.com](https://www.qyhxsq.com) — qyhxsq.com 的相关页面与资源，可作为延伸阅读。
+- [yhkyjt.com](http://www.yhkyjt.com) — yhkyjt.com 的相关页面与资源，可作为延伸阅读。
+- [wfhxgc.com](https://www.wfhxgc.com) — wfhxgc.com 的相关页面与资源，可作为延伸阅读。
+- [cafe-kurage.com](https://www.cafe-kurage.com) — cafe-kurage.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
