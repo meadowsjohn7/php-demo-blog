@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [Nginx 伪静态规则编写：技术架构](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-063659-gzbk.html) — 2026-11-06
+- [JSON-LD 结构化数据标记：优化方案](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-065538-z5pu.html) — 2026-11-06
 
 ### 参考资源
 
-- [www.oftalmologiaferreyra.com  的相关页面与资源，可作为延伸阅读。](http://www.oftalmologiaferreyra.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.zh-home-wepoker.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-home-wepoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.georgiabj.com  的相关页面与资源，可作为延伸阅读。](https://www.georgiabj.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.linyuanxinli.com  的相关页面与资源，可作为延伸阅读。](https://www.linyuanxinli.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.papirustercume.com  的相关页面与资源，可作为延伸阅读。](http://www.papirustercume.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.play-qqsports.com  的相关页面与资源，可作为延伸阅读。](https://www.play-qqsports.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.nbnmjxkesyid.com  的相关页面与资源，可作为延伸阅读。](https://www.nbnmjxkesyid.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.cupofhopecafe.com  的相关页面与资源，可作为延伸阅读。](http://www.cupofhopecafe.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.shanghaispine.com  的相关页面与资源，可作为延伸阅读。](https://www.shanghaispine.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.lavecchiaconcia.com  的相关页面与资源，可作为延伸阅读。](https://www.lavecchiaconcia.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
