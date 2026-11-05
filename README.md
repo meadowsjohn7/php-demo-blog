@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [CSS Grid 复杂布局：技术架构](https://meadowsjohn7.github.io/php-demo-blog/blog/20261105-115459-05la.html) — 2026-11-05
+- [域名权重 DA/PA 提升：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261105-121350-rqaa.html) — 2026-11-05
 
 ### 参考资源
 
-- [rotkx.net](http://www.rotkx.net) — rotkx.net 的相关页面与资源，可作为延伸阅读。
-- [linktogif.com](http://www.linktogif.com) — linktogif.com 的相关页面与资源，可作为延伸阅读。
-- [cpgea.com](http://www.cpgea.com) — cpgea.com 的相关页面与资源，可作为延伸阅读。
-- [tripupdater.com](http://www.tripupdater.com) — tripupdater.com 的相关页面与资源，可作为延伸阅读。
-- [alzidan.com](http://www.alzidan.com) — alzidan.com 的相关页面与资源，可作为延伸阅读。
+- [xhpai.com](http://www.xhpai.com) — xhpai.com 的相关页面与资源，可作为延伸阅读。
+- [amazingdistance.com](http://www.amazingdistance.com) — amazingdistance.com 的相关页面与资源，可作为延伸阅读。
+- [nbnmjxkesyid.com](https://www.nbnmjxkesyid.com) — nbnmjxkesyid.com 的相关页面与资源，可作为延伸阅读。
+- [karmelsarephta.com](http://www.karmelsarephta.com) — karmelsarephta.com 的相关页面与资源，可作为延伸阅读。
+- [bignoisempc.com](http://www.bignoisempc.com) — bignoisempc.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
