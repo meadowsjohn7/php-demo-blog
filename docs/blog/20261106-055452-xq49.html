@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AC 自动机多模式匹配：优化方案 - PHP Demo Blog</title>
+<meta name="description" content="针对 AC 自动机多模式匹配的性能瓶颈，从构建、内存、匹配三方面给出优化方案，并结合 PHP 实践说明。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>AC 自动机多模式匹配：优化方案</h1>
+<div class="meta">2026-11-06 · PHP Demo Blog <span class="tag">#AC自动机</span> <span class="tag">#多模式匹配</span> <span class="tag">#PHP</span> <span class="tag">#性能优化</span> <span class="tag">#Trie</span></div>
+<div class="summary">针对 AC 自动机多模式匹配的性能瓶颈，从构建、内存、匹配三方面给出优化方案，并结合 PHP 实践说明。</div>
+<h2>构建阶段的优化</h2>
+<p>AC 自动机的构建分为建 Trie 树和构建失败指针两步。在 PHP 中，节点用数组表示时，子节点映射建议用 `array` 而非 `SplFixedArray`，因为字符集稀疏时后者浪费内存。失败指针构建使用 BFS，队列用 `SplQueue` 比原生数组 `array_shift` 更高效。对于静态模式集，可将构建结果序列化缓存到文件或 Redis，避免每次请求重复构建。若模式集较大，可考虑将构建过程放到 CLI 脚本中预生成，Web 进程直接加载。</p>
+<h2>内存与存储优化</h2>
+<p>每个节点存储 `next`（子节点映射）、`fail`（失败指针）、`output`（输出模式列表）。`next` 用关联数组时，键为字符，值为节点索引。为减少内存，可将节点扁平化为多个并行数组：`next` 用二维数组，`fail` 用一维数组，`output` 用一维数组存模式 ID 列表。PHP 数组本身开销大，若模式集超过数万，建议用 `SplFixedArray` 或字符串打包。输出列表可只存模式 ID，匹配后再查模式表，避免重复存储字符串。</p>
+<h2>匹配阶段的加速</h2>
+<p>匹配时逐字符跳转，核心是 `while (state &amp;&amp; !isset(next[state][ch])) state = fail[state];`。优化点：一是在构建时对根节点的缺失转移补全为 0，减少判断；二是将 `next` 的查找改为 `isset` 加直接索引，避免 `array_key_exists`；三是若字符集固定为 ASCII，可用 256 长度的数组替代关联数组，以空间换时间。对于长文本，可分段匹配并利用 `yield` 流式处理，降低内存峰值。</p>
+<h2>工程化建议</h2>
+<p>在 PHP Demo Blog 这类项目中，AC 自动机常用于关键词过滤或日志分析。建议将匹配逻辑封装为独立类，提供 `addPattern`、`build`、`search` 方法，并支持从缓存加载。测试时用 `memory_get_usage` 和 `hrtime` 对比优化前后差异。若需处理中文，注意 UTF-8 字符需先转为 Unicode 码点数组，否则按字节匹配会出错。对于超大规模模式集，可考虑分片构建多个 AC 自动机并行匹配，再合并结果。</p>
+<h2>参考资源</h2>
+<ul><li>[www.tangonuestro.com  的相关页面与资源，可作为延伸阅读。](http://www.tangonuestro.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.rotkx.net 的相关页面与资源，可作为延伸阅读。](http://www.rotkx.net 的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.zh-an-ggpoker.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-an-ggpoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.wfhxgc.com  的相关页面与资源，可作为延伸阅读。](https://www.wfhxgc.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.nonton08.com  的相关页面与资源，可作为延伸阅读。](http://www.nonton08.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>

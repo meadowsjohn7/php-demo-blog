@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [SEO 伪原创句子混淆算法：深度解析](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-053701-addw.html) — 2026-11-06
+- [AC 自动机多模式匹配：优化方案](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-055452-xq49.html) — 2026-11-06
 
 ### 参考资源
 
-- [www.jobtitlesai.com  的相关页面与资源，可作为延伸阅读。](http://www.jobtitlesai.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.minglika.com  的相关页面与资源，可作为延伸阅读。](http://www.minglika.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.epiclax.com  的相关页面与资源，可作为延伸阅读。](http://www.epiclax.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.online-xinai.com  的相关页面与资源，可作为延伸阅读。](https://www.online-xinai.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.hengshuojixie.com  的相关页面与资源，可作为延伸阅读。](https://www.hengshuojixie.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.tangonuestro.com  的相关页面与资源，可作为延伸阅读。](http://www.tangonuestro.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.rotkx.net 的相关页面与资源，可作为延伸阅读。](http://www.rotkx.net 的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.zh-an-ggpoker.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-an-ggpoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.wfhxgc.com  的相关页面与资源，可作为延伸阅读。](https://www.wfhxgc.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.nonton08.com  的相关页面与资源，可作为延伸阅读。](http://www.nonton08.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
