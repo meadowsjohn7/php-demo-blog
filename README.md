@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [Nginx 伪静态规则编写：技术架构](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-015142-alsc.html) — 2026-11-06
+- [Redis 缓存穿透防护：深度解析](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-020441-7syx.html) — 2026-11-06
 
 ### 参考资源
 
-- [www.linktogif.com  的相关页面与资源，可作为延伸阅读。](http://www.linktogif.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.beta-pggame.com  的相关页面与资源，可作为延伸阅读。](https://www.beta-pggame.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.shadesofbeautybodybar.com  的相关页面与资源，可作为延伸阅读。](http://www.shadesofbeautybodybar.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.tjsenyuan.com  的相关页面与资源，可作为延伸阅读。](http://www.tjsenyuan.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.dixiecrating.com  的相关页面与资源，可作为延伸阅读。](http://www.dixiecrating.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.yuchenyuwen.com  的相关页面与资源，可作为延伸阅读。](http://www.yuchenyuwen.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.gendulphe.com  的相关页面与资源，可作为延伸阅读。](http://www.gendulphe.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.otaclinictsukuba.com  的相关页面与资源，可作为延伸阅读。](http://www.otaclinictsukuba.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.bignoisempc.com  的相关页面与资源，可作为延伸阅读。](http://www.bignoisempc.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.karmelsarephta.com  的相关页面与资源，可作为延伸阅读。](http://www.karmelsarephta.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
