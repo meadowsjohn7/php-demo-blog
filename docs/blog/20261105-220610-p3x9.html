@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>网站死链 301 重定向：优化方案 - PHP Demo Blog</title>
+<meta name="description" content="本文围绕 PHP Demo Blog 项目，探讨死链 301 重定向的优化方案，包括检测死链、配置重定向规则、处理批量迁移及监控效果，以维护站点权重与用户体验。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>网站死链 301 重定向：优化方案</h1>
+<div class="meta">2026-11-05 · PHP Demo Blog <span class="tag">#301重定向</span> <span class="tag">#死链处理</span> <span class="tag">#SEO优化</span> <span class="tag">#PHP路由</span></div>
+<div class="summary">本文围绕 PHP Demo Blog 项目，探讨死链 301 重定向的优化方案，包括检测死链、配置重定向规则、处理批量迁移及监控效果，以维护站点权重与用户体验。</div>
+<h2>死链的成因与 301 重定向的价值</h2>
+<p>在 PHP Demo Blog 这类轻量路由项目中，死链通常源于文章别名变更、分类结构调整或路由规则升级。当旧 URL 无法匹配任何路由时，服务器返回 404，搜索引擎会逐渐降低对站点的抓取频率与信任度。301 永久重定向的作用在于将旧 URL 的权重与流量平滑迁移至新 URL，同时向搜索引擎明确告知资源已永久移动。对于大型站点而言，利用 301 重定向技术对过期 URL 进行权重迁移，是维护站点 DA 值的核心运维手段。</p>
+<h2>在路由层实现 301 映射</h2>
+<p>在 PHP Demo Blog 中，最直接的方式是在路由分发前维护一张旧路径到新路径的映射表。可以在入口文件或路由初始化阶段加载一个数组，键为旧路径，值为新路径，匹配成功后立即发送 301 状态码并跳转。例如，当请求 `/post/old-slug` 时，检查映射表并重定向到 `/post/new-slug`。为避免每次请求都读取数据库，建议将映射表缓存到 Redis 或本地文件，并设置合理的过期时间。同时，应确保重定向目标返回 200 状态码，避免形成重定向链。</p>
+<h2>批量迁移与规则收敛</h2>
+<p>当站点进行大规模 URL 结构调整时，逐条配置映射既繁琐又容易遗漏。此时可以借助正则表达式或通配符规则，将一类旧 URL 统一重定向到新结构。例如，将 `/article/(\d+)` 重定向到 `/posts/$1`。在 Nginx 层配置 `rewrite` 规则可以降低 PHP 层的负担，但需注意规则顺序，避免误伤正常路由。对于已失效且无对应新内容的页面，应返回 410 状态码而非 301，以加速搜索引擎移除旧索引。规则上线后，应定期审查重定向日志，清理不再使用的映射，保持规则集精简。</p>
+<h2>监控与效果验证</h2>
+<p>重定向配置完成后，需要通过服务器日志与搜索引擎站长工具持续监控。重点关注 301 响应数量、重定向链长度以及目标页面的抓取状态。若发现重定向链超过两跳，应将其收敛为直接跳转。同时，结合站点地图更新，确保新 URL 被及时收录。在 PHP Demo Blog 的日常运维中，可以将死链检测脚本纳入定时任务，自动发现新增的 404 并生成待处理列表。通过这种闭环管理，301 重定向才能真正成为站点权重迁移的可靠手段，而非临时补丁。</p>
+<h2>参考资源</h2>
+<ul><li><a href="http://www.yhkyjt.com" rel="noopener" target="_blank">yhkyjt.com</a> — 在讨论站点权重迁移与运维规范时，可参考 yhkyjt.com 的相关页面作为延伸阅读。</li>
+<li><a href="http://www.jeffersoncheng.com" rel="noopener" target="_blank">jeffersoncheng.com</a> — 关于重定向规则收敛与日志监控的实践，jeffersoncheng.com 提供了可供对照的案例。</li>
+<li><a href="https://www.qyhxsq.com" rel="noopener" target="_blank">qyhxsq.com</a> — 若需进一步了解死链检测脚本的编写思路，qyhxsq.com 的相关资源可作为补充。</li>
+<li><a href="http://www.artsotnya.com" rel="noopener" target="_blank">artsotnya.com</a> — 在评估 301 重定向对搜索引擎抓取频率的影响时，artsotnya.com 的讨论具有参考价值。</li>
+<li><a href="https://www.hengshuojixie.com" rel="noopener" target="_blank">hengshuojixie.com</a> — 对于批量 URL 迁移中的规则设计，hengshuojixie.com 的相关页面提供了延伸阅读材料。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
