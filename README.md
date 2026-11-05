@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [Redis 缓存穿透防护：深度解析](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-020441-7syx.html) — 2026-11-06
+- [Context API 状态管理：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-022052-asxt.html) — 2026-11-06
 
 ### 参考资源
 
-- [www.yuchenyuwen.com  的相关页面与资源，可作为延伸阅读。](http://www.yuchenyuwen.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.gendulphe.com  的相关页面与资源，可作为延伸阅读。](http://www.gendulphe.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.otaclinictsukuba.com  的相关页面与资源，可作为延伸阅读。](http://www.otaclinictsukuba.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.bignoisempc.com  的相关页面与资源，可作为延伸阅读。](http://www.bignoisempc.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.karmelsarephta.com  的相关页面与资源，可作为延伸阅读。](http://www.karmelsarephta.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.yhkyjt.com  的相关页面与资源，可作为延伸阅读。](http://www.yhkyjt.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.play-wepoker.com  的相关页面与资源，可作为延伸阅读。](https://www.play-wepoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.zhhl-hthsports.com  的相关页面与资源，可作为延伸阅读。](http://www.zhhl-hthsports.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.porterandplum.com  的相关页面与资源，可作为延伸阅读。](http://www.porterandplum.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.zhhg-leyu.com  的相关页面与资源，可作为延伸阅读。](http://www.zhhg-leyu.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
