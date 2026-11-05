@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [OPcache 脚本加速原理：优化方案](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-023400-fz26.html) — 2026-11-06
+- [富文本编辑器安全过滤：深度解析](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-025019-6df1.html) — 2026-11-06
 
 ### 参考资源
 
-- [www.medservintl.com  的相关页面与资源，可作为延伸阅读。](http://www.medservintl.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.bud-max.com  的相关页面与资源，可作为延伸阅读。](https://www.bud-max.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.maoyihaocai.com  的相关页面与资源，可作为延伸阅读。](http://www.maoyihaocai.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.siliconerubberparts.com  的相关页面与资源，可作为延伸阅读。](https://www.siliconerubberparts.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.lapkov.com  的相关页面与资源，可作为延伸阅读。](http://www.lapkov.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.xhpai.com  的相关页面与资源，可作为延伸阅读。](http://www.xhpai.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.shop3s.com  的相关页面与资源，可作为延伸阅读。](http://www.shop3s.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.zh-857zhibo.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-857zhibo.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.izmirevlilikterapisi.com  的相关页面与资源，可作为延伸阅读。](http://www.izmirevlilikterapisi.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.keepingtimeclocks.com  的相关页面与资源，可作为延伸阅读。](http://www.keepingtimeclocks.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
