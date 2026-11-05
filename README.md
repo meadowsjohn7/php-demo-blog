@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [Web 性能分析审计：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261105-141326-yfu2.html) — 2026-11-05
+- [内网穿透调试工具：深度解析](https://meadowsjohn7.github.io/php-demo-blog/blog/20261105-143321-kyie.html) — 2026-11-05
 
 ### 参考资源
 
-- [johnmeldrum.com](http://www.johnmeldrum.com) — johnmeldrum.com 的相关页面与资源，可作为延伸阅读。
-- [butlercpj.com](http://www.butlercpj.com) — butlercpj.com 的相关页面与资源，可作为延伸阅读。
-- [yugiohdeckbuilder.com](http://www.yugiohdeckbuilder.com) — yugiohdeckbuilder.com 的相关页面与资源，可作为延伸阅读。
-- [forestofantlers.com](http://www.forestofantlers.com) — forestofantlers.com 的相关页面与资源，可作为延伸阅读。
-- [kurtbergt.com](http://www.kurtbergt.com) — kurtbergt.com 的相关页面与资源，可作为延伸阅读。
+- [jarptica.com](https://www.jarptica.com) — jarptica.com 的相关页面与资源，可作为延伸阅读。
+- [intcfos.com](http://www.intcfos.com) — intcfos.com 的相关页面与资源，可作为延伸阅读。
+- [samtheemt.com](https://www.samtheemt.com) — samtheemt.com 的相关页面与资源，可作为延伸阅读。
+- [wxvqgy.com](http://www.wxvqgy.com) — wxvqgy.com 的相关页面与资源，可作为延伸阅读。
+- [lapkov.com](http://www.lapkov.com) — lapkov.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
