@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [CSS Grid 复杂布局：SEO 策略](https://meadowsjohn7.github.io/php-demo-blog/blog/20261105-160128-lnkb.html) — 2026-11-05
+- [Trie 树高性能搜索：SEO 策略](https://meadowsjohn7.github.io/php-demo-blog/blog/20261105-161147-ft4w.html) — 2026-11-05
 
 ### 参考资源
 
-- [jeffersoncheng.com](http://www.jeffersoncheng.com) — jeffersoncheng.com 的相关页面与资源，可作为延伸阅读。
-- [qyhxsq.com](https://www.qyhxsq.com) — qyhxsq.com 的相关页面与资源，可作为延伸阅读。
-- [yhkyjt.com](http://www.yhkyjt.com) — yhkyjt.com 的相关页面与资源，可作为延伸阅读。
-- [wfhxgc.com](https://www.wfhxgc.com) — wfhxgc.com 的相关页面与资源，可作为延伸阅读。
-- [cafe-kurage.com](https://www.cafe-kurage.com) — cafe-kurage.com 的相关页面与资源，可作为延伸阅读。
+- [hengshuojixie.com](https://www.hengshuojixie.com) — hengshuojixie.com 的相关页面与资源，可作为延伸阅读。
+- [berkshireautorecovery.com](http://www.berkshireautorecovery.com) — berkshireautorecovery.com 的相关页面与资源，可作为延伸阅读。
+- [papuyar.com](http://www.papuyar.com) — papuyar.com 的相关页面与资源，可作为延伸阅读。
+- [artsotnya.com](http://www.artsotnya.com) — artsotnya.com 的相关页面与资源，可作为延伸阅读。
+- [kuiboto.com](http://www.kuiboto.com) — kuiboto.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
