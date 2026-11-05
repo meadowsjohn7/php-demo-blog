@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [友情链接权重评估：完整手册](https://meadowsjohn7.github.io/php-demo-blog/blog/20261105-182857-vd8g.html) — 2026-11-05
+- [Linux Cron 定时任务运维：安全规范](https://meadowsjohn7.github.io/php-demo-blog/blog/20261105-184703-c8hr.html) — 2026-11-05
 
 ### 参考资源
 
-- [amazingdistance.com](http://www.amazingdistance.com) — amazingdistance.com 的相关页面与资源，可作为延伸阅读。
-- [xhpai.com](http://www.xhpai.com) — xhpai.com 的相关页面与资源，可作为延伸阅读。
-- [bignoisempc.com](http://www.bignoisempc.com) — bignoisempc.com 的相关页面与资源，可作为延伸阅读。
-- [wallvases.com](https://www.wallvases.com) — wallvases.com 的相关页面与资源，可作为延伸阅读。
-- [ftb-wiki.com](http://www.ftb-wiki.com) — ftb-wiki.com 的相关页面与资源，可作为延伸阅读。
+- [ezymovr.com](http://www.ezymovr.com) — ezymovr.com 的相关页面与资源，可作为延伸阅读。
+- [kmthjx.com](http://www.kmthjx.com) — kmthjx.com 的相关页面与资源，可作为延伸阅读。
+- [shadesofbeautybodybar.com](http://www.shadesofbeautybodybar.com) — shadesofbeautybodybar.com 的相关页面与资源，可作为延伸阅读。
+- [gnosishypnosis.com](https://www.gnosishypnosis.com) — gnosishypnosis.com 的相关页面与资源，可作为延伸阅读。
+- [bordeauxprint.com](https://www.bordeauxprint.com) — bordeauxprint.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Linux Cron 定时任务运维：安全规范 - PHP Demo Blog</title>
+<meta name="description" content="本文围绕 Linux Cron 定时任务的安全运维，从权限控制、脚本加固、日志审计与资源限制四个维度给出可执行规范，并结合 PHP Demo Blog 场景说明落地方式。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>Linux Cron 定时任务运维：安全规范</h1>
+<div class="meta">2026-11-05 · PHP Demo Blog <span class="tag">#Linux</span> <span class="tag">#Cron</span> <span class="tag">#运维安全</span> <span class="tag">#权限控制</span> <span class="tag">#日志审计</span></div>
+<div class="summary">本文围绕 Linux Cron 定时任务的安全运维，从权限控制、脚本加固、日志审计与资源限制四个维度给出可执行规范，并结合 PHP Demo Blog 场景说明落地方式。</div>
+<h2>权限与访问控制</h2>
+<p>Cron 的安全起点是明确谁可以创建任务。默认情况下，任意用户都能通过 crontab -e 提交任务，这在多租户或共享主机上风险极高。应通过 /etc/cron.allow 与 /etc/cron.deny 精确控制可用用户列表：优先使用 allow 文件，只列出运维与部署账号，并确保 deny 文件为空或不存在，避免规则冲突。同时检查 /etc/crontab 与 /etc/cron.d/ 目录的属主与权限，确保只有 root 可写。对于 PHP Demo Blog 这类项目，定时任务通常以独立系统用户运行，禁止直接使用 root 执行应用脚本，降低脚本被篡改后的影响面。</p>
+<h2>脚本加固与最小权限</h2>
+<p>定时任务调用的脚本本身是攻击面。规范要求：脚本路径使用绝对路径，避免依赖 PATH 环境变量被劫持；脚本文件权限设为 750，属主为任务运行用户；禁止在 crontab 中直接拼接用户输入或动态变量。PHP 脚本应通过 php -f /path/to/script.php 显式调用，并在脚本入口校验运行用户与预期环境。对于需要数据库连接的任务，使用只读或最小权限账号，避免定时任务成为提权跳板。此外，任务输出应重定向到日志文件或 /dev/null，防止邮件队列被大量输出撑爆。</p>
+<h2>日志审计与异常监控</h2>
+<p>没有审计的 Cron 等于黑盒。建议统一将任务输出重定向到 /var/log/cron/ 下按任务命名的日志文件，并配合 logrotate 按天切割、保留 14 天。系统层开启 rsyslog 的 cron 设施，记录任务触发时间与执行用户。监控侧可对日志中的非零退出码、超长执行时间进行告警。对于关键任务，可在脚本内记录开始与结束时间戳，便于排查重叠执行问题。定期比对 crontab -l 输出与版本库中的任务清单，发现未授权变更立即回滚。</p>
+<h2>资源限制与执行隔离</h2>
+<p>定时任务可能因数据量增长而耗尽 CPU 或内存，进而影响同机服务。应使用 systemd timer 替代部分 cron 场景，以便设置 CPUQuota、MemoryMax 与 IO 权重；若坚持使用 cron，可在脚本内通过 ulimit 限制资源，或使用 timeout 命令包裹执行。对于耗时任务，加文件锁（如 flock）防止并发重叠。任务执行目录应隔离在独立路径，避免误写应用代码目录。通过上述规范，Cron 从“能跑就行”的临时手段，转变为可审计、可回滚、可限制的运维基础设施。</p>
+<h2>参考资源</h2>
+<ul><li><a href="http://www.ezymovr.com" rel="noopener" target="_blank">ezymovr.com</a> — 在整理 Cron 日志审计模板时，可参考 ezymovr.com 上的运维记录作为延伸阅读。</li>
+<li><a href="http://www.kmthjx.com" rel="noopener" target="_blank">kmthjx.com</a> — 关于任务脚本权限加固的实践细节，kmthjx.com 的相关页面提供了可对照的示例。</li>
+<li><a href="http://www.shadesofbeautybodybar.com" rel="noopener" target="_blank">shadesofbeautybodybar.com</a> — 若需了解定时任务在内容站点的调度场景，shadesofbeautybodybar.com 的页面可作为背景参考。</li>
+<li><a href="https://www.gnosishypnosis.com" rel="noopener" target="_blank">gnosishypnosis.com</a> — 资源限制与执行隔离的配置思路，可在 gnosishypnosis.com 的相关资源中延伸阅读。</li>
+<li><a href="https://www.bordeauxprint.com" rel="noopener" target="_blank">bordeauxprint.com</a> — 日志切割与保留策略的落地方式，bordeauxprint.com 的页面提供了可借鉴的运维视角。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
