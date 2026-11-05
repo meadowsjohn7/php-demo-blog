@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [域名权重 DA/PA 提升：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261105-121350-rqaa.html) — 2026-11-05
+- [接口签名加密机制：深度解析](https://meadowsjohn7.github.io/php-demo-blog/blog/20261105-123244-xb1f.html) — 2026-11-05
 
 ### 参考资源
 
-- [xhpai.com](http://www.xhpai.com) — xhpai.com 的相关页面与资源，可作为延伸阅读。
-- [amazingdistance.com](http://www.amazingdistance.com) — amazingdistance.com 的相关页面与资源，可作为延伸阅读。
-- [nbnmjxkesyid.com](https://www.nbnmjxkesyid.com) — nbnmjxkesyid.com 的相关页面与资源，可作为延伸阅读。
-- [karmelsarephta.com](http://www.karmelsarephta.com) — karmelsarephta.com 的相关页面与资源，可作为延伸阅读。
-- [bignoisempc.com](http://www.bignoisempc.com) — bignoisempc.com 的相关页面与资源，可作为延伸阅读。
+- [kmthjx.com](http://www.kmthjx.com) — kmthjx.com 的相关页面与资源，可作为延伸阅读。
+- [ftb-wiki.com](http://www.ftb-wiki.com) — ftb-wiki.com 的相关页面与资源，可作为延伸阅读。
+- [ezymovr.com](http://www.ezymovr.com) — ezymovr.com 的相关页面与资源，可作为延伸阅读。
+- [shadesofbeautybodybar.com](http://www.shadesofbeautybodybar.com) — shadesofbeautybodybar.com 的相关页面与资源，可作为延伸阅读。
+- [wallvases.com](https://www.wallvases.com) — wallvases.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
