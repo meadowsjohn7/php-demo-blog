@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [移动端点击率提升技巧：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261105-192836-bx26.html) — 2026-11-05
+- [Hreflang 多语言 SEO：深度解析](https://meadowsjohn7.github.io/php-demo-blog/blog/20261105-194205-cqfa.html) — 2026-11-05
 
 ### 参考资源
 
-- [atasozlerianlamlari.com](http://www.atasozlerianlamlari.com) — atasozlerianlamlari.com 的相关页面与资源，可作为延伸阅读。
-- [oftalmologiaferreyra.com](http://www.oftalmologiaferreyra.com) — oftalmologiaferreyra.com 的相关页面与资源，可作为延伸阅读。
-- [thriventfellows.com](http://www.thriventfellows.com) — thriventfellows.com 的相关页面与资源，可作为延伸阅读。
-- [acredyweb.com](http://www.acredyweb.com) — acredyweb.com 的相关页面与资源，可作为延伸阅读。
-- [semillaad.com](http://www.semillaad.com) — semillaad.com 的相关页面与资源，可作为延伸阅读。
+- [afpailescedres.com](http://www.afpailescedres.com) — afpailescedres.com 的相关页面与资源，可作为延伸阅读。
+- [jmtkw.cn](https://www.jmtkw.cn) — jmtkw.cn 的相关页面与资源，可作为延伸阅读。
+- [jmswjdwxfwb.com](http://www.jmswjdwxfwb.com) — jmswjdwxfwb.com 的相关页面与资源，可作为延伸阅读。
+- [shanghaispine.com](https://www.shanghaispine.com) — shanghaispine.com 的相关页面与资源，可作为延伸阅读。
+- [wheelsandsneakers.com](http://www.wheelsandsneakers.com) — wheelsandsneakers.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
