@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [网站跳出率深度分析：深度解析](https://meadowsjohn7.github.io/php-demo-blog/blog/20261105-094605-anfg.html) — 2026-11-05
+- [网页 UI 留白设计艺术：安全规范](https://meadowsjohn7.github.io/php-demo-blog/blog/20261105-095644-hqzz.html) — 2026-11-05
 
 ### 参考资源
 
-- [xlkbltm.com](http://www.xlkbltm.com) — xlkbltm.com 的相关页面与资源，可作为延伸阅读。
-- [brdong.com](http://www.brdong.com) — brdong.com 的相关页面与资源，可作为延伸阅读。
-- [ifromchina.com](https://www.ifromchina.com) — ifromchina.com 的相关页面与资源，可作为延伸阅读。
-- [canary-food.com](http://www.canary-food.com) — canary-food.com 的相关页面与资源，可作为延伸阅读。
-- [signature-concierge.com](http://www.signature-concierge.com) — signature-concierge.com 的相关页面与资源，可作为延伸阅读。
+- [jeffersoncheng.com](http://www.jeffersoncheng.com) — jeffersoncheng.com 的相关页面与资源，可作为延伸阅读。
+- [yhkyjt.com](http://www.yhkyjt.com) — yhkyjt.com 的相关页面与资源，可作为延伸阅读。
+- [siliconerubberparts.com](https://www.siliconerubberparts.com) — siliconerubberparts.com 的相关页面与资源，可作为延伸阅读。
+- [qyhxsq.com](https://www.qyhxsq.com) — qyhxsq.com 的相关页面与资源，可作为延伸阅读。
+- [zsh784.com](https://www.zsh784.com) — zsh784.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
