@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [MySQL 慢查询排查：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261105-103722-jupk.html) — 2026-11-05
+- [TLS 1.3 安全协议升级：深度解析](https://meadowsjohn7.github.io/php-demo-blog/blog/20261105-105050-fnkj.html) — 2026-11-05
 
 ### 参考资源
 
-- [shop3s.com](http://www.shop3s.com) — shop3s.com 的相关页面与资源，可作为延伸阅读。
-- [tangonuestro.com](http://www.tangonuestro.com) — tangonuestro.com 的相关页面与资源，可作为延伸阅读。
-- [thekeziworks.com](http://www.thekeziworks.com) — thekeziworks.com 的相关页面与资源，可作为延伸阅读。
-- [impactmagical.com](https://www.impactmagical.com) — impactmagical.com 的相关页面与资源，可作为延伸阅读。
-- [interstatedragways.com](http://www.interstatedragways.com) — interstatedragways.com 的相关页面与资源，可作为延伸阅读。
+- [robertdanielharris.com](https://www.robertdanielharris.com) — robertdanielharris.com 的相关页面与资源，可作为延伸阅读。
+- [memartau.com](http://www.memartau.com) — memartau.com 的相关页面与资源，可作为延伸阅读。
+- [rawrdaily.com](http://www.rawrdaily.com) — rawrdaily.com 的相关页面与资源，可作为延伸阅读。
+- [jobtitlesai.com](http://www.jobtitlesai.com) — jobtitlesai.com 的相关页面与资源，可作为延伸阅读。
+- [yuchenyuwen.com](http://www.yuchenyuwen.com) — yuchenyuwen.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
