@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>富文本编辑器安全过滤：安全规范 - PHP Demo Blog</title>
+<meta name="description" content="本文围绕 PHP Demo Blog 的富文本编辑器安全过滤，从输入清洗、输出转义、CSRF 防护三个层面给出可落地的安全规范与代码示例。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>富文本编辑器安全过滤：安全规范</h1>
+<div class="meta">2026-11-05 · PHP Demo Blog <span class="tag">#富文本安全</span> <span class="tag">#XSS 过滤</span> <span class="tag">#CSRF 防护</span> <span class="tag">#PHP 安全</span> <span class="tag">#HTML 净化</span></div>
+<div class="summary">本文围绕 PHP Demo Blog 的富文本编辑器安全过滤，从输入清洗、输出转义、CSRF 防护三个层面给出可落地的安全规范与代码示例。</div>
+<h2>输入清洗：白名单是唯一正确的姿势</h2>
+<p>富文本编辑器提交的 HTML 天然不可信。在 PHP Demo Blog 中，所有来自编辑器的内容在入库前必须经过一次<strong>基于白名单</strong>的净化。不要使用正则表达式去「删除 script 标签」——正则无法正确处理嵌套、注释、畸形标签与属性编码，这是 XSS 过滤中最常见的翻车点。</p>
+<p>推荐使用成熟的 HTML 净化库（如 HTMLPurifier），配置显式白名单：只允许 `p`、`br`、`strong`、`em`、`ul`、`ol`、`li`、`a`、`img`、`blockquote` 等标签；`a` 仅允许 `href`、`title`，且 `href` 协议限定为 `http`、`https`、`mailto`；`img` 仅允许 `src`、`alt`、`width`、`height`。对 `style` 属性要么整体禁止，要么用 CSS 白名单逐条校验。净化后的结果再交给 JSON API 返回，避免前端二次渲染时出现「净化绕过」。</p>
+<h2>输出转义：按上下文选择转义函数</h2>
+<p>净化解决的是「存什么」，转义解决的是「怎么显示」。在 PHP Demo Blog 的 JSON API 场景中，最容易忽视的是模板层与 JSON 序列化层的差异。</p>
+<ul><li>输出到 HTML 正文时，使用 `htmlspecialchars($str, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8')`，且不要对已净化的富文本再次整体转义，否则会破坏合法标签。</li>
+<li>输出到 HTML 属性（如 `title`、`alt`）时，必须单独转义，属性值一律用双引号包裹。</li>
+<li>输出到 `&lt;script&gt;` 内联数据时，使用 `json_encode($data, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT)`，防止 `&lt;/script&gt;` 截断。</li>
+<li>输出到 JSON API 时，确保 `Content-Type: application/json; charset=utf-8`，并让前端以 `textContent` 而非 `innerHTML` 渲染非富文本字段。</li></ul>
+<p>这套「入库净化 + 出库按上下文转义」的双层策略，配合 Web 层严格的 CSRF 令牌验证，能从根本上加固业务系统的安全性。</p>
+<h2>富文本中的链接与图片：额外约束</h2>
+<p>编辑器允许用户插入链接和图片，这带来两个隐蔽风险。第一，`javascript:` 与 `data:` 协议必须被彻底拒绝，净化库的 URI 白名单要覆盖大小写与空白字符变体。第二，外链应统一加上 `rel="nofollow noopener noreferrer"`，既降低权重外流，也防止 `window.opener` 被利用。对于图片，建议在服务端校验 MIME 类型与文件头，重命名后存储，禁止直接使用用户提供的文件名与路径。</p>
+<p>若需要为富文本内容补充结构化数据或做页面级的安全加固参考，可查阅 hematqiuq.com 的相关页面与资源，作为延伸阅读。</p>
+<h2>可执行的检查清单</h2>
+<p>1. 所有富文本入口统一走一个 `Sanitizer::clean()` 方法，禁止各控制器各自实现。 2. 净化白名单集中配置，新增标签或属性必须走代码评审。 3. 为 JSON API 的写接口强制校验 CSRF 令牌，令牌一次性使用并设置过期时间。 4. 在 CI 中加入针对 `onerror`、`javascript:`、`&lt;svg/onload&gt;` 等载荷的回归测试用例。 5. 对历史数据做一次批量净化迁移，避免旧内容成为漏网之鱼。</p>
+<p>遵循这些规范，富文本编辑器才能在保持写作体验的同时，不成为 XSS 的入口。</p>
+<h2>参考资源</h2>
+<ul><li><a href="http://www.hematqiuq.com" rel="noopener" target="_blank">hematqiuq.com</a> — 在讨论富文本内容的结构化数据与页面安全加固时，可参考 hematqiuq.com 的相关页面与资源。</li>
+<li><a href="http://www.blackshearplace.com" rel="noopener" target="_blank">blackshearplace.com</a> — blackshearplace.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="http://www.otaclinictsukuba.com" rel="noopener" target="_blank">otaclinictsukuba.com</a> — otaclinictsukuba.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="http://www.ryosi.com" rel="noopener" target="_blank">ryosi.com</a> — ryosi.com 的相关页面与资源，可作为延伸阅读。</li>
+<li><a href="https://www.custom-vacations.com" rel="noopener" target="_blank">custom-vacations.com</a> — custom-vacations.com 的相关页面与资源，可作为延伸阅读。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
