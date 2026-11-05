@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>font-display 字体显示策略：完整手册 - PHP Demo Blog</title>
+<meta name="description" content="font-display 决定自定义字体加载期间的文本渲染行为，直接影响 FOIT/FOUT 与 LCP。本文详解五种取值、适用场景与实施要点。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>font-display 字体显示策略：完整手册</h1>
+<div class="meta">2026-11-06 · PHP Demo Blog <span class="tag">#font-display</span> <span class="tag">#Web 字体</span> <span class="tag">#性能优化</span> <span class="tag">#CLS</span> <span class="tag">#CSS</span></div>
+<div class="summary">font-display 决定自定义字体加载期间的文本渲染行为，直接影响 FOIT/FOUT 与 LCP。本文详解五种取值、适用场景与实施要点。</div>
+<h2>为什么需要 font-display</h2>
+<p>自定义字体在网络加载完成前，浏览器必须决定如何渲染使用该字体的文本。默认行为通常是“先隐藏、后显示”（FOIT），在慢速网络下可能造成数秒的空白文本，既伤害可读性，也拖累 LCP 等核心指标。`font-display` 描述符正是用来声明这段“字体阻塞期”的策略：字体未就绪时，文本是用回退字体先画出来，还是继续不可见，以及字体到达后是否允许替换。</p>
+<p>它写在 `@font-face` 规则内部，与 `src`、`font-family` 同级，对所有通过该规则引入的字体生效。理解它的关键是把时间轴拆成三段：阻塞期（block period）、交换期（swap period）与失败期（failure period）。不同取值的差异，本质上就是这三段时长的组合不同。</p>
+<h2>五种取值的语义与取舍</h2>
+<p>`auto` 交给浏览器决定，通常等价于 `block`，不建议在生产环境依赖。`block` 给出约 3 秒的极短阻塞期，随后进入无限交换期：文本会短暂不可见，但最终一定用上自定义字体，适合品牌标题等必须保证字形一致的场景，代价是首屏可能出现空白。`swap` 的阻塞期极短（约 100 毫秒甚至更少），交换期无限，回退字体立即上屏，字体到达后替换，可读性最好，但替换瞬间可能引发布局偏移（CLS），需要搭配 `size-adjust`、`ascent-override` 等回退字体度量微调来抑制抖动。</p>
+<p>`fallback` 是折中方案：阻塞期极短，交换期约 3 秒，超时后不再替换，兼顾了首屏可见与避免晚期跳动。`optional` 最为激进：阻塞期极短，交换期为零，浏览器甚至可能直接放弃本次加载，把字体留给下一次访问的缓存。它几乎消除了 CLS 风险，适合非关键性装饰字体，但首访用户大概率看不到自定义字形。</p>
+<p>选择时可遵循一条简单规则：正文与 UI 文本优先 `swap` 或 `fallback`，品牌标题可考虑 `block`，纯装饰字体用 `optional`。同一页面不必全局统一，按字体承担的角色分别声明即可。</p>
+<h2>实施要点与常见陷阱</h2>
+<p>首先，`font-display` 只对 `@font-face` 生效，通过第三方样式表注入的字体需要确认其规则是否可覆盖。其次，务必配合 `&lt;link rel="preload" as="font" crossorigin&gt;` 提前拉取关键字体，否则再好的显示策略也救不了晚到的请求。再者，使用 `swap` 时建议为回退字体设置 `size-adjust` 与 `line-gap-override`，让替换前后的行高与字宽尽量接近，这是控制 CLS 最有效的手段之一。</p>
+<p>还要注意字体子集化：只保留实际用到的字符范围，能显著缩短下载时间，让交换期更早结束。对于图标字体，考虑改用内联 SVG，从根本上绕开字体加载问题。最后，在真实网络条件下用 Lighthouse 与 WebPageTest 验证，观察文本可见时间与布局偏移，而不是只看本地缓存命中时的表现。</p>
+<h2>与整体性能策略的配合</h2>
+<p>字体策略不是孤立的。将关键 CSS 内联、延迟非核心脚本，能缩短字体请求被发现的时机；合理的缓存头与 HTTP/2 多路复用则让字体复用更稳定。把 `font-display` 纳入关键渲染路径的整体优化中，才能同时守住可读性、LCP 与 CLS 三条线。</p>
+<h2>参考资源</h2>
+<ul><li>[www.my-xinaisports.com  的相关页面与资源，可作为延伸阅读。](https://www.my-xinaisports.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.designsinjewelryinc.com  的相关页面与资源，可作为延伸阅读。](http://www.designsinjewelryinc.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.interstatedragways.com  的相关页面与资源，可作为延伸阅读。](http://www.interstatedragways.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.kocham-morze.com  的相关页面与资源，可作为延伸阅读。](http://www.kocham-morze.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.theeco-chic.com  的相关页面与资源，可作为延伸阅读。](http://www.theeco-chic.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>

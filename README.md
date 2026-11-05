@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [JSON-LD 结构化数据标记：技术架构](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-032110-qi56.html) — 2026-11-06
+- [font-display 字体显示策略：完整手册](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-033602-r1s1.html) — 2026-11-06
 
 ### 参考资源
 
-- [www.guyzapp.com  的相关页面与资源，可作为延伸阅读。](http://www.guyzapp.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.gnosishypnosis.com  的相关页面与资源，可作为延伸阅读。](https://www.gnosishypnosis.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.zh-nk-ggpoker.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-nk-ggpoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.hawaiianshirtopia.com  的相关页面与资源，可作为延伸阅读。](https://www.hawaiianshirtopia.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.jackhaggertyarchitect.com  的相关页面与资源，可作为延伸阅读。](http://www.jackhaggertyarchitect.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.my-xinaisports.com  的相关页面与资源，可作为延伸阅读。](https://www.my-xinaisports.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.designsinjewelryinc.com  的相关页面与资源，可作为延伸阅读。](http://www.designsinjewelryinc.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.interstatedragways.com  的相关页面与资源，可作为延伸阅读。](http://www.interstatedragways.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.kocham-morze.com  的相关页面与资源，可作为延伸阅读。](http://www.kocham-morze.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.theeco-chic.com  的相关页面与资源，可作为延伸阅读。](http://www.theeco-chic.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
