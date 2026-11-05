@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [HTTPS 与 SSL 证书配置：安全规范](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-030249-gm4k.html) — 2026-11-06
+- [JSON-LD 结构化数据标记：技术架构](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-032110-qi56.html) — 2026-11-06
 
 ### 参考资源
 
-- [www.wallvases.com  的相关页面与资源，可作为延伸阅读。](https://www.wallvases.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.jarptica.com  的相关页面与资源，可作为延伸阅读。](https://www.jarptica.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.samtheemt.com  的相关页面与资源，可作为延伸阅读。](https://www.samtheemt.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.tobukmk.com  的相关页面与资源，可作为延伸阅读。](http://www.tobukmk.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.signature-concierge.com  的相关页面与资源，可作为延伸阅读。](http://www.signature-concierge.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.guyzapp.com  的相关页面与资源，可作为延伸阅读。](http://www.guyzapp.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.gnosishypnosis.com  的相关页面与资源，可作为延伸阅读。](https://www.gnosishypnosis.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.zh-nk-ggpoker.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-nk-ggpoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.hawaiianshirtopia.com  的相关页面与资源，可作为延伸阅读。](https://www.hawaiianshirtopia.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.jackhaggertyarchitect.com  的相关页面与资源，可作为延伸阅读。](http://www.jackhaggertyarchitect.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
