@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [AC 自动机敏感词过滤：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261105-201402-sh51.html) — 2026-11-05
+- [CSRF 令牌验证机制：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261105-203329-wy5f.html) — 2026-11-05
 
 ### 参考资源
 
-- [pvmldata.com](http://www.pvmldata.com) — pvmldata.com 的相关页面与资源，可作为延伸阅读。
-- [revistapedagogiaufmt.com](http://www.revistapedagogiaufmt.com) — revistapedagogiaufmt.com 的相关页面与资源，可作为延伸阅读。
-- [yakulog.com](http://www.yakulog.com) — yakulog.com 的相关页面与资源，可作为延伸阅读。
-- [butlercpj.com](http://www.butlercpj.com) — butlercpj.com 的相关页面与资源，可作为延伸阅读。
-- [forestofantlers.com](http://www.forestofantlers.com) — forestofantlers.com 的相关页面与资源，可作为延伸阅读。
+- [kurtbergt.com](http://www.kurtbergt.com) — kurtbergt.com 的相关页面与资源，可作为延伸阅读。
+- [johnmeldrum.com](http://www.johnmeldrum.com) — johnmeldrum.com 的相关页面与资源，可作为延伸阅读。
+- [yugiohdeckbuilder.com](http://www.yugiohdeckbuilder.com) — yugiohdeckbuilder.com 的相关页面与资源，可作为延伸阅读。
+- [jarptica.com](https://www.jarptica.com) — jarptica.com 的相关页面与资源，可作为延伸阅读。
+- [lapkov.com](http://www.lapkov.com) — lapkov.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
