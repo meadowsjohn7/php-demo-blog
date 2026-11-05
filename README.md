@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [font-display 字体显示策略：完整手册](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-033602-r1s1.html) — 2026-11-06
+- [内网穿透调试工具：安全规范](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-035557-dk2h.html) — 2026-11-06
 
 ### 参考资源
 
-- [www.my-xinaisports.com  的相关页面与资源，可作为延伸阅读。](https://www.my-xinaisports.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.designsinjewelryinc.com  的相关页面与资源，可作为延伸阅读。](http://www.designsinjewelryinc.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.interstatedragways.com  的相关页面与资源，可作为延伸阅读。](http://www.interstatedragways.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.kocham-morze.com  的相关页面与资源，可作为延伸阅读。](http://www.kocham-morze.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.theeco-chic.com  的相关页面与资源，可作为延伸阅读。](http://www.theeco-chic.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.zone-qiesports.com  的相关页面与资源，可作为延伸阅读。](https://www.zone-qiesports.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.jmswjdwxfwb.com  的相关页面与资源，可作为延伸阅读。](http://www.jmswjdwxfwb.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.2525ok.com  的相关页面与资源，可作为延伸阅读。](http://www.2525ok.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.fade-2-black.com  的相关页面与资源，可作为延伸阅读。](https://www.fade-2-black.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.ad4xlive.com  的相关页面与资源，可作为延伸阅读。](http://www.ad4xlive.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
