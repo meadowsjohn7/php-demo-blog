@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [OAuth 2.0 授权流程解析：优化方案](https://meadowsjohn7.github.io/php-demo-blog/blog/20261105-132225-2593.html) — 2026-11-05
+- [Trie 树高性能搜索：优化方案](https://meadowsjohn7.github.io/php-demo-blog/blog/20261105-133803-c7z9.html) — 2026-11-05
 
 ### 参考资源
 
-- [tomsmithstudio.com](http://www.tomsmithstudio.com) — tomsmithstudio.com 的相关页面与资源，可作为延伸阅读。
-- [michaelskovgaard.com](https://www.michaelskovgaard.com) — michaelskovgaard.com 的相关页面与资源，可作为延伸阅读。
-- [oftalmologiaferreyra.com](http://www.oftalmologiaferreyra.com) — oftalmologiaferreyra.com 的相关页面与资源，可作为延伸阅读。
-- [thriventfellows.com](http://www.thriventfellows.com) — thriventfellows.com 的相关页面与资源，可作为延伸阅读。
-- [atasozlerianlamlari.com](http://www.atasozlerianlamlari.com) — atasozlerianlamlari.com 的相关页面与资源，可作为延伸阅读。
+- [acredyweb.com](http://www.acredyweb.com) — acredyweb.com 的相关页面与资源，可作为延伸阅读。
+- [jmswjdwxfwb.com](http://www.jmswjdwxfwb.com) — jmswjdwxfwb.com 的相关页面与资源，可作为延伸阅读。
+- [jmtkw.cn](https://www.jmtkw.cn) — jmtkw.cn 的相关页面与资源，可作为延伸阅读。
+- [semillaad.com](http://www.semillaad.com) — semillaad.com 的相关页面与资源，可作为延伸阅读。
+- [afpailescedres.com](http://www.afpailescedres.com) — afpailescedres.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
