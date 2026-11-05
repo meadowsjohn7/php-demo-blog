@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [长尾关键词挖掘策略：技术架构](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-073815-x8yr.html) — 2026-11-06
+- [前端防抖与节流实战：深度解析](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-074946-qip4.html) — 2026-11-06
 
 ### 参考资源
 
-- [www.johnmeldrum.com  的相关页面与资源，可作为延伸阅读。](http://www.johnmeldrum.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.taends.com  的相关页面与资源，可作为延伸阅读。](http://www.taends.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.zn-xinqiusports.com  的相关页面与资源，可作为延伸阅读。](https://www.zn-xinqiusports.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.zh-cn-ao10.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-cn-ao10.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.ynltzx.com  的相关页面与资源，可作为延伸阅读。](http://www.ynltzx.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.hematqiuq.com  的相关页面与资源，可作为延伸阅读。](http://www.hematqiuq.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.readingswithgail.com  的相关页面与资源，可作为延伸阅读。](http://www.readingswithgail.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.tomsmithstudio.com  的相关页面与资源，可作为延伸阅读。](http://www.tomsmithstudio.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.drugshb.com  的相关页面与资源，可作为延伸阅读。](https://www.drugshb.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.zh-hans-lucky10.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-hans-lucky10.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
