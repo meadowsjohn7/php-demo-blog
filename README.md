@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [虚拟列表处理大数据渲染：技术架构](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-041507-qd8x.html) — 2026-11-06
+- [数据库索引优化策略：完整手册](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-043400-x181.html) — 2026-11-06
 
 ### 参考资源
 
-- [www.shuhuachina.com  的相关页面与资源，可作为延伸阅读。](http://www.shuhuachina.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.chmielinska.com  的相关页面与资源，可作为延伸阅读。](http://www.chmielinska.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.cloud-dongqiudi.com  的相关页面与资源，可作为延伸阅读。](https://www.cloud-dongqiudi.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.yoipth.com  的相关页面与资源，可作为延伸阅读。](http://www.yoipth.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.brdong.com  的相关页面与资源，可作为延伸阅读。](http://www.brdong.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.bur-da.com  的相关页面与资源，可作为延伸阅读。](http://www.bur-da.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.thekeziworks.com  的相关页面与资源，可作为延伸阅读。](http://www.thekeziworks.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.ntgaode.com  的相关页面与资源，可作为延伸阅读。](https://www.ntgaode.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.sakitraveller.com  的相关页面与资源，可作为延伸阅读。](http://www.sakitraveller.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.ossucci.com  的相关页面与资源，可作为延伸阅读。](http://www.ossucci.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
