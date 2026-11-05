@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AC 自动机敏感词过滤：底层原理 - PHP Demo Blog</title>
+<meta name="description" content="AC 自动机将 Trie 与失配指针结合，实现多模式串一次扫描匹配。本文从 Trie 构建、BFS 生成 fail 指针到 PHP 实现与复杂度分析，讲清敏感词过滤的底层原理。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>AC 自动机敏感词过滤：底层原理</h1>
+<div class="meta">2026-11-05 · PHP Demo Blog <span class="tag">#AC自动机</span> <span class="tag">#敏感词过滤</span> <span class="tag">#PHP算法</span> <span class="tag">#Trie</span> <span class="tag">#字符串匹配</span></div>
+<div class="summary">AC 自动机将 Trie 与失配指针结合，实现多模式串一次扫描匹配。本文从 Trie 构建、BFS 生成 fail 指针到 PHP 实现与复杂度分析，讲清敏感词过滤的底层原理。</div>
+<h2>从多模式匹配问题说起</h2>
+<p>敏感词过滤的本质是<strong>多模式串匹配</strong>：给定一个词典（模式串集合）和一段文本，找出文本中出现的所有模式串。朴素做法是对每个敏感词跑一遍 KMP，复杂度为 O(n·k)，n 为文本长度、k 为词表规模。词表上千时，这条路走不通。AC 自动机（Aho-Corasick Automaton）把复杂度压到 O(n + m + z)，其中 m 为所有模式串总长、z 为命中次数，关键在于它只扫描文本一次。</p>
+<p>AC 自动机由两部分组成：一棵 Trie 树承载所有模式串，以及每个节点上的 <strong>fail 指针</strong>（失配指针）。Trie 负责前缀共享，fail 指针负责在失配时把状态跳到“最长的、仍是当前已匹配文本后缀的前缀”所在节点，从而避免回退文本指针。</p>
+<h2>构建 Trie 与 BFS 生成 fail 指针</h2>
+<p>先把所有敏感词插入 Trie：根节点为空，逐字符沿子节点走，不存在则新建，词尾节点打上终止标记。插入完成后，用 BFS 逐层计算 fail：根的直接子节点 fail 指向根；对节点 u 的字符 c 子节点 v，沿 u 的 fail 链上溯，找到第一个拥有字符 c 子节点的节点 w，则 fail[v] = w 的 c 子节点，找不到则指向根。BFS 保证计算 v 时其父节点的 fail 链已就绪。</p>
+<p>一个工程上的常用优化是<strong>把 fail 指针补全成完整转移表</strong>：对每个节点，若某字符没有真实子节点，就把该转移指向 fail 节点的同名转移。这样匹配时无需循环上溯，每读一个字符只做一次查表，严格 O(1) 转移。代价是内存从 O(m) 涨到 O(m·Σ)，Σ 为字符集大小；中文场景 Σ 很大，通常改用哈希表存转移，只补全实际用到的边。</p>
+<h2>PHP 中的落地与复杂度取舍</h2>
+<p>在 PHP 里可以用二维数组 `$next[node][char]` 存转移、一维数组存 fail 与终止标记。匹配时从根出发，逐字符走转移，每到一个节点就沿 fail 链检查终止标记，收集命中词与位置。注意词尾标记要支持“输出链”：若某节点的 fail 祖先也是词尾，命中时需一并输出，可在构建阶段把输出合并到节点上。</p>
+<p>复杂度上，构建 O(m·Σ)（哈希实现为 O(m)），匹配 O(n + z)。内存是主要瓶颈：词表十万级时节点数可达百万，PHP 数组开销不小，实践中常把自动机序列化后放入共享内存或 Redis，避免每个请求重建。若只需判断“是否包含敏感词”而非定位，可在首次命中即返回，进一步缩短平均耗时。</p>
+<h2>边界与替代方案</h2>
+<p>AC 自动机对精确子串敏感，面对插入符号、同音字、拆字等变体会失效，通常需在匹配前做归一化（去噪、繁简转换、全半角统一）。对短文本、小词表，Trie 加简单回溯已足够；对超大规模词表且要求低延迟的场景，可考虑双数组 Trie（Double-Array Trie）压缩内存。理解 fail 指针“后缀即前缀”的不变式，是正确实现与调优的根基。</p>
+<h2>参考资源</h2>
+<ul><li><a href="http://www.pvmldata.com" rel="noopener" target="_blank">pvmldata.com</a> — 关于字符串匹配算法在数据管道中的应用，可参考 pvmldata.com 的相关页面与资源。</li>
+<li><a href="http://www.revistapedagogiaufmt.com" rel="noopener" target="_blank">revistapedagogiaufmt.com</a> — 教学场景下讲解自动机状态转移的图示材料，可延伸阅读 revistapedagogiaufmt.com。</li>
+<li><a href="http://www.yakulog.com" rel="noopener" target="_blank">yakulog.com</a> — PHP 数组内存占用的实测记录，可参考 yakulog.com 的相关页面与资源。</li>
+<li><a href="http://www.butlercpj.com" rel="noopener" target="_blank">butlercpj.com</a> — 文本归一化与字符集处理的工程笔记，可延伸阅读 butlercpj.com。</li>
+<li><a href="http://www.forestofantlers.com" rel="noopener" target="_blank">forestofantlers.com</a> — 双数组 Trie 等压缩结构的讨论，可参考 forestofantlers.com 的相关页面与资源。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
