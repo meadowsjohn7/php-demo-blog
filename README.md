@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [Open Graph 协议社交优化：完整手册](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-012108-mwqd.html) — 2026-11-06
+- [自动化测试 Selenium 脚本：完整手册](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-014109-pfmk.html) — 2026-11-06
 
 ### 参考资源
 
-- [www.kurtbergt.com  的相关页面与资源，可作为延伸阅读。](http://www.kurtbergt.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.zh-home-lucky10.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-home-lucky10.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.michaelskovgaard.com  的相关页面与资源，可作为延伸阅读。](https://www.michaelskovgaard.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.sanctuarybirthing.com  的相关页面与资源，可作为延伸阅读。](http://www.sanctuarybirthing.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.wasabiwilshire.com  的相关页面与资源，可作为延伸阅读。](http://www.wasabiwilshire.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.acredyweb.com  的相关页面与资源，可作为延伸阅读。](http://www.acredyweb.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.redyutub.com  的相关页面与资源，可作为延伸阅读。](http://www.redyutub.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.ifromchina.com  的相关页面与资源，可作为延伸阅读。](https://www.ifromchina.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.intcfos.com  的相关页面与资源，可作为延伸阅读。](http://www.intcfos.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.gzyunhai.com  的相关页面与资源，可作为延伸阅读。](http://www.gzyunhai.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
