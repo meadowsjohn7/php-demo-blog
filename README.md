@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [frp 内网穿透实战：深度解析](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-062412-wro1.html) — 2026-11-06
+- [Nginx 伪静态规则编写：技术架构](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-063659-gzbk.html) — 2026-11-06
 
 ### 参考资源
 
-- [www.internetlet.com  的相关页面与资源，可作为延伸阅读。](http://www.internetlet.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.zjcwu.com  的相关页面与资源，可作为延伸阅读。](https://www.zjcwu.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.cavusogluendustriyel.com  的相关页面与资源，可作为延伸阅读。](https://www.cavusogluendustriyel.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.memartau.com  的相关页面与资源，可作为延伸阅读。](http://www.memartau.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.slice-online.com  的相关页面与资源，可作为延伸阅读。](http://www.slice-online.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.oftalmologiaferreyra.com  的相关页面与资源，可作为延伸阅读。](http://www.oftalmologiaferreyra.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.zh-home-wepoker.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-home-wepoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.georgiabj.com  的相关页面与资源，可作为延伸阅读。](https://www.georgiabj.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.linyuanxinli.com  的相关页面与资源，可作为延伸阅读。](https://www.linyuanxinli.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.papirustercume.com  的相关页面与资源，可作为延伸阅读。](http://www.papirustercume.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
