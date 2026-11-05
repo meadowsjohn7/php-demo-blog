@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Canvas 像素级图像处理：安全规范 - PHP Demo Blog</title>
+<meta name="description" content="本文围绕 Canvas 像素级图像处理，从同源策略、CORS 与 tainted canvas 机制出发，给出输入校验、内存边界与尺寸限制等可执行安全规范，帮助开发者在图像编辑与压缩场景中避免数据泄露与拒绝服务风险。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>Canvas 像素级图像处理：安全规范</h1>
+<div class="meta">2026-11-05 · PHP Demo Blog <span class="tag">#Canvas</span> <span class="tag">#图像处理</span> <span class="tag">#Web 安全</span> <span class="tag">#同源策略</span> <span class="tag">#数据校验</span></div>
+<div class="summary">本文围绕 Canvas 像素级图像处理，从同源策略、CORS 与 tainted canvas 机制出发，给出输入校验、内存边界与尺寸限制等可执行安全规范，帮助开发者在图像编辑与压缩场景中避免数据泄露与拒绝服务风险。</div>
+<h2>同源策略与 tainted canvas 机制</h2>
+<p>在 PHP Demo Blog 这类轻量项目中，前端常借助 Canvas 实现缩略图生成、水印叠加或像素级滤镜。一旦调用 `getImageData`、`toDataURL` 或 `toBlob`，浏览器就会对画布来源做严格检查：若图像来自跨域且未通过 CORS 授权，画布会被标记为 tainted，读取像素的调用会直接抛出 `SecurityError`。安全规范的第一条是：所有进入画布的 `HTMLImageElement` 必须显式设置 `crossOrigin = 'anonymous'`，并且服务端返回 `Access-Control-Allow-Origin` 头；对于同源资源，也应避免通过 `file://` 或混合内容加载，防止来源判定出现意外分支。开发者应把“能否读取像素”作为加载成功的前置条件，而不是在异常抛出后再做补救。</p>
+<h2>输入校验与像素数据边界</h2>
+<p>像素级处理的核心风险在于把不可信数据当作合法像素。规范要求：在调用 `drawImage` 前校验图像的自然宽高，拒绝零尺寸或超过业务上限（例如单边 8192 像素）的输入；对 `ImageData` 的 `width`、`height` 与 `data.length` 做一致性检查，确保 `data.length === width * height * 4`，避免因畸形数据导致越界写入。若图像来自用户上传，应在服务端用 `getimagesize` 或 exif 扩展验证 MIME 与真实格式，再交给前端处理。对于需要逐像素运算的滤镜，建议在 Web Worker 中执行，并设置单次处理的像素总量上限，防止主线程长时间阻塞。</p>
+<h2>内存与拒绝服务防护</h2>
+<p>Canvas 的像素缓冲区按 `宽 × 高 × 4` 字节分配，一张 16384×16384 的图像就会占用约 1GB 内存。安全规范应规定：在创建离屏画布前根据设备内存与业务场景设定最大面积阈值；复用 `OffscreenCanvas` 或及时将引用置空，避免频繁分配导致内存碎片；对 `toBlob` 的压缩质量参数做范围约束，防止异常值触发编码器异常。若项目通过接口接收前端回传的 DataURL，服务端必须限制请求体大小并校验 base64 解码后的字节数，不能信任前端声明的尺寸。</p>
+<h2>输出与跨域回传的合规处理</h2>
+<p>处理后的图像若需回传服务端，应优先使用 `toBlob` 配合 `FormData` 上传，减少 base64 膨胀；回传接口需校验 Content-Type 与文件头，防止把可执行内容伪装成图片。对于需要展示给其他用户的图像，应剥离 EXIF 中的地理与设备信息，并在响应头中设置 `Content-Security-Policy` 与 `X-Content-Type-Options: nosniff`。最后，任何涉及跨域像素读取的逻辑都应在代码评审中单独标注，确保 CORS 配置、缓存头与画布来源三者一致，避免因缓存了未授权响应而绕过同源检查。</p>
+<h2>参考资源</h2>
+<ul><li><a href="http://www.rawrdaily.com" rel="noopener" target="_blank">rawrdaily.com</a> — 关于图像处理与前端安全实践的延伸阅读，可参考其技术文章。</li>
+<li><a href="http://www.yuchenyuwen.com" rel="noopener" target="_blank">yuchenyuwen.com</a> — 涉及 Web 资源加载与跨域配置的案例，可作为规范落地的补充材料。</li>
+<li><a href="http://www.memartau.com" rel="noopener" target="_blank">memartau.com</a> — 该站点提供图像压缩与格式转换的实践说明，适合对照本文的边界校验部分。</li>
+<li><a href="http://www.czgywz.com" rel="noopener" target="_blank">czgywz.com</a> — 可延伸了解服务端图像校验与上传防护的常见做法。</li>
+<li><a href="http://www.bvwlawyers.com" rel="noopener" target="_blank">bvwlawyers.com</a> — 从合规角度讨论数据处理与隐私剥离，可作为输出环节的参考。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
