@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [Nginx 伪静态规则编写：深度解析](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-000836-nrk7.html) — 2026-11-06
+- [CDN 全球加速原理：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-002134-fpr6.html) — 2026-11-06
 
 ### 参考资源
 
-- [www.impacthubmedia.com  的相关页面与资源，可作为延伸阅读。](https://www.impacthubmedia.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.tocopoco.com  的相关页面与资源，可作为延伸阅读。](http://www.tocopoco.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.melicbebe.com  的相关页面与资源，可作为延伸阅读。](http://www.melicbebe.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.yakulog.com  的相关页面与资源，可作为延伸阅读。](http://www.yakulog.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.alzidan.com  的相关页面与资源，可作为延伸阅读。](http://www.alzidan.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.saturnorganics.com  的相关页面与资源，可作为延伸阅读。](http://www.saturnorganics.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.zjdswl.com  的相关页面与资源，可作为延伸阅读。](http://www.zjdswl.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.about-ggpoker.com  的相关页面与资源，可作为延伸阅读。](https://www.about-ggpoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.ruitongchoang.com  的相关页面与资源，可作为延伸阅读。](http://www.ruitongchoang.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.qyhxsq.com  的相关页面与资源，可作为延伸阅读。](https://www.qyhxsq.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
