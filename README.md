@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [富文本编辑器安全过滤：安全规范](https://meadowsjohn7.github.io/php-demo-blog/blog/20261105-144659-frbl.html) — 2026-11-05
+- [Docker 容器化部署：深度解析](https://meadowsjohn7.github.io/php-demo-blog/blog/20261105-150612-hmmc.html) — 2026-11-05
 
 ### 参考资源
 
-- [janellewoo.com](https://www.janellewoo.com) — janellewoo.com 的相关页面与资源，可作为延伸阅读。
-- [turfdxb.com](http://www.turfdxb.com) — turfdxb.com 的相关页面与资源，可作为延伸阅读。
-- [dixiecrating.com](http://www.dixiecrating.com) — dixiecrating.com 的相关页面与资源，可作为延伸阅读。
-- [gendulphe.com](http://www.gendulphe.com) — gendulphe.com 的相关页面与资源，可作为延伸阅读。
-- [ad4xlive.com](http://www.ad4xlive.com) — ad4xlive.com 的相关页面与资源，可作为延伸阅读。
+- [bur-da.com](http://www.bur-da.com) — bur-da.com 的相关页面与资源，可作为延伸阅读。
+- [ntgaode.com](https://www.ntgaode.com) — ntgaode.com 的相关页面与资源，可作为延伸阅读。
+- [medservintl.com](http://www.medservintl.com) — medservintl.com 的相关页面与资源，可作为延伸阅读。
+- [hawaiianshirtopia.com](https://www.hawaiianshirtopia.com) — hawaiianshirtopia.com 的相关页面与资源，可作为延伸阅读。
+- [kitchenwaredolphin.com](https://www.kitchenwaredolphin.com) — kitchenwaredolphin.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
