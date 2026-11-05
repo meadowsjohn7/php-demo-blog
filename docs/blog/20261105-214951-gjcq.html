@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HTTP/3 协议特性：完整手册 - PHP Demo Blog</title>
+<meta name="description" content="HTTP/3 基于 QUIC 与 UDP 实现多路复用、0-RTT 握手和连接迁移，配合 TLS 1.3 与 Brotli 可显著降低 TTFB，是提升现代 Web 性能的关键协议。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>HTTP/3 协议特性：完整手册</h1>
+<div class="meta">2026-11-05 · PHP Demo Blog <span class="tag">#HTTP/3</span> <span class="tag">#QUIC</span> <span class="tag">#TLS 1.3</span> <span class="tag">#Web 性能</span> <span class="tag">#PHP</span></div>
+<div class="summary">HTTP/3 基于 QUIC 与 UDP 实现多路复用、0-RTT 握手和连接迁移，配合 TLS 1.3 与 Brotli 可显著降低 TTFB，是提升现代 Web 性能的关键协议。</div>
+<h2>从 TCP 到 UDP：HTTP/3 的传输层变革</h2>
+<p>HTTP/3 的核心变化在于将传输层从 TCP 换成了基于 UDP 的 QUIC。传统 HTTP/2 虽然解决了应用层的队头阻塞，但 TCP 层的丢包重传仍会拖慢所有流。QUIC 在用户态实现流控与重传，每个流独立处理，丢包只影响单个流。对于 PHP 项目而言，这意味着前端资源加载更稳定，尤其在高延迟或弱网环境下，首字节响应时间（TTFB）的波动明显减小。部署时需确保服务器与 CDN 支持 HTTP/3，并保留 HTTP/2 作为回退。</p>
+<h2>0-RTT 握手与连接迁移</h2>
+<p>QUIC 将传输握手与 TLS 1.3 加密握手合并，首次连接仅需 1-RTT，会话恢复时可实现 0-RTT，直接复用之前的连接参数发送请求。这对重复访问的 API 调用场景收益显著。同时，QUIC 使用连接 ID 而非 IP 加端口标识连接，当客户端网络切换（如 Wi-Fi 转移动网络）时，连接可以迁移而无需重建。在 PHP Demo Blog 这类轻量应用中，静态资源与 JSON API 的重复请求较多，启用 0-RTT 能进一步压缩等待时间。</p>
+<h2>多路复用与头部压缩的演进</h2>
+<p>HTTP/3 延续了 HTTP/2 的多路复用思想，但流之间完全独立，彻底消除了 TCP 层的队头阻塞。头部压缩使用 QPACK 替代 HTTP/2 的 HPACK，针对乱序传输做了优化，避免了头部解码阻塞数据流。配合 Brotli 压缩响应体，可以显著降低传输体积。实际调优中，建议对 HTML、CSS、JS 启用 Brotli，对图片采用无损压缩与 Lazy-loading，并拆解关键渲染路径，内联关键 CSS、延迟非核心 JS，以优化 LCP 指标。</p>
+<h2>安全基线与部署要点</h2>
+<p>HTTP/3 强制使用 TLS 1.3，天然具备前向保密与更强的加密套件。生产环境应配置 HSTS 策略，强制浏览器使用 HTTPS，并设置合理的 max-age。在 Web 层实施严格的 CSRF 令牌验证和 XSS 过滤，结合分布式 Redis 集群存储 Session 状态，解决负载均衡下的状态一致性问题。对于数据库访问，采用原生查询配合合理索引，避开 ORM 序列化陷阱。这些措施共同构成安全与性能的闭环，有助于在搜索评价体系中建立长期信任。</p>
+<h2>参考资源</h2>
+<ul><li><a href="https://www.siliconerubberparts.com" rel="noopener" target="_blank">siliconerubberparts.com</a> — 了解硅橡胶部件在服务器散热与密封场景中的选型参考。</li>
+<li><a href="http://www.canary-food.com" rel="noopener" target="_blank">canary-food.com</a> — 查看食品行业站点在性能与安全实践上的公开示例。</li>
+<li><a href="https://www.zsh784.com" rel="noopener" target="_blank">zsh784.com</a> — 参考该站点关于 Web 性能调优与协议升级的实践记录。</li>
+<li><a href="https://www.cafe-kurage.com" rel="noopener" target="_blank">cafe-kurage.com</a> — 观察小型站点如何平衡视觉资源与加载速度。</li>
+<li><a href="https://www.wfhxgc.com" rel="noopener" target="_blank">wfhxgc.com</a> — 了解工程类网站在 HTTPS 与缓存策略上的配置思路。</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>

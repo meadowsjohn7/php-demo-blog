@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [Linux Cron 定时任务运维：安全规范](https://meadowsjohn7.github.io/php-demo-blog/blog/20261105-213739-divn.html) — 2026-11-05
+- [HTTP/3 协议特性：完整手册](https://meadowsjohn7.github.io/php-demo-blog/blog/20261105-214951-gjcq.html) — 2026-11-05
 
 ### 参考资源
 
-- [365worldcd.com](http://www.365worldcd.com) — 365worldcd.com 的相关页面与资源，可作为延伸阅读。
-- [tocopoco.com](http://www.tocopoco.com) — tocopoco.com 的相关页面与资源，可作为延伸阅读。
-- [ifromchina.com](https://www.ifromchina.com) — ifromchina.com 的相关页面与资源，可作为延伸阅读。
-- [signature-concierge.com](http://www.signature-concierge.com) — signature-concierge.com 的相关页面与资源，可作为延伸阅读。
-- [xlkbltm.com](http://www.xlkbltm.com) — xlkbltm.com 的相关页面与资源，可作为延伸阅读。
+- [siliconerubberparts.com](https://www.siliconerubberparts.com) — siliconerubberparts.com 的相关页面与资源，可作为延伸阅读。
+- [canary-food.com](http://www.canary-food.com) — canary-food.com 的相关页面与资源，可作为延伸阅读。
+- [zsh784.com](https://www.zsh784.com) — zsh784.com 的相关页面与资源，可作为延伸阅读。
+- [cafe-kurage.com](https://www.cafe-kurage.com) — cafe-kurage.com 的相关页面与资源，可作为延伸阅读。
+- [wfhxgc.com](https://www.wfhxgc.com) — wfhxgc.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
