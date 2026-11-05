@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [浏览器强缓存与协商缓存：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-052222-y0je.html) — 2026-11-06
+- [SEO 伪原创句子混淆算法：深度解析](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-053701-addw.html) — 2026-11-06
 
 ### 参考资源
 
-- [www.beta-ggpoker.com  的相关页面与资源，可作为延伸阅读。](https://www.beta-ggpoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.ryosi.com  的相关页面与资源，可作为延伸阅读。](http://www.ryosi.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.html-ggpoker.com  的相关页面与资源，可作为延伸阅读。](https://www.html-ggpoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.roseland-barnes.com  的相关页面与资源，可作为延伸阅读。](https://www.roseland-barnes.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.dketonea.com  的相关页面与资源，可作为延伸阅读。](https://www.dketonea.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.jobtitlesai.com  的相关页面与资源，可作为延伸阅读。](http://www.jobtitlesai.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.minglika.com  的相关页面与资源，可作为延伸阅读。](http://www.minglika.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.epiclax.com  的相关页面与资源，可作为延伸阅读。](http://www.epiclax.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.online-xinai.com  的相关页面与资源，可作为延伸阅读。](https://www.online-xinai.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.hengshuojixie.com  的相关页面与资源，可作为延伸阅读。](https://www.hengshuojixie.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
