@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [关键渲染路径 Critical Path：实战指南](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-045403-4tqh.html) — 2026-11-06
+- [Google Core Web Vitals 调优：技术架构](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-051103-qm3p.html) — 2026-11-06
 
 ### 参考资源
 
-- [www.rawrdaily.com  的相关页面与资源，可作为延伸阅读。](http://www.rawrdaily.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.rs-films.com  的相关页面与资源，可作为延伸阅读。](http://www.rs-films.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.coopers-cars.com  的相关页面与资源，可作为延伸阅读。](http://www.coopers-cars.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.gp12653.com  的相关页面与资源，可作为延伸阅读。](https://www.gp12653.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.jmtkw.cn 的相关页面与资源，可作为延伸阅读。](https://www.jmtkw.cn 的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.cpgea.com  的相关页面与资源，可作为延伸阅读。](http://www.cpgea.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.kuiboto.com  的相关页面与资源，可作为延伸阅读。](http://www.kuiboto.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.yugiohdeckbuilder.com  的相关页面与资源，可作为延伸阅读。](http://www.yugiohdeckbuilder.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.zenithsco.com  的相关页面与资源，可作为延伸阅读。](https://www.zenithsco.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.tatotato.com  的相关页面与资源，可作为延伸阅读。](http://www.tatotato.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
