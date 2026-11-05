@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [Linux Cron 定时任务运维：安全规范](https://meadowsjohn7.github.io/php-demo-blog/blog/20261105-184703-c8hr.html) — 2026-11-05
+- [接口签名加密机制：优化方案](https://meadowsjohn7.github.io/php-demo-blog/blog/20261105-185839-c37r.html) — 2026-11-05
 
 ### 参考资源
 
-- [ezymovr.com](http://www.ezymovr.com) — ezymovr.com 的相关页面与资源，可作为延伸阅读。
-- [kmthjx.com](http://www.kmthjx.com) — kmthjx.com 的相关页面与资源，可作为延伸阅读。
-- [shadesofbeautybodybar.com](http://www.shadesofbeautybodybar.com) — shadesofbeautybodybar.com 的相关页面与资源，可作为延伸阅读。
-- [gnosishypnosis.com](https://www.gnosishypnosis.com) — gnosishypnosis.com 的相关页面与资源，可作为延伸阅读。
-- [bordeauxprint.com](https://www.bordeauxprint.com) — bordeauxprint.com 的相关页面与资源，可作为延伸阅读。
+- [sanctuarybirthing.com](http://www.sanctuarybirthing.com) — sanctuarybirthing.com 的相关页面与资源，可作为延伸阅读。
+- [xjwywjx.com](https://www.xjwywjx.com) — xjwywjx.com 的相关页面与资源，可作为延伸阅读。
+- [fade-2-black.com](https://www.fade-2-black.com) — fade-2-black.com 的相关页面与资源，可作为延伸阅读。
+- [clzstore.com](http://www.clzstore.com) — clzstore.com 的相关页面与资源，可作为延伸阅读。
+- [avaetss.com](http://www.avaetss.com) — avaetss.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
