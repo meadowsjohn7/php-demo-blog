@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [网站反爬虫对抗技术：SEO 策略](https://meadowsjohn7.github.io/php-demo-blog/blog/20261105-090208-0it0.html) — 2026-11-05
+- [Redis 集群高可用架构：深度解析](https://meadowsjohn7.github.io/php-demo-blog/blog/20261105-091325-hfft.html) — 2026-11-05
 
 ### 参考资源
 
-- [gendulphe.com](http://www.gendulphe.com) — gendulphe.com 的相关页面与资源，可作为延伸阅读。
-- [bur-da.com](http://www.bur-da.com) — bur-da.com 的相关页面与资源，可作为延伸阅读。
-- [ntgaode.com](https://www.ntgaode.com) — ntgaode.com 的相关页面与资源，可作为延伸阅读。
-- [ad4xlive.com](http://www.ad4xlive.com) — ad4xlive.com 的相关页面与资源，可作为延伸阅读。
-- [medservintl.com](http://www.medservintl.com) — medservintl.com 的相关页面与资源，可作为延伸阅读。
+- [blackshearplace.com](http://www.blackshearplace.com) — blackshearplace.com 的相关页面与资源，可作为延伸阅读。
+- [hawaiianshirtopia.com](https://www.hawaiianshirtopia.com) — hawaiianshirtopia.com 的相关页面与资源，可作为延伸阅读。
+- [kitchenwaredolphin.com](https://www.kitchenwaredolphin.com) — kitchenwaredolphin.com 的相关页面与资源，可作为延伸阅读。
+- [otaclinictsukuba.com](http://www.otaclinictsukuba.com) — otaclinictsukuba.com 的相关页面与资源，可作为延伸阅读。
+- [hematqiuq.com](http://www.hematqiuq.com) — hematqiuq.com 的相关页面与资源，可作为延伸阅读。
 
 ## 功能
 
