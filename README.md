@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [语义化 HTML5 标签：技术架构](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-072612-vphq.html) — 2026-11-06
+- [长尾关键词挖掘策略：技术架构](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-073815-x8yr.html) — 2026-11-06
 
 ### 参考资源
 
-- [www.www-qqsports.com  的相关页面与资源，可作为延伸阅读。](https://www.www-qqsports.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.xinhanyuwangxiao.com  的相关页面与资源，可作为延伸阅读。](http://www.xinhanyuwangxiao.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.canary-food.com  的相关页面与资源，可作为延伸阅读。](http://www.canary-food.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.afpailescedres.com  的相关页面与资源，可作为延伸阅读。](http://www.afpailescedres.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.my-5eplay.com  的相关页面与资源，可作为延伸阅读。](https://www.my-5eplay.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.johnmeldrum.com  的相关页面与资源，可作为延伸阅读。](http://www.johnmeldrum.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.taends.com  的相关页面与资源，可作为延伸阅读。](http://www.taends.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.zn-xinqiusports.com  的相关页面与资源，可作为延伸阅读。](https://www.zn-xinqiusports.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.zh-cn-ao10.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-cn-ao10.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.ynltzx.com  的相关页面与资源，可作为延伸阅读。](http://www.ynltzx.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
