@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [Critical CSS 内联策略：技术架构](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-104218-vl91.html) — 2026-11-06
+- [域名权重 DA/PA 提升：实战指南](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-105732-7mfz.html) — 2026-11-06
 
 ### 参考资源
 
-- [www.rwtracker.com  的相关页面与资源，可作为延伸阅读。](http://www.rwtracker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.app-zh-wepoker.com  的相关页面与资源，可作为延伸阅读。](https://www.app-zh-wepoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.zh-zone-xinqiu.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-zone-xinqiu.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.impacthubmedia.com  的相关页面与资源，可作为延伸阅读。](https://www.impacthubmedia.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.yakulog.com  的相关页面与资源，可作为延伸阅读。](http://www.yakulog.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.alzidan.com  的相关页面与资源，可作为延伸阅读。](http://www.alzidan.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.melicbebe.com  的相关页面与资源，可作为延伸阅读。](http://www.melicbebe.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.tocopoco.com  的相关页面与资源，可作为延伸阅读。](http://www.tocopoco.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.qyhxsq.com  的相关页面与资源，可作为延伸阅读。](https://www.qyhxsq.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.zjdswl.com  的相关页面与资源，可作为延伸阅读。](http://www.zjdswl.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
