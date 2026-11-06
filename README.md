@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [前端防抖与节流实战：安全规范](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-112318-jhma.html) — 2026-11-06
+- [SSR 服务端渲染 SEO：实战指南](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-113424-urat.html) — 2026-11-06
 
 ### 参考资源
 
-- [www.nikeairmax2019.com  的相关页面与资源，可作为延伸阅读。](http://www.nikeairmax2019.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.lemesuriers.com  的相关页面与资源，可作为延伸阅读。](https://www.lemesuriers.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.haomada.com  的相关页面与资源，可作为延伸阅读。](https://www.haomada.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.blackshearplace.com  的相关页面与资源，可作为延伸阅读。](http://www.blackshearplace.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.bordeauxprint.com  的相关页面与资源，可作为延伸阅读。](https://www.bordeauxprint.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.damaixs.com  的相关页面与资源，可作为延伸阅读。](http://www.damaixs.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.ftb-wiki.com  的相关页面与资源，可作为延伸阅读。](http://www.ftb-wiki.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.bosai1.com  的相关页面与资源，可作为延伸阅读。](https://www.bosai1.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.custom-vacations.com  的相关页面与资源，可作为延伸阅读。](https://www.custom-vacations.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.bvwlawyers.com  的相关页面与资源，可作为延伸阅读。](http://www.bvwlawyers.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
