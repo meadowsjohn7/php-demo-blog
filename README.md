@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [Trie 树高性能搜索：完整手册](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-093641-dpy5.html) — 2026-11-06
+- [TLS 1.3 安全协议升级：深度解析](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-095148-6ash.html) — 2026-11-06
 
 ### 参考资源
 
-- [www.jeffersoncheng.com  的相关页面与资源，可作为延伸阅读。](http://www.jeffersoncheng.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.amazingdistance.com  的相关页面与资源，可作为延伸阅读。](http://www.amazingdistance.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.zh-paly-ggpoker.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-paly-ggpoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.semillaad.com  的相关页面与资源，可作为延伸阅读。](http://www.semillaad.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.lagenceimmobilieremaroc.com  的相关页面与资源，可作为延伸阅读。](http://www.lagenceimmobilieremaroc.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.lowelandsfarm.com  的相关页面与资源，可作为延伸阅读。](http://www.lowelandsfarm.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.sofiamenconero.com  的相关页面与资源，可作为延伸阅读。](http://www.sofiamenconero.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.janellewoo.com  的相关页面与资源，可作为延伸阅读。](https://www.janellewoo.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.ch5-wepoker.com  的相关页面与资源，可作为延伸阅读。](https://www.ch5-wepoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.ezymovr.com  的相关页面与资源，可作为延伸阅读。](http://www.ezymovr.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
