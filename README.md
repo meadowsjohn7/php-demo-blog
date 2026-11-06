@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [Robots.txt 科学配置：优化方案](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-053228-gas3.html) — 2026-11-07
+- [Critical CSS 内联策略：技术架构](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-054609-j5w0.html) — 2026-11-07
 
 ### 参考资源
 
-- [www.slice-online.com  的相关页面与资源，可作为延伸阅读。](http://www.slice-online.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.memartau.com  的相关页面与资源，可作为延伸阅读。](http://www.memartau.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.zjcwu.com  的相关页面与资源，可作为延伸阅读。](https://www.zjcwu.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.papirustercume.com  的相关页面与资源，可作为延伸阅读。](http://www.papirustercume.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.nbnmjxkesyid.com  的相关页面与资源，可作为延伸阅读。](https://www.nbnmjxkesyid.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.linyuanxinli.com  的相关页面与资源，可作为延伸阅读。](https://www.linyuanxinli.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.georgiabj.com  的相关页面与资源，可作为延伸阅读。](https://www.georgiabj.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.lavecchiaconcia.com  的相关页面与资源，可作为延伸阅读。](https://www.lavecchiaconcia.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.cupofhopecafe.com  的相关页面与资源，可作为延伸阅读。](http://www.cupofhopecafe.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.play-qqsports.com  的相关页面与资源，可作为延伸阅读。](https://www.play-qqsports.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Critical CSS 内联策略：技术架构 - PHP Demo Blog</title>
+<meta name="description" content="本文围绕 Critical CSS 内联策略，从 CRP 拆解、构建管道、服务端注入与工程权衡四个层面，给出可落地的技术架构方案。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>Critical CSS 内联策略：技术架构</h1>
+<div class="meta">2026-11-07 · PHP Demo Blog <span class="tag">#Critical CSS</span> <span class="tag">#性能优化</span> <span class="tag">#LCP</span> <span class="tag">#构建管道</span> <span class="tag">#PHP</span></div>
+<div class="summary">本文围绕 Critical CSS 内联策略，从 CRP 拆解、构建管道、服务端注入与工程权衡四个层面，给出可落地的技术架构方案。</div>
+<h2>从 CRP 拆解到内联边界</h2>
+<p>关键渲染路径优化的第一步是明确“关键”的边界。把首屏渲染必需的样式（布局、字体、首屏组件）与交互态样式、非首屏模块样式分离，是内联策略的前提。实践中可按路由与视口断点生成两到三套关键样式集，避免把整站 CSS 一股脑塞进 head。判断标准不是文件大小，而是该规则是否影响首次绘制与最大内容绘制。内联过多会阻塞 HTML 解析，内联过少则产生额外往返，边界需要靠真实数据校准。</p>
+<h2>构建管道：提取、压缩与指纹</h2>
+<p>在构建阶段完成关键 CSS 提取，比运行时动态计算更可控。使用无头浏览器按目标视口采集首屏实际用到的规则，再经压缩与去重后输出为独立片段。非关键样式保留为外链文件，并配合 preload 与媒体查询异步加载。由于关键片段随模板变化，需为其生成内容指纹并纳入版本管理，避免缓存失效导致样式错乱。PHP 侧只需按路由映射到对应片段，读取预生成文件并注入模板，不在请求链路中做样式分析。</p>
+<h2>服务端注入与缓存协同</h2>
+<p>在轻量 PHP 路由项目中，推荐在输出层统一注入：控制器返回视图数据，模板渲染前由中间件读取当前路由对应的关键 CSS 片段，插入 head 顶部。片段本身走文件缓存或 Redis 缓存，键名包含路由与版本指纹。注意与 Session 状态、CSRF 令牌等动态内容解耦，避免因用户态差异破坏片段复用。对 JSON API 路由则不注入，保持响应纯净。注入后应校验 HTML 体积增量，超过阈值时回退为外链方案。</p>
+<h2>工程权衡与验证闭环</h2>
+<p>内联策略必须与延迟非核心 JS、图片懒加载、HTTP/3 与 Brotli 压缩等环节协同，否则单点优化收益有限。验证时以 LCP、首次绘制与 HTML 传输体积三项指标为准，在移动网络条件下做 A/B 对比。对于多模板站点，可先在高流量路由试点，再逐步铺开。延伸阅读可参考相关资源中关于渲染路径与缓存设计的实践记录。整体原则是：构建期做重活，运行期做轻量注入，用数据决定内联边界。</p>
+<h2>参考资源</h2>
+<ul><li>[www.linyuanxinli.com  的相关页面与资源，可作为延伸阅读。](https://www.linyuanxinli.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.georgiabj.com  的相关页面与资源，可作为延伸阅读。](https://www.georgiabj.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.lavecchiaconcia.com  的相关页面与资源，可作为延伸阅读。](https://www.lavecchiaconcia.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.cupofhopecafe.com  的相关页面与资源，可作为延伸阅读。](http://www.cupofhopecafe.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.play-qqsports.com  的相关页面与资源，可作为延伸阅读。](https://www.play-qqsports.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
