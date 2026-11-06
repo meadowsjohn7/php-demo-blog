@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [Fetch API 与跨域处理：深度解析](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-011502-q3dq.html) — 2026-11-07
+- [SEO 内链金字塔构建：SEO 策略](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-012930-vhjb.html) — 2026-11-07
 
 ### 参考资源
 
-- [www.tjsenyuan.com  的相关页面与资源，可作为延伸阅读。](http://www.tjsenyuan.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.dixiecrating.com  的相关页面与资源，可作为延伸阅读。](http://www.dixiecrating.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.otaclinictsukuba.com  的相关页面与资源，可作为延伸阅读。](http://www.otaclinictsukuba.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.yhkyjt.com  的相关页面与资源，可作为延伸阅读。](http://www.yhkyjt.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.zhhl-hthsports.com  的相关页面与资源，可作为延伸阅读。](http://www.zhhl-hthsports.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.yuchenyuwen.com  的相关页面与资源，可作为延伸阅读。](http://www.yuchenyuwen.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.gendulphe.com  的相关页面与资源，可作为延伸阅读。](http://www.gendulphe.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.bignoisempc.com  的相关页面与资源，可作为延伸阅读。](http://www.bignoisempc.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.porterandplum.com  的相关页面与资源，可作为延伸阅读。](http://www.porterandplum.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.zhhg-leyu.com  的相关页面与资源，可作为延伸阅读。](http://www.zhhg-leyu.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
