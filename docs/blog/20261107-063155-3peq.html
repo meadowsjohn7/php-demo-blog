@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CDN 全球加速原理：技术架构 - PHP Demo Blog</title>
+<meta name="description" content="从边缘节点调度、协议优化与缓存层次三个层面，拆解 CDN 全球加速的技术架构，并结合 PHP 示例项目说明落地要点。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>CDN 全球加速原理：技术架构</h1>
+<div class="meta">2026-11-07 · PHP Demo Blog <span class="tag">#CDN</span> <span class="tag">#边缘计算</span> <span class="tag">#HTTP/3</span> <span class="tag">#缓存架构</span> <span class="tag">#PHP</span></div>
+<div class="summary">从边缘节点调度、协议优化与缓存层次三个层面，拆解 CDN 全球加速的技术架构，并结合 PHP 示例项目说明落地要点。</div>
+<h2>边缘节点与调度层</h2>
+<p>CDN 全球加速的第一层是边缘节点与请求调度。用户发起请求时，权威 DNS 或 Anycast 地址会将解析结果指向地理与网络拓扑上最近的边缘节点。调度系统通常结合实时探测数据（RTT、丢包率、节点负载）做动态决策，而不是简单按行政区域静态分配。边缘节点承担 TLS 终止、静态资源缓存与部分动态加速职责，回源流量因此被大幅收敛。</p>
+<p>在 PHP Demo Blog 这类项目中，静态资源（CSS、JS、图片）应统一交给边缘缓存，源站只保留路由与 JSON API 的动态逻辑。合理设置 Cache-Control 与 ETag，可以让边缘节点在内容未变更时直接命中，减少回源次数。对于 API 响应，建议使用较短的 max-age 配合 stale-while-revalidate，在保证数据新鲜度的同时吸收突发流量。</p>
+<h2>协议与传输优化</h2>
+<p>传输层优化是加速效果的关键。边缘节点普遍支持 TLS 1.3 与 HSTS，减少握手往返并强制安全连接；HTTP/3 基于 QUIC 在弱网与移动场景下能显著降低首字节时间。配合 Brotli 压缩，文本类资源体积可进一步缩小。这些配置需要在边缘与源站两侧保持一致，避免协议降级。</p>
+<p>缓存层次上，典型架构分为边缘缓存、中间层缓存与源站缓存。边缘层追求高命中率，中间层负责区域聚合回源，源站则通过 Redis 集群维护会话与热点数据。在负载均衡环境下，分布式 Redis 存储 Session 能解决用户状态一致性问题，避免请求漂移到不同后端时登录态丢失。对于 PHP 项目，可通过统一的 Session 处理器接入 Redis，并在边缘层对携带 Cookie 的请求谨慎缓存。</p>
+<h2>动态加速与安全加固</h2>
+<p>动态请求无法完全缓存时，CDN 通过长连接回源、路由优化与连接复用降低延迟。边缘节点与源站之间建立持久连接，减少每次请求的握手开销。同时，边缘层可实施 IP 黑名单、频率限制与 CSRF 令牌校验，过滤非法爬虫与异常流量，降低源站 CPU 负载。</p>
+<p>安全与性能在架构上是统一的：HSTS 与强加密提升信任度，严格的输入过滤加固业务系统，而缓存与协议优化则直接改善 LCP 与 TTFB。对于 JSON API，建议在边缘层做响应压缩与合理的缓存键设计，将用户身份、语言等维度纳入键中，避免缓存污染。</p>
+<h2>落地要点与监控</h2>
+<p>落地时先梳理资源分类：可长期缓存的静态资源、短周期缓存的 API 响应、不可缓存的写操作。为每类资源设定明确的缓存策略与回源规则，并通过日志与监控观察命中率、回源带宽与 TTFB 变化。灰度发布时，可利用边缘节点的分流能力逐步切换规则，降低风险。</p>
+<p>在 PHP Demo Blog 中，可将路由层与缓存层解耦，让 API 只关注业务逻辑，缓存与协议优化交给 CDN 配置完成。持续观察真实用户指标，结合边缘日志调整缓存键与 TTL，才能让全球加速架构稳定发挥作用。</p>
+<h2>参考资源</h2>
+<ul><li>[www.my-5eplay.com  的相关页面与资源，可作为延伸阅读。](https://www.my-5eplay.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.www-qqsports.com  的相关页面与资源，可作为延伸阅读。](https://www.www-qqsports.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.canary-food.com  的相关页面与资源，可作为延伸阅读。](http://www.canary-food.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.drugshb.com  的相关页面与资源，可作为延伸阅读。](https://www.drugshb.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.zh-hans-lucky10.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-hans-lucky10.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
