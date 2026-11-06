@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Critical CSS 内联策略：优化方案 - PHP Demo Blog</title>
+<meta name="description" content="针对 PHP Demo Blog 项目，详解 Critical CSS 内联的提取、注入与异步加载策略，结合 CRP 拆解优化 LCP，并给出可落地的代码示例与工具链建议。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>Critical CSS 内联策略：优化方案</h1>
+<div class="meta">2026-11-06 · PHP Demo Blog <span class="tag">#Critical CSS</span> <span class="tag">#性能优化</span> <span class="tag">#LCP</span> <span class="tag">#CRP</span> <span class="tag">#PHP</span></div>
+<div class="summary">针对 PHP Demo Blog 项目，详解 Critical CSS 内联的提取、注入与异步加载策略，结合 CRP 拆解优化 LCP，并给出可落地的代码示例与工具链建议。</div>
+<h2>为什么内联关键 CSS 能优化 LCP</h2>
+<p>在 PHP Demo Blog 这类轻量路由项目中，首屏渲染速度直接影响 LCP。浏览器必须下载并解析 CSS 才能渲染页面，若样式表体积大或网络慢，就会阻塞关键渲染路径（CRP）。Critical CSS 内联的核心思路是：将首屏渲染所需的样式直接写入 HTML 的 `&lt;style&gt;` 标签，让浏览器无需额外请求即可完成首次绘制；非关键样式则异步加载，避免阻塞。</p>
+<p>具体到本项目，我们可以按路由区分关键样式：首页、文章页、列表页的首屏结构不同，应分别提取。例如文章页的关键样式包括页头、标题、正文容器和侧边栏骨架，而评论区和页脚样式可延迟加载。</p>
+<h2>提取与注入：从构建到运行时</h2>
+<p>提取 Critical CSS 推荐使用工具链自动完成，而非手工维护。常用方案是 `critical` 或 `penthouse`，它们基于 Puppeteer 渲染页面并收集首屏实际用到的样式。在 PHP Demo Blog 中，可以在部署前对每个路由模板生成对应的 critical CSS 文件，例如 `critical/home.css`、`critical/post.css`。</p>
+<p>运行时注入则通过 PHP 模板完成。在布局文件中根据当前路由读取对应的 critical CSS 文件内容，并内联到 `&lt;head&gt;` 中：</p>
+<pre><code>$criticalFile = __DIR__ . &#x27;/critical/&#x27; . $route . &#x27;.css&#x27;;
+if (is_file($criticalFile)) {
+    echo &#x27;&lt;style&gt;&#x27; . file_get_contents($criticalFile) . &#x27;&lt;/style&gt;&#x27;;
+}</code></pre>
+<p>同时，将完整样式表改为异步加载：使用 `&lt;link rel="preload" as="style" href="..." onload="this.rel='stylesheet'"&gt;`，并配合 `&lt;noscript&gt;` 回退。这样既保证首屏样式立即生效，又不会阻塞后续渲染。</p>
+<h2>延迟非核心 JS 与资源优先级</h2>
+<p>内联关键 CSS 只是 CRP 优化的一环。对于非核心 JS，应使用 `defer` 或 `async` 加载，避免阻塞解析。例如评论组件、统计脚本可延迟到 `DOMContentLoaded` 之后执行。图片资源采用 `loading="lazy"` 并配合无损压缩，平衡视觉质量与加载速度。</p>
+<p>此外，通过 HTTP/3 与 Brotli 压缩可进一步降低 TTFB，但需注意内联 CSS 会增加 HTML 体积，因此关键 CSS 应控制在 14KB 以内（约一个初始拥塞窗口），超出部分应拆分或改为异步加载。</p>
+<h2>验证与持续迭代</h2>
+<p>上线后需用 Lighthouse 或 WebPageTest 验证 LCP 与 CRP 变化。重点关注内联样式是否被正确缓存、异步样式表是否在首屏后及时加载。对于多路由项目，建议将 critical CSS 生成纳入 CI 流程，每次模板变更后重新提取，避免样式漂移。</p>
+<p>通过这种基于 CRP 拆解的闭环优化，站点能在移动设备友好性测试中保持稳健，并为后续的 SEO 调优打下基础。</p>
+<h2>参考资源</h2>
+<ul><li>[www.ifromchina.com  的相关页面与资源，可作为延伸阅读。](https://www.ifromchina.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.acredyweb.com  的相关页面与资源，可作为延伸阅读。](http://www.acredyweb.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.gzyunhai.com  的相关页面与资源，可作为延伸阅读。](http://www.gzyunhai.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.linktogif.com  的相关页面与资源，可作为延伸阅读。](http://www.linktogif.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.shadesofbeautybodybar.com  的相关页面与资源，可作为延伸阅读。](http://www.shadesofbeautybodybar.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
