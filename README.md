@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [Nginx 伪静态规则编写：深度解析](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-031622-hi7l.html) — 2026-11-07
+- [虚拟列表处理大数据渲染：安全规范](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-033137-5wf7.html) — 2026-11-07
 
 ### 参考资源
 
-- [www.chmielinska.com  的相关页面与资源，可作为延伸阅读。](http://www.chmielinska.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.ad4xlive.com  的相关页面与资源，可作为延伸阅读。](http://www.ad4xlive.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.cloud-dongqiudi.com  的相关页面与资源，可作为延伸阅读。](https://www.cloud-dongqiudi.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.ossucci.com  的相关页面与资源，可作为延伸阅读。](http://www.ossucci.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.shuhuachina.com  的相关页面与资源，可作为延伸阅读。](http://www.shuhuachina.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.brdong.com  的相关页面与资源，可作为延伸阅读。](http://www.brdong.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.yoipth.com  的相关页面与资源，可作为延伸阅读。](http://www.yoipth.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.bur-da.com  的相关页面与资源，可作为延伸阅读。](http://www.bur-da.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.ntgaode.com  的相关页面与资源，可作为延伸阅读。](https://www.ntgaode.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.sakitraveller.com  的相关页面与资源，可作为延伸阅读。](http://www.sakitraveller.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
