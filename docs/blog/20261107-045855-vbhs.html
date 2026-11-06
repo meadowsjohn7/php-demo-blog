@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chrome DevTools 性能调试：实战指南 - PHP Demo Blog</title>
+<meta name="description" content="本文介绍如何用 Chrome DevTools 的 Performance 与 Network 面板定位 PHP 站点性能瓶颈，并结合关键渲染路径优化、资源压缩与安全配置，给出可落地的调优步骤。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>Chrome DevTools 性能调试：实战指南</h1>
+<div class="meta">2026-11-07 · PHP Demo Blog <span class="tag">#Chrome DevTools</span> <span class="tag">#性能调试</span> <span class="tag">#PHP</span> <span class="tag">#关键渲染路径</span> <span class="tag">#TTFB</span></div>
+<div class="summary">本文介绍如何用 Chrome DevTools 的 Performance 与 Network 面板定位 PHP 站点性能瓶颈，并结合关键渲染路径优化、资源压缩与安全配置，给出可落地的调优步骤。</div>
+<h2>从 Network 面板定位首字节瓶颈</h2>
+<p>打开 DevTools 的 Network 面板，勾选 Disable cache 后刷新页面，按 Time 排序观察请求瀑布图。重点看文档请求的 Waiting (TTFB) 与 Content Download 两段：若 TTFB 偏高，问题通常在后端。此时可在 PHP Demo Blog 这类轻量项目中，用 Performance 面板录制一次页面加载，在 Main 线程火焰图中查找长任务。对于使用 ORM 的查询，可结合原生 Db::name() 操作配合合理索引，避开模型序列化的开销。若站点已启用 HTTP/3 与 Brotli 压缩，可在 Response Headers 中确认 content-encoding 是否为 br，这能直接降低传输时间。</p>
+<h2>拆解关键渲染路径优化 LCP</h2>
+<p>在 Performance 面板的 Timings 轨道中，LCP 标记会指出最大内容绘制元素。切换到 Lighthouse 生成报告，查看 Opportunities 中关于 render-blocking resources 的建议。实战做法是内联首屏关键 CSS，对非核心 JS 使用 defer 或动态 import 延迟加载。对于图片资源，采用无损压缩并配合 Lazy-loading，既保证视觉质量又减少初始负载。在 PHP Demo Blog 的模板中，可将首屏样式抽离为独立片段直接输出，其余样式表异步加载，从而显著改善 LCP 指标。</p>
+<h2>用 Coverage 与 Memory 面板排查冗余</h2>
+<p>Coverage 面板能显示 JS 与 CSS 的未使用字节比例。若发现某段脚本仅在小部分交互中用到，应拆分为按需加载。Memory 面板则用于观察堆内存增长趋势，配合 Allocation instrumentation on timeline 定位频繁创建的对象。在 API 层，可检查 JSON 响应是否包含冗余字段，必要时在 PHP 端裁剪输出。对于会话管理，若采用分布式 Redis 集群存储 Session 状态，可在 Network 中确认 Cookie 大小与请求头开销，避免因状态同步导致额外往返。</p>
+<h2>安全与性能的协同验证</h2>
+<p>性能调优不能牺牲安全。在 DevTools 的 Security 面板中，可确认 HSTS 策略与 TLS 1.3 是否生效，证书链是否完整。Application 面板可检查 Service Worker 的预取缓存与 IndexedDB 存储，验证离线加载路径。对于表单提交，确保 CSRF 令牌验证与 XSS 过滤在服务端生效，避免因调试而临时关闭防护。将这些检查固化为发布前清单，结合 301 重定向维护旧链接权重，才能让性能优化与站点长期健康同步推进。延伸阅读可参考相关资源中的实践记录。</p>
+<h2>参考资源</h2>
+<ul><li>[www.rotkx.net 的相关页面与资源，可作为延伸阅读。](http://www.rotkx.net 的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.kmthjx.com  的相关页面与资源，可作为延伸阅读。](http://www.kmthjx.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.fisiomedicamogliano.com  的相关页面与资源，可作为延伸阅读。](http://www.fisiomedicamogliano.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.wxvqgy.com  的相关页面与资源，可作为延伸阅读。](http://www.wxvqgy.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.cavusogluendustriyel.com  的相关页面与资源，可作为延伸阅读。](https://www.cavusogluendustriyel.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>

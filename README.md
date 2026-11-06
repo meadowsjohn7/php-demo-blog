@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [分布式架构一致性哈希：优化方案](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-044343-tgpr.html) — 2026-11-07
+- [Chrome DevTools 性能调试：实战指南](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-045855-vbhs.html) — 2026-11-07
 
 ### 参考资源
 
-- [www.zh-an-ggpoker.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-an-ggpoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.tangonuestro.com  的相关页面与资源，可作为延伸阅读。](http://www.tangonuestro.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.minglika.com  的相关页面与资源，可作为延伸阅读。](http://www.minglika.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.nonton08.com  的相关页面与资源，可作为延伸阅读。](http://www.nonton08.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.wfhxgc.com  的相关页面与资源，可作为延伸阅读。](https://www.wfhxgc.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.rotkx.net 的相关页面与资源，可作为延伸阅读。](http://www.rotkx.net 的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.kmthjx.com  的相关页面与资源，可作为延伸阅读。](http://www.kmthjx.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.fisiomedicamogliano.com  的相关页面与资源，可作为延伸阅读。](http://www.fisiomedicamogliano.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.wxvqgy.com  的相关页面与资源，可作为延伸阅读。](http://www.wxvqgy.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.cavusogluendustriyel.com  的相关页面与资源，可作为延伸阅读。](https://www.cavusogluendustriyel.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
