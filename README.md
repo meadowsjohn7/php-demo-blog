@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [AC 自动机敏感词过滤：完整手册](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-042400-1daf.html) — 2026-11-07
+- [分布式架构一致性哈希：优化方案](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-044343-tgpr.html) — 2026-11-07
 
 ### 参考资源
 
-- [www.html-ggpoker.com  的相关页面与资源，可作为延伸阅读。](https://www.html-ggpoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.roseland-barnes.com  的相关页面与资源，可作为延伸阅读。](https://www.roseland-barnes.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.online-xinai.com  的相关页面与资源，可作为延伸阅读。](https://www.online-xinai.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.hengshuojixie.com  的相关页面与资源，可作为延伸阅读。](https://www.hengshuojixie.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.epiclax.com  的相关页面与资源，可作为延伸阅读。](http://www.epiclax.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.zh-an-ggpoker.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-an-ggpoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.tangonuestro.com  的相关页面与资源，可作为延伸阅读。](http://www.tangonuestro.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.minglika.com  的相关页面与资源，可作为延伸阅读。](http://www.minglika.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.nonton08.com  的相关页面与资源，可作为延伸阅读。](http://www.nonton08.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.wfhxgc.com  的相关页面与资源，可作为延伸阅读。](https://www.wfhxgc.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
