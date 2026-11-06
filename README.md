@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [Google Core Web Vitals 调优：深度解析](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-092443-reci.html) — 2026-11-06
+- [Trie 树高性能搜索：完整手册](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-093641-dpy5.html) — 2026-11-06
 
 ### 参考资源
 
-- [www.turfdxb.com  的相关页面与资源，可作为延伸阅读。](http://www.turfdxb.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.butlercpj.com  的相关页面与资源，可作为延伸阅读。](http://www.butlercpj.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.365worldcd.com  的相关页面与资源，可作为延伸阅读。](http://www.365worldcd.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.thriventfellows.com  的相关页面与资源，可作为延伸阅读。](http://www.thriventfellows.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.twhitedental.com  的相关页面与资源，可作为延伸阅读。](http://www.twhitedental.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.jeffersoncheng.com  的相关页面与资源，可作为延伸阅读。](http://www.jeffersoncheng.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.amazingdistance.com  的相关页面与资源，可作为延伸阅读。](http://www.amazingdistance.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.zh-paly-ggpoker.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-paly-ggpoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.semillaad.com  的相关页面与资源，可作为延伸阅读。](http://www.semillaad.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.lagenceimmobilieremaroc.com  的相关页面与资源，可作为延伸阅读。](http://www.lagenceimmobilieremaroc.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
