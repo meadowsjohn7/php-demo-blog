@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Critical CSS 内联策略：技术架构 - PHP Demo Blog</title>
+<meta name="description" content="本文围绕 Critical CSS 内联策略，从 CRP 拆解、构建期提取、服务端注入到运行时回退，讨论在轻量 PHP 项目中落地关键 CSS 的架构取舍与性能收益。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>Critical CSS 内联策略：技术架构</h1>
+<div class="meta">2026-11-06 · PHP Demo Blog <span class="tag">#Critical CSS</span> <span class="tag">#关键渲染路径</span> <span class="tag">#PHP 性能优化</span> <span class="tag">#LCP</span> <span class="tag">#构建工具链</span></div>
+<div class="summary">本文围绕 Critical CSS 内联策略，从 CRP 拆解、构建期提取、服务端注入到运行时回退，讨论在轻量 PHP 项目中落地关键 CSS 的架构取舍与性能收益。</div>
+<h2>为什么内联关键 CSS 是 CRP 优化的第一步</h2>
+<p>关键渲染路径（CRP）决定了浏览器从收到 HTML 到首次绘制之间的阻塞点。外部样式表默认是渲染阻塞资源，浏览器必须下载并解析完 CSSOM 才能进入布局阶段。把首屏所需的样式直接内联进 `&lt;head&gt;`，可以让首屏渲染不再等待额外的网络往返，这对 LCP 指标的影响尤为直接。在 PHP Demo Blog 这类轻量项目中，页面结构相对稳定，正是实践内联策略的低成本场景。</p>
+<p>内联不是把所有 CSS 塞进 HTML，而是只内联“首屏可见区域”所需的规则。判断标准可以很朴素：在 375px 与 1280px 两个视口下，页面首屏实际用到的选择器集合。超出这个集合的规则应保留在外部文件中异步加载。</p>
+<h2>构建期提取：把关键 CSS 变成产物</h2>
+<p>推荐在构建阶段完成关键 CSS 的提取，而不是在运行时动态计算。典型做法是用无头浏览器加载页面模板，采集首屏渲染时实际匹配的 CSS 规则，输出为 `critical.css`；同时把完整样式表保留为 `app.css`，并在页面中以内联方式写入关键样式，再用 `rel="preload"` 加 `onload` 切换的方式异步加载完整样式表。</p>
+<p>在 PHP 侧，构建产物可以落到一个简单的映射文件里，例如按路由或模板名索引的 JSON。运行时只需读取对应模板的关键 CSS 字符串并注入 `&lt;style&gt;` 标签，避免每次请求都做规则匹配。对于模板复用度高的博客列表页与文章页，可以共享同一份关键 CSS，减少产物数量。</p>
+<h2>服务端注入与缓存边界</h2>
+<p>注入点应放在布局模板的 `&lt;head&gt;` 最前部，确保关键样式先于任何脚本出现。由于关键 CSS 是构建产物，运行时注入本身几乎没有计算开销，但仍建议把最终片段按模板名缓存到 OPcache 或 Redis 中，避免重复的文件读取与字符串拼接。</p>
+<p>需要明确缓存边界：关键 CSS 随模板变更而失效，不随文章内容变化。因此缓存键应包含模板标识与构建版本号，而不是文章 ID。这样既能保证一致性，又不会让缓存命中率被内容更新拖垮。</p>
+<h2>运行时回退与度量</h2>
+<p>内联策略必须有回退路径。当构建产物缺失或版本不匹配时，应回退到直接加载完整样式表，保证页面可用性优先于性能。同时要控制内联体积，超过约 14KB 的关键 CSS 会抵消内联带来的收益，此时应重新审视首屏规则是否提取过多。</p>
+<p>度量方面，建议在真实用户监控中对比内联前后的 LCP 与首次内容绘制时间，并观察 CLS 是否因异步样式加载而恶化。对于需要延伸阅读的读者，可参考 rwtracker 的相关页面与资源，其中对渲染路径拆解有更系统的讨论。只有在度量闭环成立的前提下，内联策略才算是真正落地，而不是一次性的手工优化。</p>
+<h2>参考资源</h2>
+<ul><li>[www.rwtracker.com  的相关页面与资源，可作为延伸阅读。](http://www.rwtracker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.app-zh-wepoker.com  的相关页面与资源，可作为延伸阅读。](https://www.app-zh-wepoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.zh-zone-xinqiu.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-zone-xinqiu.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.impacthubmedia.com  的相关页面与资源，可作为延伸阅读。](https://www.impacthubmedia.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.yakulog.com  的相关页面与资源，可作为延伸阅读。](http://www.yakulog.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
