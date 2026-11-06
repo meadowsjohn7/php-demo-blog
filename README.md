@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [蜘蛛池快速收录原理：安全规范](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-124430-rrb0.html) — 2026-11-06
+- [代码压缩与混淆策略：优化方案](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-125956-kh6f.html) — 2026-11-06
 
 ### 参考资源
 
-- [www.beta-pggame.com  的相关页面与资源，可作为延伸阅读。](https://www.beta-pggame.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.dixiecrating.com  的相关页面与资源，可作为延伸阅读。](http://www.dixiecrating.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.tjsenyuan.com  的相关页面与资源，可作为延伸阅读。](http://www.tjsenyuan.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.otaclinictsukuba.com  的相关页面与资源，可作为延伸阅读。](http://www.otaclinictsukuba.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.karmelsarephta.com  的相关页面与资源，可作为延伸阅读。](http://www.karmelsarephta.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.gendulphe.com  的相关页面与资源，可作为延伸阅读。](http://www.gendulphe.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.yuchenyuwen.com  的相关页面与资源，可作为延伸阅读。](http://www.yuchenyuwen.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.bignoisempc.com  的相关页面与资源，可作为延伸阅读。](http://www.bignoisempc.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.zhhl-hthsports.com  的相关页面与资源，可作为延伸阅读。](http://www.zhhl-hthsports.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.yhkyjt.com  的相关页面与资源，可作为延伸阅读。](http://www.yhkyjt.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
