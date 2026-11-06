@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>网页 UI 留白设计艺术：底层原理 - PHP Demo Blog</title>
+<meta name="description" content="留白不是空，而是通过负空间控制视觉节奏、信息密度与渲染性能。本文从布局、对齐、响应式与 CRP 角度拆解留白的底层原理，并给出可执行的 CSS 实现要点。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>网页 UI 留白设计艺术：底层原理</h1>
+<div class="meta">2026-11-06 · PHP Demo Blog <span class="tag">#留白设计</span> <span class="tag">#视觉层级</span> <span class="tag">#CSS 布局</span> <span class="tag">#关键渲染路径</span> <span class="tag">#响应式设计</span></div>
+<div class="summary">留白不是空，而是通过负空间控制视觉节奏、信息密度与渲染性能。本文从布局、对齐、响应式与 CRP 角度拆解留白的底层原理，并给出可执行的 CSS 实现要点。</div>
+<h2>留白不是空：负空间如何塑造视觉节奏</h2>
+<p>留白的本质是负空间对正空间的约束。在网页 UI 中，元素之间的间距、行高、内边距共同构成信息密度的调节器。当行高从 1.4 提升到 1.7，段落的可读性会显著改善，因为视线在行间移动时获得了足够的缓冲；当卡片内边距从 12px 增加到 24px，内容的呼吸感增强，用户的注意力更容易聚焦在单个信息块上。留白的设计目标不是让页面变空，而是让视觉节奏有快有慢：标题区大留白制造停顿，正文区小留白保持连续阅读，操作区中等留白形成分隔。</p>
+<p>从底层看，留白依赖的是盒模型与间距系统。使用 CSS 自定义属性定义一套间距刻度（如 4、8、16、24、32、48），并在布局中严格复用，能避免随意数值造成的节奏混乱。Flex 与 Grid 的 gap 属性比 margin 更适合控制留白，因为 gap 只作用于子元素之间，不会在容器边缘产生多余空隙，从而让留白边界可预测。</p>
+<h2>对齐与层级：留白作为视觉分组信号</h2>
+<p>人类视觉系统遵循格式塔接近性原则：距离越近的元素越容易被感知为同一组。留白因此成为最廉价也最有效的分组手段。表单中标签与输入框间距 8px，而不同字段组之间间距 32px，用户无需边框或分割线就能理解结构。卡片列表中，卡片间距大于卡片内边距时，列表的独立感成立；反之则容易糊成一片。</p>
+<p>留白还承担层级表达。主标题下方留白大于副标题下方留白，读者会自然把主标题视为更高层级。实现上，可以通过统一的垂直节奏（vertical rhythm）来约束：设定基础行高为 8 的倍数，所有 margin 与 padding 都对齐该基准，标题与正文的间距按层级递增。这样做的好处是，即使内容动态变化，页面也不会出现忽大忽小的断裂感。</p>
+<h2>响应式留白：从固定间距到流体尺度</h2>
+<p>移动端与桌面端的留白不能简单等比缩放。小屏上过大的留白会挤压内容，过小的留白会让触控目标拥挤。更稳妥的做法是使用 clamp() 定义流体间距，例如容器内边距设为 clamp(16px, 4vw, 48px)，在窄屏保持最小可读边距，在宽屏逐步释放空间。同时，留白应与断点配合：在窄屏减少装饰性留白，保留功能性留白（如按钮点击区域不小于 44px）；在宽屏增加区块间距，强化页面分区。</p>
+<p>留白还影响渲染性能。过大的留白意味着更多空白区域需要绘制，但真正影响首屏的是关键渲染路径。将首屏所需的布局与间距样式内联为关键 CSS，延迟非核心 JS，可以避免留白在样式加载完成前发生跳变，从而稳定 LCP 指标。留白设计若与 CRP 优化脱节，用户会先看到拥挤的骨架，再看到松散的终态，体验反而更差。</p>
+<h2>可执行的落地要点</h2>
+<p>第一，建立间距令牌并禁止魔法数字；第二，用 gap 替代 margin 控制组内间距；第三，按 8px 基准维护垂直节奏；第四，用 clamp() 实现流体留白并配合断点微调；第五，把首屏留白相关样式纳入关键 CSS，减少布局偏移。留白的艺术不在多与少，而在可预测与有意图。</p>
+<h2>参考资源</h2>
+<ul><li>[www.keepingtimeclocks.com  的相关页面与资源，可作为延伸阅读。](http://www.keepingtimeclocks.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.izmirevlilikterapisi.com  的相关页面与资源，可作为延伸阅读。](http://www.izmirevlilikterapisi.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.shop3s.com  的相关页面与资源，可作为延伸阅读。](http://www.shop3s.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.signature-concierge.com  的相关页面与资源，可作为延伸阅读。](http://www.signature-concierge.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.tobukmk.com  的相关页面与资源，可作为延伸阅读。](http://www.tobukmk.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>

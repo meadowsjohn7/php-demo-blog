@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [translate3d 硬件加速原理：深度解析](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-133300-xsem.html) — 2026-11-06
+- [网页 UI 留白设计艺术：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-134943-wo5a.html) — 2026-11-06
 
 ### 参考资源
 
-- [www.maoyihaocai.com  的相关页面与资源，可作为延伸阅读。](http://www.maoyihaocai.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.lapkov.com  的相关页面与资源，可作为延伸阅读。](http://www.lapkov.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.siliconerubberparts.com  的相关页面与资源，可作为延伸阅读。](https://www.siliconerubberparts.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.xhpai.com  的相关页面与资源，可作为延伸阅读。](http://www.xhpai.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.zh-857zhibo.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-857zhibo.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.keepingtimeclocks.com  的相关页面与资源，可作为延伸阅读。](http://www.keepingtimeclocks.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.izmirevlilikterapisi.com  的相关页面与资源，可作为延伸阅读。](http://www.izmirevlilikterapisi.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.shop3s.com  的相关页面与资源，可作为延伸阅读。](http://www.shop3s.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.signature-concierge.com  的相关页面与资源，可作为延伸阅读。](http://www.signature-concierge.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.tobukmk.com  的相关页面与资源，可作为延伸阅读。](http://www.tobukmk.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
