@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [CDN 全球加速原理：技术架构](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-063155-3peq.html) — 2026-11-07
+- [Redis 集群高可用架构：SEO 策略](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-064728-ocas.html) — 2026-11-07
 
 ### 参考资源
 
-- [www.my-5eplay.com  的相关页面与资源，可作为延伸阅读。](https://www.my-5eplay.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.www-qqsports.com  的相关页面与资源，可作为延伸阅读。](https://www.www-qqsports.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.canary-food.com  的相关页面与资源，可作为延伸阅读。](http://www.canary-food.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.drugshb.com  的相关页面与资源，可作为延伸阅读。](https://www.drugshb.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.zh-hans-lucky10.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-hans-lucky10.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.johnmeldrum.com  的相关页面与资源，可作为延伸阅读。](http://www.johnmeldrum.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.zh-cn-ao10.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-cn-ao10.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.taends.com  的相关页面与资源，可作为延伸阅读。](http://www.taends.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.midtowntapandtearoom.com  的相关页面与资源，可作为延伸阅读。](http://www.midtowntapandtearoom.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.tomsmithstudio.com  的相关页面与资源，可作为延伸阅读。](http://www.tomsmithstudio.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
