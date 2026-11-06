@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [SSR 服务端渲染 SEO：实战指南](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-113424-urat.html) — 2026-11-06
+- [Fetch API 与跨域处理：深度解析](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-115435-lii7.html) — 2026-11-06
 
 ### 参考资源
 
-- [www.damaixs.com  的相关页面与资源，可作为延伸阅读。](http://www.damaixs.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.ftb-wiki.com  的相关页面与资源，可作为延伸阅读。](http://www.ftb-wiki.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.bosai1.com  的相关页面与资源，可作为延伸阅读。](https://www.bosai1.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.custom-vacations.com  的相关页面与资源，可作为延伸阅读。](https://www.custom-vacations.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.bvwlawyers.com  的相关页面与资源，可作为延伸阅读。](http://www.bvwlawyers.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.tianjx.com  的相关页面与资源，可作为延伸阅读。](http://www.tianjx.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.zh-hans-wpk.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-hans-wpk.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.visualstudiotalkshow.com  的相关页面与资源，可作为延伸阅读。](http://www.visualstudiotalkshow.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.michaelskovgaard.com  的相关页面与资源，可作为延伸阅读。](https://www.michaelskovgaard.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.wasabiwilshire.com  的相关页面与资源，可作为延伸阅读。](http://www.wasabiwilshire.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 

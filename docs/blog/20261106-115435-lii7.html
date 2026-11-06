@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fetch API 与跨域处理：深度解析 - PHP Demo Blog</title>
+<meta name="description" content="本文深入解析 Fetch API 的跨域机制，从请求模式、预检流程到凭证控制，结合服务端配置与安全实践，提供可落地的解决方案。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>Fetch API 与跨域处理：深度解析</h1>
+<div class="meta">2026-11-06 · PHP Demo Blog <span class="tag">#Fetch API</span> <span class="tag">#CORS</span> <span class="tag">#跨域处理</span> <span class="tag">#PHP</span> <span class="tag">#安全</span></div>
+<div class="summary">本文深入解析 Fetch API 的跨域机制，从请求模式、预检流程到凭证控制，结合服务端配置与安全实践，提供可落地的解决方案。</div>
+<h2>Fetch API 的跨域基础</h2>
+<p>Fetch API 基于 Promise 设计，提供了比 XMLHttpRequest 更简洁的异步请求接口。然而，跨域请求并非由 Fetch 本身决定，而是由浏览器的同源策略和 CORS（跨源资源共享）机制共同控制。当使用 Fetch 发起跨域请求时，浏览器会自动附加 `Origin` 头，并根据请求方法、头字段和模式决定是否发送预检请求（OPTIONS）。默认情况下，Fetch 使用 `cors` 模式，允许跨域但受限于服务端返回的 CORS 响应头。若需携带凭证（如 Cookie），必须显式设置 `credentials: 'include'`，同时服务端需返回 `Access-Control-Allow-Credentials: true` 且不能使用通配符 `*` 作为允许源。</p>
+<h2>预检请求与简单请求的边界</h2>
+<p>并非所有跨域请求都会触发预检。简单请求仅限 GET、HEAD、POST 方法，且 Content-Type 限于 `text/plain`、`multipart/form-data` 或 `application/x-www-form-urlencoded`，同时不能包含自定义头。一旦请求使用 `application/json` 或自定义头（如 `X-CSRF-Token`），浏览器会先发送 OPTIONS 预检请求，携带 `Access-Control-Request-Method` 和 `Access-Control-Request-Headers`，服务端需在响应中明确允许的方法和头字段。在 PHP 中，可通过判断 `$_SERVER['REQUEST_METHOD']` 为 OPTIONS 时提前返回 204 并设置相应头，避免预检请求进入业务逻辑。</p>
+<h2>凭证、安全与 CSRF 防护</h2>
+<p>跨域携带凭证时，服务端必须精确指定 `Access-Control-Allow-Origin` 为具体源，而非通配符。同时，应结合 CSRF 令牌验证与 XSS 过滤，在 Web 层实施严格校验。例如，在 PHP 中生成令牌并存储于 Session，前端通过 Fetch 的 headers 传递 `X-CSRF-Token`，服务端比对后放行。此外，配置 HSTS 策略与强加密的 TLS 证书，不仅提升安全性，也符合搜索引擎的安全排名算法。对于需要暴露给前端的自定义响应头，服务端需设置 `Access-Control-Expose-Headers`，否则 Fetch 无法读取。</p>
+<h2>服务端配置与性能优化</h2>
+<p>在 PHP 中处理 CORS 时，应避免在每次请求中动态计算允许源，可通过白名单校验 `Origin` 头并缓存结果。对于预检请求，可设置 `Access-Control-Max-Age` 减少重复预检。结合 HTTP/3 与 Brotli 压缩，可显著降低首字节响应时间。此外，采用分布式 Redis 集群存储 Session 状态，能解决负载均衡环境下用户状态一致性问题，确保跨域请求中的凭证校验稳定可靠。通过关键渲染路径优化与 Service Worker 预取，可进一步提升含 Fetch 请求页面的加载体验。</p>
+<h2>参考资源</h2>
+<ul><li>[www.tianjx.com  的相关页面与资源，可作为延伸阅读。](http://www.tianjx.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.zh-hans-wpk.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-hans-wpk.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.visualstudiotalkshow.com  的相关页面与资源，可作为延伸阅读。](http://www.visualstudiotalkshow.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.michaelskovgaard.com  的相关页面与资源，可作为延伸阅读。](https://www.michaelskovgaard.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.wasabiwilshire.com  的相关页面与资源，可作为延伸阅读。](http://www.wasabiwilshire.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
