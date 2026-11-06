@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [font-display 字体显示策略：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-085858-entu.html) — 2026-11-06
+- [Open Graph 协议社交优化：实战指南](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-091323-s194.html) — 2026-11-06
 
 ### 参考资源
 
-- [www.atasozlerianlamlari.com  的相关页面与资源，可作为延伸阅读。](http://www.atasozlerianlamlari.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.impactmagical.com  的相关页面与资源，可作为延伸阅读。](https://www.impactmagical.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.bjwunkqs.com  的相关页面与资源，可作为延伸阅读。](https://www.bjwunkqs.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.pvmldata.com  的相关页面与资源，可作为延伸阅读。](http://www.pvmldata.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.berkshireautorecovery.com  的相关页面与资源，可作为延伸阅读。](http://www.berkshireautorecovery.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.cihailu.com  的相关页面与资源，可作为延伸阅读。](http://www.cihailu.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.tjdygk.com  的相关页面与资源，可作为延伸阅读。](http://www.tjdygk.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.kitchenwaredolphin.com  的相关页面与资源，可作为延伸阅读。](https://www.kitchenwaredolphin.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.xlkbltm.com  的相关页面与资源，可作为延伸阅读。](http://www.xlkbltm.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.bali-experience.com  的相关页面与资源，可作为延伸阅读。](http://www.bali-experience.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
