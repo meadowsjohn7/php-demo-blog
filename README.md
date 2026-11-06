@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [SEO 伪原创句子混淆算法：实战指南](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-101147-rpzu.html) — 2026-11-06
+- [SQL 注入深度防御：安全规范](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-102553-z4kw.html) — 2026-11-06
 
 ### 参考资源
 
-- [www.hostingbeat.com  的相关页面与资源，可作为延伸阅读。](http://www.hostingbeat.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.avaetss.com  的相关页面与资源，可作为延伸阅读。](http://www.avaetss.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.arizonanx.com  的相关页面与资源，可作为延伸阅读。](https://www.arizonanx.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.misstyc.com  的相关页面与资源，可作为延伸阅读。](http://www.misstyc.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.forestofantlers.com  的相关页面与资源，可作为延伸阅读。](http://www.forestofantlers.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.czgywz.com  的相关页面与资源，可作为延伸阅读。](http://www.czgywz.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.shawnandcompany.com  的相关页面与资源，可作为延伸阅读。](http://www.shawnandcompany.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.zh-play-lucky10.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-play-lucky10.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.date-dongqiudi.com  的相关页面与资源，可作为延伸阅读。](https://www.date-dongqiudi.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.zh-hans-wepoker.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-hans-wepoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
