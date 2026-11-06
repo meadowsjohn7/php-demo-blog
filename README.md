@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [TLS 1.3 安全协议升级：深度解析](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-203327-mkry.html) — 2026-11-06
+- [分布式文件系统同步：安全规范](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-205017-42cq.html) — 2026-11-06
 
 ### 参考资源
 
-- [www.artsotnya.com  的相关页面与资源，可作为延伸阅读。](http://www.artsotnya.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.newspaperln.com  的相关页面与资源，可作为延伸阅读。](https://www.newspaperln.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.al-hana.com  的相关页面与资源，可作为延伸阅读。](http://www.al-hana.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.csxino.com  的相关页面与资源，可作为延伸阅读。](http://www.csxino.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.cafe-kurage.com  的相关页面与资源，可作为延伸阅读。](https://www.cafe-kurage.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.peterdesign2511.com  的相关页面与资源，可作为延伸阅读。](http://www.peterdesign2511.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.pa-farm.com  的相关页面与资源，可作为延伸阅读。](http://www.pa-farm.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.tripupdater.com  的相关页面与资源，可作为延伸阅读。](http://www.tripupdater.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.cy2014.com  的相关页面与资源，可作为延伸阅读。](http://www.cy2014.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.xjwywjx.com  的相关页面与资源，可作为延伸阅读。](https://www.xjwywjx.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
