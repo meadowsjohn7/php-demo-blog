@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [Meta Description 点击率优化：完整手册](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-140528-rs7j.html) — 2026-11-06
+- [GPU 加速前端动画：深度解析](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-152540-hpl6.html) — 2026-11-06
 
 ### 参考资源
 
-- [www.samtheemt.com  的相关页面与资源，可作为延伸阅读。](https://www.samtheemt.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.jarptica.com  的相关页面与资源，可作为延伸阅读。](https://www.jarptica.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.wallvases.com  的相关页面与资源，可作为延伸阅读。](https://www.wallvases.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.zh-nk-ggpoker.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-nk-ggpoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.hawaiianshirtopia.com  的相关页面与资源，可作为延伸阅读。](https://www.hawaiianshirtopia.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.guyzapp.com  的相关页面与资源，可作为延伸阅读。](http://www.guyzapp.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.jackhaggertyarchitect.com  的相关页面与资源，可作为延伸阅读。](http://www.jackhaggertyarchitect.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.gnosishypnosis.com  的相关页面与资源，可作为延伸阅读。](https://www.gnosishypnosis.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.kocham-morze.com  的相关页面与资源，可作为延伸阅读。](http://www.kocham-morze.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.designsinjewelryinc.com  的相关页面与资源，可作为延伸阅读。](http://www.designsinjewelryinc.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
