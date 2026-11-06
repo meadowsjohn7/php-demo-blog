@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [网站反爬虫对抗技术：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-041227-k2hc.html) — 2026-11-07
+- [AC 自动机敏感词过滤：完整手册](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-042400-1daf.html) — 2026-11-07
 
 ### 参考资源
 
-- [www.cpgea.com  的相关页面与资源，可作为延伸阅读。](http://www.cpgea.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.ryosi.com  的相关页面与资源，可作为延伸阅读。](http://www.ryosi.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.dketonea.com  的相关页面与资源，可作为延伸阅读。](https://www.dketonea.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.beta-ggpoker.com  的相关页面与资源，可作为延伸阅读。](https://www.beta-ggpoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.jobtitlesai.com  的相关页面与资源，可作为延伸阅读。](http://www.jobtitlesai.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.html-ggpoker.com  的相关页面与资源，可作为延伸阅读。](https://www.html-ggpoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.roseland-barnes.com  的相关页面与资源，可作为延伸阅读。](https://www.roseland-barnes.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.online-xinai.com  的相关页面与资源，可作为延伸阅读。](https://www.online-xinai.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.hengshuojixie.com  的相关页面与资源，可作为延伸阅读。](https://www.hengshuojixie.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.epiclax.com  的相关页面与资源，可作为延伸阅读。](http://www.epiclax.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 

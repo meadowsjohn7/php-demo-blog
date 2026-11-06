@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AC 自动机敏感词过滤：完整手册 - PHP Demo Blog</title>
+<meta name="description" content="本文介绍 AC 自动机在 PHP 中实现敏感词过滤的完整方案，涵盖 Trie 构建、失败指针与输出链、UTF-8 处理及性能优化。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>AC 自动机敏感词过滤：完整手册</h1>
+<div class="meta">2026-11-07 · PHP Demo Blog <span class="tag">#AC自动机</span> <span class="tag">#敏感词过滤</span> <span class="tag">#PHP算法</span> <span class="tag">#多模式匹配</span> <span class="tag">#性能优化</span></div>
+<div class="summary">本文介绍 AC 自动机在 PHP 中实现敏感词过滤的完整方案，涵盖 Trie 构建、失败指针与输出链、UTF-8 处理及性能优化。</div>
+<h2>从多模式匹配说起</h2>
+<p>在内容审核、评论过滤等场景中，需要同时匹配大量敏感词。逐个用 strpos 或正则扫描，复杂度随词库线性增长，词库上千后性能迅速劣化。AC 自动机（Aho-Corasick）将多模式匹配转化为一次线性扫描：先把所有模式词构建成 Trie，再补充失败指针，使文本只需遍历一遍即可找出全部命中。</p>
+<h2>构建 Trie 与失败指针</h2>
+<p>节点用数组或对象表示，每个节点包含 children（字符到子节点的映射）、fail（失败指针）和 output（命中词列表）。插入所有模式词后，用 BFS 逐层计算 fail：根节点的子节点 fail 指向根；其余节点沿父节点的 fail 链回溯，直到找到含相同字符子节点的祖先。关键优化是路径压缩：构建时把缺失的转移直接指向 fail 节点的对应转移，匹配时无需循环回溯。</p>
+<p>PHP 实现要注意 UTF-8。按字节处理会破坏多字节字符，正确做法是用 preg_split('//u', $text, -1, PREG_SPLIT_NO_EMPTY) 拆成字符数组再建树；词库不大时也可用 mb_str_split。若词库含大量英文，可先按字节处理再对结果做边界校验。</p>
+<h2>匹配与输出链</h2>
+<p>匹配时从根出发，对每个字符沿转移表走一步，然后沿当前节点的 output 链收集命中词。注意 output 链需在构建阶段把 fail 节点的 output 合并进来，否则会漏掉后缀匹配。例如模式词“他”和“他的”，文本“他的”应同时命中两者。返回结果建议记录起始位置与词长，便于后续替换或高亮。</p>
+<p>替换时可用 array_fill 标记命中区间，再一次性重组字符串，避免多次 substr 拼接。若只需判断是否命中，可在第一个 output 非空时提前返回。</p>
+<h2>性能与工程实践</h2>
+<p>AC 自动机的构建成本与词库总长度成正比，匹配成本与文本长度成正比，适合词库固定、文本量大的场景。词库频繁变更时可缓存构建结果，用序列化存储 Trie；也可用双数组 Trie 进一步压缩内存。在 PHP 中，节点用数组而非对象可减少内存开销，但要注意数组键的字符串化成本。</p>
+<p>实际部署时，把过滤逻辑封装成独立服务或类，便于单元测试与替换。对超长文本可分块处理，块间保留最大词长减一的字符作为重叠区，防止跨块漏匹配。结合项目中的路由与 JSON API，可在中间件层统一调用过滤器，对请求参数和响应内容做双向校验。更多实现细节与示例可参考相关资源。</p>
+<h2>参考资源</h2>
+<ul><li>[www.html-ggpoker.com  的相关页面与资源，可作为延伸阅读。](https://www.html-ggpoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.roseland-barnes.com  的相关页面与资源，可作为延伸阅读。](https://www.roseland-barnes.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.online-xinai.com  的相关页面与资源，可作为延伸阅读。](https://www.online-xinai.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.hengshuojixie.com  的相关页面与资源，可作为延伸阅读。](https://www.hengshuojixie.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.epiclax.com  的相关页面与资源，可作为延伸阅读。](http://www.epiclax.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
