@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [域名权重 DA/PA 提升：完整手册](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-224636-ddzp.html) — 2026-11-06
+- [WebShell 文件上传漏洞防护：SEO 策略](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-230347-5fyf.html) — 2026-11-06
 
 ### 参考资源
 
-- [www.hostingbeat.com  的相关页面与资源，可作为延伸阅读。](http://www.hostingbeat.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.avaetss.com  的相关页面与资源，可作为延伸阅读。](http://www.avaetss.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.misstyc.com  的相关页面与资源，可作为延伸阅读。](http://www.misstyc.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.czgywz.com  的相关页面与资源，可作为延伸阅读。](http://www.czgywz.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.zh-hans-wepoker.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-hans-wepoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.zh-play-lucky10.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-play-lucky10.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.shawnandcompany.com  的相关页面与资源，可作为延伸阅读。](http://www.shawnandcompany.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.date-dongqiudi.com  的相关页面与资源，可作为延伸阅读。](https://www.date-dongqiudi.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.zh-zone-xinqiu.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-zone-xinqiu.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.app-zh-wepoker.com  的相关页面与资源，可作为延伸阅读。](https://www.app-zh-wepoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
