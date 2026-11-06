@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [HTTP/3 协议特性：完整手册](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-004558-q888.html) — 2026-11-07
+- [移动端适配媒体查询：实战指南](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-010327-isid.html) — 2026-11-07
 
 ### 参考资源
 
-- [www.kurtbergt.com  的相关页面与资源，可作为延伸阅读。](http://www.kurtbergt.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.sanctuarybirthing.com  的相关页面与资源，可作为延伸阅读。](http://www.sanctuarybirthing.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.redyutub.com  的相关页面与资源，可作为延伸阅读。](http://www.redyutub.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.gzyunhai.com  的相关页面与资源，可作为延伸阅读。](http://www.gzyunhai.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.ifromchina.com  的相关页面与资源，可作为延伸阅读。](https://www.ifromchina.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.linktogif.com  的相关页面与资源，可作为延伸阅读。](http://www.linktogif.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.shadesofbeautybodybar.com  的相关页面与资源，可作为延伸阅读。](http://www.shadesofbeautybodybar.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.acredyweb.com  的相关页面与资源，可作为延伸阅读。](http://www.acredyweb.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.karmelsarephta.com  的相关页面与资源，可作为延伸阅读。](http://www.karmelsarephta.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.beta-pggame.com  的相关页面与资源，可作为延伸阅读。](https://www.beta-pggame.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
