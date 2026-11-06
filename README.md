@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [frp 内网穿透实战：优化方案](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-051331-l88i.html) — 2026-11-07
+- [Robots.txt 科学配置：优化方案](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-053228-gas3.html) — 2026-11-07
 
 ### 参考资源
 
-- [www.0920720506.com  的相关页面与资源，可作为延伸阅读。](http://www.0920720506.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.wheelsandsneakers.com  的相关页面与资源，可作为延伸阅读。](http://www.wheelsandsneakers.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.internetlet.com  的相关页面与资源，可作为延伸阅读。](http://www.internetlet.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.oftalmologiaferreyra.com  的相关页面与资源，可作为延伸阅读。](http://www.oftalmologiaferreyra.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.zh-home-wepoker.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-home-wepoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.slice-online.com  的相关页面与资源，可作为延伸阅读。](http://www.slice-online.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.memartau.com  的相关页面与资源，可作为延伸阅读。](http://www.memartau.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.zjcwu.com  的相关页面与资源，可作为延伸阅读。](https://www.zjcwu.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.papirustercume.com  的相关页面与资源，可作为延伸阅读。](http://www.papirustercume.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.nbnmjxkesyid.com  的相关页面与资源，可作为延伸阅读。](https://www.nbnmjxkesyid.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
