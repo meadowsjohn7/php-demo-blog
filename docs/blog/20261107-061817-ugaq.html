@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HSTS 强制安全传输：安全规范 - PHP Demo Blog</title>
+<meta name="description" content="HSTS 通过强制 HTTPS 连接提升安全性，本文介绍其原理、在 PHP 项目中的配置方法及与安全排名算法的关联，并给出可执行的实施步骤。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>HSTS 强制安全传输：安全规范</h1>
+<div class="meta">2026-11-07 · PHP Demo Blog <span class="tag">#HSTS</span> <span class="tag">#安全传输</span> <span class="tag">#HTTPS</span> <span class="tag">#TLS</span> <span class="tag">#PHP安全</span></div>
+<div class="summary">HSTS 通过强制 HTTPS 连接提升安全性，本文介绍其原理、在 PHP 项目中的配置方法及与安全排名算法的关联，并给出可执行的实施步骤。</div>
+<h2>什么是 HSTS 以及为何必须启用</h2>
+<p>HSTS（HTTP Strict Transport Security）是一种 Web 安全策略机制，它通过响应头告知浏览器：在指定时间内，对该域名的所有访问必须使用 HTTPS，禁止任何降级到 HTTP 的请求。这从根本上消除了 SSL 剥离攻击（SSL Stripping）的风险——攻击者无法再通过中间人方式将 HTTPS 连接劫持为明文 HTTP。对于任何涉及用户登录、支付或敏感数据的 PHP 应用，启用 HSTS 是安全基线的一部分。此外，主流搜索引擎已将 HTTPS 作为排名信号，HSTS 作为强制 HTTPS 的强化手段，间接支持了站点的安全评分。</p>
+<h2>在服务器与 PHP 应用中配置 HSTS</h2>
+<p>HSTS 通过 `Strict-Transport-Security` 响应头下发，最佳实践是在 Web 服务器层统一配置，避免遗漏。以 Nginx 为例，在 HTTPS 的 server 块中添加：</p>
+<pre><code>add_header Strict-Transport-Security &quot;max-age=31536000; includeSubDomains; preload&quot; always;</code></pre>
+<p>其中 `max-age=31536000` 表示一年内强制 HTTPS；`includeSubDomains` 覆盖所有子域名；`preload` 表示申请加入浏览器预加载列表（需谨慎，加入后难以回退）。若使用 Apache，可在虚拟主机配置中添加：</p>
+<pre><code>Header always set Strict-Transport-Security &quot;max-age=31536000; includeSubDomains&quot;</code></pre>
+<p>在 PHP 应用层，可以在入口文件或框架中间件中补充设置，作为服务器配置的兜底：</p>
+<pre><code>if (!empty($_SERVER[&#x27;HTTPS&#x27;]) &amp;&amp; $_SERVER[&#x27;HTTPS&#x27;] !== &#x27;off&#x27;) {
+    header(&#x27;Strict-Transport-Security: max-age=31536000; includeSubDomains&#x27;);
+}</code></pre>
+<p>注意：HSTS 头仅在 HTTPS 响应中有效，HTTP 响应中的该头会被浏览器忽略。因此必须确保站点已正确部署 TLS 证书，并建议使用 TLS 1.2 及以上版本，配合强加密套件。</p>
+<h2>实施 HSTS 的注意事项与渐进策略</h2>
+<p>直接设置较长的 `max-age` 并包含子域名存在风险：一旦某个子域名无法提供 HTTPS 服务，将导致其完全不可访问。推荐采用渐进式部署：</p>
+<p>1. 先设置较短的 `max-age`（如 300 秒），验证所有子域名的 HTTPS 可用性； 2. 逐步增加 `max-age` 至一周、一个月，最终达到一年； 3. 确认无误后再考虑添加 `includeSubDomains` 和 `preload`。</p>
+<p>同时，应确保应用内部所有资源引用（CSS、JS、图片）均使用相对协议或 HTTPS 绝对地址，避免混合内容（Mixed Content）导致 HSTS 策略被浏览器忽略。对于 PHP 项目，可通过检查 `$_SERVER['HTTPS']` 或 `X-Forwarded-Proto` 头来生成正确的资源 URL。</p>
+<h2>与整体安全及性能策略的协同</h2>
+<p>HSTS 并非孤立的安全措施。结合严格的 CSRF 令牌验证与 XSS 过滤，能进一步加固业务系统。在性能层面，启用 HTTP/2 或 HTTP/3 并配合 Brotli 压缩，可降低 TTFB，而 HSTS 消除了 HTTP 到 HTTPS 的额外重定向，间接减少了首字节时间。对于使用分布式 Redis 集群存储 Session 的负载均衡环境，统一在入口层配置 HSTS 可避免各节点配置不一致。持续的技术迭代与合规性改造，是维持站点生命周期与搜索信任度的必经之路。</p>
+<h2>参考资源</h2>
+<ul><li>[www.despertarespsicologia.com  的相关页面与资源，可作为延伸阅读。](https://www.despertarespsicologia.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.xinhanyuwangxiao.com  的相关页面与资源，可作为延伸阅读。](http://www.xinhanyuwangxiao.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.afpailescedres.com  的相关页面与资源，可作为延伸阅读。](http://www.afpailescedres.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.zn-xinqiusports.com  的相关页面与资源，可作为延伸阅读。](https://www.zn-xinqiusports.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.ynltzx.com  的相关页面与资源，可作为延伸阅读。](http://www.ynltzx.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>

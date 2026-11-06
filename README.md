@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [移动端点击率提升技巧：实战指南](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-060551-2pr7.html) — 2026-11-07
+- [HSTS 强制安全传输：安全规范](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-061817-ugaq.html) — 2026-11-07
 
 ### 参考资源
 
-- [www.zsh784.com  的相关页面与资源，可作为延伸阅读。](https://www.zsh784.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.shanghaispine.com  的相关页面与资源，可作为延伸阅读。](https://www.shanghaispine.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.revistapedagogiaufmt.com  的相关页面与资源，可作为延伸阅读。](http://www.revistapedagogiaufmt.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.mmeritpluss.com  的相关页面与资源，可作为延伸阅读。](http://www.mmeritpluss.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.papuyar.com  的相关页面与资源，可作为延伸阅读。](http://www.papuyar.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.despertarespsicologia.com  的相关页面与资源，可作为延伸阅读。](https://www.despertarespsicologia.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.xinhanyuwangxiao.com  的相关页面与资源，可作为延伸阅读。](http://www.xinhanyuwangxiao.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.afpailescedres.com  的相关页面与资源，可作为延伸阅读。](http://www.afpailescedres.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.zn-xinqiusports.com  的相关页面与资源，可作为延伸阅读。](https://www.zn-xinqiusports.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.ynltzx.com  的相关页面与资源，可作为延伸阅读。](http://www.ynltzx.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
