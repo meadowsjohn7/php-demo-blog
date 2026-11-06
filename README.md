@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [React 性能优化实战：技术架构](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-070737-thdy.html) — 2026-11-07
+- [SQL 注入深度防御：技术架构](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-072113-n6ie.html) — 2026-11-07
 
 ### 参考资源
 
-- [www.readingswithgail.com  的相关页面与资源，可作为延伸阅读。](http://www.readingswithgail.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.libertysoulfood.com  的相关页面与资源，可作为延伸阅读。](http://www.libertysoulfood.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.hematqiuq.com  的相关页面与资源，可作为延伸阅读。](http://www.hematqiuq.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.theslumstudio.com  的相关页面与资源，可作为延伸阅读。](http://www.theslumstudio.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.robertdanielharris.com  的相关页面与资源，可作为延伸阅读。](https://www.robertdanielharris.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.synergie-creative.com  的相关页面与资源，可作为延伸阅读。](http://www.synergie-creative.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.global-xinzhibo.com  的相关页面与资源，可作为延伸阅读。](https://www.global-xinzhibo.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.clzstore.com  的相关页面与资源，可作为延伸阅读。](http://www.clzstore.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.al-hana.com  的相关页面与资源，可作为延伸阅读。](http://www.al-hana.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.cafe-kurage.com  的相关页面与资源，可作为延伸阅读。](https://www.cafe-kurage.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
