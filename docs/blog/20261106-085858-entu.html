@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>font-display 字体显示策略：底层原理 - PHP Demo Blog</title>
+<meta name="description" content="解析 font-display 的五个取值如何在字体加载阻塞与渲染性能间权衡，结合 FOIT/FOUT 与关键渲染路径，说明如何选择策略优化 LCP 与用户体验。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>font-display 字体显示策略：底层原理</h1>
+<div class="meta">2026-11-06 · PHP Demo Blog <span class="tag">#font-display</span> <span class="tag">#字体加载</span> <span class="tag">#渲染性能</span> <span class="tag">#LCP</span> <span class="tag">#Web 字体</span></div>
+<div class="summary">解析 font-display 的五个取值如何在字体加载阻塞与渲染性能间权衡，结合 FOIT/FOUT 与关键渲染路径，说明如何选择策略优化 LCP 与用户体验。</div>
+<h2>字体加载与渲染阻塞的本质</h2>
+<p>当浏览器解析到 @font-face 规则时，若字体文件尚未就绪，它必须决定：是先用后备字体渲染文本，还是等待字体下载完成。这个决策窗口由 font-display 控制，其底层依赖浏览器的字体加载状态机。状态机包含 block 期、swap 期和 failure 期，每个阶段对应不同的渲染行为。默认的 auto 等价于 block，即短时间隐藏文本（FOIT），超时后回退到后备字体。理解这些阶段的时间阈值（通常 block 期约 3 秒，swap 期无限长）是选择策略的前提。</p>
+<h2>五个取值的实际行为</h2>
+<p>font-display 接受 auto、block、swap、fallback、optional 五个值。block 在 block 期内隐藏文本，适合图标字体等必须准确显示的场景，但会拖慢首次内容绘制。swap 则立即用后备字体渲染，字体就绪后替换，产生 FOUT，对 LCP 最友好，但可能引起布局偏移。fallback 是折中：极短 block 期后使用后备字体，若字体在约 3 秒内到达则替换，否则本次页面生命周期不再替换。optional 更激进，浏览器可能完全放弃本次加载，仅在网络极快时使用自定义字体，适合非关键文本。auto 则交给浏览器启发式判断，通常等同于 block。</p>
+<h2>与关键渲染路径的联动</h2>
+<p>字体是渲染阻塞资源之一。若字体在首屏关键文本中使用，block 策略会推迟文本绘制，直接影响 LCP 指标。实践中，可将首屏字体预加载（preload）并配合 font-display: swap，让文本尽早可见；同时通过 size-adjust 和 ascent-override 等度量覆盖减少替换时的布局偏移。对于非首屏或装饰性字体，使用 optional 或 fallback 避免不必要的网络竞争。注意，font-display 只影响渲染时机，不改变下载优先级，因此仍需结合 preconnect 与合理的缓存策略。</p>
+<h2>策略选择与验证方法</h2>
+<p>选择策略时应先区分字体用途：品牌标题字体可接受短暂 FOIT，用 block 或 fallback；正文与 UI 字体优先 swap 保障可读性；图标字体建议内联为 SVG 或使用 block 并预加载。验证时，可在 Chrome DevTools 的 Performance 面板观察字体请求与文本绘制的时序，并利用 Lighthouse 检查 LCP 与 CLS 变化。对于多语言站点，还需考虑子集化（unicode-range）以缩小字体体积，让 swap 的替换窗口更短。最终策略应写入设计系统文档，避免不同页面随意取值导致体验不一致。</p>
+<h2>参考资源</h2>
+<ul><li>[www.atasozlerianlamlari.com  的相关页面与资源，可作为延伸阅读。](http://www.atasozlerianlamlari.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.impactmagical.com  的相关页面与资源，可作为延伸阅读。](https://www.impactmagical.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.bjwunkqs.com  的相关页面与资源，可作为延伸阅读。](https://www.bjwunkqs.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.pvmldata.com  的相关页面与资源，可作为延伸阅读。](http://www.pvmldata.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.berkshireautorecovery.com  的相关页面与资源，可作为延伸阅读。](http://www.berkshireautorecovery.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
