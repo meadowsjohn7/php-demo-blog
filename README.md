@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [自动化测试 Selenium 脚本：SEO 策略](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-165909-fphc.html) — 2026-11-06
+- [网页图片 WebP 格式转换：安全规范](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-171520-hml1.html) — 2026-11-06
 
 ### 参考资源
 
-- [www.cpgea.com  的相关页面与资源，可作为延伸阅读。](http://www.cpgea.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.tatotato.com  的相关页面与资源，可作为延伸阅读。](http://www.tatotato.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.zenithsco.com  的相关页面与资源，可作为延伸阅读。](https://www.zenithsco.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.ryosi.com  的相关页面与资源，可作为延伸阅读。](http://www.ryosi.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.dketonea.com  的相关页面与资源，可作为延伸阅读。](https://www.dketonea.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.beta-ggpoker.com  的相关页面与资源，可作为延伸阅读。](https://www.beta-ggpoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.roseland-barnes.com  的相关页面与资源，可作为延伸阅读。](https://www.roseland-barnes.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.html-ggpoker.com  的相关页面与资源，可作为延伸阅读。](https://www.html-ggpoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.jobtitlesai.com  的相关页面与资源，可作为延伸阅读。](http://www.jobtitlesai.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.online-xinai.com  的相关页面与资源，可作为延伸阅读。](https://www.online-xinai.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
