@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [URL 扁平化设计规范：SEO 策略](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-190041-t63e.html) — 2026-11-06
+- [Chrome DevTools 性能调试：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-191756-hxvq.html) — 2026-11-06
 
 ### 参考资源
 
-- [www.play-qqsports.com  的相关页面与资源，可作为延伸阅读。](https://www.play-qqsports.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.shanghaispine.com  的相关页面与资源，可作为延伸阅读。](https://www.shanghaispine.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.cupofhopecafe.com  的相关页面与资源，可作为延伸阅读。](http://www.cupofhopecafe.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.revistapedagogiaufmt.com  的相关页面与资源，可作为延伸阅读。](http://www.revistapedagogiaufmt.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.zsh784.com  的相关页面与资源，可作为延伸阅读。](https://www.zsh784.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.despertarespsicologia.com  的相关页面与资源，可作为延伸阅读。](https://www.despertarespsicologia.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.mmeritpluss.com  的相关页面与资源，可作为延伸阅读。](http://www.mmeritpluss.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.papuyar.com  的相关页面与资源，可作为延伸阅读。](http://www.papuyar.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.xinhanyuwangxiao.com  的相关页面与资源，可作为延伸阅读。](http://www.xinhanyuwangxiao.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.afpailescedres.com  的相关页面与资源，可作为延伸阅读。](http://www.afpailescedres.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
