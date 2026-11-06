@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [域名权重 DA/PA 提升：优化方案](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-073806-8p9r.html) — 2026-11-07
+- [跨域资源共享 CORS 配置：安全规范](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-075128-tydd.html) — 2026-11-07
 
 ### 参考资源
 
-- [www.csxino.com  的相关页面与资源，可作为延伸阅读。](http://www.csxino.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.artsotnya.com  的相关页面与资源，可作为延伸阅读。](http://www.artsotnya.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.newspaperln.com  的相关页面与资源，可作为延伸阅读。](https://www.newspaperln.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.cy2014.com  的相关页面与资源，可作为延伸阅读。](http://www.cy2014.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.peterdesign2511.com  的相关页面与资源，可作为延伸阅读。](http://www.peterdesign2511.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.pa-farm.com  的相关页面与资源，可作为延伸阅读。](http://www.pa-farm.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.tripupdater.com  的相关页面与资源，可作为延伸阅读。](http://www.tripupdater.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.xjwywjx.com  的相关页面与资源，可作为延伸阅读。](https://www.xjwywjx.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.bjwunkqs.com  的相关页面与资源，可作为延伸阅读。](https://www.bjwunkqs.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.alibba-inc.com  的相关页面与资源，可作为延伸阅读。](http://www.alibba-inc.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
