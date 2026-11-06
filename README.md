@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [网站死链 301 重定向：技术架构](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-025719-ufw6.html) — 2026-11-07
+- [Nginx 伪静态规则编写：深度解析](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-031622-hi7l.html) — 2026-11-07
 
 ### 参考资源
 
-- [www.jmswjdwxfwb.com  的相关页面与资源，可作为延伸阅读。](http://www.jmswjdwxfwb.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.my-xinaisports.com  的相关页面与资源，可作为延伸阅读。](https://www.my-xinaisports.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.interstatedragways.com  的相关页面与资源，可作为延伸阅读。](http://www.interstatedragways.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.zone-qiesports.com  的相关页面与资源，可作为延伸阅读。](https://www.zone-qiesports.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.fade-2-black.com  的相关页面与资源，可作为延伸阅读。](https://www.fade-2-black.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.chmielinska.com  的相关页面与资源，可作为延伸阅读。](http://www.chmielinska.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.ad4xlive.com  的相关页面与资源，可作为延伸阅读。](http://www.ad4xlive.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.cloud-dongqiudi.com  的相关页面与资源，可作为延伸阅读。](https://www.cloud-dongqiudi.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.ossucci.com  的相关页面与资源，可作为延伸阅读。](http://www.ossucci.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.shuhuachina.com  的相关页面与资源，可作为延伸阅读。](http://www.shuhuachina.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
