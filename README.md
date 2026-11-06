@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [frp 内网穿透实战：安全规范](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-214311-0cmm.html) — 2026-11-06
+- [链接提交工具对比：安全规范](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-220148-2ux6.html) — 2026-11-06
 
 ### 参考资源
 
-- [www.tjdygk.com  的相关页面与资源，可作为延伸阅读。](http://www.tjdygk.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.xlkbltm.com  的相关页面与资源，可作为延伸阅读。](http://www.xlkbltm.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.cihailu.com  的相关页面与资源，可作为延伸阅读。](http://www.cihailu.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.thriventfellows.com  的相关页面与资源，可作为延伸阅读。](http://www.thriventfellows.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.twhitedental.com  的相关页面与资源，可作为延伸阅读。](http://www.twhitedental.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.365worldcd.com  的相关页面与资源，可作为延伸阅读。](http://www.365worldcd.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.butlercpj.com  的相关页面与资源，可作为延伸阅读。](http://www.butlercpj.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.turfdxb.com  的相关页面与资源，可作为延伸阅读。](http://www.turfdxb.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.lagenceimmobilieremaroc.com  的相关页面与资源，可作为延伸阅读。](http://www.lagenceimmobilieremaroc.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.jeffersoncheng.com  的相关页面与资源，可作为延伸阅读。](http://www.jeffersoncheng.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
