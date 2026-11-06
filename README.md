@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [frp 内网穿透实战：深度解析](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-174831-tfz8.html) — 2026-11-06
+- [语义化 HTML5 标签：安全规范](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-180807-oq69.html) — 2026-11-06
 
 ### 参考资源
 
-- [www.wfhxgc.com  的相关页面与资源，可作为延伸阅读。](https://www.wfhxgc.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.nonton08.com  的相关页面与资源，可作为延伸阅读。](http://www.nonton08.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.rotkx.net 的相关页面与资源，可作为延伸阅读。](http://www.rotkx.net 的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.kmthjx.com  的相关页面与资源，可作为延伸阅读。](http://www.kmthjx.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.fisiomedicamogliano.com  的相关页面与资源，可作为延伸阅读。](http://www.fisiomedicamogliano.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.wheelsandsneakers.com  的相关页面与资源，可作为延伸阅读。](http://www.wheelsandsneakers.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.wxvqgy.com  的相关页面与资源，可作为延伸阅读。](http://www.wxvqgy.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.0920720506.com  的相关页面与资源，可作为延伸阅读。](http://www.0920720506.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.internetlet.com  的相关页面与资源，可作为延伸阅读。](http://www.internetlet.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.cavusogluendustriyel.com  的相关页面与资源，可作为延伸阅读。](https://www.cavusogluendustriyel.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
