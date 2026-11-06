@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [Chrome DevTools 性能调试：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-191756-hxvq.html) — 2026-11-06
+- [Redis 集群高可用架构：安全规范](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-193302-qgyi.html) — 2026-11-06
 
 ### 参考资源
 
-- [www.despertarespsicologia.com  的相关页面与资源，可作为延伸阅读。](https://www.despertarespsicologia.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.mmeritpluss.com  的相关页面与资源，可作为延伸阅读。](http://www.mmeritpluss.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.papuyar.com  的相关页面与资源，可作为延伸阅读。](http://www.papuyar.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.xinhanyuwangxiao.com  的相关页面与资源，可作为延伸阅读。](http://www.xinhanyuwangxiao.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.afpailescedres.com  的相关页面与资源，可作为延伸阅读。](http://www.afpailescedres.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.www-qqsports.com  的相关页面与资源，可作为延伸阅读。](https://www.www-qqsports.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.my-5eplay.com  的相关页面与资源，可作为延伸阅读。](https://www.my-5eplay.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.canary-food.com  的相关页面与资源，可作为延伸阅读。](http://www.canary-food.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.ynltzx.com  的相关页面与资源，可作为延伸阅读。](http://www.ynltzx.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.zn-xinqiusports.com  的相关页面与资源，可作为延伸阅读。](https://www.zn-xinqiusports.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
