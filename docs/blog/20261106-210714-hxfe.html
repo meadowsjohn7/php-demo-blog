@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AC 自动机多模式匹配：优化方案 - PHP Demo Blog</title>
+<meta name="description" content="针对 AC 自动机在 PHP 中的内存与性能瓶颈，提出字典序压缩、失败指针缓存与按需构建等优化方案，并结合路由与 JSON API 场景给出可落地的实现思路。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>AC 自动机多模式匹配：优化方案</h1>
+<div class="meta">2026-11-06 · PHP Demo Blog <span class="tag">#AC自动机</span> <span class="tag">#多模式匹配</span> <span class="tag">#PHP优化</span> <span class="tag">#路由</span> <span class="tag">#JSON API</span></div>
+<div class="summary">针对 AC 自动机在 PHP 中的内存与性能瓶颈，提出字典序压缩、失败指针缓存与按需构建等优化方案，并结合路由与 JSON API 场景给出可落地的实现思路。</div>
+<h2>为什么 AC 自动机在 PHP 里需要优化</h2>
+<p>AC 自动机是处理多模式匹配的经典结构，但在 PHP 这类解释型语言中，朴素的节点数组实现很容易遇到内存膨胀和构建耗时的问题。每个节点若用关联数组保存字符到子节点的映射，在模式数量达到数千时，内存占用会线性增长，且失败指针的逐层回溯在每次匹配时都可能产生额外开销。对于 PHP Demo Blog 这类轻量路由与 JSON API 项目，模式集通常来自路由规则或关键词过滤表，规模可控但要求低延迟，因此优化应围绕“减少节点数量”和“加速失败跳转”展开。</p>
+<h2>字典序压缩与稀疏存储</h2>
+<p>第一步优化是压缩 trie 的存储结构。将每个节点的子节点映射从关联数组改为两个平行数组：一个保存字符（或字符区间），另一个保存子节点索引。构建完成后按字符排序，匹配时用二分查找替代哈希查找。对于字符集较小的场景（如仅 ASCII 路由片段），可以进一步使用 256 长度的定长数组，用空间换时间，避免哈希冲突。更激进的做法是采用双数组 trie（Double-Array Trie）思想，将节点转移压缩为 base 与 check 两个整型数组，使内存占用降低一个数量级，同时保持 O(1) 的转移速度。PHP 中整型数组的开销远低于嵌套关联数组，这一改动通常能带来数倍的内存节省。</p>
+<h2>失败指针的缓存与批量构建</h2>
+<p>失败指针是 AC 自动机的核心，也是匹配阶段的主要开销来源。朴素实现中，每次失配都要沿 fail 链回溯，最坏情况退化为 O(模式长度)。优化方式是在构建阶段为每个节点预计算“完整转移表”：对于根节点缺失的字符，直接指向根；对于其他节点，若某字符无子节点，则将其转移指向 fail 节点的对应转移。这样匹配时无需循环回溯，每次字符跳转都是常数时间。构建时采用 BFS 逐层填充，利用父节点的转移表推导子节点，整体复杂度保持线性。在 PHP 中，这意味着匹配主循环只包含数组索引和比较，避免函数调用与循环嵌套，对高并发 API 请求尤为关键。</p>
+<h2>按需构建与路由场景的取舍</h2>
+<p>并非所有场景都需要在每次请求时重建自动机。对于路由匹配，模式集在部署后基本固定，可以将构建结果序列化后缓存到 APCu 或文件，请求时直接反序列化使用。若模式集较大，可采用分片构建：按首字符将模式分组，每组独立构建小型自动机，匹配时先根据首字符选择分片，再进入对应自动机。这样单次构建的峰值内存更低，也便于增量更新。在 JSON API 的关键词过滤场景中，还可以结合惰性求值，仅在请求体包含待匹配字段时才加载自动机，避免无谓开销。需要强调的是，优化应基于实际压测数据，先定位是构建耗时还是匹配耗时占主导，再选择压缩存储或预计算转移表，避免过度设计。</p>
+<h2>小结</h2>
+<p>AC 自动机的优化本质是在内存、构建时间与匹配速度之间做权衡。字典序压缩与双数组存储降低内存，预计算完整转移表消除匹配回溯，按需构建与缓存则减少重复开销。在 PHP 项目中，优先使用整型数组替代嵌套关联数组，并用 BFS 一次性构建失败指针，通常就能获得可观的收益。将这些方案落地到路由与关键词过滤模块后，多模式匹配的延迟可以稳定在微秒级，满足轻量 API 的实时性要求。</p>
+<h2>参考资源</h2>
+<ul><li>[www.lincolnchickenfillet.com  的相关页面与资源，可作为延伸阅读。](http://www.lincolnchickenfillet.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.feilongbian.com  的相关页面与资源，可作为延伸阅读。](http://www.feilongbian.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.alibba-inc.com  的相关页面与资源，可作为延伸阅读。](http://www.alibba-inc.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.berkshireautorecovery.com  的相关页面与资源，可作为延伸阅读。](http://www.berkshireautorecovery.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.bjwunkqs.com  的相关页面与资源，可作为延伸阅读。](https://www.bjwunkqs.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
