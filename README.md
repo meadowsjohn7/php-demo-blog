@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [GPU 加速前端动画：深度解析](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-152540-hpl6.html) — 2026-11-06
+- [SEO 内链金字塔构建：完整手册](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-153903-lszo.html) — 2026-11-06
 
 ### 参考资源
 
-- [www.guyzapp.com  的相关页面与资源，可作为延伸阅读。](http://www.guyzapp.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.jackhaggertyarchitect.com  的相关页面与资源，可作为延伸阅读。](http://www.jackhaggertyarchitect.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.gnosishypnosis.com  的相关页面与资源，可作为延伸阅读。](https://www.gnosishypnosis.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.kocham-morze.com  的相关页面与资源，可作为延伸阅读。](http://www.kocham-morze.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.designsinjewelryinc.com  的相关页面与资源，可作为延伸阅读。](http://www.designsinjewelryinc.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.my-xinaisports.com  的相关页面与资源，可作为延伸阅读。](https://www.my-xinaisports.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.interstatedragways.com  的相关页面与资源，可作为延伸阅读。](http://www.interstatedragways.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.theeco-chic.com  的相关页面与资源，可作为延伸阅读。](http://www.theeco-chic.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.2525ok.com  的相关页面与资源，可作为延伸阅读。](http://www.2525ok.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.jmswjdwxfwb.com  的相关页面与资源，可作为延伸阅读。](http://www.jmswjdwxfwb.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
