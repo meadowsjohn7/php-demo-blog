@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [接口签名加密机制：SEO 策略](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-131743-a8aw.html) — 2026-11-06
+- [translate3d 硬件加速原理：深度解析](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-133300-xsem.html) — 2026-11-06
 
 ### 参考资源
 
-- [www.zhhg-leyu.com  的相关页面与资源，可作为延伸阅读。](http://www.zhhg-leyu.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.porterandplum.com  的相关页面与资源，可作为延伸阅读。](http://www.porterandplum.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.play-wepoker.com  的相关页面与资源，可作为延伸阅读。](https://www.play-wepoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.bud-max.com  的相关页面与资源，可作为延伸阅读。](https://www.bud-max.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.medservintl.com  的相关页面与资源，可作为延伸阅读。](http://www.medservintl.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.maoyihaocai.com  的相关页面与资源，可作为延伸阅读。](http://www.maoyihaocai.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.lapkov.com  的相关页面与资源，可作为延伸阅读。](http://www.lapkov.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.siliconerubberparts.com  的相关页面与资源，可作为延伸阅读。](https://www.siliconerubberparts.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.xhpai.com  的相关页面与资源，可作为延伸阅读。](http://www.xhpai.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.zh-857zhibo.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-857zhibo.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
