@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [数据库索引优化策略：SEO 策略](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-231645-1b1a.html) — 2026-11-06
+- [跨域资源共享 CORS 配置：完整手册](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-232820-lgvx.html) — 2026-11-06
 
 ### 参考资源
 
-- [www.yakulog.com  的相关页面与资源，可作为延伸阅读。](http://www.yakulog.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.impacthubmedia.com  的相关页面与资源，可作为延伸阅读。](https://www.impacthubmedia.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.rwtracker.com  的相关页面与资源，可作为延伸阅读。](http://www.rwtracker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.zjdswl.com  的相关页面与资源，可作为延伸阅读。](http://www.zjdswl.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.tocopoco.com  的相关页面与资源，可作为延伸阅读。](http://www.tocopoco.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.melicbebe.com  的相关页面与资源，可作为延伸阅读。](http://www.melicbebe.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.alzidan.com  的相关页面与资源，可作为延伸阅读。](http://www.alzidan.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.qyhxsq.com  的相关页面与资源，可作为延伸阅读。](https://www.qyhxsq.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.about-ggpoker.com  的相关页面与资源，可作为延伸阅读。](https://www.about-ggpoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.saturnorganics.com  的相关页面与资源，可作为延伸阅读。](http://www.saturnorganics.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
