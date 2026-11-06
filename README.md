@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [Google Core Web Vitals 调优：技术架构](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-003106-u19c.html) — 2026-11-07
+- [HTTP/3 协议特性：完整手册](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-004558-q888.html) — 2026-11-07
 
 ### 参考资源
 
-- [www.wasabiwilshire.com  的相关页面与资源，可作为延伸阅读。](http://www.wasabiwilshire.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.zh-hans-wpk.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-hans-wpk.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.michaelskovgaard.com  的相关页面与资源，可作为延伸阅读。](https://www.michaelskovgaard.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.intcfos.com  的相关页面与资源，可作为延伸阅读。](http://www.intcfos.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.zh-home-lucky10.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-home-lucky10.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.kurtbergt.com  的相关页面与资源，可作为延伸阅读。](http://www.kurtbergt.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.sanctuarybirthing.com  的相关页面与资源，可作为延伸阅读。](http://www.sanctuarybirthing.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.redyutub.com  的相关页面与资源，可作为延伸阅读。](http://www.redyutub.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.gzyunhai.com  的相关页面与资源，可作为延伸阅读。](http://www.gzyunhai.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.ifromchina.com  的相关页面与资源，可作为延伸阅读。](https://www.ifromchina.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
