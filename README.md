@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [网站域名权重迁移：完整手册](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-194959-849g.html) — 2026-11-06
+- [蜘蛛池快速收录原理：技术架构](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-200249-4xus.html) — 2026-11-06
 
 ### 参考资源
 
-- [www.zh-cn-ao10.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-cn-ao10.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.johnmeldrum.com  的相关页面与资源，可作为延伸阅读。](http://www.johnmeldrum.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.taends.com  的相关页面与资源，可作为延伸阅读。](http://www.taends.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.zh-hans-lucky10.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-hans-lucky10.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.drugshb.com  的相关页面与资源，可作为延伸阅读。](https://www.drugshb.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.hematqiuq.com  的相关页面与资源，可作为延伸阅读。](http://www.hematqiuq.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.readingswithgail.com  的相关页面与资源，可作为延伸阅读。](http://www.readingswithgail.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.tomsmithstudio.com  的相关页面与资源，可作为延伸阅读。](http://www.tomsmithstudio.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.libertysoulfood.com  的相关页面与资源，可作为延伸阅读。](http://www.libertysoulfood.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.midtowntapandtearoom.com  的相关页面与资源，可作为延伸阅读。](http://www.midtowntapandtearoom.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
