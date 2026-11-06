@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [Chrome DevTools 性能调试：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-000206-01as.html) — 2026-11-07
+- [Trie 树高性能搜索：安全规范](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-001424-5xuj.html) — 2026-11-07
 
 ### 参考资源
 
-- [www.nikeairmax2019.com  的相关页面与资源，可作为延伸阅读。](http://www.nikeairmax2019.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.blackshearplace.com  的相关页面与资源，可作为延伸阅读。](http://www.blackshearplace.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.lemesuriers.com  的相关页面与资源，可作为延伸阅读。](https://www.lemesuriers.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.bvwlawyers.com  的相关页面与资源，可作为延伸阅读。](http://www.bvwlawyers.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.bosai1.com  的相关页面与资源，可作为延伸阅读。](https://www.bosai1.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.ftb-wiki.com  的相关页面与资源，可作为延伸阅读。](http://www.ftb-wiki.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.damaixs.com  的相关页面与资源，可作为延伸阅读。](http://www.damaixs.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.custom-vacations.com  的相关页面与资源，可作为延伸阅读。](https://www.custom-vacations.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.visualstudiotalkshow.com  的相关页面与资源，可作为延伸阅读。](http://www.visualstudiotalkshow.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.tianjx.com  的相关页面与资源，可作为延伸阅读。](http://www.tianjx.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
