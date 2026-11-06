@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [接口签名加密机制：优化方案](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-081631-sfb3.html) — 2026-11-06
+- [URL 扁平化设计规范：SEO 策略](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-082943-tu91.html) — 2026-11-06
 
 ### 参考资源
 
-- [www.newspaperln.com  的相关页面与资源，可作为延伸阅读。](https://www.newspaperln.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.synergie-creative.com  的相关页面与资源，可作为延伸阅读。](http://www.synergie-creative.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.artsotnya.com  的相关页面与资源，可作为延伸阅读。](http://www.artsotnya.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.al-hana.com  的相关页面与资源，可作为延伸阅读。](http://www.al-hana.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.clzstore.com  的相关页面与资源，可作为延伸阅读。](http://www.clzstore.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.csxino.com  的相关页面与资源，可作为延伸阅读。](http://www.csxino.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.tripupdater.com  的相关页面与资源，可作为延伸阅读。](http://www.tripupdater.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.peterdesign2511.com  的相关页面与资源，可作为延伸阅读。](http://www.peterdesign2511.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.cafe-kurage.com  的相关页面与资源，可作为延伸阅读。](https://www.cafe-kurage.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.pa-farm.com  的相关页面与资源，可作为延伸阅读。](http://www.pa-farm.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
