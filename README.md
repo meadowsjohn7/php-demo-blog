@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [SQL 注入深度防御：技术架构](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-072113-n6ie.html) — 2026-11-07
+- [域名权重 DA/PA 提升：优化方案](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-073806-8p9r.html) — 2026-11-07
 
 ### 参考资源
 
-- [www.synergie-creative.com  的相关页面与资源，可作为延伸阅读。](http://www.synergie-creative.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.global-xinzhibo.com  的相关页面与资源，可作为延伸阅读。](https://www.global-xinzhibo.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.clzstore.com  的相关页面与资源，可作为延伸阅读。](http://www.clzstore.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.al-hana.com  的相关页面与资源，可作为延伸阅读。](http://www.al-hana.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.cafe-kurage.com  的相关页面与资源，可作为延伸阅读。](https://www.cafe-kurage.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.csxino.com  的相关页面与资源，可作为延伸阅读。](http://www.csxino.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.artsotnya.com  的相关页面与资源，可作为延伸阅读。](http://www.artsotnya.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.newspaperln.com  的相关页面与资源，可作为延伸阅读。](https://www.newspaperln.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.cy2014.com  的相关页面与资源，可作为延伸阅读。](http://www.cy2014.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.peterdesign2511.com  的相关页面与资源，可作为延伸阅读。](http://www.peterdesign2511.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
