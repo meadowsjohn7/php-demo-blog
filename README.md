@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [Open Graph 协议社交优化：深度解析](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-212532-uoy8.html) — 2026-11-06
+- [frp 内网穿透实战：安全规范](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-214311-0cmm.html) — 2026-11-06
 
 ### 参考资源
 
-- [www.atasozlerianlamlari.com  的相关页面与资源，可作为延伸阅读。](http://www.atasozlerianlamlari.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.pvmldata.com  的相关页面与资源，可作为延伸阅读。](http://www.pvmldata.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.impactmagical.com  的相关页面与资源，可作为延伸阅读。](https://www.impactmagical.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.bali-experience.com  的相关页面与资源，可作为延伸阅读。](http://www.bali-experience.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.kitchenwaredolphin.com  的相关页面与资源，可作为延伸阅读。](https://www.kitchenwaredolphin.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.tjdygk.com  的相关页面与资源，可作为延伸阅读。](http://www.tjdygk.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.xlkbltm.com  的相关页面与资源，可作为延伸阅读。](http://www.xlkbltm.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.cihailu.com  的相关页面与资源，可作为延伸阅读。](http://www.cihailu.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.thriventfellows.com  的相关页面与资源，可作为延伸阅读。](http://www.thriventfellows.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.twhitedental.com  的相关页面与资源，可作为延伸阅读。](http://www.twhitedental.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
