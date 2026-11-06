@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [Redis 集群高可用架构：SEO 策略](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-064728-ocas.html) — 2026-11-07
+- [React 性能优化实战：技术架构](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-070737-thdy.html) — 2026-11-07
 
 ### 参考资源
 
-- [www.johnmeldrum.com  的相关页面与资源，可作为延伸阅读。](http://www.johnmeldrum.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.zh-cn-ao10.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-cn-ao10.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.taends.com  的相关页面与资源，可作为延伸阅读。](http://www.taends.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.midtowntapandtearoom.com  的相关页面与资源，可作为延伸阅读。](http://www.midtowntapandtearoom.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.tomsmithstudio.com  的相关页面与资源，可作为延伸阅读。](http://www.tomsmithstudio.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.readingswithgail.com  的相关页面与资源，可作为延伸阅读。](http://www.readingswithgail.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.libertysoulfood.com  的相关页面与资源，可作为延伸阅读。](http://www.libertysoulfood.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.hematqiuq.com  的相关页面与资源，可作为延伸阅读。](http://www.hematqiuq.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.theslumstudio.com  的相关页面与资源，可作为延伸阅读。](http://www.theslumstudio.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.robertdanielharris.com  的相关页面与资源，可作为延伸阅读。](https://www.robertdanielharris.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
