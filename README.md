@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [HSTS 强制安全传输：完整手册](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-202139-pjd7.html) — 2026-11-06
+- [TLS 1.3 安全协议升级：深度解析](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-203327-mkry.html) — 2026-11-06
 
 ### 参考资源
 
-- [www.theslumstudio.com  的相关页面与资源，可作为延伸阅读。](http://www.theslumstudio.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.global-xinzhibo.com  的相关页面与资源，可作为延伸阅读。](https://www.global-xinzhibo.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.robertdanielharris.com  的相关页面与资源，可作为延伸阅读。](https://www.robertdanielharris.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.synergie-creative.com  的相关页面与资源，可作为延伸阅读。](http://www.synergie-creative.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.clzstore.com  的相关页面与资源，可作为延伸阅读。](http://www.clzstore.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.artsotnya.com  的相关页面与资源，可作为延伸阅读。](http://www.artsotnya.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.newspaperln.com  的相关页面与资源，可作为延伸阅读。](https://www.newspaperln.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.al-hana.com  的相关页面与资源，可作为延伸阅读。](http://www.al-hana.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.csxino.com  的相关页面与资源，可作为延伸阅读。](http://www.csxino.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.cafe-kurage.com  的相关页面与资源，可作为延伸阅读。](https://www.cafe-kurage.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
