@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [网页图片 WebP 格式转换：安全规范](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-171520-hml1.html) — 2026-11-06
+- [SEO 伪原创句子混淆算法：安全规范](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-172926-roul.html) — 2026-11-06
 
 ### 参考资源
 
-- [www.beta-ggpoker.com  的相关页面与资源，可作为延伸阅读。](https://www.beta-ggpoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.roseland-barnes.com  的相关页面与资源，可作为延伸阅读。](https://www.roseland-barnes.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.html-ggpoker.com  的相关页面与资源，可作为延伸阅读。](https://www.html-ggpoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.jobtitlesai.com  的相关页面与资源，可作为延伸阅读。](http://www.jobtitlesai.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.online-xinai.com  的相关页面与资源，可作为延伸阅读。](https://www.online-xinai.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.epiclax.com  的相关页面与资源，可作为延伸阅读。](http://www.epiclax.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.hengshuojixie.com  的相关页面与资源，可作为延伸阅读。](https://www.hengshuojixie.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.minglika.com  的相关页面与资源，可作为延伸阅读。](http://www.minglika.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.zh-an-ggpoker.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-an-ggpoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.tangonuestro.com  的相关页面与资源，可作为延伸阅读。](http://www.tangonuestro.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
