@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [GitHub Actions CI/CD 流水线：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-080610-bctv.html) — 2026-11-06
+- [接口签名加密机制：优化方案](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-081631-sfb3.html) — 2026-11-06
 
 ### 参考资源
 
-- [www.robertdanielharris.com  的相关页面与资源，可作为延伸阅读。](https://www.robertdanielharris.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.libertysoulfood.com  的相关页面与资源，可作为延伸阅读。](http://www.libertysoulfood.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.midtowntapandtearoom.com  的相关页面与资源，可作为延伸阅读。](http://www.midtowntapandtearoom.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.theslumstudio.com  的相关页面与资源，可作为延伸阅读。](http://www.theslumstudio.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.global-xinzhibo.com  的相关页面与资源，可作为延伸阅读。](https://www.global-xinzhibo.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.newspaperln.com  的相关页面与资源，可作为延伸阅读。](https://www.newspaperln.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.synergie-creative.com  的相关页面与资源，可作为延伸阅读。](http://www.synergie-creative.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.artsotnya.com  的相关页面与资源，可作为延伸阅读。](http://www.artsotnya.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.al-hana.com  的相关页面与资源，可作为延伸阅读。](http://www.al-hana.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.clzstore.com  的相关页面与资源，可作为延伸阅读。](http://www.clzstore.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
