@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [虚拟列表处理大数据渲染：安全规范](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-022734-gej5.html) — 2026-11-07
+- [OAuth 2.0 授权流程解析：优化方案](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-024138-6sho.html) — 2026-11-07
 
 ### 参考资源
 
-- [www.jarptica.com  的相关页面与资源，可作为延伸阅读。](https://www.jarptica.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.zh-nk-ggpoker.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-nk-ggpoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.wallvases.com  的相关页面与资源，可作为延伸阅读。](https://www.wallvases.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.gnosishypnosis.com  的相关页面与资源，可作为延伸阅读。](https://www.gnosishypnosis.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.jackhaggertyarchitect.com  的相关页面与资源，可作为延伸阅读。](http://www.jackhaggertyarchitect.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.designsinjewelryinc.com  的相关页面与资源，可作为延伸阅读。](http://www.designsinjewelryinc.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.guyzapp.com  的相关页面与资源，可作为延伸阅读。](http://www.guyzapp.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.kocham-morze.com  的相关页面与资源，可作为延伸阅读。](http://www.kocham-morze.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.2525ok.com  的相关页面与资源，可作为延伸阅读。](http://www.2525ok.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.theeco-chic.com  的相关页面与资源，可作为延伸阅读。](http://www.theeco-chic.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
