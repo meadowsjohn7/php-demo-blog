@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>数据库死锁排查与解决：底层原理 - PHP Demo Blog</title>
+<meta name="description" content="从锁等待图与事务隔离级别出发，解析死锁成因与排查方法，并给出 PHP 项目中的预防与解决策略。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>数据库死锁排查与解决：底层原理</h1>
+<div class="meta">2026-11-06 · PHP Demo Blog <span class="tag">#数据库死锁</span> <span class="tag">#InnoDB</span> <span class="tag">#事务隔离</span> <span class="tag">#索引优化</span> <span class="tag">#PHP</span></div>
+<div class="summary">从锁等待图与事务隔离级别出发，解析死锁成因与排查方法，并给出 PHP 项目中的预防与解决策略。</div>
+<h2>死锁的本质：等待图成环</h2>
+<p>在 InnoDB 中，死锁并非偶发故障，而是并发事务对锁资源竞争到极致时的必然产物。当两个或多个事务各自持有对方所需的锁，并等待对方释放时，就形成了等待图上的环。InnoDB 通过 `innodb_deadlock_detect` 周期性地检测等待图，一旦发现环便主动回滚代价较小的事务，并通过 `SHOW ENGINE INNODB STATUS` 输出 LATEST DETECTED DEADLOCK 段落。理解这一点，排查时就不应只盯着报错语句，而要还原事务加锁顺序与索引访问路径。</p>
+<h2>常见成因：索引缺失与顺序颠倒</h2>
+<p>实际项目里，死锁高发场景集中在三类。第一是缺少合适索引导致全表扫描，行锁退化为间隙锁甚至表级锁，锁范围被放大。第二是多个事务以不同顺序更新同一批行，例如订单与库存互相等待。第三是长事务持有锁时间过长，配合高并发短事务形成交错。以 PHP Demo Blog 的 JSON API 为例，若一次请求内先更新文章计数再写评论，而另一请求顺序相反，就很容易在 `UPDATE ... WHERE id IN (...)` 上形成环。采用原生 Db::name() 操作配合合理的索引设计，能避开 ORM 模型序列化的性能陷阱，同时让锁的粒度更可控。</p>
+<h2>排查手段：从日志到锁等待视图</h2>
+<p>第一步是打开死锁日志，在 `my.cnf` 中确保 `innodb_print_all_deadlocks=ON`，将每次死锁写入错误日志。第二步用 `performance_schema.data_locks` 与 `data_lock_waits` 观察当前锁等待关系，定位阻塞者。第三步结合 `SHOW PROCESSLIST` 查看长事务，必要时在业务层记录事务开始与提交时间戳。对于 PHP 侧，可在路由中间件中统一包裹事务，并在捕获 `PDOException` 时判断错误码 1213，记录 SQL 与参数，便于复现。</p>
+<h2>解决策略：缩短事务与固定顺序</h2>
+<p>解决死锁的核心是缩小锁范围、缩短持锁时间、统一加锁顺序。具体做法包括：为 WHERE 条件补全联合索引，避免间隙锁扩散；将大事务拆分为小事务，先做查询再做更新；对同一批资源按主键升序处理；使用 `SELECT ... FOR UPDATE` 时明确命中索引；在高并发写入场景下引入乐观锁版本号或 Redis 分布式锁做前置串行化。此外，应用层应具备重试机制，对 1213 错误做有限次退避重试。持续的技术迭代与合规性改造，是我们在复杂环境下维持系统生命周期的必经之路。</p>
+<h2>小结</h2>
+<p>死锁无法被彻底消灭，但可以被预测和收敛。把锁日志当作常规监控项，把索引与事务边界当作代码规范的一部分，才能在流量增长时保持数据库稳定。</p>
+<h2>参考资源</h2>
+<ul><li>[www.jmtkw.cn 的相关页面与资源，可作为延伸阅读。](https://www.jmtkw.cn 的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.gp12653.com  的相关页面与资源，可作为延伸阅读。](https://www.gp12653.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.rawrdaily.com  的相关页面与资源，可作为延伸阅读。](http://www.rawrdaily.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.kuiboto.com  的相关页面与资源，可作为延伸阅读。](http://www.kuiboto.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.yugiohdeckbuilder.com  的相关页面与资源，可作为延伸阅读。](http://www.yugiohdeckbuilder.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>

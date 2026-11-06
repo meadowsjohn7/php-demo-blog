@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [蜘蛛轨迹挖掘收录瓶颈：完整手册](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-162652-r8sw.html) — 2026-11-06
+- [数据库死锁排查与解决：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-164227-0sa8.html) — 2026-11-06
 
 ### 参考资源
 
-- [www.ntgaode.com  的相关页面与资源，可作为延伸阅读。](https://www.ntgaode.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.thekeziworks.com  的相关页面与资源，可作为延伸阅读。](http://www.thekeziworks.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.sakitraveller.com  的相关页面与资源，可作为延伸阅读。](http://www.sakitraveller.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.rs-films.com  的相关页面与资源，可作为延伸阅读。](http://www.rs-films.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.coopers-cars.com  的相关页面与资源，可作为延伸阅读。](http://www.coopers-cars.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.jmtkw.cn 的相关页面与资源，可作为延伸阅读。](https://www.jmtkw.cn 的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.gp12653.com  的相关页面与资源，可作为延伸阅读。](https://www.gp12653.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.rawrdaily.com  的相关页面与资源，可作为延伸阅读。](http://www.rawrdaily.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.kuiboto.com  的相关页面与资源，可作为延伸阅读。](http://www.kuiboto.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.yugiohdeckbuilder.com  的相关页面与资源，可作为延伸阅读。](http://www.yugiohdeckbuilder.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
