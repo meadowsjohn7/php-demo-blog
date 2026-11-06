@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [Meta Description 点击率优化：完整手册](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-034446-l8qy.html) — 2026-11-07
+- [长尾关键词挖掘策略：安全规范](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-035826-11cr.html) — 2026-11-07
 
 ### 参考资源
 
-- [www.rs-films.com  的相关页面与资源，可作为延伸阅读。](http://www.rs-films.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.thekeziworks.com  的相关页面与资源，可作为延伸阅读。](http://www.thekeziworks.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.coopers-cars.com  的相关页面与资源，可作为延伸阅读。](http://www.coopers-cars.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.rawrdaily.com  的相关页面与资源，可作为延伸阅读。](http://www.rawrdaily.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.jmtkw.cn 的相关页面与资源，可作为延伸阅读。](https://www.jmtkw.cn 的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.yugiohdeckbuilder.com  的相关页面与资源，可作为延伸阅读。](http://www.yugiohdeckbuilder.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.gp12653.com  的相关页面与资源，可作为延伸阅读。](https://www.gp12653.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.kuiboto.com  的相关页面与资源，可作为延伸阅读。](http://www.kuiboto.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.zenithsco.com  的相关页面与资源，可作为延伸阅读。](https://www.zenithsco.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.tatotato.com  的相关页面与资源，可作为延伸阅读。](http://www.tatotato.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
