@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [友情链接权重评估：完整手册](https://meadowsjohn7.github.io/php-demo-blog/blog/20261106-234328-gjzf.html) — 2026-11-06
+- [Chrome DevTools 性能调试：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-000206-01as.html) — 2026-11-07
 
 ### 参考资源
 
-- [www.letmesayiloveyou.com  的相关页面与资源，可作为延伸阅读。](https://www.letmesayiloveyou.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.ruitongchoang.com  的相关页面与资源，可作为延伸阅读。](http://www.ruitongchoang.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.thecorriganshow.com  的相关页面与资源，可作为延伸阅读。](http://www.thecorriganshow.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.haomada.com  的相关页面与资源，可作为延伸阅读。](https://www.haomada.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.bordeauxprint.com  的相关页面与资源，可作为延伸阅读。](https://www.bordeauxprint.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.nikeairmax2019.com  的相关页面与资源，可作为延伸阅读。](http://www.nikeairmax2019.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.blackshearplace.com  的相关页面与资源，可作为延伸阅读。](http://www.blackshearplace.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.lemesuriers.com  的相关页面与资源，可作为延伸阅读。](https://www.lemesuriers.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.bvwlawyers.com  的相关页面与资源，可作为延伸阅读。](http://www.bvwlawyers.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.bosai1.com  的相关页面与资源，可作为延伸阅读。](https://www.bosai1.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
