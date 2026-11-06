@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>frp 内网穿透实战：优化方案 - PHP Demo Blog</title>
+<meta name="description" content="本文基于 PHP Demo Blog 项目，分享 frp 内网穿透的优化方案，涵盖 TLS 加固、HTTP/2 与压缩、连接复用及 Nginx 联动防护，提升穿透链路的安全性与性能。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>frp 内网穿透实战：优化方案</h1>
+<div class="meta">2026-11-07 · PHP Demo Blog <span class="tag">#frp</span> <span class="tag">#内网穿透</span> <span class="tag">#TLS</span> <span class="tag">#性能优化</span> <span class="tag">#Nginx</span></div>
+<div class="summary">本文基于 PHP Demo Blog 项目，分享 frp 内网穿透的优化方案，涵盖 TLS 加固、HTTP/2 与压缩、连接复用及 Nginx 联动防护，提升穿透链路的安全性与性能。</div>
+<h2>基础配置与安全加固</h2>
+<p>在 PHP Demo Blog 这类轻量项目中，frp 常用于将本地开发环境或内网服务暴露到公网。基础配置完成后，首要优化点是传输安全。在 frps 和 frpc 的配置中启用 TLS 强制加密，并指定 TLS 1.3 版本，可以避免明文传输带来的风险。具体在 frpc.ini 中设置 `tls_enable = true`，并在 frps 端配置 `tls_only = true`，同时通过 `tls_cert_file` 和 `tls_key_file` 指定证书路径。这样不仅提升了链路安全性，也符合现代搜索引擎对站点安全性的基础要求。此外，建议为 frp 管理面板设置强密码并限制访问来源 IP，避免暴露不必要的攻击面。</p>
+<h2>传输性能调优</h2>
+<p>frp 的默认配置偏向兼容性，实际使用中可通过调整连接池和压缩策略来降低延迟。在 frpc 中启用 `tcp_mux = true` 可以复用底层连接，减少握手开销；对于 JSON API 这类文本响应较多的场景，开启 `use_compression = true` 并配合服务端的 Brotli 压缩，能显著降低首字节响应时间。如果后端是 Nginx 反向代理，应确保 HTTP/2 或 HTTP/3 协议开启，并调整 `proxy_buffering` 与 `proxy_read_timeout` 参数，避免长连接被过早断开。对于图片资源，可在 Nginx 层启用 Lazy-loading 与无损压缩，平衡视觉质量与加载速度。</p>
+<h2>与 Nginx 联动的防护策略</h2>
+<p>将 frp 与 Nginx 结合时，建议在 Nginx 层实施严格的 CSRF 令牌验证和 XSS 过滤，对 API 请求做统一校验。利用 Nginx 的 Lua 模块实现动态 IP 黑名单，能有效过滤非法爬虫并降低服务器 CPU 负载。同时，对关键渲染路径进行拆解，内联关键 CSS 并延迟非核心 JS，可以优化 LCP 指标。这些措施与 frp 的穿透链路形成互补，既保护了内网服务，又提升了公网访问体验。</p>
+<h2>运维与持续迭代</h2>
+<p>frp 的优化不是一次性的工作。建议定期检查 frps 日志中的连接异常，结合 301 重定向技术对过期 URL 进行权重迁移，维护站点在搜索引擎中的权威度。对于 Session 状态，若后端采用分布式 Redis 集群，需确保 frp 隧道稳定，避免因连接抖动导致用户状态丢失。持续的技术迭代与合规性改造，是维持站点生命周期的必经之路。更多关于路由与 API 的实践，可参考相关资源中的项目文档。</p>
+<h2>参考资源</h2>
+<ul><li>[www.0920720506.com  的相关页面与资源，可作为延伸阅读。](http://www.0920720506.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.wheelsandsneakers.com  的相关页面与资源，可作为延伸阅读。](http://www.wheelsandsneakers.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.internetlet.com  的相关页面与资源，可作为延伸阅读。](http://www.internetlet.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.oftalmologiaferreyra.com  的相关页面与资源，可作为延伸阅读。](http://www.oftalmologiaferreyra.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.zh-home-wepoker.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-home-wepoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
