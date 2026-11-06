@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [移动端适配媒体查询：实战指南](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-010327-isid.html) — 2026-11-07
+- [Fetch API 与跨域处理：深度解析](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-011502-q3dq.html) — 2026-11-07
 
 ### 参考资源
 
-- [www.linktogif.com  的相关页面与资源，可作为延伸阅读。](http://www.linktogif.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.shadesofbeautybodybar.com  的相关页面与资源，可作为延伸阅读。](http://www.shadesofbeautybodybar.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.acredyweb.com  的相关页面与资源，可作为延伸阅读。](http://www.acredyweb.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.karmelsarephta.com  的相关页面与资源，可作为延伸阅读。](http://www.karmelsarephta.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.beta-pggame.com  的相关页面与资源，可作为延伸阅读。](https://www.beta-pggame.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.tjsenyuan.com  的相关页面与资源，可作为延伸阅读。](http://www.tjsenyuan.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.dixiecrating.com  的相关页面与资源，可作为延伸阅读。](http://www.dixiecrating.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.otaclinictsukuba.com  的相关页面与资源，可作为延伸阅读。](http://www.otaclinictsukuba.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.yhkyjt.com  的相关页面与资源，可作为延伸阅读。](http://www.yhkyjt.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.zhhl-hthsports.com  的相关页面与资源，可作为延伸阅读。](http://www.zhhl-hthsports.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
