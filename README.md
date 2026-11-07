@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [Brotli 压缩算法应用：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-211455-h7dq.html) — 2026-11-07
+- [Keepalived 高可用集群：实战指南](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-213200-mtq3.html) — 2026-11-07
 
 ### 参考资源
 
-- [www.rwtracker.com  的相关页面与资源，可作为延伸阅读。](http://www.rwtracker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.app-zh-wepoker.com  的相关页面与资源，可作为延伸阅读。](https://www.app-zh-wepoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.zjdswl.com  的相关页面与资源，可作为延伸阅读。](http://www.zjdswl.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.saturnorganics.com  的相关页面与资源，可作为延伸阅读。](http://www.saturnorganics.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.yakulog.com  的相关页面与资源，可作为延伸阅读。](http://www.yakulog.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.tocopoco.com  的相关页面与资源，可作为延伸阅读。](http://www.tocopoco.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.impacthubmedia.com  的相关页面与资源，可作为延伸阅读。](https://www.impacthubmedia.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.melicbebe.com  的相关页面与资源，可作为延伸阅读。](http://www.melicbebe.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.letmesayiloveyou.com  的相关页面与资源，可作为延伸阅读。](https://www.letmesayiloveyou.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.alzidan.com  的相关页面与资源，可作为延伸阅读。](http://www.alzidan.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
