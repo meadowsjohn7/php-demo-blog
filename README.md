@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [链接提交工具对比：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-103312-aml5.html) — 2026-11-07
+- [数据库死锁排查与解决：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-104741-lero.html) — 2026-11-07
 
 ### 参考资源
 
-- [www.qyhxsq.com  的相关页面与资源，可作为延伸阅读。](https://www.qyhxsq.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.alzidan.com  的相关页面与资源，可作为延伸阅读。](http://www.alzidan.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.about-ggpoker.com  的相关页面与资源，可作为延伸阅读。](https://www.about-ggpoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.letmesayiloveyou.com  的相关页面与资源，可作为延伸阅读。](https://www.letmesayiloveyou.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.bordeauxprint.com  的相关页面与资源，可作为延伸阅读。](https://www.bordeauxprint.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.haomada.com  的相关页面与资源，可作为延伸阅读。](https://www.haomada.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.thecorriganshow.com  的相关页面与资源，可作为延伸阅读。](http://www.thecorriganshow.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.ruitongchoang.com  的相关页面与资源，可作为延伸阅读。](http://www.ruitongchoang.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.bosai1.com  的相关页面与资源，可作为延伸阅读。](https://www.bosai1.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.nikeairmax2019.com  的相关页面与资源，可作为延伸阅读。](http://www.nikeairmax2019.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 

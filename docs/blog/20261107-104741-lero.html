@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>数据库死锁排查与解决：底层原理 - PHP Demo Blog</title>
+<meta name="description" content="从行锁、间隙锁与等待图出发，解析死锁的底层成因，并给出 InnoDB 死锁日志的排查方法与加锁顺序优化等可执行方案。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>数据库死锁排查与解决：底层原理</h1>
+<div class="meta">2026-11-07 · PHP Demo Blog <span class="tag">#数据库</span> <span class="tag">#死锁</span> <span class="tag">#MySQL</span> <span class="tag">#InnoDB</span> <span class="tag">#并发控制</span></div>
+<div class="summary">从行锁、间隙锁与等待图出发，解析死锁的底层成因，并给出 InnoDB 死锁日志的排查方法与加锁顺序优化等可执行方案。</div>
+<h2>死锁的本质：等待图中的环路</h2>
+<p>死锁并不是数据库的“故障”，而是并发事务对锁资源竞争到极致后形成的环路等待。InnoDB 用等待图（wait-for graph）来描述事务间的依赖：当事务 A 持有记录 R1 的行锁并申请 R2，而事务 B 持有 R2 并申请 R1 时，等待图中出现环，InnoDB 的后台死锁检测线程会立即介入，选择代价较小的事务回滚。理解这一点是排查的前提——死锁一定意味着两个以上事务以相反顺序获取了同一组锁资源。</p>
+<h2>三种容易被忽视的锁</h2>
+<p>第一是行锁与索引的绑定关系。InnoDB 的行锁加在索引记录上，如果查询条件没有命中索引，扫描过程中的每一行都会被加锁，锁范围被放大，冲突概率随之上升。第二是间隙锁（gap lock）。在 REPEATABLE READ 隔离级别下，范围查询会锁住记录之间的“间隙”，两个事务分别向同一间隙插入数据时就会互相等待。第三是插入意向锁与唯一键冲突：并发插入相同唯一键时，后到的事务会等待前一个事务，若前一个事务又在等待其他资源，环路便形成。</p>
+<h2>用死锁日志定位现场</h2>
+<p>发生死锁后，执行 SHOW ENGINE INNODB STATUS，关注 LATEST DETECTED DEADLOCK 段落。日志会给出两个事务的完整信息：事务 ID、正在执行的 SQL、持有的锁（HOLDS THE LOCK）、等待的锁（WAITING FOR THIS LOCK），以及最终被回滚的事务。排查时按以下顺序阅读：先看两个事务的 SQL 是否操作同一张表、同一批索引记录；再看锁的类型是行锁还是间隙锁；最后比对加锁顺序是否相反。把日志中的 SQL 与业务代码对应起来，往往能直接定位到某个未加索引的更新语句或批量操作。</p>
+<h2>解决与预防：从加锁顺序到重试机制</h2>
+<p>最有效的办法是统一加锁顺序。例如批量更新时先按主键排序再逐条执行，避免两个事务以相反顺序锁定多行。其次，为高频查询条件补充合适的索引，把范围锁收敛为精确的行锁；在允许的业务场景下，将隔离级别调整为 READ COMMITTED 可减少间隙锁带来的冲突。此外，控制事务粒度，避免在事务内执行远程调用或耗时操作，缩短锁持有时间。最后，在应用层为死锁错误（错误码 1213）加入有限次数的重试与退避，把偶发冲突消化在业务代码里，而不是让它变成用户可见的失败。</p>
+<h2>小结</h2>
+<p>死锁排查的核心是“读日志、找环路、调顺序”。底层原理并不复杂，难的是把锁的行为与具体的 SQL、索引和事务边界对应起来。把加锁顺序、索引设计和事务粒度这三件事做扎实，绝大多数死锁都能在发生前被规避。</p>
+<h2>参考资源</h2>
+<ul><li>[www.haomada.com  的相关页面与资源，可作为延伸阅读。](https://www.haomada.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.thecorriganshow.com  的相关页面与资源，可作为延伸阅读。](http://www.thecorriganshow.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.ruitongchoang.com  的相关页面与资源，可作为延伸阅读。](http://www.ruitongchoang.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.bosai1.com  的相关页面与资源，可作为延伸阅读。](https://www.bosai1.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.nikeairmax2019.com  的相关页面与资源，可作为延伸阅读。](http://www.nikeairmax2019.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
