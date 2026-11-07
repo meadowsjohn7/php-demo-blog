@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [WebShell 文件上传漏洞防护：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-152723-n5xa.html) — 2026-11-07
+- [OAuth 2.0 授权流程解析：深度解析](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-154739-h17z.html) — 2026-11-07
 
 ### 参考资源
 
-- [www.jobtitlesai.com  的相关页面与资源，可作为延伸阅读。](http://www.jobtitlesai.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.beta-ggpoker.com  的相关页面与资源，可作为延伸阅读。](https://www.beta-ggpoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.ryosi.com  的相关页面与资源，可作为延伸阅读。](http://www.ryosi.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.online-xinai.com  的相关页面与资源，可作为延伸阅读。](https://www.online-xinai.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.html-ggpoker.com  的相关页面与资源，可作为延伸阅读。](https://www.html-ggpoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.hengshuojixie.com  的相关页面与资源，可作为延伸阅读。](https://www.hengshuojixie.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.epiclax.com  的相关页面与资源，可作为延伸阅读。](http://www.epiclax.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.roseland-barnes.com  的相关页面与资源，可作为延伸阅读。](https://www.roseland-barnes.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.tangonuestro.com  的相关页面与资源，可作为延伸阅读。](http://www.tangonuestro.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.nonton08.com  的相关页面与资源，可作为延伸阅读。](http://www.nonton08.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
