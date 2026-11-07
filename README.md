@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [Context API 状态管理：实战指南](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-122930-1g1o.html) — 2026-11-07
+- [数据库死锁排查与解决：实战指南](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-124806-qrhd.html) — 2026-11-07
 
 ### 参考资源
 
-- [www.otaclinictsukuba.com  的相关页面与资源，可作为延伸阅读。](http://www.otaclinictsukuba.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.dixiecrating.com  的相关页面与资源，可作为延伸阅读。](http://www.dixiecrating.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.zhhl-hthsports.com  的相关页面与资源，可作为延伸阅读。](http://www.zhhl-hthsports.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.bignoisempc.com  的相关页面与资源，可作为延伸阅读。](http://www.bignoisempc.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.porterandplum.com  的相关页面与资源，可作为延伸阅读。](http://www.porterandplum.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.yuchenyuwen.com  的相关页面与资源，可作为延伸阅读。](http://www.yuchenyuwen.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.gendulphe.com  的相关页面与资源，可作为延伸阅读。](http://www.gendulphe.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.zhhg-leyu.com  的相关页面与资源，可作为延伸阅读。](http://www.zhhg-leyu.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.medservintl.com  的相关页面与资源，可作为延伸阅读。](http://www.medservintl.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.siliconerubberparts.com  的相关页面与资源，可作为延伸阅读。](https://www.siliconerubberparts.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
