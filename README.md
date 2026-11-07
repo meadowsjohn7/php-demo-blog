@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [网页图片 WebP 格式转换：优化方案](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-193122-ogzk.html) — 2026-11-07
+- [OAuth 2.0 授权流程解析：深度解析](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-195115-z91h.html) — 2026-11-07
 
 ### 参考资源
 
-- [www.impactmagical.com  的相关页面与资源，可作为延伸阅读。](https://www.impactmagical.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.thriventfellows.com  的相关页面与资源，可作为延伸阅读。](http://www.thriventfellows.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.twhitedental.com  的相关页面与资源，可作为延伸阅读。](http://www.twhitedental.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.cihailu.com  的相关页面与资源，可作为延伸阅读。](http://www.cihailu.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.turfdxb.com  的相关页面与资源，可作为延伸阅读。](http://www.turfdxb.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.butlercpj.com  的相关页面与资源，可作为延伸阅读。](http://www.butlercpj.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.xlkbltm.com  的相关页面与资源，可作为延伸阅读。](http://www.xlkbltm.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.tjdygk.com  的相关页面与资源，可作为延伸阅读。](http://www.tjdygk.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.semillaad.com  的相关页面与资源，可作为延伸阅读。](http://www.semillaad.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.jeffersoncheng.com  的相关页面与资源，可作为延伸阅读。](http://www.jeffersoncheng.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
