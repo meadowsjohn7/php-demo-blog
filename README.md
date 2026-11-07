@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [内网穿透调试工具：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-110441-p0gw.html) — 2026-11-07
+- [Chrome DevTools 性能调试：安全规范](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-112108-lemx.html) — 2026-11-07
 
 ### 参考资源
 
-- [www.bvwlawyers.com  的相关页面与资源，可作为延伸阅读。](http://www.bvwlawyers.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.blackshearplace.com  的相关页面与资源，可作为延伸阅读。](http://www.blackshearplace.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.lemesuriers.com  的相关页面与资源，可作为延伸阅读。](https://www.lemesuriers.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.custom-vacations.com  的相关页面与资源，可作为延伸阅读。](https://www.custom-vacations.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.damaixs.com  的相关页面与资源，可作为延伸阅读。](http://www.damaixs.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.visualstudiotalkshow.com  的相关页面与资源，可作为延伸阅读。](http://www.visualstudiotalkshow.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.tianjx.com  的相关页面与资源，可作为延伸阅读。](http://www.tianjx.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.ftb-wiki.com  的相关页面与资源，可作为延伸阅读。](http://www.ftb-wiki.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.zh-home-lucky10.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-home-lucky10.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.michaelskovgaard.com  的相关页面与资源，可作为延伸阅读。](https://www.michaelskovgaard.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
