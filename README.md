@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [XSS 跨站脚本过滤：深度解析](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-084135-usbe.html) — 2026-11-07
+- [接口签名加密机制：SEO 策略](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-085729-i78n.html) — 2026-11-07
 
 ### 参考资源
 
-- [www.xlkbltm.com  的相关页面与资源，可作为延伸阅读。](http://www.xlkbltm.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.cihailu.com  的相关页面与资源，可作为延伸阅读。](http://www.cihailu.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.tjdygk.com  的相关页面与资源，可作为延伸阅读。](http://www.tjdygk.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.turfdxb.com  的相关页面与资源，可作为延伸阅读。](http://www.turfdxb.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.butlercpj.com  的相关页面与资源，可作为延伸阅读。](http://www.butlercpj.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.365worldcd.com  的相关页面与资源，可作为延伸阅读。](http://www.365worldcd.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.jeffersoncheng.com  的相关页面与资源，可作为延伸阅读。](http://www.jeffersoncheng.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.lagenceimmobilieremaroc.com  的相关页面与资源，可作为延伸阅读。](http://www.lagenceimmobilieremaroc.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.zh-paly-ggpoker.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-paly-ggpoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.semillaad.com  的相关页面与资源，可作为延伸阅读。](http://www.semillaad.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
