@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [XSS 跨站脚本过滤：深度解析](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-101416-9756.html) — 2026-11-07
+- [链接提交工具对比：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-103312-aml5.html) — 2026-11-07
 
 ### 参考资源
 
-- [www.impacthubmedia.com  的相关页面与资源，可作为延伸阅读。](https://www.impacthubmedia.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.tocopoco.com  的相关页面与资源，可作为延伸阅读。](http://www.tocopoco.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.yakulog.com  的相关页面与资源，可作为延伸阅读。](http://www.yakulog.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.saturnorganics.com  的相关页面与资源，可作为延伸阅读。](http://www.saturnorganics.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.melicbebe.com  的相关页面与资源，可作为延伸阅读。](http://www.melicbebe.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.qyhxsq.com  的相关页面与资源，可作为延伸阅读。](https://www.qyhxsq.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.alzidan.com  的相关页面与资源，可作为延伸阅读。](http://www.alzidan.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.about-ggpoker.com  的相关页面与资源，可作为延伸阅读。](https://www.about-ggpoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.letmesayiloveyou.com  的相关页面与资源，可作为延伸阅读。](https://www.letmesayiloveyou.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.bordeauxprint.com  的相关页面与资源，可作为延伸阅读。](https://www.bordeauxprint.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
