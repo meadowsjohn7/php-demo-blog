@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [Keepalived 高可用集群：实战指南](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-213200-mtq3.html) — 2026-11-07
+- [网站反爬虫对抗技术：技术架构](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-215156-7p8z.html) — 2026-11-07
 
 ### 参考资源
 
-- [www.tocopoco.com  的相关页面与资源，可作为延伸阅读。](http://www.tocopoco.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.impacthubmedia.com  的相关页面与资源，可作为延伸阅读。](https://www.impacthubmedia.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.melicbebe.com  的相关页面与资源，可作为延伸阅读。](http://www.melicbebe.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.letmesayiloveyou.com  的相关页面与资源，可作为延伸阅读。](https://www.letmesayiloveyou.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.alzidan.com  的相关页面与资源，可作为延伸阅读。](http://www.alzidan.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.about-ggpoker.com  的相关页面与资源，可作为延伸阅读。](https://www.about-ggpoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.qyhxsq.com  的相关页面与资源，可作为延伸阅读。](https://www.qyhxsq.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.bordeauxprint.com  的相关页面与资源，可作为延伸阅读。](https://www.bordeauxprint.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.haomada.com  的相关页面与资源，可作为延伸阅读。](https://www.haomada.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.ruitongchoang.com  的相关页面与资源，可作为延伸阅读。](http://www.ruitongchoang.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
