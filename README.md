@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [网站 404 引导设计：优化方案](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-185133-mrk3.html) — 2026-11-07
+- [FCP 首屏渲染优化：技术架构](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-190241-dotz.html) — 2026-11-07
 
 ### 参考资源
 
-- [www.newspaperln.com  的相关页面与资源，可作为延伸阅读。](https://www.newspaperln.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.artsotnya.com  的相关页面与资源，可作为延伸阅读。](http://www.artsotnya.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.csxino.com  的相关页面与资源，可作为延伸阅读。](http://www.csxino.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.pa-farm.com  的相关页面与资源，可作为延伸阅读。](http://www.pa-farm.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.alibba-inc.com  的相关页面与资源，可作为延伸阅读。](http://www.alibba-inc.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.bjwunkqs.com  的相关页面与资源，可作为延伸阅读。](https://www.bjwunkqs.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.tripupdater.com  的相关页面与资源，可作为延伸阅读。](http://www.tripupdater.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.xjwywjx.com  的相关页面与资源，可作为延伸阅读。](https://www.xjwywjx.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.feilongbian.com  的相关页面与资源，可作为延伸阅读。](http://www.feilongbian.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.lincolnchickenfillet.com  的相关页面与资源，可作为延伸阅读。](http://www.lincolnchickenfillet.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
