@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [Chrome DevTools 性能调试：安全规范](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-112108-lemx.html) — 2026-11-07
+- [Robots.txt 科学配置：SEO 策略](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-113827-j9kw.html) — 2026-11-07
 
 ### 参考资源
 
-- [www.visualstudiotalkshow.com  的相关页面与资源，可作为延伸阅读。](http://www.visualstudiotalkshow.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.tianjx.com  的相关页面与资源，可作为延伸阅读。](http://www.tianjx.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.ftb-wiki.com  的相关页面与资源，可作为延伸阅读。](http://www.ftb-wiki.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.zh-home-lucky10.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-home-lucky10.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.michaelskovgaard.com  的相关页面与资源，可作为延伸阅读。](https://www.michaelskovgaard.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.intcfos.com  的相关页面与资源，可作为延伸阅读。](http://www.intcfos.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.wasabiwilshire.com  的相关页面与资源，可作为延伸阅读。](http://www.wasabiwilshire.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.zh-hans-wpk.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-hans-wpk.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.redyutub.com  的相关页面与资源，可作为延伸阅读。](http://www.redyutub.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.ifromchina.com  的相关页面与资源，可作为延伸阅读。](https://www.ifromchina.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
