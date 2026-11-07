@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [接口签名加密机制：SEO 策略](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-085729-i78n.html) — 2026-11-07
+- [Hreflang 多语言 SEO：安全规范](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-091342-2frr.html) — 2026-11-07
 
 ### 参考资源
 
-- [www.365worldcd.com  的相关页面与资源，可作为延伸阅读。](http://www.365worldcd.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.jeffersoncheng.com  的相关页面与资源，可作为延伸阅读。](http://www.jeffersoncheng.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.lagenceimmobilieremaroc.com  的相关页面与资源，可作为延伸阅读。](http://www.lagenceimmobilieremaroc.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.zh-paly-ggpoker.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-paly-ggpoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.semillaad.com  的相关页面与资源，可作为延伸阅读。](http://www.semillaad.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.ch5-wepoker.com  的相关页面与资源，可作为延伸阅读。](https://www.ch5-wepoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.amazingdistance.com  的相关页面与资源，可作为延伸阅读。](http://www.amazingdistance.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.janellewoo.com  的相关页面与资源，可作为延伸阅读。](https://www.janellewoo.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.arizonanx.com  的相关页面与资源，可作为延伸阅读。](https://www.arizonanx.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.lowelandsfarm.com  的相关页面与资源，可作为延伸阅读。](http://www.lowelandsfarm.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
