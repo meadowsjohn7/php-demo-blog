@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>自动化测试 Selenium 脚本：深度解析 - PHP Demo Blog</title>
+<meta name="description" content="本文深入解析 Selenium 脚本的架构设计、定位策略与等待机制，结合 PHP Demo Blog 项目演示如何编写稳定可维护的端到端测试，并分享性能与安全测试的扩展技巧。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>自动化测试 Selenium 脚本：深度解析</h1>
+<div class="meta">2026-11-07 · PHP Demo Blog <span class="tag">#Selenium</span> <span class="tag">#自动化测试</span> <span class="tag">#PHP</span> <span class="tag">#WebDriver</span> <span class="tag">#端到端测试</span></div>
+<div class="summary">本文深入解析 Selenium 脚本的架构设计、定位策略与等待机制，结合 PHP Demo Blog 项目演示如何编写稳定可维护的端到端测试，并分享性能与安全测试的扩展技巧。</div>
+<h2>定位策略与元素交互</h2>
+<p>Selenium 脚本的稳定性首先取决于元素定位策略。在 PHP Demo Blog 项目中，我们优先使用 `By.cssSelector` 或 `By.id`，避免依赖易变的 XPath 层级。例如，对博客列表的每条记录，使用 `article.post` 作为选择器，并通过 `findElements` 获取集合后遍历操作。对于动态加载的评论区域，采用 `WebDriverWait` 配合 `expectedConditions` 等待元素可见，而非硬编码 `sleep`。交互时，先调用 `clear()` 再 `sendKeys()`，并利用 `Actions` 类处理下拉菜单和拖拽，确保脚本在不同浏览器中行为一致。</p>
+<h2>等待机制与异常处理</h2>
+<p>显式等待是 Selenium 脚本健壮性的核心。我们封装一个 `waitForElement` 方法，设置超时 10 秒和轮询间隔 0.5 秒，并捕获 `TimeoutException` 记录日志后重试。对于页面跳转，使用 `waitForUrlContains` 或 `waitForTitle` 验证导航完成。异常处理方面，在 `try-catch` 块中包裹关键步骤，失败时自动截图保存至 `logs/` 目录，并输出当前 URL 和页面源码片段，便于排查。同时，为每个测试用例设置 `implicitlyWait` 为 5 秒作为兜底，但避免与显式等待混用导致时间叠加。</p>
+<h2>数据驱动与并行执行</h2>
+<p>为了覆盖博客的发布、编辑和删除流程，我们采用数据驱动模式，将测试数据存放在 JSON 文件中，通过 PHP 的 `json_decode` 读取后循环执行。每个用例独立启动浏览器实例，使用 `--headless` 模式减少资源消耗。并行执行借助 PHP 的 `pcntl_fork` 或多进程管理工具，将不同测试类分配到独立进程，每个进程使用不同的 `--user-data-dir` 避免会话冲突。执行结果汇总为 JUnit XML 格式，便于持续集成平台解析。</p>
+<h2>性能与安全测试扩展</h2>
+<p>在功能测试之外，Selenium 脚本可集成性能与安全检查。通过 `executeScript` 注入 `performance.getEntriesByType('navigation')` 获取关键渲染指标，如 LCP 和 TTFB，并与预设阈值比较。安全方面，利用 `driver.manage().getCookies()` 验证 CSRF 令牌是否存在，并检查响应头中的 HSTS 和 Content-Security-Policy。对于图片资源，通过 `executeScript` 统计未设置 `loading="lazy"` 的 `img` 标签数量，提示优化。这些扩展让自动化测试不仅验证功能，还成为质量门禁的一部分。</p>
+<p>通过上述实践，Selenium 脚本从简单的录制回放升级为可维护的测试资产，为 PHP Demo Blog 的持续交付提供可靠保障。</p>
+<h2>参考资源</h2>
+<ul><li>[www.jackhaggertyarchitect.com  的相关页面与资源，可作为延伸阅读。](http://www.jackhaggertyarchitect.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.wallvases.com  的相关页面与资源，可作为延伸阅读。](https://www.wallvases.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.gnosishypnosis.com  的相关页面与资源，可作为延伸阅读。](https://www.gnosishypnosis.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.2525ok.com  的相关页面与资源，可作为延伸阅读。](http://www.2525ok.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.kocham-morze.com  的相关页面与资源，可作为延伸阅读。](http://www.kocham-morze.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
