@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [Nginx 高并发优化：完整手册](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-092432-2fpp.html) — 2026-11-07
+- [自动化测试 Selenium 脚本：SEO 策略](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-094355-p83u.html) — 2026-11-07
 
 ### 参考资源
 
-- [www.sofiamenconero.com  的相关页面与资源，可作为延伸阅读。](http://www.sofiamenconero.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.forestofantlers.com  的相关页面与资源，可作为延伸阅读。](http://www.forestofantlers.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.ezymovr.com  的相关页面与资源，可作为延伸阅读。](http://www.ezymovr.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.czgywz.com  的相关页面与资源，可作为延伸阅读。](http://www.czgywz.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.zh-hans-wepoker.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-hans-wepoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.hostingbeat.com  的相关页面与资源，可作为延伸阅读。](http://www.hostingbeat.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.misstyc.com  的相关页面与资源，可作为延伸阅读。](http://www.misstyc.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.avaetss.com  的相关页面与资源，可作为延伸阅读。](http://www.avaetss.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.zh-play-lucky10.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-play-lucky10.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.date-dongqiudi.com  的相关页面与资源，可作为延伸阅读。](https://www.date-dongqiudi.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
