@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [JavaScript 内存泄漏排查：SEO 策略](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-205957-o0mg.html) — 2026-11-07
+- [Brotli 压缩算法应用：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-211455-h7dq.html) — 2026-11-07
 
 ### 参考资源
 
-- [www.avaetss.com  的相关页面与资源，可作为延伸阅读。](http://www.avaetss.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.zh-play-lucky10.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-play-lucky10.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.hostingbeat.com  的相关页面与资源，可作为延伸阅读。](http://www.hostingbeat.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.zh-zone-xinqiu.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-zone-xinqiu.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.shawnandcompany.com  的相关页面与资源，可作为延伸阅读。](http://www.shawnandcompany.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.rwtracker.com  的相关页面与资源，可作为延伸阅读。](http://www.rwtracker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.app-zh-wepoker.com  的相关页面与资源，可作为延伸阅读。](https://www.app-zh-wepoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.zjdswl.com  的相关页面与资源，可作为延伸阅读。](http://www.zjdswl.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.saturnorganics.com  的相关页面与资源，可作为延伸阅读。](http://www.saturnorganics.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.yakulog.com  的相关页面与资源，可作为延伸阅读。](http://www.yakulog.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
