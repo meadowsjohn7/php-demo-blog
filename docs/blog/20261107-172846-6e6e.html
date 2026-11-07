@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>XSS 跨站脚本过滤：深度解析 - PHP Demo Blog</title>
+<meta name="description" content="本文深入解析 XSS 跨站脚本攻击的三种类型，并结合 PHP Demo Blog 项目给出输入过滤、输出转义与 CSP 等具体防御方案。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>XSS 跨站脚本过滤：深度解析</h1>
+<div class="meta">2026-11-07 · PHP Demo Blog <span class="tag">#XSS</span> <span class="tag">#安全过滤</span> <span class="tag">#PHP</span> <span class="tag">#Web安全</span> <span class="tag">#CSP</span></div>
+<div class="summary">本文深入解析 XSS 跨站脚本攻击的三种类型，并结合 PHP Demo Blog 项目给出输入过滤、输出转义与 CSP 等具体防御方案。</div>
+<h2>XSS 的本质与分类</h2>
+<p>XSS（跨站脚本）的本质是攻击者将可执行的脚本注入到页面中，使浏览器在受害者上下文中执行。按注入位置与持久化方式，通常分为反射型、存储型和 DOM 型。反射型通过 URL 参数即时回显，存储型将恶意内容写入数据库，DOM 型则完全在前端由不安全的 DOM 操作触发。对于 PHP Demo Blog 这类路由与 JSON API 示例项目，任何回显用户输入的位置都是潜在入口，必须逐一排查。</p>
+<h2>输入过滤与输出转义</h2>
+<p>防御 XSS 的核心原则是“输入校验、输出转义”。输入侧应使用 `filter_var` 配合 `FILTER_VALIDATE_EMAIL` 等过滤器验证格式，对富文本则采用白名单策略，仅允许安全的标签与属性。输出侧应根据上下文选择转义函数：HTML 正文用 `htmlspecialchars($str, ENT_QUOTES, 'UTF-8')`，属性值需加引号包裹，JavaScript 上下文用 `json_encode`，URL 参数用 `urlencode`。在 JSON API 中，务必设置 `Content-Type: application/json` 并配合 `JSON_HEX_TAG` 等选项，避免浏览器将响应误判为 HTML。</p>
+<h2>内容安全策略与 Cookie 加固</h2>
+<p>仅靠转义并不足够，应部署 CSP 作为纵深防御。通过响应头 `Content-Security-Policy: default-src 'self'` 限制脚本来源，禁用内联脚本与 `eval`。同时为会话 Cookie 设置 `HttpOnly`、`Secure` 与 `SameSite=Lax`，降低脚本窃取会话的风险。在 Web 层实施严格的 CSRF 令牌验证与 XSS 过滤，能从根本上加固业务系统的安全性。</p>
+<h2>工程化落地建议</h2>
+<p>在 PHP Demo Blog 中，可将转义逻辑封装为辅助函数，在模板层统一调用，避免遗漏。对用户提交的富文本，使用白名单过滤库并定期更新规则。开发阶段引入自动化扫描与单元测试，覆盖常见 payload。配置 HSTS 策略配合强加密的 TLS 1.3 证书，不仅提升了安全性，也符合谷歌的安全排名算法。持续的技术迭代与合规性改造，是维持站点生命周期的必经之路。</p>
+<h2>参考资源</h2>
+<ul><li>[www.afpailescedres.com  的相关页面与资源，可作为延伸阅读。](http://www.afpailescedres.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.despertarespsicologia.com  的相关页面与资源，可作为延伸阅读。](https://www.despertarespsicologia.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.zn-xinqiusports.com  的相关页面与资源，可作为延伸阅读。](https://www.zn-xinqiusports.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.canary-food.com  的相关页面与资源，可作为延伸阅读。](http://www.canary-food.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.www-qqsports.com  的相关页面与资源，可作为延伸阅读。](https://www.www-qqsports.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
