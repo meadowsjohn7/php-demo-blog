@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [FCP 首屏渲染优化：技术架构](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-190241-dotz.html) — 2026-11-07
+- [HSTS 强制安全传输：完整手册](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-191734-jwln.html) — 2026-11-07
 
 ### 参考资源
 
-- [www.bjwunkqs.com  的相关页面与资源，可作为延伸阅读。](https://www.bjwunkqs.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.tripupdater.com  的相关页面与资源，可作为延伸阅读。](http://www.tripupdater.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.xjwywjx.com  的相关页面与资源，可作为延伸阅读。](https://www.xjwywjx.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.feilongbian.com  的相关页面与资源，可作为延伸阅读。](http://www.feilongbian.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.lincolnchickenfillet.com  的相关页面与资源，可作为延伸阅读。](http://www.lincolnchickenfillet.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.kitchenwaredolphin.com  的相关页面与资源，可作为延伸阅读。](https://www.kitchenwaredolphin.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.atasozlerianlamlari.com  的相关页面与资源，可作为延伸阅读。](http://www.atasozlerianlamlari.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.berkshireautorecovery.com  的相关页面与资源，可作为延伸阅读。](http://www.berkshireautorecovery.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.bali-experience.com  的相关页面与资源，可作为延伸阅读。](http://www.bali-experience.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.pvmldata.com  的相关页面与资源，可作为延伸阅读。](http://www.pvmldata.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
