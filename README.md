@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [Robots.txt 科学配置：SEO 策略](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-113827-j9kw.html) — 2026-11-07
+- [蜘蛛池快速收录原理：安全规范](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-115630-udrz.html) — 2026-11-07
 
 ### 参考资源
 
-- [www.intcfos.com  的相关页面与资源，可作为延伸阅读。](http://www.intcfos.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.wasabiwilshire.com  的相关页面与资源，可作为延伸阅读。](http://www.wasabiwilshire.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.zh-hans-wpk.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-hans-wpk.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.redyutub.com  的相关页面与资源，可作为延伸阅读。](http://www.redyutub.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.ifromchina.com  的相关页面与资源，可作为延伸阅读。](https://www.ifromchina.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.gzyunhai.com  的相关页面与资源，可作为延伸阅读。](http://www.gzyunhai.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.kurtbergt.com  的相关页面与资源，可作为延伸阅读。](http://www.kurtbergt.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.sanctuarybirthing.com  的相关页面与资源，可作为延伸阅读。](http://www.sanctuarybirthing.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.linktogif.com  的相关页面与资源，可作为延伸阅读。](http://www.linktogif.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.acredyweb.com  的相关页面与资源，可作为延伸阅读。](http://www.acredyweb.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
