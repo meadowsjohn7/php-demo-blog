@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [指纹规避与环境伪装：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-161704-qpjt.html) — 2026-11-07
+- [Web 性能分析审计：完整手册](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-163516-tce0.html) — 2026-11-07
 
 ### 参考资源
 
-- [www.wxvqgy.com  的相关页面与资源，可作为延伸阅读。](http://www.wxvqgy.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.rotkx.net 的相关页面与资源，可作为延伸阅读。](http://www.rotkx.net 的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.cavusogluendustriyel.com  的相关页面与资源，可作为延伸阅读。](https://www.cavusogluendustriyel.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.wheelsandsneakers.com  的相关页面与资源，可作为延伸阅读。](http://www.wheelsandsneakers.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.oftalmologiaferreyra.com  的相关页面与资源，可作为延伸阅读。](http://www.oftalmologiaferreyra.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.0920720506.com  的相关页面与资源，可作为延伸阅读。](http://www.0920720506.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.zh-home-wepoker.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-home-wepoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.internetlet.com  的相关页面与资源，可作为延伸阅读。](http://www.internetlet.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.slice-online.com  的相关页面与资源，可作为延伸阅读。](http://www.slice-online.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.papirustercume.com  的相关页面与资源，可作为延伸阅读。](http://www.papirustercume.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
