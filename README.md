@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [HSTS 强制安全传输：完整手册](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-191734-jwln.html) — 2026-11-07
+- [网页图片 WebP 格式转换：优化方案](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-193122-ogzk.html) — 2026-11-07
 
 ### 参考资源
 
-- [www.kitchenwaredolphin.com  的相关页面与资源，可作为延伸阅读。](https://www.kitchenwaredolphin.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.atasozlerianlamlari.com  的相关页面与资源，可作为延伸阅读。](http://www.atasozlerianlamlari.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.berkshireautorecovery.com  的相关页面与资源，可作为延伸阅读。](http://www.berkshireautorecovery.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.bali-experience.com  的相关页面与资源，可作为延伸阅读。](http://www.bali-experience.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.pvmldata.com  的相关页面与资源，可作为延伸阅读。](http://www.pvmldata.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.impactmagical.com  的相关页面与资源，可作为延伸阅读。](https://www.impactmagical.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.thriventfellows.com  的相关页面与资源，可作为延伸阅读。](http://www.thriventfellows.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.twhitedental.com  的相关页面与资源，可作为延伸阅读。](http://www.twhitedental.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.cihailu.com  的相关页面与资源，可作为延伸阅读。](http://www.cihailu.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.turfdxb.com  的相关页面与资源，可作为延伸阅读。](http://www.turfdxb.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
