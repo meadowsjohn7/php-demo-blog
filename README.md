@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [Chrome DevTools 性能调试：完整手册](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-150655-p3af.html) — 2026-11-07
+- [WebShell 文件上传漏洞防护：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-152723-n5xa.html) — 2026-11-07
 
 ### 参考资源
 
-- [www.gp12653.com  的相关页面与资源，可作为延伸阅读。](https://www.gp12653.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.tatotato.com  的相关页面与资源，可作为延伸阅读。](http://www.tatotato.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.kuiboto.com  的相关页面与资源，可作为延伸阅读。](http://www.kuiboto.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.cpgea.com  的相关页面与资源，可作为延伸阅读。](http://www.cpgea.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.dketonea.com  的相关页面与资源，可作为延伸阅读。](https://www.dketonea.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.jobtitlesai.com  的相关页面与资源，可作为延伸阅读。](http://www.jobtitlesai.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.beta-ggpoker.com  的相关页面与资源，可作为延伸阅读。](https://www.beta-ggpoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.ryosi.com  的相关页面与资源，可作为延伸阅读。](http://www.ryosi.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.online-xinai.com  的相关页面与资源，可作为延伸阅读。](https://www.online-xinai.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.html-ggpoker.com  的相关页面与资源，可作为延伸阅读。](https://www.html-ggpoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
