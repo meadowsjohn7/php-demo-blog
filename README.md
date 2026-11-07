@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [FCP 首屏渲染优化：SEO 策略](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-180217-9hz4.html) — 2026-11-07
+- [FCP 首屏渲染优化：完整手册](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-181944-p84l.html) — 2026-11-07
 
 ### 参考资源
 
-- [www.tomsmithstudio.com  的相关页面与资源，可作为延伸阅读。](http://www.tomsmithstudio.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.midtowntapandtearoom.com  的相关页面与资源，可作为延伸阅读。](http://www.midtowntapandtearoom.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.taends.com  的相关页面与资源，可作为延伸阅读。](http://www.taends.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.hematqiuq.com  的相关页面与资源，可作为延伸阅读。](http://www.hematqiuq.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.readingswithgail.com  的相关页面与资源，可作为延伸阅读。](http://www.readingswithgail.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.robertdanielharris.com  的相关页面与资源，可作为延伸阅读。](https://www.robertdanielharris.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.libertysoulfood.com  的相关页面与资源，可作为延伸阅读。](http://www.libertysoulfood.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.theslumstudio.com  的相关页面与资源，可作为延伸阅读。](http://www.theslumstudio.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.global-xinzhibo.com  的相关页面与资源，可作为延伸阅读。](https://www.global-xinzhibo.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.synergie-creative.com  的相关页面与资源，可作为延伸阅读。](http://www.synergie-creative.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
