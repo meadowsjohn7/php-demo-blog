@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AC 自动机敏感词过滤：底层原理 - PHP Demo Blog</title>
+<meta name="description" content="AC 自动机将 Trie 与失配指针结合，实现多模式串一次扫描匹配。本文从 Trie 构建、BFS 失配链、输出合并到 PHP 实现，解析其在敏感词过滤中的高效原理。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>AC 自动机敏感词过滤：底层原理</h1>
+<div class="meta">2026-11-07 · PHP Demo Blog <span class="tag">#AC自动机</span> <span class="tag">#敏感词过滤</span> <span class="tag">#PHP算法</span> <span class="tag">#字符串匹配</span> <span class="tag">#Trie</span></div>
+<div class="summary">AC 自动机将 Trie 与失配指针结合，实现多模式串一次扫描匹配。本文从 Trie 构建、BFS 失配链、输出合并到 PHP 实现，解析其在敏感词过滤中的高效原理。</div>
+<h2>从单模式到多模式：为什么需要 AC 自动机</h2>
+<p>在 PHP Demo Blog 的评论与投稿接口中，敏感词过滤是绕不开的一环。若对每个敏感词逐个调用 strpos 或正则匹配，时间复杂度会随词库规模线性膨胀。AC 自动机（Aho-Corasick）把一组模式串预先组织成 Trie，再通过失配指针把“当前已匹配的最长后缀”信息复用起来，使扫描一遍主串即可命中所有模式串，时间复杂度为 O(n + m + k)，其中 n 为主串长度、m 为模式串总长、k 为命中次数。</p>
+<h2>Trie 构建：把词库变成状态机</h2>
+<p>第一步是插入所有敏感词。每个节点维护 children 数组（PHP 中可用关联数组模拟，键为字符）与 fail 指针。插入时从根出发，逐字符创建或复用节点，在词尾节点标记输出词。注意要处理前缀关系：若词库中同时存在“敏感”与“敏感词”，则“敏感”的结尾节点必须在匹配“敏感词”时也能被输出，这正是输出合并要解决的问题。对于中文，建议先按 UTF-8 拆分为字符数组再插入，避免字节级误匹配。</p>
+<h2>失配指针：BFS 构造与输出合并</h2>
+<p>fail 指针的语义是：当在节点 u 匹配字符 c 失败时，跳到 fail[u] 继续尝试。构造时用 BFS 逐层处理：根的子节点 fail 指向根；对节点 u 的每个子节点 v（字符 c），令 f = fail[u]，沿 fail 链向上找第一个拥有子节点 c 的节点，将 v.fail 指向该子节点，找不到则指向根。同时把 v.fail 的输出集合合并到 v 的输出中，这样扫描到 v 时就能一次性报告所有以当前位置结尾的模式串。BFS 保证父节点先于子节点处理，fail 链天然形成有向无环结构。</p>
+<h2>PHP 实现要点与工程取舍</h2>
+<p>在 PHP 中可用数组节点加队列实现，示例骨架如下：</p>
+<pre><code>function build(array $words): array {
+    $trie = [[&#x27;next&#x27; =&gt; [], &#x27;fail&#x27; =&gt; 0, &#x27;out&#x27; =&gt; []]];
+    foreach ($words as $w) {
+        $node = 0;
+        foreach (preg_split(&#x27;//u&#x27;, $w, -1, PREG_SPLIT_NO_EMPTY) as $ch) {
+            if (!isset($trie[$node][&#x27;next&#x27;][$ch])) {
+                $trie[] = [&#x27;next&#x27; =&gt; [], &#x27;fail&#x27; =&gt; 0, &#x27;out&#x27; =&gt; []];
+                $trie[$node][&#x27;next&#x27;][$ch] = count($trie) - 1;
+            }
+            $node = $trie[$node][&#x27;next&#x27;][$ch];
+        }
+        $trie[$node][&#x27;out&#x27;][] = $w;
+    }
+    $queue = [];
+    foreach ($trie[0][&#x27;next&#x27;] as $child) { $trie[$child][&#x27;fail&#x27;] = 0; $queue[] = $child; }
+    for ($i = 0; $i &lt; count($queue); $i++) {
+        $u = $queue[$i];
+        foreach ($trie[$u][&#x27;next&#x27;] as $ch =&gt; $v) {
+            $f = $trie[$u][&#x27;fail&#x27;];
+            while ($f &amp;&amp; !isset($trie[$f][&#x27;next&#x27;][$ch])) $f = $trie[$f][&#x27;fail&#x27;];
+            $trie[$v][&#x27;fail&#x27;] = $trie[$f][&#x27;next&#x27;][$ch] ?? 0;
+            $trie[$v][&#x27;out&#x27;] = array_merge($trie[$v][&#x27;out&#x27;], $trie[$trie[$v][&#x27;fail&#x27;]][&#x27;out&#x27;]);
+            $queue[] = $v;
+        }
+    }
+    return $trie;
+}</code></pre>
+<p>扫描时维护当前节点，逐字符沿 next 或 fail 转移，命中 out 即记录位置。工程上需注意：词库较大时构建开销应缓存到 APCu 或 Redis，避免每次请求重建；对命中结果做位置合并与替换时，要防止重叠替换导致文本错乱；定期对词库做去重与长度排序，可减少无用输出。AC 自动机只解决“找得到”，替换策略与业务规则仍需单独设计，二者分离才能让过滤层保持可维护。</p>
+<h2>参考资源</h2>
+<ul><li>[www.play-qqsports.com  的相关页面与资源，可作为延伸阅读。](https://www.play-qqsports.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.cupofhopecafe.com  的相关页面与资源，可作为延伸阅读。](http://www.cupofhopecafe.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.georgiabj.com  的相关页面与资源，可作为延伸阅读。](https://www.georgiabj.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.mmeritpluss.com  的相关页面与资源，可作为延伸阅读。](http://www.mmeritpluss.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.zsh784.com  的相关页面与资源，可作为延伸阅读。](https://www.zsh784.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>

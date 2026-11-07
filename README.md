@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [URL 扁平化设计规范：优化方案](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-165018-pd60.html) — 2026-11-07
+- [AC 自动机敏感词过滤：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-170108-veti.html) — 2026-11-07
 
 ### 参考资源
 
-- [www.memartau.com  的相关页面与资源，可作为延伸阅读。](http://www.memartau.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.nbnmjxkesyid.com  的相关页面与资源，可作为延伸阅读。](https://www.nbnmjxkesyid.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.zjcwu.com  的相关页面与资源，可作为延伸阅读。](https://www.zjcwu.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.lavecchiaconcia.com  的相关页面与资源，可作为延伸阅读。](https://www.lavecchiaconcia.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.linyuanxinli.com  的相关页面与资源，可作为延伸阅读。](https://www.linyuanxinli.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.play-qqsports.com  的相关页面与资源，可作为延伸阅读。](https://www.play-qqsports.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.cupofhopecafe.com  的相关页面与资源，可作为延伸阅读。](http://www.cupofhopecafe.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.georgiabj.com  的相关页面与资源，可作为延伸阅读。](https://www.georgiabj.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.mmeritpluss.com  的相关页面与资源，可作为延伸阅读。](http://www.mmeritpluss.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.zsh784.com  的相关页面与资源，可作为延伸阅读。](https://www.zsh784.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
