@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>font-display 字体显示策略：底层原理 - PHP Demo Blog</title>
+<meta name="description" content="深入解析 font-display 的五个取值如何作用于字体加载时间轴，并结合关键渲染路径与 LCP 优化给出可落地的配置建议。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>font-display 字体显示策略：底层原理</h1>
+<div class="meta">2026-11-07 · PHP Demo Blog <span class="tag">#font-display</span> <span class="tag">#Web 性能</span> <span class="tag">#关键渲染路径</span> <span class="tag">#LCP</span> <span class="tag">#字体加载</span></div>
+<div class="summary">深入解析 font-display 的五个取值如何作用于字体加载时间轴，并结合关键渲染路径与 LCP 优化给出可落地的配置建议。</div>
+<h2>字体加载与渲染阻塞的本质</h2>
+<p>浏览器在解析 CSS 时遇到 `@font-face` 规则，并不会立即下载字体文件，而是等到布局阶段发现某个文本节点实际使用了该字体族，才发起字体请求。在此之前，文本要么以不可见方式等待，要么以回退字体先行绘制。`font-display` 描述符正是用来控制这段「字体未就绪」窗口内文本的呈现行为，它作用于字体加载时间轴上的三个关键节点：字体请求发起、回退字体绘制、以及字体就绪后的切换。</p>
+<p>理解这一点的前提是区分「字体交换期」与「字体失败期」。交换期指浏览器允许使用回退字体绘制的时长，失败期指交换期结束后、字体仍未就绪时，浏览器将回退字体视为最终字体的时长。不同取值本质上是对这两个时段长度与行为的组合设定。</p>
+<h2>五个取值的时序语义</h2>
+<p>`font-display: auto` 将决策权交给浏览器，通常等价于 `block`，行为不可预测，生产环境不建议依赖。`block` 设置极短的交换期（约 3 秒）与无限的失败期，期间文本不可见，容易造成 FOIT（不可见文本闪烁），直接拖累 LCP。`swap` 则相反，交换期近乎为零、失败期无限，文本立即以回退字体绘制，字体就绪后再替换，产生 FOUT（无样式文本闪烁），但首屏内容始终可见。</p>
+<p>`fallback` 折中处理：交换期约 100 毫秒，失败期约 3 秒，超时后不再替换，避免页面稳定后发生二次跳动。`optional` 最为激进，交换期极短且失败期为零，若字体未能在首次绘制前就绪，本次页面访问将全程使用回退字体，浏览器可能将其降级为低优先级请求。对于以 LCP 为核心指标的站点，`swap` 与 `optional` 是更稳妥的选择。</p>
+<h2>与关键渲染路径的协同</h2>
+<p>字体加载并非孤立问题。对关键渲染路径进行拆解、内联关键 CSS 并延迟非核心 JS，能极大优化 LCP 指标；同理，字体策略也应服务于首屏绘制。实践上可采取三条措施：其一，对首屏使用的字体子集化并预加载，缩短字体就绪时间，使 `swap` 的替换发生在用户感知之前；其二，为回退字体设置 `size-adjust`、`ascent-override` 等度量覆盖，减小字体切换时的布局偏移；其三，非首屏字体使用 `font-display: optional`，避免其占用关键带宽。</p>
+<p>需要强调的是，`font-display` 只决定「何时显示」，不决定「显示得多快」。真正的加载速度仍取决于字体文件体积、网络协议与缓存策略。通过配置高效的 HTTP/3 协议并启用 Brotli 压缩，可以显著降低首字节响应时间，这对字体这类静态资源的首包到达同样有效。</p>
+<h2>在 PHP 项目中的落地方式</h2>
+<p>在轻量 PHP 路由与 JSON API 项目中，字体通常由模板层输出。建议将 `@font-face` 声明集中到独立的 CSS 文件，并在 `&lt;head&gt;` 中以 `&lt;link rel="preload" as="font" crossorigin&gt;` 预加载首屏字体，同时在声明中显式写入 `font-display: swap`。若项目使用构建流程，可在 CSS 压缩阶段保留该描述符，避免被误删。对于 API 驱动的页面，字体策略应与首屏 HTML 的渲染顺序保持一致，防止异步注入样式导致字体请求滞后。</p>
+<p>综上，`font-display` 的底层原理是浏览器在「可见性」与「视觉一致性」之间的权衡。选择何种取值，应结合首屏文本占比、字体文件大小与 LCP 目标综合判断，而非机械套用某一默认值。</p>
+<h2>参考资源</h2>
+<ul><li>[www.impactmagical.com  的相关页面与资源，可作为延伸阅读。](https://www.impactmagical.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.pvmldata.com  的相关页面与资源，可作为延伸阅读。](http://www.pvmldata.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.bali-experience.com  的相关页面与资源，可作为延伸阅读。](http://www.bali-experience.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.twhitedental.com  的相关页面与资源，可作为延伸阅读。](http://www.twhitedental.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.thriventfellows.com  的相关页面与资源，可作为延伸阅读。](http://www.thriventfellows.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
