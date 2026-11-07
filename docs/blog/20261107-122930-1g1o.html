@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Context API 状态管理：实战指南 - PHP Demo Blog</title>
+<meta name="description" content="本文介绍如何用 React Context API 管理全局状态，涵盖创建、提供、消费与性能优化，并结合 PHP Demo Blog 项目给出可执行步骤。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>Context API 状态管理：实战指南</h1>
+<div class="meta">2026-11-07 · PHP Demo Blog <span class="tag">#React</span> <span class="tag">#Context API</span> <span class="tag">#状态管理</span> <span class="tag">#性能优化</span> <span class="tag">#PHP Demo Blog</span></div>
+<div class="summary">本文介绍如何用 React Context API 管理全局状态，涵盖创建、提供、消费与性能优化，并结合 PHP Demo Blog 项目给出可执行步骤。</div>
+<h2>为什么需要 Context API</h2>
+<p>在 React 应用中，当多个组件需要共享状态时，逐层传递 props 会导致代码冗余且难以维护。Context API 提供了一种在组件树中直接传递数据的方式，无需显式地通过每一层。它适用于主题、用户认证、语言偏好等全局状态。与 Redux 等库相比，Context API 更轻量，适合中小型项目。在 PHP Demo Blog 项目中，我们使用 Context API 管理用户登录状态和主题切换，减少了组件间的耦合。</p>
+<h2>创建与使用 Context</h2>
+<p>首先，使用 `React.createContext` 创建一个 Context 对象，并定义默认值。然后，在顶层组件中使用 `Provider` 包裹子组件，并通过 `value` 属性传递状态和更新函数。子组件可以通过 `useContext` Hook 消费 Context。例如，创建一个 `AuthContext` 来管理用户信息：</p>
+<pre><code>const AuthContext = React.createContext(null);
+
+function App() {
+  const [user, setUser] = useState(null);
+  return (
+    &lt;AuthContext.Provider value={{ user, setUser }}&gt;
+      &lt;Blog /&gt;
+    &lt;/AuthContext.Provider&gt;
+  );
+}
+
+function Blog() {
+  const { user } = useContext(AuthContext);
+  return &lt;div&gt;{user ? `欢迎, ${user.name}` : &#x27;请登录&#x27;}&lt;/div&gt;;
+}</code></pre>
+<p>注意，`value` 属性应避免每次渲染都创建新对象，否则会导致所有消费者重新渲染。可以使用 `useMemo` 缓存 value。</p>
+<h2>性能优化与常见陷阱</h2>
+<p>Context API 的一个常见问题是，当 Provider 的 value 变化时，所有消费该 Context 的组件都会重新渲染，即使它们只依赖 value 中的部分数据。为了优化性能，可以将 Context 拆分为多个细粒度的 Context，或者使用 `useMemo` 和 `useCallback` 来稳定 value。另外，避免在 Provider 中直接传递内联对象或函数。在 PHP Demo Blog 项目中，我们将用户状态和主题状态拆分为两个独立的 Context，减少了不必要的渲染。同时，对于频繁更新的状态，可以考虑使用状态管理库或 `useReducer` 配合 Context。</p>
+<h2>在 PHP Demo Blog 中的实践</h2>
+<p>在 PHP Demo Blog 的 JSON API 示例项目中，前端使用 React 构建。我们通过 Context API 管理全局的 API 请求状态和用户会话。例如，创建一个 `ApiContext` 来封装 fetch 请求，并处理加载和错误状态。结合后端返回的 JSON 数据，前端组件可以轻松获取博客文章列表。此外，我们使用 Context 管理主题切换，将主题值存储在 localStorage 中，实现持久化。通过 Context API，我们保持了组件的纯净性，并提升了开发效率。对于更复杂的场景，可以参考相关资源中的实践案例。</p>
+<h2>参考资源</h2>
+<ul><li>[www.otaclinictsukuba.com  的相关页面与资源，可作为延伸阅读。](http://www.otaclinictsukuba.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.dixiecrating.com  的相关页面与资源，可作为延伸阅读。](http://www.dixiecrating.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.zhhl-hthsports.com  的相关页面与资源，可作为延伸阅读。](http://www.zhhl-hthsports.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.bignoisempc.com  的相关页面与资源，可作为延伸阅读。](http://www.bignoisempc.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.porterandplum.com  的相关页面与资源，可作为延伸阅读。](http://www.porterandplum.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>

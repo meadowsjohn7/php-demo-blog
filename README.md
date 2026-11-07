@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [HTTP/3 协议特性：深度解析](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-121558-bgrt.html) — 2026-11-07
+- [Context API 状态管理：实战指南](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-122930-1g1o.html) — 2026-11-07
 
 ### 参考资源
 
-- [www.karmelsarephta.com  的相关页面与资源，可作为延伸阅读。](http://www.karmelsarephta.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.beta-pggame.com  的相关页面与资源，可作为延伸阅读。](https://www.beta-pggame.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.shadesofbeautybodybar.com  的相关页面与资源，可作为延伸阅读。](http://www.shadesofbeautybodybar.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.yhkyjt.com  的相关页面与资源，可作为延伸阅读。](http://www.yhkyjt.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.tjsenyuan.com  的相关页面与资源，可作为延伸阅读。](http://www.tjsenyuan.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.otaclinictsukuba.com  的相关页面与资源，可作为延伸阅读。](http://www.otaclinictsukuba.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.dixiecrating.com  的相关页面与资源，可作为延伸阅读。](http://www.dixiecrating.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.zhhl-hthsports.com  的相关页面与资源，可作为延伸阅读。](http://www.zhhl-hthsports.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.bignoisempc.com  的相关页面与资源，可作为延伸阅读。](http://www.bignoisempc.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.porterandplum.com  的相关页面与资源，可作为延伸阅读。](http://www.porterandplum.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
