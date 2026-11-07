@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [OAuth 2.0 授权流程解析：深度解析](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-195115-z91h.html) — 2026-11-07
+- [关键渲染路径 Critical Path：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-200603-h3ds.html) — 2026-11-07
 
 ### 参考资源
 
-- [www.butlercpj.com  的相关页面与资源，可作为延伸阅读。](http://www.butlercpj.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.xlkbltm.com  的相关页面与资源，可作为延伸阅读。](http://www.xlkbltm.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.tjdygk.com  的相关页面与资源，可作为延伸阅读。](http://www.tjdygk.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.semillaad.com  的相关页面与资源，可作为延伸阅读。](http://www.semillaad.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.jeffersoncheng.com  的相关页面与资源，可作为延伸阅读。](http://www.jeffersoncheng.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.365worldcd.com  的相关页面与资源，可作为延伸阅读。](http://www.365worldcd.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.zh-paly-ggpoker.com  的相关页面与资源，可作为延伸阅读。](https://www.zh-paly-ggpoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.lagenceimmobilieremaroc.com  的相关页面与资源，可作为延伸阅读。](http://www.lagenceimmobilieremaroc.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.lowelandsfarm.com  的相关页面与资源，可作为延伸阅读。](http://www.lowelandsfarm.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.amazingdistance.com  的相关页面与资源，可作为延伸阅读。](http://www.amazingdistance.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
