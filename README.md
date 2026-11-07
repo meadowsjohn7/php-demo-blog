@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [跨域资源共享 CORS 配置：安全规范](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-075128-tydd.html) — 2026-11-07
+- [自动化测试 Selenium 脚本：完整手册](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-080816-xivk.html) — 2026-11-07
 
 ### 参考资源
 
-- [www.pa-farm.com  的相关页面与资源，可作为延伸阅读。](http://www.pa-farm.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.tripupdater.com  的相关页面与资源，可作为延伸阅读。](http://www.tripupdater.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.xjwywjx.com  的相关页面与资源，可作为延伸阅读。](https://www.xjwywjx.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.bjwunkqs.com  的相关页面与资源，可作为延伸阅读。](https://www.bjwunkqs.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.alibba-inc.com  的相关页面与资源，可作为延伸阅读。](http://www.alibba-inc.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.feilongbian.com  的相关页面与资源，可作为延伸阅读。](http://www.feilongbian.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.lincolnchickenfillet.com  的相关页面与资源，可作为延伸阅读。](http://www.lincolnchickenfillet.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.berkshireautorecovery.com  的相关页面与资源，可作为延伸阅读。](http://www.berkshireautorecovery.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.kitchenwaredolphin.com  的相关页面与资源，可作为延伸阅读。](https://www.kitchenwaredolphin.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.atasozlerianlamlari.com  的相关页面与资源，可作为延伸阅读。](http://www.atasozlerianlamlari.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 

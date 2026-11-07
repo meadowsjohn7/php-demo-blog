@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>自动化测试 Selenium 脚本：完整手册 - PHP Demo Blog</title>
+<meta name="description" content="本手册系统讲解 Selenium 自动化测试脚本的编写流程，涵盖环境搭建、元素定位、等待策略与测试组织，并结合 PHP Demo Blog 项目给出可落地的实践建议。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>自动化测试 Selenium 脚本：完整手册</h1>
+<div class="meta">2026-11-07 · PHP Demo Blog <span class="tag">#Selenium</span> <span class="tag">#自动化测试</span> <span class="tag">#PHP</span> <span class="tag">#Web 测试</span> <span class="tag">#脚本编写</span></div>
+<div class="summary">本手册系统讲解 Selenium 自动化测试脚本的编写流程，涵盖环境搭建、元素定位、等待策略与测试组织，并结合 PHP Demo Blog 项目给出可落地的实践建议。</div>
+<h2>环境准备与项目结构</h2>
+<p>在 PHP Demo Blog 这类轻量路由与 JSON API 项目中引入 Selenium，首先需要明确测试边界。建议在项目根目录下建立 `tests/selenium/` 目录，存放测试脚本与配置文件。Selenium 本身不依赖 PHP 运行，但为了与项目技术栈统一，可通过 Composer 安装 `php-webdriver/webdriver` 作为客户端库。同时需要下载对应浏览器版本的 WebDriver，并确保其路径在系统环境变量中。测试脚本应独立于业务代码，避免在 `public/index.php` 中混入测试逻辑。</p>
+<h2>元素定位与等待策略</h2>
+<p>元素定位是 Selenium 脚本稳定性的关键。优先使用 `id` 与 `name` 属性，其次考虑 CSS 选择器，最后才使用 XPath。在 PHP Demo Blog 的登录与文章发布流程中，建议为关键按钮和输入框添加稳定的 `data-testid` 属性，这样即使前端样式调整也不会影响测试。等待策略上，应完全避免 `sleep()`，改用显式等待（Expected Conditions），例如等待元素可见或可点击。对于 JSON API 返回后的页面渲染，可结合 `WebDriverWait` 设置最长 10 秒超时，并轮询检查目标元素状态。</p>
+<h2>测试组织与断言设计</h2>
+<p>将测试按功能模块拆分为多个脚本文件，例如 `LoginTest.php`、`ArticleTest.php`，每个文件只覆盖一个核心流程。使用 PHPUnit 作为测试运行器，通过 `setUp()` 初始化 WebDriver 实例，在 `tearDown()` 中关闭浏览器并释放资源。断言应聚焦于用户可见的结果，例如页面标题、提示文本或列表项数量，而不是直接查询数据库。对于 JSON API 的测试，可先通过 Selenium 触发页面操作，再用 HTTP 客户端请求接口验证返回结构，形成端到端闭环。</p>
+<h2>持续集成与维护建议</h2>
+<p>将 Selenium 脚本接入 CI 时，建议使用无头模式运行，并配置失败截图与日志输出，便于排查问题。由于浏览器驱动与浏览器版本强相关，应在 CI 配置中固定版本号，避免自动升级导致脚本失效。定期审查测试用例，删除已废弃的流程，保持脚本精简。对于 PHP Demo Blog 这类示例项目，可先覆盖登录、文章创建与列表展示三条主链路，再逐步扩展。稳定的自动化测试不仅能提升代码质量，也为后续性能优化与安全加固提供回归保障。</p>
+<h2>参考资源</h2>
+<ul><li>[www.feilongbian.com  的相关页面与资源，可作为延伸阅读。](http://www.feilongbian.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.lincolnchickenfillet.com  的相关页面与资源，可作为延伸阅读。](http://www.lincolnchickenfillet.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.berkshireautorecovery.com  的相关页面与资源，可作为延伸阅读。](http://www.berkshireautorecovery.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.kitchenwaredolphin.com  的相关页面与资源，可作为延伸阅读。](https://www.kitchenwaredolphin.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.atasozlerianlamlari.com  的相关页面与资源，可作为延伸阅读。](http://www.atasozlerianlamlari.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>
