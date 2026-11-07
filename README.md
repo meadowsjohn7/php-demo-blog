@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [自动化测试 Selenium 脚本：深度解析](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-133816-21is.html) — 2026-11-07
+- [Context API 状态管理：底层原理](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-135340-3d3z.html) — 2026-11-07
 
 ### 参考资源
 
-- [www.jackhaggertyarchitect.com  的相关页面与资源，可作为延伸阅读。](http://www.jackhaggertyarchitect.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.wallvases.com  的相关页面与资源，可作为延伸阅读。](https://www.wallvases.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.gnosishypnosis.com  的相关页面与资源，可作为延伸阅读。](https://www.gnosishypnosis.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.2525ok.com  的相关页面与资源，可作为延伸阅读。](http://www.2525ok.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.kocham-morze.com  的相关页面与资源，可作为延伸阅读。](http://www.kocham-morze.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.guyzapp.com  的相关页面与资源，可作为延伸阅读。](http://www.guyzapp.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.designsinjewelryinc.com  的相关页面与资源，可作为延伸阅读。](http://www.designsinjewelryinc.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.theeco-chic.com  的相关页面与资源，可作为延伸阅读。](http://www.theeco-chic.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.fade-2-black.com  的相关页面与资源，可作为延伸阅读。](https://www.fade-2-black.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.interstatedragways.com  的相关页面与资源，可作为延伸阅读。](http://www.interstatedragways.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
