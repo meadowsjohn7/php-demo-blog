@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub Actions CI/CD 流水线：实战指南 - PHP Demo Blog</title>
+<meta name="description" content="本文介绍如何为 PHP Demo Blog 构建 GitHub Actions CI/CD 流水线，涵盖工作流设计、环境隔离、缓存优化与部署策略，提升交付效率与代码质量。">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">PHP Demo Blog</a>
+<nav><a href="../index.html">首页</a><a href="../index.html">文章</a></nav>
+</div></header>
+<main class="wrap">
+<h1>GitHub Actions CI/CD 流水线：实战指南</h1>
+<div class="meta">2026-11-07 · PHP Demo Blog <span class="tag">#GitHub Actions</span> <span class="tag">#CI/CD</span> <span class="tag">#PHP</span> <span class="tag">#自动化部署</span> <span class="tag">#DevOps</span></div>
+<div class="summary">本文介绍如何为 PHP Demo Blog 构建 GitHub Actions CI/CD 流水线，涵盖工作流设计、环境隔离、缓存优化与部署策略，提升交付效率与代码质量。</div>
+<h2>为什么需要 CI/CD 流水线</h2>
+<p>在 PHP Demo Blog 的迭代过程中，手动执行测试、构建和部署不仅耗时，还容易因环境差异引入错误。GitHub Actions 提供与仓库深度集成的自动化能力，能够将代码提交、拉取请求和发布事件转化为可重复的流水线任务。通过定义清晰的工作流，团队可以在合并前自动运行静态分析和单元测试，确保每次变更都经过统一的质量门禁。</p>
+<h2>设计工作流结构</h2>
+<p>一个实用的流水线通常包含三个作业：测试、构建和部署。测试作业负责安装 PHP 依赖并运行 PHPUnit；构建作业生成可部署的产物，例如压缩后的代码包或容器镜像；部署作业则根据分支策略将产物推送到目标环境。在 YAML 中，使用 `on` 触发器区分 `push` 到主分支和 `pull_request` 事件，避免不必要的部署。通过 `needs` 关键字建立作业依赖，确保只有测试通过后才进入构建阶段。</p>
+<h2>环境隔离与缓存优化</h2>
+<p>环境变量应通过 GitHub Secrets 管理，避免敏感信息硬编码。对于 PHP 项目，利用 `actions/cache` 缓存 Composer 依赖可以显著缩短流水线时长。缓存键建议包含 `composer.lock` 的哈希值，确保依赖变更时自动失效。同时，为不同环境（如 staging 和 production）定义独立的部署作业，并通过 `environment` 字段配置保护规则，要求人工审批后才能发布到生产环境。</p>
+<h2>部署策略与回滚机制</h2>
+<p>部署作业应遵循幂等原则，优先使用原子化操作。例如，通过 SSH 将构建产物同步到服务器后，执行符号链接切换，实现快速回滚。在流水线中记录部署版本和提交哈希，便于问题追踪。此外，结合健康检查脚本，在部署后自动验证关键接口的可用性。若检查失败，流水线应自动触发回滚流程，减少故障影响时间。</p>
+<h2>持续维护建议</h2>
+<p>流水线本身也需要版本控制与定期审查。建议将工作流文件纳入代码评审范围，并监控执行时长与失败率。对于频繁变动的依赖，设置定时任务运行安全扫描。通过持续优化流水线，团队能够将更多精力投入功能开发，而非重复的运维操作。</p>
+<h2>参考资源</h2>
+<ul><li>[www.bud-max.com  的相关页面与资源，可作为延伸阅读。](https://www.bud-max.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.xhpai.com  的相关页面与资源，可作为延伸阅读。](http://www.xhpai.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.play-wepoker.com  的相关页面与资源，可作为延伸阅读。](https://www.play-wepoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.keepingtimeclocks.com  的相关页面与资源，可作为延伸阅读。](http://www.keepingtimeclocks.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li>
+<li>[www.maoyihaocai.com  的相关页面与资源，可作为延伸阅读。](http://www.maoyihaocai.com  的相关页面与资源，可作为延伸阅读。) — 相关资源</li></ul>
+</main>
+<footer class="wrap">© PHP Demo Blog · 由 GitHub Pages 托管</footer>
+</body></html>

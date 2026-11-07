@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [数据库死锁排查与解决：实战指南](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-124806-qrhd.html) — 2026-11-07
+- [GitHub Actions CI/CD 流水线：实战指南](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-125956-1uzo.html) — 2026-11-07
 
 ### 参考资源
 
-- [www.yuchenyuwen.com  的相关页面与资源，可作为延伸阅读。](http://www.yuchenyuwen.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.gendulphe.com  的相关页面与资源，可作为延伸阅读。](http://www.gendulphe.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.zhhg-leyu.com  的相关页面与资源，可作为延伸阅读。](http://www.zhhg-leyu.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.medservintl.com  的相关页面与资源，可作为延伸阅读。](http://www.medservintl.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.siliconerubberparts.com  的相关页面与资源，可作为延伸阅读。](https://www.siliconerubberparts.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.bud-max.com  的相关页面与资源，可作为延伸阅读。](https://www.bud-max.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.xhpai.com  的相关页面与资源，可作为延伸阅读。](http://www.xhpai.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.play-wepoker.com  的相关页面与资源，可作为延伸阅读。](https://www.play-wepoker.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.keepingtimeclocks.com  的相关页面与资源，可作为延伸阅读。](http://www.keepingtimeclocks.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.maoyihaocai.com  的相关页面与资源，可作为延伸阅读。](http://www.maoyihaocai.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
