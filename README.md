@@ -4,15 +4,15 @@ PHP Demo Blog 是一个轻量级的 PHP 示例项目，旨在演示如何构建�
 
 ## 最新文章
 
-- [蜘蛛池快速收录原理：安全规范](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-142024-agd9.html) — 2026-11-07
+- [自动化测试 Selenium 脚本：深度解析](https://meadowsjohn7.github.io/php-demo-blog/blog/20261107-143941-955k.html) — 2026-11-07
 
 ### 参考资源
 
-- [www.ad4xlive.com  的相关页面与资源，可作为延伸阅读。](http://www.ad4xlive.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.chmielinska.com  的相关页面与资源，可作为延伸阅读。](http://www.chmielinska.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.ossucci.com  的相关页面与资源，可作为延伸阅读。](http://www.ossucci.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.sakitraveller.com  的相关页面与资源，可作为延伸阅读。](http://www.sakitraveller.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
-- [www.bur-da.com  的相关页面与资源，可作为延伸阅读。](http://www.bur-da.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.brdong.com  的相关页面与资源，可作为延伸阅读。](http://www.brdong.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.ntgaode.com  的相关页面与资源，可作为延伸阅读。](https://www.ntgaode.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.yoipth.com  的相关页面与资源，可作为延伸阅读。](http://www.yoipth.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.rs-films.com  的相关页面与资源，可作为延伸阅读。](http://www.rs-films.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
+- [www.rawrdaily.com  的相关页面与资源，可作为延伸阅读。](http://www.rawrdaily.com  的相关页面与资源，可作为延伸阅读。) — 相关资源
 
 ## 功能
 
